@@ -8,7 +8,7 @@
 */
 
 //Sprite is what we'll actually call.
-function Sprite() {
+function Sprite(x = 0, y = 0, width = 10, height = 10, image = null) {
 
 	//------------------------------VARIABLES-------------------------------------
 
@@ -24,9 +24,12 @@ function Sprite() {
 		return {"x":x, "y":y, "width":width, "height":height };
 	}
 
+	function _setImage(_image){ image = _image;}
+
 	function _getImage(){
 		return {"image":image};
 	}
+
 
 	//All of our public methods go here.
 	//Everything outside of toReturn is private.
@@ -40,6 +43,12 @@ function Sprite() {
 
 		//Returns and object with the x, y, width and height of the sprite.
 		"getBounds":_getBounds,
+
+		//set the source image of the sprite.
+		/*
+		image: img
+		*/
+		"setImage":_setImage,
 
 		//Returns the source image
 		"getImage":_getImage,
