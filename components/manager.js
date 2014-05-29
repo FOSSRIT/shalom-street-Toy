@@ -66,7 +66,6 @@ function Manager() {
 	function _drawSprite(sprite){
 		var data = sprite.getData(); //Or whatever this method ends up being.
 		//Currently no support for spritesheets.
-		alert(data.image.src);
 		ctx.fillRect(0,0, 400, 400);
 		ctx.drawImage(data.image, 10, 10);
 		ctx.drawImage(data.image, 0, 0, data.width, data.height, data.x, data.y, data.width, data.height);
