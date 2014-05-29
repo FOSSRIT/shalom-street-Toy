@@ -1,4 +1,4 @@
-//Sprite.js 
+//Sprite.js
 
 /*
 --Handles data storage of what to draw and where.  Mostly used in playArea.js, but if made generic enough,
@@ -7,13 +7,21 @@
 --In the future, could work with animations, or be scripted or some stuff like that.
 */
 
-//Sprite is what we'll actually call ()
-function Sprite() {
 
+//Sprite is what we'll actually call.
+function Sprite(_x, _y, _width, _height, _image) {
 	//------------------------------VARIABLES-------------------------------------
 
-	var x, y, width, height;
-	this.x = 5;
+	var x = _x;
+	var y = _y; 
+	var width = _width; 
+	var height = _height; 
+	var image = new Image();
+	image.src = _image;
+
+	var isLoaded = false;
+	image.onLoad = function(){ isLoaded = true };
+
 
 	//-----------------------------PROPERTIES-------------------------------------
 
@@ -22,6 +30,16 @@ function Sprite() {
 
 	function _getBounds() {
 		return {"x":x, "y":y, "width":width, "height":height };
+	}
+
+	function _setImage(_image){ image = _image;}
+
+	function _getImage(){
+		return {"image":image};
+	}
+
+	function _getData(){
+		return {"image":image, "x":x, "y":y, "width":width, "height":height };
 	}
 
 
@@ -37,10 +55,19 @@ function Sprite() {
 
 		//Returns and object with the x, y, width and height of the sprite.
 		"getBounds":_getBounds,
+
+		//set the source image of the sprite.
+		/*
+		image: img
+		*/
+		"setImage":_setImage,
+
+		//Returns the source image
+		"getImage":_getImage,
+
+		"getData":_getData,
 	}
 
 
 	return toReturn;
 }
-
-

@@ -8,6 +8,7 @@
 
 		<!--Javascript-->
 		<script type="text/javascript" src="components/manager.js" ></script>
+		<script type="text/javascript" src="components/sprite.js" ></script>
 
 		<script>
 
@@ -21,6 +22,15 @@
 
 				manager.addObject({});
 				manager.addObject({});
+
+
+				var image = new Image();
+				image.src = "images/happyFaceTest.png";
+				var mySprite = Sprite(40, 40, 60, 60, image);
+				image.onload = function(){
+					manager.drawSprite(mySprite);
+				}
+
 			}
 
 			window.onload = onLoad;
