@@ -25,8 +25,6 @@ function Sprite() {
 	}
 
 
-
-
 	//All of our public methods go here.
 	//Everything outside of toReturn is private.
 	var toReturn = {
