@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title id='title'>Toy Building App</title>
+
+		<!--CSS-->
+		<link rel="stylesheet" type="text/css" href="" />
+
+		<!--Javascript-->
+		<script type="text/javascript" src="components/manager.js" ></script>
+
+		<script>
+
+			var canvas, ctx, manager;
+			function onLoad(){
+				//Grab the Canvas.
+				canvas = document.getElementById("main");
+				ctx = canvas.getContext("2d");
+				manager = Manager();
+				manager.init(canvas, ctx);
+
+				manager.addObject({});
+				manager.addObject({});
+			}
+
+			window.onload = onLoad;
+
+		</script>
+	</head>
+
+
+
+	<!--Main app-->
+	<body>
+		<!--Canvas is width and height of the screen.-->
+		<!--We'll need to set this stuff up so it goes full screen I guess.-->
+		<canvas id="main" width="700" height="500"></canvas>
+	</body>
+
+</html>

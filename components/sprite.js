@@ -7,7 +7,7 @@
 --In the future, could work with animations, or be scripted or some stuff like that.
 */
 
-//Sprite is what we'll actually call.
+//Sprite is what we'll actually call ()
 function Sprite() {
 
 	//------------------------------VARIABLES-------------------------------------
