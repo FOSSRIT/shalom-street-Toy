@@ -9,7 +9,7 @@
 
 
 //Sprite is what we'll actually call.
-function Sprite(_x, _y, _width, _height, _image) {
+function Sprite(_x, _y, _width, _height, _imageSource) {
 	//------------------------------VARIABLES-------------------------------------
 
 	var x = _x;
@@ -17,7 +17,7 @@ function Sprite(_x, _y, _width, _height, _image) {
 	var width = _width; 
 	var height = _height; 
 	var image = new Image();
-	image.src = _image;
+	image.src = _imageSource;
 
 	var isLoaded = false;
 	image.onLoad = function(){ isLoaded = true };
