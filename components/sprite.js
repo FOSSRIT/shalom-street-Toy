@@ -12,8 +12,8 @@ function Sprite() {
 
 	//------------------------------VARIABLES-------------------------------------
 
-	var x, y, width, height;
-	this.x = 5;
+	var x, y, width, height, image;
+
 
 	//-----------------------------PROPERTIES-------------------------------------
 
@@ -24,6 +24,9 @@ function Sprite() {
 		return {"x":x, "y":y, "width":width, "height":height };
 	}
 
+	function _getImage(){
+		return {"image":image};
+	}
 
 	//All of our public methods go here.
 	//Everything outside of toReturn is private.
@@ -37,10 +40,11 @@ function Sprite() {
 
 		//Returns and object with the x, y, width and height of the sprite.
 		"getBounds":_getBounds,
+
+		//Returns the source image
+		"getImage":_getImage,
 	}
 
 
 	return toReturn;
 }
-
-
