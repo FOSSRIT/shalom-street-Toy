@@ -4,7 +4,7 @@
 		<title id='title'>Toy Building App</title>
 
 		<!--CSS-->
-		<link rel="stylesheet" type="text/css" href="" />
+		<link rel="stylesheet" type="text/css" href="styles.css" />
 
 		<!--Javascript-->
 		<script type="text/javascript" src="components/manager.js" ></script>
@@ -21,9 +21,11 @@
 				manager = Manager();
 				playArea = PlayArea();
 				manager.init(canvas, ctx);
-
-
-				var mySprite = Sprite(40, 40, 60, 60, "images/happyFaceTest.png");
+				//Make the canvas full screen
+				document.getElementById("main").style.height="100%";
+				document.getElementById("main").style.width="100%";
+				
+				var mySprite = Sprite(0, 0, 50, 50, "images/happyFaceTest.png");
 
 				manager.setLoad(function(){
 					manager.draw();
@@ -45,7 +47,13 @@
 	<body>
 		<!--Canvas is width and height of the screen.-->
 		<!--We'll need to set this stuff up so it goes full screen I guess.-->
-		<canvas id="main" width="700" height="500"></canvas>
+		
+		<!--I don't really understand how the width and height is functioning 
+		below on the canvas in line style. It seems to be acting as a resolution 
+		for the canvas. Not sure if canvas properties itself, or 
+		Possibly due to the fact that the canvas was made full screen 
+		by the "onLoad" script at the top of this page.-->
+		<canvas id="main" width="1920px" height="1080px"></canvas>
 	</body>
 
 </html>
