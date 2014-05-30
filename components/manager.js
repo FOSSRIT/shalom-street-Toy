@@ -96,6 +96,8 @@ function Manager() {
 			ctx.drawImage(data.image, 0, 0, data.image.width, data.image.height, data.x, data.y, data.width, data.height);
 
 		}
+		playArea.draw();
+		toybox.draw();
 	}
 
 	function _drawSprite(sprite){
