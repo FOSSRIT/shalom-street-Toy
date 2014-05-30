@@ -55,8 +55,7 @@ function PlayArea(_x, _y, _width, _height) {
 	}
 
 	function _draw(){
-		//In the future, this will be modified.
-		//Because in the future, contents won't be sprites.
+
 		var toDraw = [];
 		for(var i=0; i<_contents.length; i++){
 			toDraw = toDraw.concat(_contents[i].draw());

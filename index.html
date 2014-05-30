@@ -30,13 +30,14 @@
 				
 				
 				var mySprite = Sprite(0, 0, 50, 50, "images/happyFaceTest.png");
+				var mySprite2 = Sprite(0, 0, 50, 50, "images/happyFaceTest.png");
 
 				manager.setLoad(function(){
 					manager.draw();
 				});
 				
-				
 				playArea.addGameObject(mySprite);
+				toybox.addGameObject(mySprite2);
 				manager.addObject(playArea);
 				manager.addObject(toybox);
 

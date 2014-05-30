@@ -54,17 +54,16 @@ function Manager() {
 		ctx = _ctx;
 
 		//set up events.
-		for(var p in events.mouse) //For each event we're tracking.
+		for(var p in events.mouse) { //For each event we're tracking.
 			canvas.addEventListener(p, function(e){ //When triggered, 
-
 				//Check to see if the event is blocked.
 				if(clipBoard.BlockEvents == undefined || clipBoard.BlockEvents.indexOf(events.mouse[p]) == -1) {
 					for(var a=0;a<events.mouse[p].length;a++) { //For each object.
 						//Check to see if it should be sent to this object.
 						var toPassTo = events.mouse[p][a];
-						if(toPassTo)
+						if(toPassTo){
 							//Send event to objects.  Pass in the string, the clipboard, and e, the mouseEvent parameter.
-							clipBoard = toPassTo.handleEvent(p, clipBoard, e);
+							//clipBoard = toPassTo.handleEvent(p, clipBoard, e); -- Method does not exist yet.
 
 							//Check and see what's in clipBoard, and respond to it.
 
@@ -72,9 +71,11 @@ function Manager() {
 							/*//uncomment when method exists.
 							events[p][a].fireEvent(/relevant data goes here/);
 							*/
+						}
 					}
 				}
-		});
+			});
+		}
 	}
 
 	//Check for an event and pass it into a certain object.
