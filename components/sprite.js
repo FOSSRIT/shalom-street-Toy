@@ -19,28 +19,24 @@ function Sprite(_x, _y, _width, _height, _imageSource) {
 	var image = new Image();
 	image.src = _imageSource;
 
-	var isLoaded = false;
-	image.onLoad = function(){ isLoaded = true };
+
+	//Handles events.  
+	var _fireOnLoad = undefined;
+	var _ctxForLoad = undefined;
+	image.onload = function(){ 
+		if(_fireOnLoad != undefined){  //If there's anything to fire off.
+			//Fire off in proper context if you can, otherwise, just use the current context.
+			if(_ctxForLoad) { _fireOnLoad(_ctxForLoad); } else { _fireOnLoad(this); }
+		}
+	};
 
 
 	//-----------------------------PROPERTIES-------------------------------------
 
 	function _setPosition(_x, _y){ x = _x; y = _y; }
-
-
-	function _getBounds() {
-		return {"x":x, "y":y, "width":width, "height":height };
-	}
-
-	function _setImage(_image){ image = _image;}
-
-	function _getImage(){
-		return {"image":image};
-	}
-
-	function _getData(){
-		return {"image":image, "x":x, "y":y, "width":width, "height":height };
-	}
+	function _setImage(_image){ image = _image; }
+	function _setLoad(_load, _ctx) { _fireOnLoad = _load; _ctxForLoad = _ctx}
+	function _getData(){ return {"image":image, "x":x, "y":y, "width":width, "height":height }; }
 
 
 	//All of our public methods go here.
@@ -53,18 +49,19 @@ function Sprite(_x, _y, _width, _height, _imageSource) {
 		*/
 		"setPosition":_setPosition,
 
-		//Returns and object with the x, y, width and height of the sprite.
-		"getBounds":_getBounds,
-
 		//set the source image of the sprite.
 		/*
 		image: img
 		*/
 		"setImage":_setImage,
 
-		//Returns the source image
-		"getImage":_getImage,
+		//Set a function to be fired off when the sprite has finished loading.
+		/*
+		function: the function to be called, ctx: the object to set the context to (optional)
+		*/
+		"setLoad":_setLoad,
 
+		//Returns an object with x, y, width, height, and image of the sprite.
 		"getData":_getData,
 	}
 
