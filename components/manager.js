@@ -14,14 +14,20 @@ function Manager() {
 	//-------------VARIABLES-----------------------------------
 
 	var canvas, ctx;
+	var clipBoard = {};
 	var objects = []; //Objects have events passed down to them.
 	var events = {
-		"mousedown":[],
-		//"mousemove":[],
-		"mouseup":[],
-		"touchstart":[],
-		"touchmove":[],
-		"touchend":[]
+		"mouse": {
+			"mousedown":[],
+			//"mousemove":[],
+			"mouseup":[],
+			"touchstart":[],
+			"touchmove":[],
+			"touchend":[]
+		},
+		"custom": {
+
+		}
 	};
 
 	//-----------------------Loading event----------------------------
@@ -48,25 +54,32 @@ function Manager() {
 		ctx = _ctx;
 
 		//set up events.
-		for(var p in events) //For each event we're tracking.
+		for(var p in events.mouse) //For each event we're tracking.
 			canvas.addEventListener(p, function(e){ //When triggered, 
-				for(var a=0;a<events[p].length;a++) {
-					var data = {
-						"x":5, 
-						"y":5
-					};
 
-					//Pass to relevant objects.
-					/*//uncomment when method exists.
-					events[p][a].fireEvent(/relevant data goes here/);
-					*/
+				//Check to see if the event is blocked.
+				if(clipBoard.BlockEvents == undefined || clipBoard.BlockEvents.indexOf(events.mouse[p]) == -1) {
+					for(var a=0;a<events.mouse[p].length;a++) { //For each object.
+						//Check to see if it should be sent to this object.
+						var toPassTo = events.mouse[p][a];
+						if(toPassTo)
+							//Send event to objects.  Pass in the string, the clipboard, and e, the mouseEvent parameter.
+							clipBoard = toPassTo.handleEvent(p, clipBoard, e);
+
+							//Check and see what's in clipBoard, and respond to it.
+
+							//Pass to relevant objects.
+							/*//uncomment when method exists.
+							events[p][a].fireEvent(/relevant data goes here/);
+							*/
+					}
 				}
 		});
 	}
 
 	//Check for an event and pass it into a certain object.
 	function _addObject(_object){
-		for(var k in events){  events[k].push(_object);  } //Add it to event list.
+		for(var k in events.mouse){  events.mouse[k].push(_object);  } //Add it to event list.
 		_object.setLoad(_onSubLoad); //Add it to loading queue.
 		objects.push(_object);
 
@@ -91,10 +104,10 @@ function Manager() {
 
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		for(var i=0; i<toDraw.length; i++) {
-			var data = toDraw[i].getData();
+			var data = toDraw[i];
 			//Currently no support for spritesheets.
+			//ToDo: Set offset for canvas.
 			ctx.drawImage(data.image, 0, 0, data.image.width, data.image.height, data.x, data.y, data.width, data.height);
-
 		}
 		playArea.draw();
 		toybox.draw();

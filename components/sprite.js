@@ -23,21 +23,30 @@ function Sprite(_x, _y, _width, _height, _imageSource) {
 	//Handles events.  
 	var _fireOnLoad = undefined;
 	var _ctxForLoad = undefined;
-	image.onload = function(){ 
+	function onImageLoad(){ 
 		if(_fireOnLoad != undefined){  //If there's anything to fire off.
 			//Fire off in proper context if you can, otherwise, just use the current context.
 			toReturn.loaded = true;
 			if(_ctxForLoad) { _fireOnLoad(_ctxForLoad); } else { _fireOnLoad(this); }
 		}
-	};
+	}; image.onload = onImageLoad;
 
 
 	//-----------------------------PROPERTIES-------------------------------------
 
 	function _setPosition(_x, _y){ x = _x; y = _y; }
-	function _setImage(_image){ image = _image; }//ToDo: set loaded variable accordingly.
-	function _setLoad(_load, _ctx) { _fireOnLoad = _load; _ctxForLoad = _ctx}
+	function _setImage(_image) { 
+		image = _image; 
+		//Add load event. If the image is loaded, fire off the load event.
+		image.onload = onImageLoad();
+		if(image.complete) {
+			onImageLoad();
+		}
+	}
+	function _setLoad(_load, _ctx) { _fireOnLoad = _load; _ctxForLoad = _ctx; }
+	function _draw(){ return Array(_getData()); }
 	function _getData(){ return {"image":image, "x":x, "y":y, "width":width, "height":height }; }
+
 
 
 	//All of our public methods go here.
@@ -64,6 +73,9 @@ function Sprite(_x, _y, _width, _height, _imageSource) {
 		function: the function to be called, ctx: the object to set the context to (optional)
 		*/
 		"setLoad":_setLoad,
+
+		//Returns a list of data objects for drawing. (just itself.)
+		"draw":_draw,
 
 		//Returns an object with x, y, width, height, and image of the sprite.
 		"getData":_getData,
