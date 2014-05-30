@@ -23,11 +23,13 @@
 				//Make the canvas full screen
 				document.getElementById("main").style.height="100%";
 				document.getElementById("main").style.width="100%";
-
+				
 				var mySprite = Sprite(0, 0, 50, 50, "images/happyFaceTest.png");
 				mySprite.setLoad(function(){
 					manager.drawSprite(mySprite);
 				});
+
+				manager.addObject(mySprite);
 
 			}
 
