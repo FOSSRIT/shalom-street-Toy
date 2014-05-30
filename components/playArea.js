@@ -8,10 +8,16 @@
 */
 
 //
-function PlayArea() {
+function PlayArea(_x, _y, _width, _height) {
 
 
 	//Private variables and internal functions.
+	//------------------------------VARIABLES-------------------------------------
+
+	var x = _x;
+	var y = _y; 
+	var width = _width; 
+	var height = _height; 
 
 	var _contents = []; //Images and parts in the playArea.
 
@@ -51,6 +57,15 @@ function PlayArea() {
 	function _draw(){
 		//In the future, this will be modified.
 		//Because in the future, contents won't be sprites.
+		
+		//Temp Dev Test
+		// Red rectangle
+		ctx.beginPath();
+		ctx.lineWidth="10";
+		ctx.strokeStyle="red";
+		ctx.rect(x,y,width,height);
+		ctx.stroke();
+		
 		return _contents;
 	}	
 
