@@ -24,10 +24,10 @@ function Manager() {
 		"touchend":[]
 	};
 
+	//Loading event.
 	var _onLoaded = undefined;
 	var _contextOnLoaded = undefined;
-	function _onSubLoad()
-	{
+	function _onSubLoad() {
 		//Loop through all of our sub-objects and make sure that they're loaded.
 		for(var i = 0; i<objects.length; i++){
 			if(!objects[i].loaded) return; //Don't trigger.
@@ -35,7 +35,10 @@ function Manager() {
 		if(_onLoaded) {
 			if(_contextOnLoaded) { _onLoaded(_contextOnLoaded); } else { _onLoaded(this); }
 		}
+	}
 
+	function _setLoad(_function, _ctx) {
+		_onLoaded = _function; _contextOnLoaded = _ctx;
 	}
 
 	//
@@ -62,9 +65,12 @@ function Manager() {
 
 	//Check for an event and pass it into a certain object.
 	function _addObject(_object){
-		events["touchstart"].push(_object);
-		events["touchmove"].push(_object);
-		events["touchend"].push(_object);
+		for(var k in events){  events[k].push(_object);  } //Add it to event list.
+		_object.setLoad(_onSubLoad); //Add it to loading queue.
+
+		//If it's already loaded, fire event in response
+		//and tell us if manager is loaded.
+		if(_object.loaded) _onSubLoad();
 	}
 
 	function _update(){
@@ -97,6 +103,12 @@ function Manager() {
 		_object: the object to track and update.  This relies on some methods actually existing in object.
 		*/
 		"addObject":_addObject,
+
+		//Set a function to be fired off when the sprite has finished loading.
+		/*
+		function: the function to be called, ctx: the object to set the context to (optional)
+		*/
+		"setLoad":_setLoad,
 
 		//
 		/*

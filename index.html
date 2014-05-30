@@ -22,9 +22,11 @@
 
 
 				var mySprite = Sprite(40, 40, 60, 60, "images/happyFaceTest.png");
-				mySprite.setLoad(function(){
+				manager.setLoad(function(){
 					manager.drawSprite(mySprite);
 				});
+
+				manager.addObject(mySprite);
 
 			}
 
