@@ -13,9 +13,9 @@ function Sprite(_x, _y, _width, _height, _imageSource) {
 	//------------------------------VARIABLES-------------------------------------
 
 	var x = _x || 0;
-	var y = _y || 0; 
-	var width = _width || 50; 
-	var height = _height || 50; 
+	var y = _y || 0;
+	var width = _width || 128; 
+	var height = _height || 128; 
 	var image = new Image();
 	image.src = _imageSource || "images/error.png";
 
