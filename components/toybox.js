@@ -35,7 +35,7 @@ function ToyBox(_x, _y, _width, _height){
 	
 
 
-	var _contents;
+	var _contents = [];
 	var _tabContents = []; //list of tabs in the tab section.
 	var _currentlySelectedTab; // the tab that is currently selected
 	var _componentsContents = []; //list of components in the component section. these should be changed depending on what tab is selected.
@@ -55,7 +55,7 @@ function ToyBox(_x, _y, _width, _height){
 	}
 
 	function _setLoad(_function, _ctx) {
-		_onLoaded = _function, _contextOnLoaded = _ctx;
+		_onLoaded = _function; _contextOnLoaded = _ctx;
 
 	}
 	
@@ -84,16 +84,24 @@ function ToyBox(_x, _y, _width, _height){
 
 		//If it's already loaded, fire event in response
 		//and tell us if manager is loaded.
-		if(_object.loaded) _onSubLoad();
+		if(_object.loaded) _onSubLoad(); 
 	}
 	
 	
 	function _draw(){
-		//In the future, this will be modified.
-		//Because in the future, contents won't be sprites.
-		/*var _thingsToDraw = _tabContents + _componentsContents;
-		return _thingsToDraw;*/
-		
+
+		var toDraw = [];
+		for(var i=0; i<_contents.length; i++){
+			toDraw = toDraw.concat(_contents[i].draw());
+		}
+
+		//Set offsets.
+		for(var i=0; i<toDraw.length; i++){
+			toDraw[i].x += toReturn.bounds.x;
+			toDraw[i].y += toReturn.bounds.y;
+		}
+
+
 		//Temp Dev Test
 		// Blue rectangle
 		ctx.beginPath();
@@ -117,7 +125,7 @@ function ToyBox(_x, _y, _width, _height){
 		ctx.rect(componentsX,componentsY,componentsWidth,componentsHeight);
 		ctx.stroke();
 		
-		return _contents;
+		return toDraw;
 	}	
 	
 	//Public interface.

@@ -29,14 +29,19 @@
 				manager.init(canvas, ctx);
 				
 				
+<<<<<<< HEAD
 				var mySprite = Sprite();
+=======
+				var mySprite = Sprite(0, 0, 50, 50, "images/happyFaceTest.png");
+				var mySprite2 = Sprite(0, 0, 50, 50, "images/happyFaceTest.png");
+>>>>>>> 6ebc211cccc21cc22bc22c00e22cdbfa3d044bf9
 
 				manager.setLoad(function(){
 					manager.draw();
 				});
 				
-				
 				playArea.addGameObject(mySprite);
+				toybox.addGameObject(mySprite2);
 				manager.addObject(playArea);
 				manager.addObject(toybox);
 
