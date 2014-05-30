@@ -34,18 +34,12 @@ function ToyBox(_x, _y, _width, _height){
 	var componentsHeight = 7*height/8;
 	
 
-<<<<<<< HEAD
-=======
+
 	var _contents;
->>>>>>> 59dbedd249654fe1a72c5bcc039747abebe24c07
 	var _tabContents = []; //list of tabs in the tab section.
 	var _currentlySelectedTab; // the tab that is currently selected
 	var _componentsContents = []; //list of components in the component section. these should be changed depending on what tab is selected.
 	
-<<<<<<< HEAD
-	
-	//------------------------------FUNCTIONS-------------------------------------
-=======
 	var _fireOnLoad = undefined;
 	var _contextForLoad = undefined;
 	//------------------------------FUNCTIONS-------------------------------------
@@ -130,6 +124,8 @@ function ToyBox(_x, _y, _width, _height){
 	//Public interface.
 	var toReturn = {
 
+
+		"bounds":{"x": componentsX, "y":componentsY, "width":componentsWidth, "height":componentsHeight },
 		"loaded":false /*should be true?*/,
 
 		//Set a function to be fired off when the sprite has finished loading.
