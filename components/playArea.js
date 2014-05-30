@@ -51,12 +51,26 @@ function PlayArea() {
 	function _draw(){
 		//In the future, this will be modified.
 		//Because in the future, contents won't be sprites.
-		return _contents;
+		var toDraw = [];
+		for(var i=0; i<_contents.length; i++){
+			toDraw = toDraw.concat(_contents[i].draw());
+		}
+
+		//Set offsets.
+		for(var i=0; i<toDraw.length; i++){
+			toDraw[i].x += toReturn.bounds.x;
+			toDraw[i].y += toReturn.bounds.y;
+		}
+
+		return toDraw;
 	}	
 
 
 	//Public interface.
 	var toReturn = {
+
+		//Public variables.  We don't need methods for these.
+		"bounds":{"x":0, "y":0, "width":1920, "height":1080 },
 
 		"loaded":false /*should be true?*/,
 
@@ -66,6 +80,11 @@ function PlayArea() {
 		*/
 		"setLoad":_setLoad,
 
+		//adds a gameObject
+		/*
+		gameObject: object to Add - note that gameObject refers to the wrapper around Sprite for our dolls/characters/whatever.
+		It is *not* a universal object, and should *not* be used for logos, buttons, etc...
+		*/
 		"addGameObject":_addGameObject,
 
 		//Returns an array of sprites to draw.
