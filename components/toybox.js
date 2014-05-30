@@ -59,7 +59,6 @@ function ToyBox(_x, _y, _width, _height){
 
 	}
 	
->>>>>>> 59dbedd249654fe1a72c5bcc039747abebe24c07
 	function _newTabSelected(_newTab){
 		/*
 			_currentlySelectedTab.highlight = false;
