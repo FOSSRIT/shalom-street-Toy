@@ -24,7 +24,7 @@ function Manager() {
 		"touchend":[]
 	};
 
-	//Loading event.
+	//-----------------------Loading event----------------------------
 	var _onLoaded = undefined;
 	var _contextOnLoaded = undefined;
 	function _onSubLoad() {
@@ -40,6 +40,7 @@ function Manager() {
 	function _setLoad(_function, _ctx) {
 		_onLoaded = _function; _contextOnLoaded = _ctx;
 	}
+	//-----------------------------------------------------------------
 
 	//
 	function _init(_canvas, _ctx) {
@@ -67,6 +68,7 @@ function Manager() {
 	function _addObject(_object){
 		for(var k in events){  events[k].push(_object);  } //Add it to event list.
 		_object.setLoad(_onSubLoad); //Add it to loading queue.
+		objects.push(_object);
 
 		//If it's already loaded, fire event in response
 		//and tell us if manager is loaded.
@@ -78,8 +80,22 @@ function Manager() {
 	}
 
 
+	//Currently, very ineficient, but does allow for future expansion.
 	function _draw(){
+		//Loop through all objects and get list of sprites from them to return.
+		var toDraw = []; //Fill this with sprites.
+		for(var i=0; i<objects.length; i++){ //Theoretically, we could perform some opperations in here if need be.
+			//Objects at the front of the array get drawn before objects in the back.
+			toDraw = toDraw.concat(objects[i].draw());
+		}
 
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		for(var i=0; i<toDraw.length; i++) {
+			var data = toDraw[i].getData();
+			//Currently no support for spritesheets.
+			ctx.drawImage(data.image, 0, 0, data.image.width, data.image.height, data.x, data.y, data.width, data.height);
+
+		}
 	}
 
 	function _drawSprite(sprite){
@@ -110,7 +126,10 @@ function Manager() {
 		*/
 		"setLoad":_setLoad,
 
-		//
+		//Draws all of the objects in the game.
+		"draw":_draw,
+
+		//Draws a sprite.
 		/*
 		sprite: the sprite to draw.  This should be pulled from our native sprite class.
 		*/

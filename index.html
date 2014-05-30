@@ -9,24 +9,28 @@
 		<!--Javascript-->
 		<script type="text/javascript" src="components/manager.js" ></script>
 		<script type="text/javascript" src="components/sprite.js" ></script>
+		<script type="text/javascript" src="components/playArea.js" ></script>
 
 		<script>
 
-			var canvas, ctx, manager;
+			var canvas, ctx, manager, playArea;
 			function onLoad(){
 				//Grab the Canvas.
 				canvas = document.getElementById("main");
 				ctx = canvas.getContext("2d");
 				manager = Manager();
+				playArea = PlayArea();
 				manager.init(canvas, ctx);
 
 
 				var mySprite = Sprite(40, 40, 60, 60, "images/happyFaceTest.png");
+
 				manager.setLoad(function(){
-					manager.drawSprite(mySprite);
+					manager.draw();
 				});
 
-				manager.addObject(mySprite);
+				playArea.addGameObject(mySprite);
+				manager.addObject(playArea);
 
 			}
 

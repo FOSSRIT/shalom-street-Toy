@@ -35,7 +35,7 @@ function Sprite(_x, _y, _width, _height, _imageSource) {
 	//-----------------------------PROPERTIES-------------------------------------
 
 	function _setPosition(_x, _y){ x = _x; y = _y; }
-	function _setImage(_image){ image = _image; }
+	function _setImage(_image){ image = _image; }//ToDo: set loaded variable accordingly.
 	function _setLoad(_load, _ctx) { _fireOnLoad = _load; _ctxForLoad = _ctx}
 	function _getData(){ return {"image":image, "x":x, "y":y, "width":width, "height":height }; }
 
