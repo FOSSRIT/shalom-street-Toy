@@ -8,10 +8,16 @@
 */
 
 //
-function PlayArea() {
+function PlayArea(_x, _y, _width, _height) {
 
 
 	//Private variables and internal functions.
+	//------------------------------VARIABLES-------------------------------------
+
+	var x = _x;
+	var y = _y; 
+	var width = _width; 
+	var height = _height; 
 
 	var _contents = []; //Images and parts in the playArea.
 
@@ -63,6 +69,19 @@ function PlayArea() {
 		}
 
 		return toDraw;
+
+		//Temp Dev Test
+		// Red rectangle
+		//--------ctx is not a variable that normally would be available to this--------
+		//--------Comment this out outside of testing environment-----------------------
+		ctx.beginPath();
+		ctx.lineWidth="10";
+		ctx.strokeStyle="red";
+		ctx.rect(x,y,width,height);
+		ctx.stroke();
+		//------------------End testing environment-------------------------------------
+		//------------------------------------------------------------------------------
+		
 	}	
 
 

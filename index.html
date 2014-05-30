@@ -10,7 +10,8 @@
 		<script type="text/javascript" src="components/manager.js" ></script>
 		<script type="text/javascript" src="components/sprite.js" ></script>
 		<script type="text/javascript" src="components/playArea.js" ></script>
-
+		<script type="text/javascript" src="components/toybox.js" ></script>
+	
 		<script>
 
 			var canvas, ctx, manager, playArea;
@@ -18,12 +19,15 @@
 				//Grab the Canvas.
 				canvas = document.getElementById("main");
 				ctx = canvas.getContext("2d");
-				manager = Manager();
-				playArea = PlayArea();
-				manager.init(canvas, ctx);
 				//Make the canvas full screen
 				document.getElementById("main").style.height="100%";
 				document.getElementById("main").style.width="100%";
+				//create and add elements
+				manager = Manager();
+				playArea = PlayArea(0,0,2*window.innerWidth/3,window.innerHeight);
+				toybox = ToyBox(2*window.innerWidth/3,0,window.innerWidth/3,window.innerHeight);
+				manager.init(canvas, ctx);
+				
 				
 				var mySprite = Sprite(0, 0, 50, 50, "images/happyFaceTest.png");
 
@@ -34,6 +38,7 @@
 				
 				playArea.addGameObject(mySprite);
 				manager.addObject(playArea);
+				manager.addObject(toybox);
 
 			}
 
