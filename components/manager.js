@@ -14,7 +14,7 @@ function Manager() {
 	//-------------VARIABLES-----------------------------------
 
 	var canvas, ctx;
-	var objects = [];
+	var objects = []; //Objects have events passed down to them.
 	var events = {
 		"mousedown":[],
 		//"mousemove":[],
@@ -23,6 +23,20 @@ function Manager() {
 		"touchmove":[],
 		"touchend":[]
 	};
+
+	var _onLoaded = undefined;
+	var _contextOnLoaded = undefined;
+	function _onSubLoad()
+	{
+		//Loop through all of our sub-objects and make sure that they're loaded.
+		for(var i = 0; i<objects.length; i++){
+			if(!objects[i].loaded) return; //Don't trigger.
+		} //Got through?
+		if(_onLoaded) {
+			if(_contextOnLoaded) { _onLoaded(_contextOnLoaded); } else { _onLoaded(this); }
+		}
+
+	}
 
 	//
 	function _init(_canvas, _ctx) {
@@ -53,18 +67,17 @@ function Manager() {
 		events["touchend"].push(_object);
 	}
 
-
-	function _draw(){
-
-	}
-
 	function _update(){
 
 	}
 
 
+	function _draw(){
+
+	}
+
 	function _drawSprite(sprite){
-		var data = sprite.getData(); //Or whatever this method ends up being.
+		var data = sprite.getData();
 		//Currently no support for spritesheets.
 		ctx.drawImage(data.image, 0, 0, data.image.width, data.image.height, data.x, data.y, data.width, data.height);
 	}

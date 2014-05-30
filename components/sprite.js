@@ -26,6 +26,7 @@ function Sprite(_x, _y, _width, _height, _imageSource) {
 	image.onload = function(){ 
 		if(_fireOnLoad != undefined){  //If there's anything to fire off.
 			//Fire off in proper context if you can, otherwise, just use the current context.
+			toReturn.loaded = true;
 			if(_ctxForLoad) { _fireOnLoad(_ctxForLoad); } else { _fireOnLoad(this); }
 		}
 	};
@@ -42,6 +43,9 @@ function Sprite(_x, _y, _width, _height, _imageSource) {
 	//All of our public methods go here.
 	//Everything outside of toReturn is private.
 	var toReturn = {
+
+		//Public variables.  Internal functions can refer to it through toReturn.loaded.
+		"loaded":false,
 
 		//set the x and y coordinates of the sprite.
 		/*
