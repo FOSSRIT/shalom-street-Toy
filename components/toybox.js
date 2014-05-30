@@ -59,10 +59,8 @@ function ToyBox(_x, _y, _width, _height){
 	
 	
 	function _draw(){
-		//In the future, this will be modified.
-		//Because in the future, contents won't be sprites.
-		/*var _thingsToDraw = _tabContents + _componentsContents;
-		return _thingsToDraw;*/
+
+		//
 		
 		//Temp Dev Test
 		// Blue rectangle
@@ -92,8 +90,10 @@ function ToyBox(_x, _y, _width, _height){
 	//Public interface.
 	var toReturn = {
 
+		"bounds":{"x":0, "y":0, "width":1920, "height":1080 },
 		//Returns an array of sprites to draw.
 		"draw":_draw,
+
 	}
 
 	return toReturn;

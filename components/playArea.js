@@ -68,7 +68,6 @@ function PlayArea(_x, _y, _width, _height) {
 			toDraw[i].y += toReturn.bounds.y;
 		}
 
-		return toDraw;
 
 		//Temp Dev Test
 		// Red rectangle
@@ -82,6 +81,8 @@ function PlayArea(_x, _y, _width, _height) {
 		//------------------End testing environment-------------------------------------
 		//------------------------------------------------------------------------------
 		
+		return toDraw;
+
 	}	
 
 
