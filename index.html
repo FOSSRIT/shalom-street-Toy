@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="styles.css" />
 
 		<!--Javascript-->
+		<script type="text/javascript" src="components/module.js" ></script>
 		<script type="text/javascript" src="components/manager.js" ></script>
 		<script type="text/javascript" src="components/sprite.js" ></script>
 		<script type="text/javascript" src="components/playArea.js" ></script>
@@ -36,7 +37,7 @@
 					manager.draw();
 				});
 				
-				playArea.addGameObject(mySprite);
+				playArea.addModule(mySprite);
 				toybox.addGameObject(mySprite2);
 				manager.addObject(playArea);
 				manager.addObject(toybox);
