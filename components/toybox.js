@@ -11,10 +11,14 @@ the components.
 the side should the play area go full screen.
 */
 
-function ToyBox(_x, _y, _width, _height){
+function ToyBox(_x, _y, _width, _height) {
 
-	//Private variables and internal functions.
+
 	//------------------------------VARIABLES-------------------------------------
+
+	var base = Module(_x, _y, _width, _height); //Call base
+	var toReturn = base.interface; //Set toReturn via base.
+	toReturn.draw = _draw; //Modify public interface.
 
 	var x = _x;
 	var y = _y; 
@@ -35,7 +39,6 @@ function ToyBox(_x, _y, _width, _height){
 	
 
 
-	var _contents = [];
 	var _tabContents = []; //list of tabs in the tab section.
 	var _currentlySelectedTab; // the tab that is currently selected
 	var _componentsContents = []; //list of components in the component section. these should be changed depending on what tab is selected.
@@ -43,21 +46,7 @@ function ToyBox(_x, _y, _width, _height){
 	var _fireOnLoad = undefined;
 	var _contextForLoad = undefined;
 	//------------------------------FUNCTIONS-------------------------------------
-	
-	function _onSubLoad() {
-		for(var i = 0; i<_contents.length; i++){
-			if(!_contents[i].loaded) { toReturn.loaded = false; return; }//Don't trigger.
-		} //Got through?
-		if(_onLoaded) {
-			toReturn.loaded = true;
-			if(_contextOnLoaded) { _onLoaded(_contextOnLoaded); } else { _onLoaded(this); }
-		}
-	}
 
-	function _setLoad(_function, _ctx) {
-		_onLoaded = _function; _contextOnLoaded = _ctx;
-
-	}
 	
 	function _newTabSelected(_newTab){
 		/*
@@ -76,40 +65,20 @@ function ToyBox(_x, _y, _width, _height){
 		*/
 	}
 	
-	function _addGameObject(_object) {
-		//There's a heck of a lot more that needs to go
-		//in this method.  I think.
-		_object.setLoad(_onSubLoad); //Add it to loading queue.
-		_contents.push(_object);
-
-		//If it's already loaded, fire event in response
-		//and tell us if manager is loaded.
-		if(_object.loaded) _onSubLoad(); 
-	}
-	
 	
 	function _draw(){
 
-		var toDraw = [];
-		for(var i=0; i<_contents.length; i++){
-			toDraw = toDraw.concat(_contents[i].draw());
-		}
-
-		//Set offsets.
-		for(var i=0; i<toDraw.length; i++){
-			toDraw[i].x += toReturn.bounds.x;
-			toDraw[i].y += toReturn.bounds.y;
-		}
-
+		var toDraw = base.draw();
 
 		//Temp Dev Test
+		//--------ctx is not a variable that normally would be available here--------
+		//--------Comment this out outside of testing environment-----------------------
 		// Blue rectangle
 		ctx.beginPath();
 		ctx.lineWidth="10";
 		ctx.strokeStyle="blue";
 		ctx.rect(x,y,width,height);
 		ctx.stroke();
-		
 		//Temp Dev Tab Section
 		//Green Rect
 		ctx.beginPath();
@@ -124,27 +93,11 @@ function ToyBox(_x, _y, _width, _height){
 		ctx.strokeStyle="yellow";
 		ctx.rect(componentsX,componentsY,componentsWidth,componentsHeight);
 		ctx.stroke();
+		//------------------End testing environment code--------------------------------
+		//------------------------------------------------------------------------------
 		
 		return toDraw;
 	}	
-	
-	//Public interface.
-	var toReturn = {
-
-
-		"bounds":{"x": componentsX, "y":componentsY, "width":componentsWidth, "height":componentsHeight },
-		"loaded":false /*should be true?*/,
-
-		//Set a function to be fired off when the sprite has finished loading.
-		/*
-		function: the function to be called, ctx: the object to set the context to (optional)
-		*/
-		"setLoad":_setLoad,
-		"addGameObject":_addGameObject,
-		
-		//Returns an array of sprites to draw.
-		"draw":_draw,
-	}
 
 	return toReturn;
 }

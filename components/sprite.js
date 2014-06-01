@@ -10,15 +10,22 @@
 
 //Sprite is what we'll actually call.
 function Sprite(_x, _y, _width, _height, _imageSource) {
-	//------------------------------VARIABLES-------------------------------------
 
-	var x = _x || 0;
-	var y = _y || 0;
-	var width = _width || 128; 
-	var height = _height || 128; 
-	var image = new Image();
+
+	//------------------------------INIT/VARIABLES-----------------------------
+
+	var base = Module(_x, _y, _width, _height); //Call base
+	var toReturn = base.interface; //Set toReturn via base.
+	toReturn.loaded = false; //Images don't start out loaded.
+
+
+	var image = new Image(); //Images are a thing here.
 	image.src = _imageSource || "images/error.png";
 
+
+	//--------------------------INTERNAL------------------------------------
+
+	//-----------MODIFIED LOADING---------------
 
 	//Handles events.  
 	var _fireOnLoad = undefined;
@@ -31,55 +38,61 @@ function Sprite(_x, _y, _width, _height, _imageSource) {
 		}
 	}; image.onload = onImageLoad;
 
+	function _setLoad(_function, _ctx) {
+		_fireOnLoad = _function; _ctxForLoad = _ctx;
+	}
 
 	//-----------------------------PROPERTIES-------------------------------------
 
-	function _setPosition(_x, _y){ x = _x; y = _y; }
 	function _setImage(_image) { 
-		image = _image; 
-		//Add load event. If the image is loaded, fire off the load event.
-		image.onload = onImageLoad();
-		if(image.complete) {
-			onImageLoad();
+		//Works with both strings and actual images.
+		if(typeof(_image) == "string") {
+			image.src = _image; 
+		} else  {
+			image = _image;
+			//Add load event. If the image is loaded, fire off the load event.
+			image.onload = onImageLoad();
+			if(image.complete) {
+				onImageLoad();
+			}
 		}
 	}
-	function _setLoad(_load, _ctx) { _fireOnLoad = _load; _ctxForLoad = _ctx; }
+
+
 	function _draw(){ return Array(_getData()); }
-	function _getData(){ return {"image":image, "x":x, "y":y, "width":width, "height":height }; }
+	function _getData(){ return {"image":image, "x":toReturn.bounds.x, "y":toReturn.bounds.y, "width":toReturn.bounds.width, "height":toReturn.bounds.height }; }
 
 
 
-	//All of our public methods go here.
-	//Everything outside of toReturn is private.
-	var toReturn = {
+	//---------Modified public interface----------------------------
 
-		//Public variables.  Internal functions can refer to it through toReturn.loaded.
-		"loaded":false,
+	//set the source image of the sprite.
+	/*
+	image: img
+	*/
+	toReturn.setImage = _setImage;
+	//Returns the sprite's dat object for drawing.
+	toReturn.draw = _draw;
+	//Returns an object with x, y, width, height, and image of the sprite.
+	toReturn.getData = _getData;
 
-		//set the x and y coordinates of the sprite.
-		/*
-		x:number, y:number
-		*/
-		"setPosition":_setPosition,
+	//Some functions are unavailable.  Don't try and add a module to a sprite, please.
+	toReturn.addModule = function(){ alert("Error: Attempt to add sub-module to sprite."); };
 
-		//set the source image of the sprite.
-		/*
-		image: img
-		*/
-		"setImage":_setImage,
+	//set the source image of the sprite.
+	/*
+	image: accepts either an image, or the string url of the image you wish to pass in.
+	*/
+	toReturn.setImage = _setImage; //Instead use this.
 
-		//Set a function to be fired off when the sprite has finished loading.
-		/*
-		function: the function to be called, ctx: the object to set the context to (optional)
-		*/
-		"setLoad":_setLoad,
+	//Sets a function to be fired off when the module has finished loading.
+	/*
+	function: the function to be called, ctx: the object to set the context to (optional)
+	*/
+	toReturn.setLoad = _setLoad; //Works the same way, but now hooked into Sprites internals instead.
 
-		//Returns a list of data objects for drawing. (just itself.)
-		"draw":_draw,
-
-		//Returns an object with x, y, width, height, and image of the sprite.
-		"getData":_getData,
-	}
+	//Returns an object with x, y, width, height, and image of the sprite.
+	toReturn.getData = _getData; //Think of it as .bounds on steroids.
 
 
 	return toReturn;
