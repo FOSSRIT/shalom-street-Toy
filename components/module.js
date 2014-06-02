@@ -17,6 +17,10 @@ function Module(_x, _y, _width, _height){
 
 	_loaded = true; //We'll set this to false when necessary.
 	_contents = []; //Sub-modules.
+	_extensions = []; //What extensions have been installed.
+	_events = {
+		//We don't have any events to start off I guess.
+	};
 
 	//-----------INTERNAL VARIABLES------------------------
 
@@ -52,6 +56,10 @@ function Module(_x, _y, _width, _height){
 		//If it's already loaded, fire event in response
 		//and tell us if manager is loaded.
 		if(_object.loaded) _onSubLoad();
+	}
+
+	function _addEvent(eventString, funct) {
+
 	}
 
 	//----------------------------------------------
@@ -97,6 +105,9 @@ function Module(_x, _y, _width, _height){
 
 		//An array of sub-modules stored within this module.
 		"contents":_contents,
+
+		"extensions":_extensions,
+		"events":_events,
 
 		//Returns an array of sprite information to draw.
 		//Return the results of this method from your draw method.
