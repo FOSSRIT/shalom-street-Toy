@@ -29,8 +29,8 @@ function Module(_x, _y, _width, _height){
 	//------------LOADING EVENTS-------------------
 
 
-	var _fireOnLoad = undefined;
-	var _contextForLoad = undefined;
+	var _onLoaded = false;
+	var _contextOnLoaded = false;
 	function _onSubLoad() {
 		for(var i = 0; i<toReturn.contents.length; i++){
 			if(!toReturn.contents[i].loaded) { toReturn.loaded = false; return; }//Don't trigger.

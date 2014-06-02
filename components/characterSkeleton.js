@@ -11,26 +11,41 @@ in our app. Similar to the Diablo 3 system of character gear. For example,
 your character has a slot for a "hat", a slot for "boots", and so on.
 */
 
-function characterSkeleton(_x, _y, _width, _height){
+function CharacterSkeleton(_x, _y, _width, _height){
 	//------------------------------VARIABLES-------------------------------------
 	var base = Module(_x, _y, _width, _height); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.draw = _draw; //Modify public interface.
+
+
+	var slots = {
+		"hat": {"x":50 , "y":10, "sprite":base.contents[0]},
+		"head": {"x":30, "y":4, "sprite":undefined},
+	}
 	
-	var _hat;
-	var _head;
-	var _body;
-	var _arms;
-	var _legs;
-	var _shoes;
-	
-	var _spriteList = [];
-	var _componentList = [];
 	
 	//---------------------------FUNCTIONS---------------------------------------
 	function _draw(){
 
-		toDraw = base.draw();
+		var toDraw = [];
+		//Recursively get all sprite data to draw.
+		for(var i=0; i<base.contents.length; i++){
+			toDraw = toDraw.concat(base.contents[i].draw());
+		}
+
+		/*for(i in slots){ //Make sprite drawing work.
+			if(slots[i].sprite != undefined) {
+				toDraw = toDraw.concat(slots[i].sprite);
+			}
+		}*/
+
+		//Set offsets.
+		for(i=0; i<toDraw.length; i++){
+			toDraw[i].x += toReturn.bounds.x;
+			toDraw[i].y += toReturn.bounds.y;
+		}
+
+		return toDraw;
 
 		//Temp Dev Test
 		// Red rectangle
@@ -47,6 +62,13 @@ function characterSkeleton(_x, _y, _width, _height){
 		return toDraw;
 	}	
 	
+	function addSlot(toAdd){
+		slots[toAdd] = undefined
+	}
+	function removeSlot(toRemove){
+		//slots.removeProperty
+	}
+
 	/*
 	function: 	_updateComponent
 	parameters:	_componentType: type of component that is passed in. IE: baseball cap is has a _componentType of "hat"
@@ -56,21 +78,13 @@ function characterSkeleton(_x, _y, _width, _height){
 	*/
 	function _updateComponent(_componentType, _component)
 	{
-		/*
-		//Danny make something like this work cool and nice.
-		for (var i = 0; i < _componentList.length; i++) { 
-			if(_componentList[i].type == _componentType)
-			{
-				_componentList[i] = _component;
-			}
-		}
-		*/
 		
-		//Idk my bff jill, dev test
-		if(_componentType == hat)
-		{
-			_hat = _component;
+		if(slots[_componentType]) {
+			slots[_componentType].sprite = _component;
+			_component.bounds.x = slots[_componentType].x;
+			_component.bounds.y = slots[_componentType].y;
 		}
+		
 	}
 
 	return toReturn;
