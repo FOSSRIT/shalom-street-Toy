@@ -19,6 +19,7 @@ function Sprite(_x, _y, _width, _height, _imageSource) {
 	toReturn.loaded = false; //Images don't start out loaded.
 
 
+
 	var image = new Image(); //Images are a thing here.
 	image.src = _imageSource || "images/error.png";
 

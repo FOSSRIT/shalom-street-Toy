@@ -20,7 +20,7 @@ function Module(_x, _y, _width, _height){
 	_extensions = []; //What extensions have been installed.
 	_events = {
 		/*
-		"Event": {funct:array of functions to call, bubble:is this function going to be passed down?},
+		"Event": {call:array of functions to call, bubble:is this function going to be passed down?},
 		*/
 	};
 
@@ -57,16 +57,41 @@ function Module(_x, _y, _width, _height){
 				//Those functions can be anywhere, but they're mostly going to be internal.
 				//Before we run them, we want to update our internal clipboard so they have access to it.
 				for(var i=0; i<toReturn.events[_eventString].call.length; i++) {
-					//ToDO: Call functions and figure out what to pass them here.
+					//Call functions.
+
+					//FOR POSTERITY:  If you're utalizing this part of the code - ie, calling a custom function
+					//and then passing down events on your own, you should probably set bubble to false.
+					//You can handle passing the event down and managing the clipboard in all likelyhood - bubble is mostly for automation's sake.
+					toReturn.events[_eventString].call[i](_clipBoard);
 				}
 			}
 
-			//If the event exists and is set to bubble, pass it on.
-			//If the module is set to auto-bubble events, pass it on anyway.
-			if(toReturn.autoBubbleEvents || (toReturn.events[_eventString] && toReturn.events[_eventString].bubble)) {
-				for(i=0; i<toReturn.contents.length; i++)
-				toReturn.contents[i].handleEvent(_eventString, _clipBoard);
+			//Bubbling events.
+			if( //This might be able to be shortened.
+				//If we're set to auto bubble and either the event doesn't exist or is set to bubble.
+				(toReturn.autoBubbleEvents && ( !toReturn.events[_eventString] || toReturn.events[_eventString].bubble))
+				|| //Or
+				//If the event exists and is set to bubble downward.
+				(toReturn.events[_eventString] && toReturn.events[_eventString].bubble)) 
+			{
+				//Pass the event on.
+				for(i=0; i<toReturn.contents.length; i++) {
+					//To all of the children.
+					toReturn.contents[i].handleEvent(_eventString, _clipBoard);
+				}
 			}
+
+			//Now that the event has been fired off, check the clipboard to see if anything else needs to be fired off.
+			if(_clipBoard.ToFire) {
+				for(i=0; i<_clipBoard.ToFire.length; i++) { //For each event to fire.
+					for(var j=0; j<toReturn.contents.length; j++) { //For each object.
+						toReturn.contents[j].handleEvent(_clipBoard.ToFire[i], _clipBoard);
+					}
+				}
+			}
+
+			//Now that we've finished that off, check to see if the clipboard should be cleared.
+			if(_clipBoard.preserve) { _clipBoard = {}; }
 		}
 
 		return _clipBoard;//If we modified it, we modified it.  Otherwise, just have your data back.
@@ -166,6 +191,7 @@ function Module(_x, _y, _width, _height){
 		"extensions":_extensions,
 		"events":_events,
 		"autoBubbleEvents":false,
+		"clipBoard":{},
 
 		//Returns an array of sprite information to draw.
 		//Return the results of this method from your draw method.

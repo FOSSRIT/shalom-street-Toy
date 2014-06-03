@@ -18,6 +18,7 @@ function ToyBox(_x, _y, _width, _height) {
 
 	var base = Module(_x, _y, _width, _height); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
+
 	toReturn.draw = _draw; //Modify public interface.
 
 	var x = _x;

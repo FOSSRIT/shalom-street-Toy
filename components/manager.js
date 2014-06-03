@@ -14,11 +14,15 @@ function Manager() {
 	//-------------VARIABLES-----------------------------------
 
 	var canvas, ctx;
+	var clipBoard = {};
+
+	//
 	var base = Module(0,0,1920,1080); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
+
+	//Switch methods.
 	toReturn.init = _init;
 	toReturn.draw = _draw;
-	var clipBoard = {};
 
 	//-----------------------------------------------------------------
 
