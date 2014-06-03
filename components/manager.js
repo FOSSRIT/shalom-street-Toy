@@ -14,79 +14,18 @@ function Manager() {
 	//-------------VARIABLES-----------------------------------
 
 	var canvas, ctx;
+	var base = Module(0,0,1920,1080); //Call base
+	var toReturn = base.interface; //Set toReturn via base.
+	toReturn.init = _init;
+	toReturn.draw = _draw;
 	var clipBoard = {};
-	var objects = []; //Objects have events passed down to them.
-	var events = {
-		"mouse": {
-			"mousedown":[],
-			//"mousemove":[],
-			"mouseup":[],
-			"touchstart":[],
-			"touchmove":[],
-			"touchend":[]
-		},
-		"custom": {
 
-		}
-	};
-
-	//-----------------------Loading event----------------------------
-	var _onLoaded = undefined;
-	var _contextOnLoaded = undefined;
-	function _onSubLoad() {
-		//Loop through all of our sub-objects and make sure that they're loaded.
-		for(var i = 0; i<objects.length; i++){
-			if(!objects[i].loaded) return; //Don't trigger.
-		} //Got through?
-		if(_onLoaded) {
-			if(_contextOnLoaded) { _onLoaded(_contextOnLoaded); } else { _onLoaded(this); }
-		}
-	}
-
-	function _setLoad(_function, _ctx) {
-		_onLoaded = _function; _contextOnLoaded = _ctx;
-	}
 	//-----------------------------------------------------------------
 
 	//
 	function _init(_canvas, _ctx) {
 		canvas = _canvas;
 		ctx = _ctx;
-
-		//set up events.
-		for(var p in events.mouse) { //For each event we're tracking.
-			canvas.addEventListener(p, function(e){ //When triggered, 
-				//Check to see if the event is blocked.
-				if(clipBoard.BlockEvents == undefined || clipBoard.BlockEvents.indexOf(events.mouse[p]) == -1) {
-					for(var a=0;a<events.mouse[p].length;a++) { //For each object.
-						//Check to see if it should be sent to this object.
-						var toPassTo = events.mouse[p][a];
-						if(toPassTo){
-							//Send event to objects.  Pass in the string, the clipboard, and e, the mouseEvent parameter.
-							//clipBoard = toPassTo.handleEvent(p, clipBoard, e); -- Method does not exist yet.
-
-							//Check and see what's in clipBoard, and respond to it.
-
-							//Pass to relevant objects.
-							/*//uncomment when method exists.
-							events[p][a].fireEvent(/relevant data goes here/);
-							*/
-						}
-					}
-				}
-			});
-		}
-	}
-
-	//Check for an event and pass it into a certain object.
-	function _addObject(_object){
-		for(var k in events.mouse){  events.mouse[k].push(_object);  } //Add it to event list.
-		_object.setLoad(_onSubLoad); //Add it to loading queue.
-		objects.push(_object);
-
-		//If it's already loaded, fire event in response
-		//and tell us if manager is loaded.
-		if(_object.loaded) _onSubLoad();
 	}
 
 	function _update(){
@@ -96,62 +35,26 @@ function Manager() {
 
 	//Currently, very ineficient, but does allow for future expansion.
 	function _draw(){
+
+		//Clear the screen.
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		//Loop through all objects and get list of sprites from them to return.
 		var toDraw = []; //Fill this with sprites.
-		for(var i=0; i<objects.length; i++){ //Theoretically, we could perform some opperations in here if need be.
+		for(var i=0; i<base.contents.length; i++){ //Theoretically, we could perform some opperations in here if need be.
 			//Objects at the front of the array get drawn before objects in the back.
-			toDraw = toDraw.concat(objects[i].draw());
+			toDraw = toDraw.concat(base.contents[i].draw());
 		}
 
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		for(var i=0; i<toDraw.length; i++) {
 			var data = toDraw[i];
 			//Currently no support for spritesheets.
-			//ToDo: Set offset for canvas.
 			ctx.drawImage(data.image, 0, 0, data.image.width, data.image.height, data.x, data.y, data.width, data.height);
 		}
-		playArea.draw();
-		toybox.draw();
-	}
-
-	function _drawSprite(sprite){
-		var data = sprite.getData();
-		//Currently no support for spritesheets.
-		ctx.drawImage(data.image, 0, 0, data.image.width, data.image.height, data.x, data.y, data.width, data.height);
 	}
 
 
 	//-------------PUBLIC INTERFACE---------------------------
 
-	var toReturn = {
-		//pass in required variables for Manager to function
-		/*
-		canvas:canvas, ctx: context - canvas.getContext("2d")
-		*/
-		"init":_init,
-
-		//Adds an object to our list of things we're tracking and passing events to.
-		/*
-		_object: the object to track and update.  This relies on some methods actually existing in object.
-		*/
-		"addObject":_addObject,
-
-		//Set a function to be fired off when the sprite has finished loading.
-		/*
-		function: the function to be called, ctx: the object to set the context to (optional)
-		*/
-		"setLoad":_setLoad,
-
-		//Draws all of the objects in the game.
-		"draw":_draw,
-
-		//Draws a sprite.
-		/*
-		sprite: the sprite to draw.  This should be pulled from our native sprite class.
-		*/
-		"drawSprite":_drawSprite,
-
-	};
 
 	return toReturn;
 

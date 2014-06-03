@@ -19,7 +19,9 @@ function Module(_x, _y, _width, _height){
 	_contents = []; //Sub-modules.
 	_extensions = []; //What extensions have been installed.
 	_events = {
-		//We don't have any events to start off I guess.
+		/*
+		"Event": {funct:array of functions to call, bubble:is this function going to be passed down?},
+		*/
 	};
 
 	//-----------INTERNAL VARIABLES------------------------
@@ -45,6 +47,32 @@ function Module(_x, _y, _width, _height){
 		_onLoaded = _function; _contextOnLoaded = _ctx;
 	}
 
+	function _handleEvent(_eventString, _clipBoard) {
+		//If the event isn't blocked.
+		if(!toReturn.clipBoard.BlockEvents || toReturn.clipBoard.BlockEvents.indexOf(_eventString) !=-1) {
+			//If the event exists.
+			if(toReturn.events[_eventString]) {
+
+				//Loop through the list of functions attached to that event and fire them off.
+				//Those functions can be anywhere, but they're mostly going to be internal.
+				//Before we run them, we want to update our internal clipboard so they have access to it.
+				for(var i=0; i<toReturn.events[_eventString].call.length; i++) {
+					//ToDO: Call functions and figure out what to pass them here.
+				}
+			}
+
+			//If the event exists and is set to bubble, pass it on.
+			//If the module is set to auto-bubble events, pass it on anyway.
+			if(toReturn.autoBubbleEvents || (toReturn.events[_eventString] && toReturn.events[_eventString].bubble)) {
+				for(i=0; i<toReturn.contents.length; i++)
+				toReturn.contents[i].handleEvent(_eventString, _clipBoard);
+			}
+		}
+
+		return _clipBoard;//If we modified it, we modified it.  Otherwise, just have your data back.
+		//Todo: make a way to clear the clipboard as necessary.
+	}
+
 	//--------------------------------------------
 
 	function _addModule(_object) {
@@ -58,8 +86,37 @@ function Module(_x, _y, _width, _height){
 		if(_object.loaded) _onSubLoad();
 	}
 
-	function _addEvent(eventString, funct) {
+	function _removeModule(_object){
+		//Find and remove.
+		var i = toReturn.contents.indexOf(_object);
+		if(i != -1) {
+			_object.setLoad(false);
+			toReturn.contents.splice(i, 1);
+		}
+	}
 
+	function _addEvent(eventString, funct) {
+		//If the event exists, add it.
+		if(toReturn.events[eventString]) {
+			toReturn.events[eventString].call.push(funct);
+		} else {
+			toReturn.events[eventString] = {"call":new Array(funct), "bubble":bubble || false}
+		}
+	}
+
+	//Removes ALL of the events attached.
+	function _removeEvent(eventString, funct) {
+		//If it exists.
+		if(toReturn.events[eventString]) {
+			var i = []; //We use our own array.indexOf equivalent because we need more control.
+			for(var k=0; k<toReturn.events[eventString].call.length; k++) {
+				if(toReturn.events[eventString].call[k] == funct) { i.push(k); } //Add it to the list to remove.
+			}
+			//And remove.
+			for(j=0;j<i.length;j++){
+				toReturn.events[eventString].call = toReturn.events[eventString].call.splice(i[j], 1);
+			}
+		}
 	}
 
 	//----------------------------------------------
@@ -108,6 +165,7 @@ function Module(_x, _y, _width, _height){
 
 		"extensions":_extensions,
 		"events":_events,
+		"autoBubbleEvents":false,
 
 		//Returns an array of sprite information to draw.
 		//Return the results of this method from your draw method.
@@ -118,6 +176,32 @@ function Module(_x, _y, _width, _height){
 
 		*/
 		"addModule":_addModule,
+
+		//
+		/*
+
+		*/
+		"removeModule":_removeModule,
+
+
+		//
+		/*
+
+		*/
+		"addEvent":_addEvent,
+
+
+		//
+		/*
+
+		*/
+		"removeEvent":_removeEvent,
+
+		//
+		/*
+
+		*/
+		"handleEvent":_handleEvent,
 
 
 		//Sets a function to be fired off when the module has finished loading.
@@ -170,6 +254,12 @@ function Module(_x, _y, _width, _height){
 
 			*/
 			"addModule":_addModule,
+
+			//
+			/*
+
+			*/
+			"handleEvent":_handleEvent,
 
 		},
 
