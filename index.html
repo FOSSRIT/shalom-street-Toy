@@ -35,19 +35,48 @@
 					manager.draw();
 				});
 				
-
-				var mySprite = Sprite(0, 0, 50, 50, "images/happyFaceTest.png");
-				var mySprite2 = CharacterSkeleton(50, 50, 100, 100);
-				mySprite2.addModule(Sprite());
-				playArea.addModule(mySprite);
-				toybox.addModule(mySprite2);
+				//The two main areas of our app inside of the canvas.
 				manager.addModule(playArea);
 				manager.addModule(toybox);
-
+				
+				//create objects
+				var mySprite = Sprite(0, 0, 50, 50, "images/happyFaceTest.png");
+				
+				//TEMP DEV TABS
+				var devTab1 = Sprite(0, 0, 128, 128, "images/dev/tab1.png");
+				var devTab2 = Sprite(128, 0, 128, 128, "images/dev/tab2.png");
+				var devTab3 = Sprite(256, 0, 128, 128, "images/dev/tab3.png");
+				//TEMP DEV COMPONENTS
+				var dev1 = Sprite(0, 128, 128, 128, "images/dev/_01.png");
+				var dev2 = Sprite(128, 128, 128, 128, "images/dev/_02.png");
+				var dev3 = Sprite(0, 256, 128, 128, "images/dev/_03.png");
+				var dev4 = Sprite(128, 256, 128, 128, "images/dev/_04.png");
+				//TEMP DEV TOY TEST
+				var toy = CharacterSkeleton(0, 0, 100, 100);
+				
+				//ADD MODULES
+					//visual test of character skeleton
+					playArea.addModule(toy);
+					//toy.slots.hat.spriteaddModule(Sprite());
+					toy.slots.head.sprite = Sprite();
+					toy.slots.body.sprite = Sprite();
+					toy.slots.body.sprite.bounds.x = toy.slots.body.x;
+					toy.slots.body.sprite.bounds.y = toy.slots.body.y;
+					toy.slots.feet.sprite = Sprite();
+					toy.slots.feet.sprite.bounds.x = toy.slots.feet.x;
+					toy.slots.feet.sprite.bounds.y = toy.slots.feet.y;
+					//happy face (hello image) dev test in toybox
+					toybox.addModule(mySprite);
+					//specific to toybox -- TEMP DEV
+					toybox.addModule(devTab1);
+					toybox.addModule(devTab2);
+					toybox.addModule(devTab3);
+					toybox.addModule(dev1);
+					toybox.addModule(dev2);
+					toybox.addModule(dev3);
+					toybox.addModule(dev4);
 			}
-
-			window.onload = onLoad;
-
+		window.onload = onLoad;
 		</script>
 	</head>
 
