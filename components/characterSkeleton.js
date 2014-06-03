@@ -19,12 +19,15 @@ function CharacterSkeleton(_x, _y, _width, _height){
 
 
 	toReturn.draw = _draw; //Modify public interface.
+	
 
 
-	var slots = {
-		"hat": {"x":50 , "y":10, "sprite":base.contents[0]},
-		"head": {"x":30, "y":4, "sprite":undefined},
+	var _slots = {
+		"head": {"x":0 , "y":0, "sprite":base.contents[0]},
+		"body": {"x":0, "y":128, "sprite":undefined},
+		"feet": {"x":0, "y":256, "sprite":undefined},
 	}
+	toReturn.slots = _slots;
 	
 	
 	//---------------------------FUNCTIONS---------------------------------------
@@ -36,11 +39,11 @@ function CharacterSkeleton(_x, _y, _width, _height){
 			toDraw = toDraw.concat(base.contents[i].draw());
 		}
 
-		/*for(i in slots){ //Make sprite drawing work.
-			if(slots[i].sprite != undefined) {
-				toDraw = toDraw.concat(slots[i].sprite);
+		for(i in toReturn.slots){ //Make sprite drawing work.
+			if(toReturn.slots[i].sprite != undefined) {
+				toDraw = toDraw.concat(toReturn.slots[i].sprite.draw());
 			}
-		}*/
+		}
 
 		//Set offsets.
 		for(i=0; i<toDraw.length; i++){
@@ -71,6 +74,8 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	function removeSlot(toRemove){
 		//slots.removeProperty
 	}
+	
+	
 
 	/*
 	function: 	_updateComponent
@@ -81,11 +86,12 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	*/
 	function _updateComponent(_componentType, _component)
 	{
-		
-		if(slots[_componentType]) {
-			slots[_componentType].sprite = _component;
-			_component.bounds.x = slots[_componentType].x;
-			_component.bounds.y = slots[_componentType].y;
+		if(slots._componentType) {
+			//Set the new sprite
+			slots._componentType.sprite = _component;
+			//Make sure that the sprite's x and y are at the spot for this componentType
+			slots._componentType.sprite.bounds.x = _componentType.x;
+			slots._componentType.sprite.bounds.y = _componentType.y;
 		}
 		
 	}
