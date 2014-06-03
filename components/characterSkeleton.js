@@ -83,11 +83,12 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	*/
 	function _updateComponent(_componentType, _component)
 	{
-		
-		if(slots[_componentType]) {
-			slots[_componentType].sprite = _component;
-			_component.bounds.x = slots[_componentType].x;
-			_component.bounds.y = slots[_componentType].y;
+		if(slots._componentType) {
+			//Set the new sprite
+			slots._componentType.sprite = _component;
+			//Make sure that the sprite's x and y are at the spot for this componentType
+			slots._componentType.sprite.bounds.x = _componentType.x;
+			slots._componentType.sprite.bounds.y = _componentType.y;
 		}
 		
 	}
