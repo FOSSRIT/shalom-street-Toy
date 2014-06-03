@@ -23,9 +23,6 @@ function Sprite(_x, _y, _width, _height, _imageSource) {
 	var image = new Image(); //Images are a thing here.
 	image.src = _imageSource || "images/error.png";
 
-	function _handle(_clipBoard){ alert(image.src); }
-	base.addEvent("mousedown", _handle);
-
 	//--------------------------INTERNAL------------------------------------
 
 	//-----------MODIFIED LOADING---------------

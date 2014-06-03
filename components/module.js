@@ -83,8 +83,12 @@ function Module(_x, _y, _width, _height){
 			}
 
 			//Now that the event has been fired off, check the clipboard to see if anything else needs to be fired off.
+			console.log(_clipBoard.ToFire.length);
 			if(_clipBoard.ToFire) {
 				for(i=0; i<_clipBoard.ToFire.length; i++) { //For each event to fire.
+					//Fire it off in this context if necessary.
+					//ToDo:
+					//Re-fire it off for sub-objects.
 					for(var j=0; j<toReturn.contents.length; j++) { //For each object.
 						//Fire it off if it isn't blocked.
 						//ToDo: Think about this - should it be reading from _clipBoard for blocked events?  When should ClipBoard be set?
@@ -96,7 +100,7 @@ function Module(_x, _y, _width, _height){
 			}
 
 			//Now that we've finished that off, check to see if the clipboard should be cleared.
-			if(_clipBoard.preserve) { _clipBoard = {}; }
+			if(!_clipBoard.Preserve) { _clipBoard = {}; }
 		}
 
 		return _clipBoard;//If we modified it, we modified it.  Otherwise, just have your data back.
@@ -133,7 +137,6 @@ function Module(_x, _y, _width, _height){
 
 		//If I'm passing in a function at all, add that too.
 		if(funct) { 
-			console.log('adding function');
 			toReturn.events[eventString].call.push(funct);
 		}
 	}
@@ -296,6 +299,19 @@ function Module(_x, _y, _width, _height){
 
 			*/
 			"addModule":_addModule,
+
+			//
+			/*
+
+			*/
+			"addEvent":_addEvent,
+
+
+			//
+			/*
+
+			*/
+			"removeEvent":_removeEvent,
 
 			//
 			/*
