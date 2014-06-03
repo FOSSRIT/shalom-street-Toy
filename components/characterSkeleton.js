@@ -15,6 +15,9 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	//------------------------------VARIABLES-------------------------------------
 	var base = Module(_x, _y, _width, _height); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
+	Touch.Collisions(base);
+
+
 	toReturn.draw = _draw; //Modify public interface.
 
 

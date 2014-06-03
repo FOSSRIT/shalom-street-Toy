@@ -62,6 +62,7 @@ function Module(_x, _y, _width, _height){
 					//FOR POSTERITY:  If you're utalizing this part of the code - ie, calling a custom function
 					//and then passing down events on your own, you should probably set bubble to false.
 					//You can handle passing the event down and managing the clipboard in all likelyhood - bubble is mostly for automation's sake.
+					
 					toReturn.events[_eventString].call[i](_clipBoard);
 				}
 			}
@@ -85,7 +86,11 @@ function Module(_x, _y, _width, _height){
 			if(_clipBoard.ToFire) {
 				for(i=0; i<_clipBoard.ToFire.length; i++) { //For each event to fire.
 					for(var j=0; j<toReturn.contents.length; j++) { //For each object.
-						toReturn.contents[j].handleEvent(_clipBoard.ToFire[i], _clipBoard);
+						//Fire it off if it isn't blocked.
+						//ToDo: Think about this - should it be reading from _clipBoard for blocked events?  When should ClipBoard be set?
+						if(!toReturn.clipBoard.BlockEvents || toReturn.clipBoard.BlockEvents.indexOf(_eventString) !=-1) {
+							toReturn.contents[j].handleEvent(_clipBoard.ToFire[i], _clipBoard);
+						}
 					}
 				}
 			}
@@ -120,12 +125,16 @@ function Module(_x, _y, _width, _height){
 		}
 	}
 
-	function _addEvent(eventString, funct) {
-		//If the event exists, add it.
-		if(toReturn.events[eventString]) {
+	function _addEvent(eventString, funct, bubble) {
+		//If the event doesn't exist, add it.
+		if(!toReturn.events[eventString]) {
+			toReturn.events[eventString] = {"call":new Array(), "bubble":bubble || false };
+		}
+
+		//If I'm passing in a function at all, add that too.
+		if(funct) { 
+			console.log('adding function');
 			toReturn.events[eventString].call.push(funct);
-		} else {
-			toReturn.events[eventString] = {"call":new Array(funct), "bubble":bubble || false}
 		}
 	}
 
@@ -133,13 +142,20 @@ function Module(_x, _y, _width, _height){
 	function _removeEvent(eventString, funct) {
 		//If it exists.
 		if(toReturn.events[eventString]) {
-			var i = []; //We use our own array.indexOf equivalent because we need more control.
-			for(var k=0; k<toReturn.events[eventString].call.length; k++) {
-				if(toReturn.events[eventString].call[k] == funct) { i.push(k); } //Add it to the list to remove.
-			}
-			//And remove.
-			for(j=0;j<i.length;j++){
-				toReturn.events[eventString].call = toReturn.events[eventString].call.splice(i[j], 1);
+
+			//If a function was passed in to remove, remove just that function from the toCall list.
+			if(funct) {
+				var i = []; //We use our own array.indexOf equivalent because we need more control.
+				for(var k=0; k<toReturn.events[eventString].call.length; k++) {
+					if(toReturn.events[eventString].call[k] == funct) { i.push(k); } //Add it to the list to remove.
+				}
+				//And remove.
+				for(j=0;j<i.length;j++){
+					toReturn.events[eventString].call = toReturn.events[eventString].call.splice(i[j], 1);
+				}
+			} else {
+				//Otherwise, assume that they just want the event gone entirely.
+				delete toReturn.events[eventString];
 			}
 		}
 	}
@@ -190,7 +206,7 @@ function Module(_x, _y, _width, _height){
 
 		"extensions":_extensions,
 		"events":_events,
-		"autoBubbleEvents":false,
+		"autoBubbleEvents":true,
 		"clipBoard":{},
 
 		//Returns an array of sprite information to draw.

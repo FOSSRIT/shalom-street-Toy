@@ -20,6 +20,7 @@ function ToyBox(_x, _y, _width, _height) {
 	var toReturn = base.interface; //Set toReturn via base.
 
 	toReturn.draw = _draw; //Modify public interface.
+	Touch.Collisions(base);
 
 	var x = _x;
 	var y = _y; 

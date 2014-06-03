@@ -19,6 +19,7 @@ function Manager() {
 	//
 	var base = Module(0,0,1920,1080); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
+	Touch.Collisions(base);
 
 	//Switch methods.
 	toReturn.init = _init;
@@ -30,6 +31,8 @@ function Manager() {
 	function _init(_canvas, _ctx) {
 		canvas = _canvas;
 		ctx = _ctx;
+
+		canvas.onmousedown = function(e){ base.handleEvent("mousedown", { "eventType":"mousedown", "mousex":e.offsetX, "mousey": e.offsetY}); };
 	}
 
 	function _update(){
