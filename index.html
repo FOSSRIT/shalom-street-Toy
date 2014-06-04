@@ -49,7 +49,7 @@
 					tab1.addOption(Sprite(0, 0, 128, 128, "images/Esther sets/Esther-1/esther-set-1-02.png"), "images/Esther sets/Esther-1/esther-set-1-02.png");
 					tab1.addOption(Sprite(128, 0, 128, 128, "images/Esther sets/Esther-2/esther-set-2-02.png"), "images/Esther sets/Esther-2/esther-set-2-02.png");
 					tab1.addOption(Sprite(0, 128, 128, 128, "images/Esther sets/Esther-3/esther-set-3-02.png"), "images/Esther sets/Esther-3/esther-set-3-02.png");
-					tab1.addOption(Sprite(128, 128, 128, 128, "images/dev/_04.png"), "images/dev/_04.png");
+					tab1.addOption(Sprite(128, 128, 128, 128, "images/dev/_04.png"), Sprite(0, 0, 230, 230, "images/dev/_04.png"));
 					//add the tab to the toybox
 					toybox.addModule(tab1);
 				var tab2 = ToyBoxTab(0, 128, toybox.bounds.width, toybox.bounds.height - 128, "body");
@@ -72,7 +72,7 @@
 				
 				//TEMP DEV TOY TEST
 				// ADD MODULES
-					var toy = CharacterSkeleton(50, 50, 100, 100);
+					var toy = CharacterSkeleton(200, 150, 234, 400);
 					//visual test of character skeleton
 					playArea.addModule(toy);
 					//TEMP DEV SPRITE SET UP FOR TOY
@@ -134,6 +134,7 @@
 
 				toybox.addEvent("changeTab", function(_clipBoard){ alert("change to tab: " + _clipBoard.tabChange.source); }, false);
 				toy.addEvent("swapComponent", function(_clipBoard){ toy.setSlot(_clipBoard.ComponentSwap.slot, _clipBoard.ComponentSwap.image); }, false);
+				toy.addEvent("mousedown", function(_clipBoard){ alert("hi, I'm Esther!"); }, false);
 			}
 		window.onload = onLoad;
 		</script>
