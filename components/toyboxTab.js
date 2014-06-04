@@ -7,20 +7,15 @@ function ToyBoxTab(_x, _y, _width, _height, _connectedSlot) {
 	toReturn.addOption = _addOption;
 	var options = [];
 	toReturn.selected = false;
+	toReturn.visible = false; //By default.
 
 	function _select(){
-		for(var m in options) {
-			m.visible = true;
-		}
+		toReturn.visible = true;
 		toReturn.selected = true;
-
-		alert('selected');
 	}
 
 	function _deselect(){
-		for(var m in options) {
-			m.visible = false;
-		}
+		toReturn.visible = false;
 		toReturn.selected = false;
 	}
 
@@ -29,10 +24,11 @@ function ToyBoxTab(_x, _y, _width, _height, _connectedSlot) {
 		base.addModule(option);
 		options.push(option);
 
+		var _img = image;
 		//Add in the proper event.
 		option.addEvent("mousedown", function(_clipBoard){
 			_clipBoard.ToFire = ["swapComponent"];
-			_clipBoard.ComponentSwap = {"image":image, "slot":slot || _connectedSlot};
+			_clipBoard.ComponentSwap = {"image":_img, "slot":slot || connectedSlot};
 		}, false);
 	}
 

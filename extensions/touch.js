@@ -70,8 +70,8 @@ Touch.Collisions = function(module){
 					//Pass down the function.
 					module.contents[j].handleEvent(_clipBoard.eventType, _clipBoard);
 					//Fix the clipboard so that the process can be repeated.
-					_clipBoard.mousex -= module.contents[j].bounds.x;
-					_clipBoard.mousey -= module.contents[j].bounds.y;
+					_clipBoard.mousex += module.contents[j].bounds.x;
+					_clipBoard.mousey += module.contents[j].bounds.y;
 				}
 			}
 		}, false /*don't bubble event, we're handling that*/);
