@@ -25,7 +25,7 @@ function CharacterSkeleton(_x, _y, _width, _height){
 
 	var _slots = {
 		"head": {"x":0 , "y":0, "sprite":undefined, "order":2},
-		"body": {"x":0, "y":128, "sprite":undefined, "order":1},
+		"body": {"x":0, "y":100, "sprite":undefined, "order":1},
 		"feet": {"x":0, "y":256, "sprite":undefined, "order":0},
 	}
 	toReturn.slots = _slots;
@@ -63,23 +63,33 @@ function CharacterSkeleton(_x, _y, _width, _height){
 		return toDraw;
 	}
 	
-	function addSlot(toAdd){
-		slots[toAdd] = undefined
+	function _addSlot(toAdd, _x, _y, _order){
+		slots[toAdd] = {"x":_x || 0, "y": _y || 0, "order": _order || 0 }
 	}
-	function removeSlot(toRemove){
-		//slots.removeProperty
+	function _removeSlot(toRemove){
+		delete slots[toAdd];
 	}
 	
 	function _setSlot(slot, sprite){
-		//Remove the past contents of the slot if it exists.
-		if(toReturn.slots[slot]){
-			toReturn.removeModule(toReturn.slots[slot]);
-		}//
 
-		toReturn.slots[slot].sprite = sprite;
-		sprite.bounds.x = toReturn.slots[slot].x;
-		sprite.bounds.y = toReturn.slots[slot].y;
-		base.addModule(sprite, toReturn.slots[slot].order);
+		//If you were passed in an image.
+		if(typeof(sprite) == "string") {
+			//Some error checking, we could be doing more here.
+			if(toReturn.slots[slot]){
+				toReturn.slots[slot].sprite.setImage(sprite);
+			}
+		//Otherwise.
+		} else {
+			//Remove the past contents of the slot if it exists.
+			if(toReturn.slots[slot]){
+				toReturn.removeModule(toReturn.slots[slot]);
+			}//
+
+			toReturn.slots[slot].sprite = sprite;
+			sprite.bounds.x = toReturn.slots[slot].x;
+			sprite.bounds.y = toReturn.slots[slot].y;
+			base.addModule(sprite, toReturn.slots[slot].order);
+		}
 	}
 
 	/*
