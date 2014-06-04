@@ -34,6 +34,11 @@ function Sprite(_x, _y, _width, _height, _imageSource) {
 		if(_fireOnLoad != undefined){  //If there's anything to fire off.
 			//Fire off in proper context if you can, otherwise, just use the current context.
 			toReturn.loaded = true;
+			//If we don't have width and height set, set them.
+			if(toReturn.bounds.width === 0 && toReturn.bounds.height === 0) {
+				toReturn.bounds.width = image.width;
+				toReturn.bounds.height = image.height;
+			}
 			if(_ctxForLoad) { _fireOnLoad(_ctxForLoad); } else { _fireOnLoad(this); }
 		}
 	}; image.onload = onImageLoad;
@@ -48,6 +53,8 @@ function Sprite(_x, _y, _width, _height, _imageSource) {
 		//Works with both strings and actual images.
 		if(typeof(_image) == "string") {
 			image.src = _image; 
+			toReturn.bounds.width = image.width;
+			toReturn.bounds.height = image.height;
 		} else  {
 			image = _image;
 			//Add load event. If the image is loaded, fire off the load event.

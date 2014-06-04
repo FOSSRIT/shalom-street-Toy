@@ -112,7 +112,7 @@ function Module(_x, _y, _width, _height){
 		//There's a heck of a lot more that needs to go
 		//in this method.  I think.
 		_object.setLoad(_onSubLoad); //Add it to loading queue.
-		if(_position){
+		if(_position != undefined){
 			toReturn.contents.splice(_position, 0, _object)
 		}else{
 			toReturn.contents.push(_object);
