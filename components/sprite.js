@@ -59,7 +59,13 @@ function Sprite(_x, _y, _width, _height, _imageSource) {
 	}
 
 
-	function _draw(){ return Array(_getData()); }
+	function _draw(){ 
+		if(toReturn.visible) {
+			return Array(_getData()); 
+		} else {
+			return [];
+		}
+	}
 	function _getData(){ return {"image":image, "x":toReturn.bounds.x, "y":toReturn.bounds.y, "width":toReturn.bounds.width, "height":toReturn.bounds.height }; }
 
 

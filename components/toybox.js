@@ -19,9 +19,15 @@ function ToyBox(_x, _y, _width, _height) {
 	var base = Module(_x, _y, _width, _height); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
 
-	toReturn.draw = _draw; //Modify public interface.
+	//Modify public interface and add variables as necessary.
+	toReturn.draw = _draw;
+	var tabs = [];
 	Touch.Collisions(base);
 
+
+
+
+	//-------FOR DEV PURPOSES
 	var x = _x;
 	var y = _y; 
 	var width = _width; 
@@ -38,10 +44,13 @@ function ToyBox(_x, _y, _width, _height) {
 	var componentsY = y+height/8; 
 	var componentsWidth = width; 
 	var componentsHeight = 7*height/8;
+	//------------------------------
 	
 
-
-	var _tabContents = []; //list of tabs in the tab section.
+	//list of tabs in the tab section.
+	var _tabs = [
+		
+	];
 	var _currentlySelectedTab; // the tab that is currently selected
 	var _componentsContents = []; //list of components in the component section. these should be changed depending on what tab is selected.
 	
@@ -65,6 +74,10 @@ function ToyBox(_x, _y, _width, _height) {
 		//update the data
 		_componentsContents = _newList;
 		*/
+	}
+
+	function _addTab(){
+
 	}
 	
 	

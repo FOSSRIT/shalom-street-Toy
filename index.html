@@ -13,6 +13,8 @@
 		<script type="text/javascript" src="components/characterSkeleton.js" ></script>
 		<script type="text/javascript" src="components/playArea.js" ></script>
 		<script type="text/javascript" src="components/toybox.js" ></script>
+		<script type="text/javascript" src="components/toyboxTab.js" ></script>
+		<!--Extensions-->
 		<script type="text/javascript" src="extensions/touch.js" ></script>
 	
 		<script>
@@ -41,7 +43,22 @@
 				manager.addModule(toybox);
 				
 				//create objects
-				var mySprite = Sprite(0, 0, 50, 50, "images/happyFaceTest.png");
+
+
+				//Toybox tabs.
+				var tab1 = ToyBoxTab(0, 128, toybox.bounds.width, toybox.bounds.height - 128, "head");
+				tab1.addOption(Sprite(0, 0, 128, 128, "images/dev/_01.png"), "images/dev/_01.png");
+				toybox.addModule(tab1);
+				var tab2 = ToyBoxTab(0, 128, toybox.bounds.width, toybox.bounds.height - 128, "body");
+				tab2.addOption(Sprite(0, 0, 128, 128, "images/dev/_02.png"), "images/dev/_02.png");
+				toybox.addModule(tab2);
+				var tab3 = ToyBoxTab(0, 128, toybox.bounds.width, toybox.bounds.height - 128, "feet");
+				tab3.addOption(Sprite(0, 0, 128, 128, "images/dev/_03.png"), "images/dev/_03.png");
+				toybox.addModule(tab3);
+
+
+				//
+
 				
 				//TEMP DEV TABS
 				var devTab1 = Sprite(0, 0, 128, 128, "images/dev/tab1.png");
@@ -53,61 +70,65 @@
 				var dev3 = Sprite(0, 256, 128, 128, "images/dev/_03.png");
 				var dev4 = Sprite(128, 256, 128, 128, "images/dev/_04.png");
 				//TEMP DEV TOY TEST
-				var toy = CharacterSkeleton(0, 0, 100, 100);
 				
-				//ADD MODULES
+				// ADD MODULES
+					var toy = CharacterSkeleton(50, 50, 100, 100);
 					//visual test of character skeleton
 					playArea.addModule(toy);
 					//TEMP DEV SPRITE SET UP FOR TOY
 					toy.setSlot("head", Sprite());
 					toy.setSlot("body", Sprite());
 					toy.setSlot("feet", Sprite());
-					//happy face (hello image) dev test in toybox
-					toybox.addModule(mySprite);
 					//specific to toybox -- TEMP DEV
 					toybox.addModule(devTab1);
 					toybox.addModule(devTab2);
 					toybox.addModule(devTab3);
-					toybox.addModule(dev1);
-					toybox.addModule(dev2);
-					toybox.addModule(dev3);
-					toybox.addModule(dev4);
+					toybox.addModule(tab1);
+					toybox.addModule(tab2);
+					toybox.addModule(tab3);
 
 
 
 					//DEV adding events
 					devTab1.addEvent("mousedown", function(_clipBoard){ 
-						_clipBoard.ToFire = ["changeTab"]; 
-						_clipBoard.tabChange = {"source":1}
+						tab1.select();
+						tab2.deselect();
+						tab3.deselect();
+						if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+						manager.draw();
 					}, false);
 					devTab2.addEvent("mousedown", function(_clipBoard){ 
-						_clipBoard.ToFire = ["changeTab"]; 
-						_clipBoard.tabChange = {"source":2}
+						if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+						tab1.deselect();
+						tab2.select();
+						tab3.deselect();
 					}, false);
 					devTab3.addEvent("mousedown", function(_clipBoard){ 
-						_clipBoard.ToFire = ["changeTab"]; 
-						_clipBoard.tabChange = {"source":3}
+						if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+						tab1.deselect();
+						tab2.deselect();
+						tab3.select();
 					}, false);
 
-					dev1.addEvent("mousedown", function(_clipBoard){
-						_clipBoard.ToFire = ["swapComponent"];
-						_clipBoard.Body = {"image":"images/dev/_01.png", "slot":"body"}
-					}, false);
+					// dev1.addEvent("mousedown", function(_clipBoard){
+					// 	_clipBoard.ToFire = ["swapComponent"];
+					// 	_clipBoard.Body = {"image":"images/dev/_01.png", "slot":"body"}
+					// }, false);
 
-					dev3.addEvent("mousedown", function(_clipBoard){
-						_clipBoard.ToFire = ["swapComponent"];
-						_clipBoard.Body = {"image":"images/dev/_03.png", "slot":"body"}
-					}, false);
+					// dev3.addEvent("mousedown", function(_clipBoard){
+					// 	_clipBoard.ToFire = ["swapComponent"];
+					// 	_clipBoard.Body = {"image":"images/dev/_03.png", "slot":"body"}
+					// }, false);
 
-					dev2.addEvent("mousedown", function(_clipBoard){
-						_clipBoard.ToFire = ["swapComponent"];
-						_clipBoard.Body = {"image":"images/dev/_02.png", "slot":"head"}
-					}, false);
+					// dev2.addEvent("mousedown", function(_clipBoard){
+					// 	_clipBoard.ToFire = ["swapComponent"];
+					// 	_clipBoard.Body = {"image":"images/dev/_02.png", "slot":"head"}
+					// }, false);
 
-					dev4.addEvent("mousedown", function(_clipBoard){
-						_clipBoard.ToFire = ["swapComponent"];
-						_clipBoard.Body = {"image":"images/dev/_04.png", "slot":"head"}
-					}, false);
+					// dev4.addEvent("mousedown", function(_clipBoard){
+					// 	_clipBoard.ToFire = ["swapComponent"];
+					// 	_clipBoard.Body = {"image":"images/dev/_04.png", "slot":"head"}
+					// }, false);
 
 
 

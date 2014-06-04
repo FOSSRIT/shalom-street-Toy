@@ -181,7 +181,9 @@ function Module(_x, _y, _width, _height){
 		var toDraw = [];
 		//Recursively get all sprite data to draw.
 		for(var i=0; i<toReturn.contents.length; i++){
-			toDraw = toDraw.concat(toReturn.contents[i].draw());
+			if(toReturn.contents[i].visible) {
+				toDraw = toDraw.concat(toReturn.contents[i].draw());
+			}
 		}
 
 		//Set offsets.
@@ -281,6 +283,9 @@ function Module(_x, _y, _width, _height){
 			//Boolean of whether or not the module is loaded.  
 			//False by default, should be set to true while initializing.
 			"loaded": _loaded,
+
+			//
+			"visible": true,
 
 			//Updates the module and all sub-modules.
 			/*
