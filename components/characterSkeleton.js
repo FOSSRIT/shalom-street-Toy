@@ -25,8 +25,8 @@ function CharacterSkeleton(_x, _y, _width, _height){
 
 	var _slots = {
 		"head": {"x":0 , "y":0, "width":234, "height":262, "sprite":undefined, "order":1},
-		"body": {"x":0, "y":200, "width":220, "height":220, "sprite":undefined, "order":2},
-		"feet": {"x":0, "y":400, "width":128, "height":128, "sprite":undefined, "order":0},
+		"body": {"x":0, "y":212, "width":220, "height":220, "sprite":undefined, "order":2},
+		"feet": {"x":0, "y":347, "width":128, "height":128, "sprite":undefined, "order":0},
 	}
 	toReturn.slots = _slots;
 	
