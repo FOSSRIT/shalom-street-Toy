@@ -20,15 +20,14 @@ function ToyBoxTab(_x, _y, _width, _height, _connectedSlot) {
 	}
 
 	//Slot is optional.
-	function _addOption(option, image, slot){
+	function _addOption(option, img, slot){
 		base.addModule(option);
 		options.push(option);
 
-		var _img = image;
 		//Add in the proper event.
 		option.addEvent("mousedown", function(_clipBoard){
 			_clipBoard.ToFire = ["swapComponent"];
-			_clipBoard.ComponentSwap = {"image":_img, "slot":slot || connectedSlot};
+			_clipBoard.ComponentSwap = {"image":img, "slot":slot || connectedSlot};
 		}, false);
 	}
 
