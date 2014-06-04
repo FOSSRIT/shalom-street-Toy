@@ -57,21 +57,24 @@ Touch.Collisions = function(module){
 			//When recieving a touch event, loop through other events, and if applicable, send the event to them.
 			//Update their clipBoard with the correct info.
 			for(var j=0; j<module.contents.length; j++) {
-				//Collision detection
-				//--------------------------------------------------------------------------------------------
-				if(_clipBoard.mousex > module.contents[j].bounds.x &&
-					_clipBoard.mousex < module.contents[j].bounds.x + module.contents[j].bounds.width &&
-					_clipBoard.mousey > module.contents[j].bounds.y &&
-					_clipBoard.mousey < module.contents[j].bounds.y + module.contents[j].bounds.height) {
-				//------------------------------------------------------------------------------------------
-					//Update
-					_clipBoard.mousex -= module.contents[j].bounds.x;
-					_clipBoard.mousey -= module.contents[j].bounds.y;
-					//Pass down the function.
-					module.contents[j].handleEvent(_clipBoard.eventType, _clipBoard);
-					//Fix the clipboard so that the process can be repeated.
-					_clipBoard.mousex += module.contents[j].bounds.x;
-					_clipBoard.mousey += module.contents[j].bounds.y;
+				//Only click on visible modules.
+				if(module.contents[j].visible) {
+					//Collision detection
+					//--------------------------------------------------------------------------------------------
+					if(_clipBoard.mousex > module.contents[j].bounds.x &&
+						_clipBoard.mousex < module.contents[j].bounds.x + module.contents[j].bounds.width &&
+						_clipBoard.mousey > module.contents[j].bounds.y &&
+						_clipBoard.mousey < module.contents[j].bounds.y + module.contents[j].bounds.height) {
+					//------------------------------------------------------------------------------------------
+						//Update
+						_clipBoard.mousex -= module.contents[j].bounds.x;
+						_clipBoard.mousey -= module.contents[j].bounds.y;
+						//Pass down the function.
+						module.contents[j].handleEvent(_clipBoard.eventType, _clipBoard);
+						//Fix the clipboard so that the process can be repeated.
+						_clipBoard.mousex += module.contents[j].bounds.x;
+						_clipBoard.mousey += module.contents[j].bounds.y;
+					}
 				}
 			}
 		}, false /*don't bubble event, we're handling that*/);
