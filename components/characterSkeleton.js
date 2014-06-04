@@ -15,6 +15,7 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	//------------------------------VARIABLES-------------------------------------
 	var base = Module(_x, _y, _width, _height); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
+	toReturn.setSlot = _setSlot;
 	Touch.Collisions(base);
 
 
@@ -23,9 +24,9 @@ function CharacterSkeleton(_x, _y, _width, _height){
 
 
 	var _slots = {
-		"head": {"x":0 , "y":0, "sprite":base.contents[0]},
-		"body": {"x":0, "y":128, "sprite":undefined},
-		"feet": {"x":0, "y":256, "sprite":undefined},
+		"head": {"x":0 , "y":0, "sprite":undefined, "order":2},
+		"body": {"x":0, "y":128, "sprite":undefined, "order":1},
+		"feet": {"x":0, "y":256, "sprite":undefined, "order":0},
 	}
 	toReturn.slots = _slots;
 	
@@ -37,12 +38,6 @@ function CharacterSkeleton(_x, _y, _width, _height){
 		//Recursively get all sprite data to draw.
 		for(var i=0; i<base.contents.length; i++){
 			toDraw = toDraw.concat(base.contents[i].draw());
-		}
-
-		for(i in toReturn.slots){ //Make sprite drawing work.
-			if(toReturn.slots[i].sprite != undefined) {
-				toDraw = toDraw.concat(toReturn.slots[i].sprite.draw());
-			}
 		}
 
 		//Set offsets.
@@ -66,7 +61,7 @@ function CharacterSkeleton(_x, _y, _width, _height){
 		//------------------------------------------------------------------------------
 
 		return toDraw;
-	}	
+	}
 	
 	function addSlot(toAdd){
 		slots[toAdd] = undefined
@@ -75,7 +70,17 @@ function CharacterSkeleton(_x, _y, _width, _height){
 		//slots.removeProperty
 	}
 	
-	
+	function _setSlot(slot, sprite){
+		//Remove the past contents of the slot if it exists.
+		if(toReturn.slots[slot]){
+			toReturn.removeModule(toReturn.slots[slot]);
+		}//
+
+		toReturn.slots[slot].sprite = sprite;
+		sprite.bounds.x = toReturn.slots[slot].x;
+		sprite.bounds.y = toReturn.slots[slot].y;
+		base.addModule(sprite, toReturn.slots[slot].order);
+	}
 
 	/*
 	function: 	_updateComponent

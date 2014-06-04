@@ -83,7 +83,6 @@ function Module(_x, _y, _width, _height){
 			}
 
 			//Now that the event has been fired off, check the clipboard to see if anything else needs to be fired off.
-			console.log(_clipBoard.ToFire.length);
 			if(_clipBoard.ToFire) {
 				for(i=0; i<_clipBoard.ToFire.length; i++) { //For each event to fire.
 					//Fire it off in this context if necessary.
@@ -109,11 +108,15 @@ function Module(_x, _y, _width, _height){
 
 	//--------------------------------------------
 
-	function _addModule(_object) {
+	function _addModule(_object, _position) {
 		//There's a heck of a lot more that needs to go
 		//in this method.  I think.
 		_object.setLoad(_onSubLoad); //Add it to loading queue.
-		toReturn.contents.push(_object);
+		if(_position){
+			toReturn.contents.splice(_position, 0, _object)
+		}else{
+			toReturn.contents.push(_object);
+		}
 
 		//If it's already loaded, fire event in response
 		//and tell us if manager is loaded.
@@ -299,6 +302,13 @@ function Module(_x, _y, _width, _height){
 
 			*/
 			"addModule":_addModule,
+
+
+			//
+			/*
+
+			*/
+			"removeModule":_removeModule,
 
 			//
 			/*
