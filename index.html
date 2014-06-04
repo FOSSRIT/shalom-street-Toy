@@ -141,7 +141,7 @@
 
 
 					toybox.addEvent("changeTab", function(_clipBoard){ alert("change to tab: " + _clipBoard.tabChange.source); }, false);
-					toy.addEvent("swapComponent", function(_clipBoard){ alert(_clipBoard.ComponentSwap.slot); toy.setSlot(_clipBoard.ComponentSwap.slot, _clipBoard.ComponentSwap.image); }, false);
+					toy.addEvent("swapComponent", function(_clipBoard){ toy.setSlot(_clipBoard.ComponentSwap.slot, _clipBoard.ComponentSwap.image); }, false);
 
 			}
 		window.onload = onLoad;
