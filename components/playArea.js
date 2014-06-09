@@ -17,6 +17,7 @@ function PlayArea(_x, _y, _width, _height) {
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.draw = _draw; //Modify public interface.
 	Touch.Collisions(base);
+	base.addEvent("mousemove", function(_clipBoard){ console.log("I think it's at: " + _clipBoard.mousex); })
 
 	//---------------------------FUNCTIONS---------------------------------------
 

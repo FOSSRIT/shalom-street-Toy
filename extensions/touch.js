@@ -19,10 +19,16 @@ var Touch = {}
 //Events that we'll add.
 Touch.events = [
 	"mousedown",
+	"mouseover",
 	"mouseup",
 	"mousemove",
 	"touchbegin",
 	"touchend",
+	"touchover"
+]
+
+Touch.passAll = [
+	"mousemove",
 	"touchmove"
 ]
 
@@ -66,29 +72,91 @@ Touch.Collisions = function(module){
 						_clipBoard.mousey > module.contents[j].bounds.y &&
 						_clipBoard.mousey < module.contents[j].bounds.y + module.contents[j].bounds.height) {
 					//------------------------------------------------------------------------------------------
-						//Update
+
+						//Link to the outer world.
+						var prevMousex = _clipBoard.mousex;
+						var prevMousey = _clipBoard.mousey;
+						//
+						_clipBoard.prevMousex = prevMousex;
+						_clipBoard.prevMousey = prevMousey;
+						//Update stuff.
 						_clipBoard.mousex -= module.contents[j].bounds.x;
 						_clipBoard.mousey -= module.contents[j].bounds.y;
+
 						//Pass down the function.
 						module.contents[j].handleEvent(_clipBoard.eventType, _clipBoard);
 						//Fix the clipboard so that the process can be repeated.
-						_clipBoard.mousex += module.contents[j].bounds.x;
-						_clipBoard.mousey += module.contents[j].bounds.y;
+						_clipBoard.mousex = prevMousex;
+						_clipBoard.mousey = prevMousey;
 					}
 				}
 			}
 		}, false /*don't bubble event, we're handling that*/);
 	}
+
+	//Some events always get passed down, like mouse moving.
+	for(i=0; i<Touch.passAll.length; i++){
+		//Add the events.
+		var eventToAdd = Touch.passAll[i];
+		module.addEvent(eventToAdd, function(_clipBoard){ 
+			//When recieving a touch event, loop through other events, and if applicable, send the event to them.
+			//Update their clipBoard with the correct info.
+			for(var j=0; j<module.contents.length; j++) {
+
+				//Link to the outer world.
+				var prevMousex = _clipBoard.mousex;
+				var prevMousey = _clipBoard.mousey;
+				//
+				_clipBoard.prevMousex = prevMousex;
+				_clipBoard.prevMousey = prevMousey;
+				//Update stuff.
+				_clipBoard.mousex -= module.contents[j].bounds.x;
+				_clipBoard.mousey -= module.contents[j].bounds.y;
+
+				//Pass down the function.
+				module.contents[j].handleEvent(_clipBoard.eventType, _clipBoard);
+				//Fix the clipboard so that the process can be repeated.
+				_clipBoard.mousex = prevMousex;
+				_clipBoard.mousey = prevMousey;
+			}
+		}, false /*don't bubble event, we're handling that*/);
+	}
 }
 
-//Useless at the moment.
+//t
 Touch.DragAndDrop = function(module){
 	module.mouseOffset = {"x":0, "y":0}
+	module.lastMouse = {"x":0, "y":0}
 	module.dragging = false;
 	//Add the actual event.
 	module.addEvent("mousedown", function(_clipBoard){
-		module.mouseOffset.x = module.bounds.x - _clipBoard.mousex;
-		module.mouseOffset.y = module.bounds.y - _clipBoard.mousey;
-	});
+		module.lastMouse.x = _clipBoard.mousex;
+		module.lastMouse.y = _clipBoard.mousey;
+		module.mouseOffset.x = _clipBoard.mousex;
+		module.mouseOffset.y = _clipBoard.mousey;
+		module.dragging = true;
+		console.log("startDrag: " + _clipBoard.prevMousex);
+	}, false);
+	//
+	module.addEvent("mousemove", function(_clipBoard){
+		if(module.dragging) {
+			//module.interface.bounds.x += _clipBoard.mousex - module.mouseOffset.x;// + module.interface.bounds.x//module.mouseOffset.x// + module.interface.bounds.x
+			console.log(_clipBoard.prevMousex + " " + _clipBoard.mousex);
+			module.interface.bounds.x = _clipBoard.prevMousex - module.mouseOffset.x;
+			module.interface.bounds.y = _clipBoard.prevMousey - module.mouseOffset.y;
+			console.log("target position: " + _clipBoard.prevMousex + ", at: " + module.interface.bounds.x + ".  Offset: " + module.mouseOffset.x);
+			//module.interface.bounds.x += _clipBoard.mousex - module.lastMouse.x;
+			//module.interface.bounds.y += _clipBoard.mousey - module.lastMouse.y;
+			module.lastMouse.y = _clipBoard.mousey;
+			module.lastMouse.x = _clipBoard.mousex;
+			//module.interface.bounds.y = _clipBoard.mousey// + module.interface.bounds.y//module.mouseOffset.y// + module.interface.bounds.y
+			if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+		}
+	}, false);
+	//
+	module.addEvent("mouseup", function(_clipBoard){
+		module.dragging = false;
+		alert("stopDrag")
+	}, false);
 }
 

@@ -93,7 +93,6 @@
 					tab2.deselect();
 					tab3.deselect();
 					//ToDo: This next line isn't working.
-					_clipBoard.Preserve = true;
 					if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
 					//work.
 					//manager.draw();
@@ -135,7 +134,7 @@
 
 				toybox.addEvent("changeTab", function(_clipBoard){ alert("change to tab: " + _clipBoard.tabChange.source); }, false);
 				toy.addEvent("swapComponent", function(_clipBoard){ toy.setSlot(_clipBoard.ComponentSwap.slot, _clipBoard.ComponentSwap.image); }, false);
-				toy.addEvent("mousedown", function(_clipBoard){ alert("hi, I'm Esther!"); }, false);
+				//\toy.addEvent("mouseup", function(_clipBoard){ alert("hi, I'm Esther!"); }, false);
 			}
 		window.onload = onLoad;
 		</script>

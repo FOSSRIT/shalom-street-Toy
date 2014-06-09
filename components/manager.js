@@ -33,11 +33,17 @@ function Manager() {
 		ctx = _ctx;
 
 		canvas.onmousedown = function(e){ base.handleEvent("mousedown", { "eventType":"mousedown", "mousex":e.offsetX, "mousey": e.offsetY}); };
+		canvas.onmouseup = function(e){ base.handleEvent("mouseup", { "eventType":"mouseup", "mousex":e.offsetX, "mousey": e.offsetY}); };
+		canvas.onmousemove = function(e){ base.handleEvent("mousemove", { "eventType":"mousemove", "mousex":e.offsetX, "mousey": e.offsetY}); };
+
+
 		base.addEvent("redraw", function(_clipBoard){ _draw(); }, false);
+		//_tick();
 	}
 
-	function _update(){
-
+	function _tick(){
+		base.handleEvent("tick", {});
+		window.requestAnimationFrame(_tick);
 	}
 
 
