@@ -33,7 +33,7 @@ function Manager() {
 		ctx = _ctx;
 
 		canvas.onmousedown = function(e){ base.handleEvent("mousedown", { "eventType":"mousedown", "mousex":e.offsetX, "mousey": e.offsetY}); };
-		base.addEvent("redraw", function(_clipBoard){ alert("redrawing everything"); _draw(); }, false);
+		base.addEvent("redraw", function(_clipBoard){ _draw(); }, false);
 	}
 
 	function _update(){

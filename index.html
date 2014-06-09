@@ -93,16 +93,17 @@
 					tab2.deselect();
 					tab3.deselect();
 					//ToDo: This next line isn't working.
+					_clipBoard.Preserve = true;
 					if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
 					//work.
-					manager.draw();
-				}, false);
+					//manager.draw();
+				}, true);
 				devTab2.addEvent("mousedown", function(_clipBoard){ 
 					if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
 					tab1.deselect();
 					tab2.select();
 					tab3.deselect();
-					manager.draw();
+					//manager.draw();
 				}, false);
 				devTab3.addEvent("mousedown", function(_clipBoard){ 
 					if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }

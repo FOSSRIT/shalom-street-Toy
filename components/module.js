@@ -86,6 +86,11 @@ function Module(_x, _y, _width, _height){
 			if(_clipBoard.ToFire) {
 				for(i=0; i<_clipBoard.ToFire.length; i++) { //For each event to fire.
 					//Fire it off in this context if necessary.
+					if(toReturn.events[_clipBoard.ToFire[i]]){
+						for(var k=0; k<toReturn.events[_clipBoard.ToFire[i]].call.length; k++) {
+							toReturn.events[_clipBoard.ToFire[i]].call[k](_clipBoard); //May still have some errors.
+						}
+					}
 					//ToDo:
 					//Re-fire it off for sub-objects.
 					for(var j=0; j<toReturn.contents.length; j++) { //For each object.

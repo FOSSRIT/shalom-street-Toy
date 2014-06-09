@@ -82,7 +82,13 @@ Touch.Collisions = function(module){
 }
 
 //Useless at the moment.
-Touch.Resolve = function(module){
-
+Touch.DragAndDrop = function(module){
+	module.mouseOffset = {"x":0, "y":0}
+	module.dragging = false;
+	//Add the actual event.
+	module.addEvent("mousedown", function(_clipBoard){
+		module.mouseOffset.x = module.bounds.x - _clipBoard.mousex;
+		module.mouseOffset.y = module.bounds.y - _clipBoard.mousey;
+	});
 }
 
