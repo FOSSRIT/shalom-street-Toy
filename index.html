@@ -14,6 +14,9 @@
 		<script type="text/javascript" src="components/playArea.js" ></script>
 		<script type="text/javascript" src="components/toybox.js" ></script>
 		<script type="text/javascript" src="components/toyboxTab.js" ></script>
+		<script type="text/javascript" src="components/currentState.js" ></script>
+		<script type="text/javascript" src="components/splashScreen.js" ></script>
+		
 		<!--Extensions-->
 		<script type="text/javascript" src="extensions/touch.js" ></script>
 	
@@ -29,8 +32,6 @@
 				document.getElementById("main").style.width="100%";
 				//create and add elements
 				manager = Manager();
-				playArea = PlayArea(0,0,2*window.innerWidth/3,window.innerHeight);
-				toybox = ToyBox(2*window.innerWidth/3,0,window.innerWidth/3,window.innerHeight);
 				manager.init(canvas, ctx);
 				
 
@@ -38,12 +39,56 @@
 					manager.draw();
 				});
 				
-				//The two main areas of our app inside of the canvas.
-				manager.addModule(playArea);
-				manager.addModule(toybox);
+				currentState = CurrentState();
+				manager.addModule(currentState);
 				
-				//create objects
+				//Load up the splash screen.
+				sc = SplashScreen(0,0,window.innerWidth, window.innerHeight);
+				currentState.addModule(sc);
+				testSprite = new Sprite();
+				sc.addModule(testSprite);
+				
+				testSprite.addEvent("mousedown", function(_clipBoard){
+					switchState("characterBuilder");
+					_clipBoard.ToFire = ["redraw"];
+				},false);
+				
+
+				
+
+				// dev1.addEvent("mousedown", function(_clipBoard){
+				// 	_clipBoard.ToFire = ["swapComponent"];
+				// 	_clipBoard.Body = {"image":"images/dev/_01.png", "slot":"body"}
+				// }, false);
+
+				// dev3.addEvent("mousedown", function(_clipBoard){
+				// 	_clipBoard.ToFire = ["swapComponent"];
+				// 	_clipBoard.Body = {"image":"images/dev/_03.png", "slot":"body"}
+				// }, false);
+
+				// dev2.addEvent("mousedown", function(_clipBoard){
+				// 	_clipBoard.ToFire = ["swapComponent"];
+				// 	_clipBoard.Body = {"image":"images/dev/_02.png", "slot":"head"}
+				// }, false);
+
+				// dev4.addEvent("mousedown", function(_clipBoard){
+				// 	_clipBoard.ToFire = ["swapComponent"];
+				// 	_clipBoard.Body = {"image":"images/dev/_04.png", "slot":"head"}
+				// }, false);
+
+				
+				
+				//\toy.addEvent("mouseup", function(_clipBoard){ alert("hi, I'm Esther!"); }, false);
+			}
+			function createTabs(){
+				//TEMP DEV TABS
+				//the tabs themselves
+				var devTab1 = Sprite(0, 0, 128, 128, "images/dev/tab1.png");
+				var devTab2 = Sprite(128, 0, 128, 128, "images/dev/tab2.png");
+				var devTab3 = Sprite(256, 0, 128, 128, "images/dev/tab3.png");
+			
 				//Toybox tabs.
+				//the components inside each tab
 				var tab1 = ToyBoxTab(0, 128, toybox.bounds.width, toybox.bounds.height - 128, "head");
 					//Components in side of a tab
 					tab1.addOption(Sprite(0, 0, 128, 128, "images/Esther sets/Esther-1/esther-set-1-02.png"), "images/Esther sets/Esther-1/esther-set-1-02.png");
@@ -64,29 +109,17 @@
 					tab3.addOption(Sprite(0, 128, 128, 128, "images/dev/_07.png"), "images/dev/_07.png");
 					tab3.addOption(Sprite(128, 128, 128, 128, "images/dev/_08.png"), "images/dev/_08.png");
 					toybox.addModule(tab3);
-				
-				//TEMP DEV TABS
-				var devTab1 = Sprite(0, 0, 128, 128, "images/dev/tab1.png");
-				var devTab2 = Sprite(128, 0, 128, 128, "images/dev/tab2.png");
-				var devTab3 = Sprite(256, 0, 128, 128, "images/dev/tab3.png");
-				
-				//TEMP DEV TOY TEST
-				// ADD MODULES
-					var toy = CharacterSkeleton(200, 150, 234, 400);
-					//visual test of character skeleton
-					playArea.addModule(toy);
-					//TEMP DEV SPRITE SET UP FOR TOY
-					toy.setSlot("head", Sprite());
-					toy.setSlot("body", Sprite());
-					toy.setSlot("feet", Sprite());
+					
 					//specific to toybox -- TEMP DEV
+					//add all the things we just created to the toybox module
 					toybox.addModule(devTab1);
 					toybox.addModule(devTab2);
 					toybox.addModule(devTab3);
 					toybox.addModule(tab1);
 					toybox.addModule(tab2);
 					toybox.addModule(tab3);
-
+					
+					
 				//DEV adding events
 				devTab1.addEvent("mousedown", function(_clipBoard){ 
 					tab1.select();
@@ -111,30 +144,67 @@
 					tab3.select();
 					manager.draw();
 				}, false);
-
-				// dev1.addEvent("mousedown", function(_clipBoard){
-				// 	_clipBoard.ToFire = ["swapComponent"];
-				// 	_clipBoard.Body = {"image":"images/dev/_01.png", "slot":"body"}
-				// }, false);
-
-				// dev3.addEvent("mousedown", function(_clipBoard){
-				// 	_clipBoard.ToFire = ["swapComponent"];
-				// 	_clipBoard.Body = {"image":"images/dev/_03.png", "slot":"body"}
-				// }, false);
-
-				// dev2.addEvent("mousedown", function(_clipBoard){
-				// 	_clipBoard.ToFire = ["swapComponent"];
-				// 	_clipBoard.Body = {"image":"images/dev/_02.png", "slot":"head"}
-				// }, false);
-
-				// dev4.addEvent("mousedown", function(_clipBoard){
-				// 	_clipBoard.ToFire = ["swapComponent"];
-				// 	_clipBoard.Body = {"image":"images/dev/_04.png", "slot":"head"}
-				// }, false);
-
-				toybox.addEvent("changeTab", function(_clipBoard){ alert("change to tab: " + _clipBoard.tabChange.source); }, false);
+			}
+			function createPlayArea(){
+				playArea = PlayArea(0,0,2*window.innerWidth/3,window.innerHeight);
+				currentState.addModule(playArea);
+				
+				//TEMP DEV TOY TEST
+					// ADD MODULES
+						var toy = CharacterSkeleton(200, 150, 234, 400);
+						//visual test of character skeleton
+						playArea.addModule(toy);
+						//TEMP DEV SPRITE SET UP FOR TOY
+						toy.setSlot("head", Sprite());
+						toy.setSlot("body", Sprite());
+						toy.setSlot("feet", Sprite());
+						
+						testSprite = new Sprite();
+						playArea.addModule(testSprite);
+				
+						testSprite.addEvent("mousedown", function(_clipBoard){
+							switchState("splashScreen");
+							_clipBoard.ToFire = ["redraw"];
+					
+						},false);
+						
+				//Add events
 				toy.addEvent("swapComponent", function(_clipBoard){ toy.setSlot(_clipBoard.ComponentSwap.slot, _clipBoard.ComponentSwap.image); }, false);
-				//\toy.addEvent("mouseup", function(_clipBoard){ alert("hi, I'm Esther!"); }, false);
+			}
+			function createToyBox(){
+				toybox = ToyBox(2*window.innerWidth/3,0,window.innerWidth/3,window.innerHeight);
+				currentState.addModule(toybox);
+				createTabs();
+				
+				//Add events
+				toybox.addEvent("changeTab", function(_clipBoard){ alert("change to tab: " + _clipBoard.tabChange.source); }, false);
+			}
+			function switchState(_state){
+				//Remove current state data
+				manager.removeModule(currentState);
+				currentState = CurrentState();
+				manager.addModule(currentState);
+				
+				//set current state = _state
+				if(_state == "splashScreen"){
+					sc = new SplashScreen(0,0,window.innerWidth, window.innerHeight);
+					currentState.addModule(sc);
+					testSprite = new Sprite();
+					sc.addModule(testSprite);
+					
+					testSprite.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("characterBuilder");
+					
+					},false);
+				
+				}else if(_state == "characterBuilder"){
+					//The two main areas of our app inside of the canvas.
+					createPlayArea();
+					createToyBox();
+				}else{
+				
+				}
 			}
 		window.onload = onLoad;
 		</script>
