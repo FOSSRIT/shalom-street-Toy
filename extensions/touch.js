@@ -151,7 +151,6 @@ Touch.DragAndDrop = function(module){
 	//
 	module.addEvent("mouseup", function(_clipBoard){
 		module.dragging = false;
-		alert("stopDrag")
 	}, false);
 }
 
