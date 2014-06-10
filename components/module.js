@@ -13,7 +13,7 @@ function Module(_x, _y, _width, _height){
 	//-------------------------------------------
 
 	//ToDo: Allow for null values.
-	_bounds = {"x": _x || 0, "y":_y || 0, "width":_width || 128, "height":_height || 128, };
+	_bounds = {"x": _x || 0, "y":_y || 0, "width":_width || 0, "height":_height || 0, };
 
 	_loaded = true; //We'll set this to false when necessary.
 	_contents = []; //Sub-modules.
