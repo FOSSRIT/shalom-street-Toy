@@ -3,6 +3,7 @@ function CurrentState(_x, _y, _width, _height){
 
 	var base = Module(_x, _y, _width, _height); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
+	Touch.Collisions(base);
 
 	//Modify public interface and add variables as necessary.
 	toReturn.draw = _draw;

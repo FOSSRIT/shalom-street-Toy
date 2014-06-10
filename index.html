@@ -182,7 +182,7 @@
 			function switchState(_state){
 				//Remove current state data
 				manager.removeModule(currentState);
-				currentState = CurrentState();
+				currentState = CurrentState(0, 0, 1920, 1080);
 				manager.addModule(currentState);
 				
 				//set current state = _state
