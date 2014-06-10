@@ -61,8 +61,15 @@ function Manager() {
 
 		for(var i=0; i<toDraw.length; i++) {
 			var data = toDraw[i];
-			//Currently no support for spritesheets.
-			ctx.drawImage(data.image, 0, 0, data.image.width, data.image.height, data.x - data.originX, data.y - data.originY, data.width, data.height);
+			if(data.image) { //If it's an image.
+				//Currently no support for spritesheets.
+				ctx.drawImage(data.image, 0, 0, data.image.width, data.image.height, data.x - data.originX, data.y - data.originY, data.width, data.height);
+			} else if(data.text) { //If it's text.
+				ctx.font = data.font;
+				console.log(data);
+				ctx.fillText(data.text, data.x - data.originX, data.y - data.originY);
+				//Text draws from the lower left hand corner.
+			}
 		}
 	}
 

@@ -48,8 +48,8 @@ function Module(_x, _y, _width, _height){
 	}
 
 	function _handleEvent(_eventString, _clipBoard) {
-		//If the event isn't blocked.
-		if(!toReturn.clipBoard.BlockEvents || toReturn.clipBoard.BlockEvents.indexOf(_eventString) !=-1) {
+		//If the event isn't blocked.  And if you're not set to block all events.
+		if((!toReturn.clipBoard.BlockEvents || toReturn.clipBoard.BlockEvents.indexOf(_eventString) !=-1) && !toReturn.interface.eventBlocked) {
 			//If the event exists.
 			if(toReturn.events[_eventString]) {
 
@@ -281,6 +281,9 @@ function Module(_x, _y, _width, _height){
 
 		"interface": {
 
+			//What is the type of the object?
+			"type":"module",
+
 			//Object with the dimensions and positions of the module.
 			//{x, y, width, height}
 			"bounds": _bounds,
@@ -289,8 +292,11 @@ function Module(_x, _y, _width, _height){
 			//False by default, should be set to true while initializing.
 			"loaded": _loaded,
 
-			//
+			//Whether or not to draw the module.
 			"visible": true,
+
+			//Whether or not to block all events.
+			"eventBlocked": false,
 
 			//Updates the module and all sub-modules.
 			/*
