@@ -135,18 +135,13 @@ Touch.DragAndDrop = function(module){
 		module.mouseOffset.x = _clipBoard.mousex;
 		module.mouseOffset.y = _clipBoard.mousey;
 		module.dragging = true;
-		console.log("startDrag: " + _clipBoard.prevMousex);
 	}, false);
 	//
 	module.addEvent("mousemove", function(_clipBoard){
 		if(module.dragging) {
-			//module.interface.bounds.x += _clipBoard.mousex - module.mouseOffset.x;// + module.interface.bounds.x//module.mouseOffset.x// + module.interface.bounds.x
-			console.log(_clipBoard.prevMousex + " " + _clipBoard.mousex);
+
 			module.interface.bounds.x = _clipBoard.prevMousex - module.mouseOffset.x;
 			module.interface.bounds.y = _clipBoard.prevMousey - module.mouseOffset.y;
-			console.log("target position: " + _clipBoard.prevMousex + ", at: " + module.interface.bounds.x + ".  Offset: " + module.mouseOffset.x);
-			//module.interface.bounds.x += _clipBoard.mousex - module.lastMouse.x;
-			//module.interface.bounds.y += _clipBoard.mousey - module.lastMouse.y;
 			module.lastMouse.y = _clipBoard.mousey;
 			module.lastMouse.x = _clipBoard.mousex;
 			//module.interface.bounds.y = _clipBoard.mousey// + module.interface.bounds.y//module.mouseOffset.y// + module.interface.bounds.y

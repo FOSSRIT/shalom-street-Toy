@@ -9,7 +9,7 @@
 
 
 //Sprite is what we'll actually call.
-function Sprite(_x, _y, _width, _height, _imageSource) {
+function Sprite(_x, _y, _width, _height, _imageSource, _xOrigin, _yOrigin) {
 
 
 	//------------------------------INIT/VARIABLES-----------------------------
@@ -73,12 +73,14 @@ function Sprite(_x, _y, _width, _height, _imageSource) {
 			return [];
 		}
 	}
-	function _getData(){ return {"image":image, "x":toReturn.bounds.x, "y":toReturn.bounds.y, "width":toReturn.bounds.width, "height":toReturn.bounds.height }; }
+	function _getData(){ return {"image":image, "x":toReturn.bounds.x, "y":toReturn.bounds.y, "width":toReturn.bounds.width, "height":toReturn.bounds.height, "originX":toReturn.origin.x, "originY":toReturn.origin.y }; }
 
 
 
 	//---------Modified public interface----------------------------
 
+	//Contains the origin of the sprite.
+	toReturn.origin = {"x":_xOrigin || 0, "y":_yOrigin || 0}
 	//set the source image of the sprite.
 	/*
 	image: img

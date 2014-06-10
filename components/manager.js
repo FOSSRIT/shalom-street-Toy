@@ -62,7 +62,7 @@ function Manager() {
 		for(var i=0; i<toDraw.length; i++) {
 			var data = toDraw[i];
 			//Currently no support for spritesheets.
-			ctx.drawImage(data.image, 0, 0, data.image.width, data.image.height, data.x, data.y, data.width, data.height);
+			ctx.drawImage(data.image, 0, 0, data.image.width, data.image.height, data.x - data.originX, data.y - data.originY, data.width, data.height);
 		}
 	}
 
