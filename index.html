@@ -14,6 +14,7 @@
 		<script type="text/javascript" src="components/playArea.js" ></script>
 		<script type="text/javascript" src="components/toybox.js" ></script>
 		<script type="text/javascript" src="components/toyboxTab.js" ></script>
+		<script type="text/javascript" src="components/textbox.js"></script>
 		<!--Extensions-->
 		<script type="text/javascript" src="extensions/touch.js" ></script>
 	
@@ -31,6 +32,7 @@
 				manager = Manager();
 				playArea = PlayArea(0,0,2*window.innerWidth/3,window.innerHeight);
 				toybox = ToyBox(2*window.innerWidth/3,0,window.innerWidth/3,window.innerHeight);
+				playArea.addModule(TextBox(0, 40, 20, 20, "hello there", 10, 10));
 				manager.init(canvas, ctx);
 				
 

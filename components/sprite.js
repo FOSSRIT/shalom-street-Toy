@@ -73,7 +73,17 @@ function Sprite(_x, _y, _width, _height, _imageSource, _xOrigin, _yOrigin) {
 			return [];
 		}
 	}
-	function _getData(){ return {"image":image, "x":toReturn.bounds.x, "y":toReturn.bounds.y, "width":toReturn.bounds.width, "height":toReturn.bounds.height, "originX":toReturn.origin.x, "originY":toReturn.origin.y }; }
+	function _getData(){ 
+		return {
+			"image":image, 
+			"x":toReturn.bounds.x, 
+			"y":toReturn.bounds.y, 
+			"width":toReturn.bounds.width, 
+			"height":toReturn.bounds.height, 
+			"originX":toReturn.origin.x, 
+			"originY":toReturn.origin.y 
+		}; 
+	}
 
 
 

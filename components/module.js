@@ -281,6 +281,9 @@ function Module(_x, _y, _width, _height){
 
 		"interface": {
 
+			//What is the type of the object?
+			"type":"module",
+
 			//Object with the dimensions and positions of the module.
 			//{x, y, width, height}
 			"bounds": _bounds,
