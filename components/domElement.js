@@ -6,9 +6,35 @@ function domWrapper(_domElement){
 	var toReturn = base.interface;
 	toReturn.loaded = false;
 
+	//Some init.
+
+	if(_domElement != undefined){
+		var _dom = _domElement;
+	} else {
+		alert("attempt to create dom wrapper around undefined.  Fatal error.");
+	}
+
+	//-------------DOM controls------------------
+
+	function _setDom(_domElement){
+		if(_domElement != undefined){
+		 	_dom = _domElement
+		} else {
+			alert("attempt to create dom wrapper around undefined.  Fatal error.");
+		}
+	}
+
+
+	function _draw(){
+		if(toReturn.visible){
+			_domElement.style.visibility="visible";
+		} else {
+			_domElement.style.visibility="hidden";
+		}
+	}
+
 	//-------------Public interfaces-------------
-	//Throw an error if you do something stupid.
-	toReturn.domElement = _domElement;
+
 
 }
 
