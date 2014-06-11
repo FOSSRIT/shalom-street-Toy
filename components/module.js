@@ -119,18 +119,9 @@ function Module(_x, _y, _width, _height){
 						toReturn.events[_toFire[i]].call[j](_clipBoard); //May still have errors.
 					}
 				}
-
-				if(toReturn.interface.type === "Toybox" && _toFire[i] === "swapComponent"){
-					console.log("stop");
-				}
-
 				//Fire off to everyone else except _returnFrom
 				for(j= 0; j<toReturn.contents.length; j++){
 					if(toReturn.contents[j] != _returnFrom){ //Not the same module.
-
-						if(toReturn.interface.type === "CurrentState" && _toFire[i] == "swapComponent"){
-							console.log("fire off here!!!!");
-						}
 						//Fire off if not blocked.
 						if(!toReturn.clipBoard.BlockEvents || toReturn.clipBoard.BlockEvents.indexOf(_toFire[i]) != -1){
 							toReturn.contents[j].handleEvent(_toFire[i], _clipBoard);
@@ -146,6 +137,11 @@ function Module(_x, _y, _width, _height){
 	//--------------------------------------------
 
 	function _addModule(_object, _position) {
+
+		if(_object.type == "DomWrapper") { 
+			console.log("I'm adding a domWrapper");
+		}
+
 		//There's a heck of a lot more that needs to go
 		//in this method.  I think.
 		_object.setLoad(_onSubLoad); //Add it to loading queue.

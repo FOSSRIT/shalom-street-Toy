@@ -17,6 +17,7 @@
 		<script type="text/javascript" src="components/currentState.js" ></script>
 		<script type="text/javascript" src="components/splashScreen.js" ></script>
 		<script type="text/javascript" src="components/textbox.js"></script>
+		<script type="text/javascript" src="components/domElement.js"></script>
 		<!--Extensions-->
 		<script type="text/javascript" src="extensions/touch.js" ></script>
 	
@@ -41,6 +42,11 @@
 				
 				currentState = CurrentState(0, 0, 1920, 1080);
 				manager.addModule(currentState);
+
+				var domElementThing = DomWrapper(document.getElementById("myDomObject"));
+					
+				domElementThing.visible = true;
+				manager.addModule(domElementThing);
 				
 				//Load up the splash screen.
 				sc = SplashScreen(0,0,window.innerWidth, window.innerHeight);
@@ -171,6 +177,7 @@
 				
 				//set current state = _state
 				if(_state == "splashScreen"){
+
 					sc = new SplashScreen(0,0,window.innerWidth, window.innerHeight);
 					currentState.addModule(sc);
 					testSprite = new Sprite();
@@ -199,6 +206,7 @@
 
 	<!--Main app-->
 	<body>
+		<div id="myDomObject">HELLO HELLO HELLO</div>
 		<!--Canvas is width and height of the screen.-->
 		<!--We'll need to set this stuff up so it goes full screen I guess.-->
 		

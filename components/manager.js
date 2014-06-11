@@ -36,7 +36,6 @@ function Manager() {
 		canvas.onmouseup = function(e){ base.handleEvent("mouseup", { "eventType":"mouseup", "mousex":e.offsetX, "mousey": e.offsetY}); };
 		canvas.onmousemove = function(e){ base.handleEvent("mousemove", { "eventType":"mousemove", "mousex":e.offsetX, "mousey": e.offsetY}); };
 
-
 		base.addEvent("redraw", function(_clipBoard){ _draw(); }, false);
 		//_tick();
 	}
@@ -50,6 +49,7 @@ function Manager() {
 	//Currently, very ineficient, but does allow for future expansion.
 	function _draw(){
 
+		console.log('starting draw');
 		//Clear the screen.
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		//Loop through all objects and get list of sprites from them to return.
