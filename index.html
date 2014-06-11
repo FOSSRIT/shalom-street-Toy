@@ -29,11 +29,17 @@
 				canvas = document.getElementById("main");
 				ctx = canvas.getContext("2d");
 				//Make the canvas full screen
-				document.getElementById("main").style.height="100%";
-				document.getElementById("main").style.width="100%";
+
+				var wantedHeightProp = window.innerHeight / 1080;
+				var wantedWidthProp = window.innerWidth / 1920;
+				var scale = (wantedHeightProp < wantedWidthProp)? wantedHeightProp : wantedWidthProp;
+
+				canvas.style.height = 1080 * scale;
+				canvas.style.width = 1920 * scale;
+
 				//create and add elements
 				manager = Manager();
-				manager.init(canvas, ctx);
+				manager.init(canvas, ctx, 1/scale);
 				
 
 				manager.setLoad(function(){
@@ -49,7 +55,7 @@
 				manager.addModule(domElementThing);
 				
 				//Load up the splash screen.
-				sc = SplashScreen(0,0,window.innerWidth, window.innerHeight);
+				sc = SplashScreen(0,0,1920, 1080);
 				currentState.addModule(sc);
 				testSprite = new Sprite();
 				sc.addModule(testSprite);
@@ -133,7 +139,7 @@
 				}, false);
 			}
 			function createPlayArea(){
-				playArea = PlayArea(0,0,2*window.innerWidth/3,window.innerHeight);
+				playArea = PlayArea(0,0,2*1920/3,1080);
 				currentState.addModule(playArea);
 				
 				//TEMP DEV TOY TEST
@@ -164,7 +170,7 @@
 				}, false);
 			}
 			function createToyBox(){
-				toybox = ToyBox(2*window.innerWidth/3,0,window.innerWidth/3,window.innerHeight);
+				toybox = ToyBox(2*1920/3,0,1920/3,1080);
 				currentState.addModule(toybox);
 				createTabs();
 				
@@ -178,7 +184,7 @@
 				//set current state = _state
 				if(_state == "splashScreen"){
 
-					sc = new SplashScreen(0,0,window.innerWidth, window.innerHeight);
+					sc = new SplashScreen(0,0,1920, 1080);
 					currentState.addModule(sc);
 					testSprite = new Sprite();
 					sc.addModule(testSprite);
