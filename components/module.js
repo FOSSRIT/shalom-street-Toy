@@ -138,22 +138,22 @@ function Module(_x, _y, _width, _height){
 
 	function _addModule(_object, _position) {
 
-		if(_object.type == "DomWrapper") { 
-			console.log("I'm adding a domWrapper");
-		}
+		if(_object !== undefined) {
+			//There's a heck of a lot more that needs to go
+			//in this method.  I think.
+			_object.setLoad(_onSubLoad); //Add it to loading queue.
+			if(_position != undefined){
+				toReturn.contents.splice(_position, 0, _object)
+			}else{
+				toReturn.contents.push(_object);
+			}
 
-		//There's a heck of a lot more that needs to go
-		//in this method.  I think.
-		_object.setLoad(_onSubLoad); //Add it to loading queue.
-		if(_position != undefined){
-			toReturn.contents.splice(_position, 0, _object)
-		}else{
-			toReturn.contents.push(_object);
+			//If it's already loaded, fire event in response
+			//and tell us if manager is loaded.
+			if(_object.loaded) _onSubLoad();
+		} else {
+			alert("attempt to add undefined as a sub-module using addModule(_module, optional_position).  Fatal error.")
 		}
-
-		//If it's already loaded, fire event in response
-		//and tell us if manager is loaded.
-		if(_object.loaded) _onSubLoad();
 	}
 
 	function _removeModule(_object){
