@@ -47,6 +47,8 @@ function Module(_x, _y, _width, _height){
 		_onLoaded = _function; _contextOnLoaded = _ctx;
 	}
 
+
+
 	function _handleEvent(_eventString, _clipBoard) {
 		//If the event isn't blocked.  And if you're not set to block all events.
 		if((!toReturn.clipBoard.BlockEvents || toReturn.clipBoard.BlockEvents.indexOf(_eventString) !=-1) && !toReturn.interface.eventBlocked) {
@@ -64,6 +66,7 @@ function Module(_x, _y, _width, _height){
 					//You can handle passing the event down and managing the clipboard in all likelyhood - bubble is mostly for automation's sake.
 					
 					toReturn.events[_eventString].call[i](_clipBoard);
+
 				}
 			}
 
@@ -76,39 +79,68 @@ function Module(_x, _y, _width, _height){
 				(toReturn.events[_eventString] && toReturn.events[_eventString].bubble)) 
 			{
 				//Pass the event on.
-				for(i=0; i<toReturn.contents.length; i++) {
+				var fireList = _clipBoard.ToFire || [];
+				for(var j=0; j<toReturn.contents.length; j++) {
 					//To all of the children.
-					toReturn.contents[i].handleEvent(_eventString, _clipBoard);
+					toReturn.contents[j].handleEvent(_eventString, _clipBoard);
+
+					//-------------HANDLE TOFIRE-------------------------------
+
+					fireList = _handleToFire(toReturn.contents[j], fireList, _clipBoard);
+
 				}
+
+				//Set _clipBoard.ToFire
+				_clipBoard.ToFire = fireList;
 			}
 
-			//Now that the event has been fired off, check the clipboard to see if anything else needs to be fired off.
-			if(_clipBoard.ToFire) {
-				for(i=0; i<_clipBoard.ToFire.length; i++) { //For each event to fire.
-					//Fire it off in this context if necessary.
-					if(toReturn.events[_clipBoard.ToFire[i]]){
-						for(var k=0; k<toReturn.events[_clipBoard.ToFire[i]].call.length; k++) {
-							toReturn.events[_clipBoard.ToFire[i]].call[k](_clipBoard); //May still have some errors.
-						}
-					}
-					//ToDo:
-					//Re-fire it off for sub-objects.
-					for(var j=0; j<toReturn.contents.length; j++) { //For each object.
-						//Fire it off if it isn't blocked.
-						//ToDo: Think about this - should it be reading from _clipBoard for blocked events?  When should ClipBoard be set?
-						if(!toReturn.clipBoard.BlockEvents || toReturn.clipBoard.BlockEvents.indexOf(_eventString) !=-1) {
-							toReturn.contents[j].handleEvent(_clipBoard.ToFire[i], _clipBoard);
-						}
-					}
-				}
-			}
+			//---------------END HANDLE TOFIRE-----------------------------
+		}
 
 			//Now that we've finished that off, check to see if the clipboard should be cleared.
-			if(!_clipBoard.Preserve) { _clipBoard = {}; }
-		}
+			//if(!_clipBoard.Preserve) { _clipBoard = {}; }
 
 		return _clipBoard;//If we modified it, we modified it.  Otherwise, just have your data back.
 		//Todo: make a way to clear the clipboard as necessary.
+	}
+
+	function _handleToFire(_returnFrom, _fireArray, _clipBoard){
+
+		var _toFire = _clipBoard.ToFire;
+		_clipBoard.ToFire = [];
+		_fireArray = _fireArray.concat(_toFire);
+
+		if(_toFire != undefined) {
+			for (var i=0; i<_toFire.length; i++){
+
+				//if necessary, fire it off in this context.
+				if(toReturn.events[_toFire[i]]) {
+					for(var j=0; j<toReturn.events[_toFire[i]].call.length; j++) {
+						toReturn.events[_toFire[i]].call[j](_clipBoard); //May still have errors.
+					}
+				}
+
+				if(toReturn.interface.type === "Toybox" && _toFire[i] === "swapComponent"){
+					console.log("stop");
+				}
+
+				//Fire off to everyone else except _returnFrom
+				for(j= 0; j<toReturn.contents.length; j++){
+					if(toReturn.contents[j] != _returnFrom){ //Not the same module.
+
+						if(toReturn.interface.type === "CurrentState" && _toFire[i] == "swapComponent"){
+							console.log("fire off here!!!!");
+						}
+						//Fire off if not blocked.
+						if(!toReturn.clipBoard.BlockEvents || toReturn.clipBoard.BlockEvents.indexOf(_toFire[i]) != -1){
+							toReturn.contents[j].handleEvent(_toFire[i], _clipBoard);
+						}
+					}
+				}
+			}
+		}
+
+		return _fireArray;
 	}
 
 	//--------------------------------------------
@@ -257,6 +289,12 @@ function Module(_x, _y, _width, _height){
 
 		*/
 		"handleEvent":_handleEvent,
+
+		//
+		/*
+
+		*/
+		"handleToFire":_handleToFire,
 
 
 		//Sets a function to be fired off when the module has finished loading.

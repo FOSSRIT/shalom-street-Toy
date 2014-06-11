@@ -18,12 +18,14 @@ function ToyBox(_x, _y, _width, _height) {
 
 	var base = Module(_x, _y, _width, _height); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
+	toReturn.type = "Toybox"
 
 	//Modify public interface and add variables as necessary.
 	toReturn.draw = _draw;
 	var tabs = [];
 	Touch.Collisions(base);
 
+	base.addEvent("swapComponent", function(){ console.log("Toybox recieved swapComponent");}, false)
 
 
 
@@ -49,7 +51,7 @@ function ToyBox(_x, _y, _width, _height) {
 
 	//list of tabs in the tab section.
 	var _tabs = [
-		
+
 	];
 	var _currentlySelectedTab; // the tab that is currently selected
 	var _componentsContents = []; //list of components in the component section. these should be changed depending on what tab is selected.

@@ -25,6 +25,7 @@ Touch.events = [
 	"touchbegin",
 	"touchend",
 	"touchover"
+	//"mousemove"
 ]
 
 Touch.passAll = [
@@ -45,7 +46,7 @@ Touch.Base = function(module){
 				_clipBoard.mousex -= module.contents[j].bounds.x;
 				_clipBoard.mousey -= module.contents[j].bounds.y;
 				//Pass down the function.
-				module.contents[j].handleEvent("", _clipBoard);
+				module.contents[j].handleEvent("", _clipBoard); //I think this is broken?  We don't use it anywhere.
 				//Fix the clipboard so that the process can be repeated.
 				_clipBoard.mousex -= module.contents[j].bounds.x;
 				_clipBoard.mousey -= module.contents[j].bounds.y;
@@ -62,6 +63,10 @@ Touch.Collisions = function(module){
 		module.addEvent(eventToAdd, function(_clipBoard){ 
 			//When recieving a touch event, loop through other events, and if applicable, send the event to them.
 			//Update their clipBoard with the correct info.
+
+			//Handle toFire at the end.
+			var _finalToFire = [];
+
 			for(var j=0; j<module.contents.length; j++) {
 				//Only click on visible modules.
 				if(module.contents[j].visible) {
@@ -85,12 +90,18 @@ Touch.Collisions = function(module){
 
 						//Pass down the function.
 						module.contents[j].handleEvent(_clipBoard.eventType, _clipBoard);
+						//Handle toFire
+						_finalToFire = module.handleToFire(module.contents[j], _finalToFire, _clipBoard);
 						//Fix the clipboard so that the process can be repeated.
 						_clipBoard.mousex = prevMousex;
 						_clipBoard.mousey = prevMousey;
 					}
 				}
 			}
+
+			//Set ToFire to be correct again.
+			_clipBoard.ToFire = _finalToFire;
+
 		}, false /*don't bubble event, we're handling that*/);
 	}
 
@@ -101,24 +112,39 @@ Touch.Collisions = function(module){
 		module.addEvent(eventToAdd, function(_clipBoard){ 
 			//When recieving a touch event, loop through other events, and if applicable, send the event to them.
 			//Update their clipBoard with the correct info.
+
+			//Handle toFire at the end.
+			var _finalToFire = [];
+
 			for(var j=0; j<module.contents.length; j++) {
 
-				//Link to the outer world.
-				var prevMousex = _clipBoard.mousex;
-				var prevMousey = _clipBoard.mousey;
-				//
-				_clipBoard.prevMousex = prevMousex;
-				_clipBoard.prevMousey = prevMousey;
-				//Update stuff.
-				_clipBoard.mousex -= module.contents[j].bounds.x;
-				_clipBoard.mousey -= module.contents[j].bounds.y;
+				if(module.contents[j].visible) {
 
-				//Pass down the function.
-				module.contents[j].handleEvent(_clipBoard.eventType, _clipBoard);
-				//Fix the clipboard so that the process can be repeated.
-				_clipBoard.mousex = prevMousex;
-				_clipBoard.mousey = prevMousey;
+					//Link to the outer world.
+					var prevMousex = _clipBoard.mousex;
+					var prevMousey = _clipBoard.mousey;
+					//
+					_clipBoard.prevMousex = prevMousex;
+					_clipBoard.prevMousey = prevMousey;
+					//Update stuff.
+					_clipBoard.mousex -= module.contents[j].bounds.x;
+					_clipBoard.mousey -= module.contents[j].bounds.y;
+
+					//Pass down the function.
+					module.contents[j].handleEvent(_clipBoard.eventType, _clipBoard);
+
+					//Handle toFire
+					_finalToFire = module.handleToFire(module.contents[j], _finalToFire, _clipBoard);
+
+					//Fix the clipboard so that the process can be repeated.
+					_clipBoard.mousex = prevMousex;
+					_clipBoard.mousey = prevMousey;
+				}
 			}
+
+			//Set ToFire to be correct again.
+			_clipBoard.ToFire = _finalToFire;
+
 		}, false /*don't bubble event, we're handling that*/);
 	}
 }
@@ -135,6 +161,7 @@ Touch.DragAndDrop = function(module){
 		module.mouseOffset.x = _clipBoard.mousex;
 		module.mouseOffset.y = _clipBoard.mousey;
 		module.dragging = true;
+		console.log("startDrag");
 	}, false);
 	//
 	module.addEvent("mousemove", function(_clipBoard){

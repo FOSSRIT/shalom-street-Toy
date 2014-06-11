@@ -17,11 +17,13 @@ function Sprite(_x, _y, _width, _height, _imageSource, _xOrigin, _yOrigin) {
 	var base = Module(_x, _y, _width, _height); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.loaded = false; //Images don't start out loaded.
+	toReturn.type = "Sprite"
 
 
 
 	var image = new Image(); //Images are a thing here.
 	image.src = _imageSource || "images/error.png";
+	toReturn.events = base.events;
 
 	//--------------------------INTERNAL------------------------------------
 
