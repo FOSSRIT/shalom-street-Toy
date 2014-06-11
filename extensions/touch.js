@@ -153,19 +153,19 @@ Touch.Collisions = function(module){
 Touch.DragAndDrop = function(module){
 	module.mouseOffset = {"x":0, "y":0}
 	module.lastMouse = {"x":0, "y":0}
-	module.dragging = false;
+	module.interface.dragging = false;
 	//Add the actual event.
 	module.addEvent("mousedown", function(_clipBoard){
 		module.lastMouse.x = _clipBoard.mousex;
 		module.lastMouse.y = _clipBoard.mousey;
 		module.mouseOffset.x = _clipBoard.mousex;
 		module.mouseOffset.y = _clipBoard.mousey;
-		module.dragging = true;
+		module.interface.dragging = true;
 		console.log("startDrag");
 	}, false);
 	//
 	module.addEvent("mousemove", function(_clipBoard){
-		if(module.dragging) {
+		if(module.interface.dragging) {
 
 			module.interface.bounds.x = _clipBoard.prevMousex - module.mouseOffset.x;
 			module.interface.bounds.y = _clipBoard.prevMousey - module.mouseOffset.y;
@@ -177,7 +177,7 @@ Touch.DragAndDrop = function(module){
 	}, false);
 	//
 	module.addEvent("mouseup", function(_clipBoard){
-		module.dragging = false;
+		module.interface.dragging = false;
 	}, false);
 }
 

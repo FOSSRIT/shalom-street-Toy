@@ -48,8 +48,6 @@ function Manager() {
 
 	//Currently, very ineficient, but does allow for future expansion.
 	function _draw(){
-
-		console.log('starting draw');
 		//Clear the screen.
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		//Loop through all objects and get list of sprites from them to return.
