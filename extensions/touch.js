@@ -33,28 +33,6 @@ Touch.passAll = [
 	"touchmove"
 ]
 
-//Adds in events and sets them to bubble downward modified for the coordinate system of where they're bubbling down to.
-Touch.Base = function(module){
-	for(var i=0; i<Touch.events.length; i++){
-		//Add the events.
-		module.addEvent(Touch.events, function(_clipBoard){ 
-			//When recieving a touch event, loop through other events, and if applicable, send the event to them.
-			//Update their clipBoard with the correct info.
-			for(var j=0; j<module.contents.length; j++) {
-
-				//Update
-				_clipBoard.mousex -= module.contents[j].bounds.x;
-				_clipBoard.mousey -= module.contents[j].bounds.y;
-				//Pass down the function.
-				module.contents[j].handleEvent("", _clipBoard); //I think this is broken?  We don't use it anywhere.
-				//Fix the clipboard so that the process can be repeated.
-				_clipBoard.mousex -= module.contents[j].bounds.x;
-				_clipBoard.mousey -= module.contents[j].bounds.y;
-			}
-		}, false /*don't bubble event, we're handling that*/);
-	}
-}
-
 //Adds in events and sets them to bubble downward if they're colliding with sub-modules.
 Touch.Collisions = function(module){
 	for(var i=0; i<Touch.events.length; i++){
