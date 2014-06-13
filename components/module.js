@@ -51,7 +51,7 @@ function Module(_x, _y, _width, _height){
 
 	function _handleEvent(_eventString, _clipBoard) {
 		//If the event isn't blocked.  And if you're not set to block all events.
-		if((!toReturn.clipBoard.BlockEvents || toReturn.clipBoard.BlockEvents.indexOf(_eventString) !=-1) && !toReturn.interface.eventBlocked) {
+		if((!toReturn.clipBoard.BlockEvents || toReturn.clipBoard.BlockEvents.indexOf(_eventString) !=-1) && toReturn.interface.recieveEvents) {
 			//If the event exists.
 			if(toReturn.events[_eventString]) {
 
@@ -150,7 +150,7 @@ function Module(_x, _y, _width, _height){
 
 			//If it's already loaded, fire event in response
 			//and tell us if manager is loaded.
-			if(_object.loaded) _onSubLoad();
+			if(_object.loaded) { _onSubLoad(); }
 		} else {
 			alert("attempt to add undefined as a sub-module using addModule(_module, optional_position).  Fatal error.")
 		}
@@ -330,7 +330,7 @@ function Module(_x, _y, _width, _height){
 			"visible": true,
 
 			//Whether or not to block all events.
-			"eventBlocked": false,
+			"recieveEvents": true,
 
 			//Updates the module and all sub-modules.
 			/*

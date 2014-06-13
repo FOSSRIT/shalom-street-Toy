@@ -33,9 +33,9 @@ function Sprite(_x, _y, _width, _height, _imageSource, _xOrigin, _yOrigin) {
 	var _fireOnLoad = undefined;
 	var _ctxForLoad = undefined;
 	function onImageLoad(){ 
+		toReturn.loaded = true;
 		if(_fireOnLoad != undefined){  //If there's anything to fire off.
 			//Fire off in proper context if you can, otherwise, just use the current context.
-			toReturn.loaded = true;
 			//If we don't have width and height set, set them.
 			if(toReturn.bounds.width === 0 && toReturn.bounds.height === 0) {
 				toReturn.bounds.width = image.width;

@@ -83,16 +83,18 @@ function CharacterSkeleton(_x, _y, _width, _height){
 		} else {
 			//Remove the past contents of the slot if it exists.
 			if(toReturn.slots[slot]){
-				toReturn.removeModule(sprite);
+				toReturn.removeModule(toReturn.slots[slot].sprite);
 			}//
+
+
+			base.addModule(sprite, toReturn.slots[slot].order);
 
 			toReturn.slots[slot].sprite = sprite;
 			sprite.bounds.x = toReturn.slots[slot].x;
 			sprite.bounds.y = toReturn.slots[slot].y;
+
 			//sprite.bounds.width = toReturn.slots[slot].width;
 			//sprite.bounds.height = toReturn.slots[slot].height;
-
-			base.addModule(sprite, toReturn.slots[slot].order);
 		}
 	}
 
