@@ -16,6 +16,8 @@
 		<script type="text/javascript" src="components/toyboxTab.js" ></script>
 		<script type="text/javascript" src="components/currentState.js" ></script>
 		<script type="text/javascript" src="components/splashScreen.js" ></script>
+		<script type="text/javascript" src="components/scenarioScreen.js" ></script>
+		<script type="text/javascript" src="components/Screen.js" ></script>
 		<script type="text/javascript" src="components/textbox.js"></script>
 		<script type="text/javascript" src="components/domElement.js"></script>
 		<!--Extensions-->
@@ -49,28 +51,22 @@
 					manager.draw();
 				});
 				
+				
 				currentState = CurrentState(0, 0, 1920, 1080);
 				manager.addModule(currentState);
-
+				/*
 				var domElementThing = DomWrapper(document.getElementById("myDomObject"));
 					
 				domElementThing.visible = true;
 				manager.addModule(domElementThing);
+				*/
 				
 				//Load up the splash screen.
-				sc = SplashScreen(0,0,1920, 1080);
-				currentState.addModule(sc);
-				testSprite = new Sprite();
-				sc.addModule(testSprite);
+				switchState("splashScreen");
 				
-				testSprite.addEvent("mousedown", function(_clipBoard){
-					switchState("characterBuilder");
-					_clipBoard.ToFire = ["redraw"];
-				},false);
 				
-
 				
-
+				
 				// dev1.addEvent("mousedown", function(_clipBoard){
 				// 	_clipBoard.ToFire = ["swapComponent"];
 				// 	_clipBoard.Body = {"image":"images/dev/_01.png", "slot":"body"}
@@ -78,6 +74,312 @@
 
 				
 				//\toy.addEvent("mouseup", function(_clipBoard){ alert("hi, I'm Esther!"); }, false);
+			}
+			function loadErrorScreen(){
+				sc = new SplashScreen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				//Splash Image
+				splashImage = Sprite(0,0,1920,1080, "images/dev/error.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				//Events
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+			}
+			function loadSplashScreen(){
+				sc = new SplashScreen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				//Splash Image
+				splashImage = Sprite(0,0,1920,1080, "images/dev/splashTest.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				//Events
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("scenarioScreen");
+				},false);
+			}
+			function loadScenarioScreen(){
+				sc = new ScenarioScreen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Dev Splash Image
+				splashImage = Sprite(0,0,1920,1080, "images/dev/scenarioScreen.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+				
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("detailedScenarioScreen");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+			}
+			function loadDetailedScenarioScreen(){
+				sc = new Screen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Dev Splash Image
+				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/detailedScenarioScreen.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("scenarioScreen");
+				},false);
+				
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("qualitiesScreen");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+			}
+			function loadQualitiesScreen(){
+				sc = new Screen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Dev Splash Image
+				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/qualitiesScreen.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("detailedScenarioScreen");
+				},false);
+				
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("characterBuilder");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+			}
+			function loadPowersScreen(){
+				sc = new Screen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Dev Splash Image
+				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/powersScreen.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("characterBuilder");
+				},false);
+				
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("characterBioScreen");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+			}
+			function loadCharacterBioScreen(){
+				sc = new Screen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Dev Splash Image
+				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/characterBioScreen.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("powersScreen");
+				},false);
+				
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("resultsScreen");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+			}
+			function loadResultsScreen(){
+				sc = new Screen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Dev Splash Image
+				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/resultsScreen.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("characterBioScreen");
+				},false);
+				
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("whyItWorkedScreen");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+			}
+			function loadWhyItWorkedScreen(){
+				sc = new Screen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Dev Splash Image
+				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/whyItWorkedScreen.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("resultsScreen");
+				},false);
+				
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("superPoseScreen");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+			}
+			function loadSuperPoseScreen(){
+				sc = new Screen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Dev Splash Image
+				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/superPoseScreen.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("whyItWorkedScreen");
+				},false);
+				
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
 			}
 			function createTabs(){
 				//TEMP DEV TABS
@@ -155,13 +457,30 @@
 						toy.setSlot("body", Sprite());
 						toy.setSlot("feet", Sprite());
 						
-						testSprite = new Sprite();
-						playArea.addModule(testSprite);
-				
-						testSprite.addEvent("mousedown", function(_clipBoard){
+						//Buttons
+						backButton = Sprite(playArea.bounds.x, playArea.bounds.height-128, 128, 128, "images/dev/back.png");
+						playArea.addModule(backButton);
+						
+						continueButton = Sprite(playArea.bounds.width-128, playArea.bounds.height-128, 128, 128, "images/dev/continue.png");
+						playArea.addModule(continueButton);
+						
+						quitButton = Sprite(playArea.bounds.x, playArea.bounds.y, 128, 128, "images/dev/quit.png");
+						playArea.addModule(quitButton);
+						
+						//Events
+						backButton.addEvent("mousedown", function(_clipBoard){
+							manager.removeModule(playArea);
+							switchState("qualitiesScreen");
+						},false);
+						
+						continueButton.addEvent("mousedown", function(_clipBoard){
+							manager.removeModule(playArea);
+							switchState("powersScreen");
+						},false);
+						
+						quitButton.addEvent("mousedown", function(_clipBoard){
+							manager.removeModule(playArea);
 							switchState("splashScreen");
-							_clipBoard.ToFire = ["redraw"];
-					
 						},false);
 						
 				//Add events
@@ -185,28 +504,21 @@
 				manager.addModule(currentState);
 				
 				//set current state = _state
-				if(_state == "splashScreen"){
-
-					sc = new SplashScreen(0,0,1920, 1080);
-					currentState.addModule(sc);
-					testSprite = new Sprite();
-					sc.addModule(testSprite);
-					
-					testSprite.addEvent("mousedown", function(_clipBoard){
-						
-					alert('hello');
-					manager.removeModule(sc);
-					switchState("characterBuilder");
-					
-					},false);
-					
-				
+				if(_state == "splashScreen"){loadSplashScreen();
+				}else if(_state == "scenarioScreen"){loadScenarioScreen();
+				}else if(_state == "detailedScenarioScreen"){loadDetailedScenarioScreen();
+				}else if(_state == "qualitiesScreen"){loadQualitiesScreen();
 				}else if(_state == "characterBuilder"){
 					//The two main areas of our app inside of the canvas.
 					createPlayArea();
 					createToyBox();
+				}else if(_state == "powersScreen"){loadPowersScreen();
+				}else if(_state == "characterBioScreen"){loadCharacterBioScreen();
+				}else if(_state == "resultsScreen"){loadResultsScreen();
+				}else if(_state == "whyItWorkedScreen"){loadWhyItWorkedScreen();
+				}else if(_state == "superPoseScreen"){loadSuperPoseScreen();
 				}else{
-				
+					loadErrorScreen();
 				}
 			}
 		window.onload = onLoad;
@@ -217,7 +529,7 @@
 
 	<!--Main app-->
 	<body>
-		<div id="myDomObject">HELLO HELLO HELLO</div>
+		<!--<div id="myDomObject">HELLO HELLO HELLO</div>-->
 		<!--Canvas is width and height of the screen.-->
 		<!--We'll need to set this stuff up so it goes full screen I guess.-->
 		
