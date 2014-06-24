@@ -33,7 +33,7 @@ function Manager() {
 		ctx = _ctx;
 		toReturn.scale = _scale;
 
-		canvas.onmousedown = function(e){ base.handleEvent("mousedown", { "eventType":"mousedown", "mousex":e.offsetX*toReturn.scale, "mousey": e.offsetY*toReturn.scale}); };
+		canvas.onmousedown = function(e){ base.handleEvent("mousedown", { "eventType":"mousedown", "mousex":(e.offsetX || e.)*toReturn.scale, "mousey": e.offsetY*toReturn.scale}); };
 		canvas.onmouseup = function(e){ base.handleEvent("mouseup", { "eventType":"mouseup", "mousex":e.offsetX*toReturn.scale, "mousey": e.offsetY*toReturn.scale}); };
 		canvas.onmousemove = function(e){ base.handleEvent("mousemove", { "eventType":"mousemove", "mousex":e.offsetX*toReturn.scale, "mousey": e.offsetY*toReturn.scale}); };
 
