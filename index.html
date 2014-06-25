@@ -27,6 +27,11 @@
 		<script>
 
 			var canvas, ctx, manager, playArea;
+			var superhero = {
+				"powers":[],
+				"skeleton":undefined,
+				"virtues":[]
+			}
 			function onLoad(){
 
 
@@ -250,6 +255,11 @@
 					manager.removeModule(sc);
 					switchState("splashScreen");
 				},false);
+
+
+				//When you click on a button, you can add a quality like so.
+				//superhero.virtues.push("quality");
+				//And reference it and all that good stuff like an array.
 			}
 			function loadPowersScreen(){
 				sc = new Screen(0,0,1920, 1080);
@@ -284,6 +294,10 @@
 					manager.removeModule(sc);
 					switchState("splashScreen");
 				},false);
+
+				//When you click on a button, you can add a power like so.
+				//superhero.powers.push("fire");
+				//And reference it and all that good stuff like an array.
 			}
 			function loadCharacterBioScreen(){
 				sc = new Screen(0,0,1920, 1080);
@@ -318,6 +332,8 @@
 					manager.removeModule(sc);
 					switchState("splashScreen");
 				},false);
+
+				//Assumably, you could also attach this to the superhero object.
 			}
 			function loadResultsScreen(){
 				sc = new Screen(0,0,1920, 1080);
@@ -489,47 +505,54 @@
 				
 				//TEMP DEV TOY TEST
 					// ADD MODULES
+					//Here we do our test for stuff.
+					if(superhero.skeleton === undefined){
 						var toy = CharacterSkeleton(200, 150, 234, 400);
-						//visual test of character skeleton
-						playArea.addModule(toy);
 						//TEMP DEV SPRITE SET UP FOR TOY
 						toy.setSlot("head", Sprite());
 						toy.setSlot("body", Sprite());
 						toy.setSlot("feet", Sprite());
-						
-						//Buttons
-						backButton = Sprite(playArea.bounds.x, playArea.bounds.height-128, 128, 128, "images/dev/back.png");
-						playArea.addModule(backButton);
-						
-						continueButton = Sprite(playArea.bounds.width-128, playArea.bounds.height-128, 128, 128, "images/dev/continue.png");
-						playArea.addModule(continueButton);
-						
-						quitButton = Sprite(playArea.bounds.x, playArea.bounds.y, 128, 128, "images/dev/quit.png");
-						playArea.addModule(quitButton);
-						
-						//Events
-						backButton.addEvent("mousedown", function(_clipBoard){
-							manager.removeModule(playArea);
-							switchState("qualitiesScreen");
-						},false);
-						
-						continueButton.addEvent("mousedown", function(_clipBoard){
-							manager.removeModule(playArea);
-							switchState("powersScreen");
-						},false);
-						
-						quitButton.addEvent("mousedown", function(_clipBoard){
-							manager.removeModule(playArea);
-							switchState("splashScreen");
-						},false);
-						
-				//Add events
-				toy.addEvent("swapComponent", function(_clipBoard){ 
-					console.log('swapping');
-					toy.setSlot(_clipBoard.ComponentSwap.slot, 
-					_clipBoard.ComponentSwap.image); 
-					if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
-				}, false);
+						//Add events
+						toy.addEvent("swapComponent", function(_clipBoard){ 
+							console.log('swapping');
+							toy.setSlot(_clipBoard.ComponentSwap.slot, 
+							_clipBoard.ComponentSwap.image); 
+							if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+						}, false);
+
+						//And save for later.
+						superhero.skeleton = toy;
+					} else {
+						var toy = superhero.skeleton;
+					}
+					//add the character skeleton to the scene.
+					playArea.addModule(toy);
+					
+					//Buttons
+					backButton = Sprite(playArea.bounds.x, playArea.bounds.height-128, 128, 128, "images/dev/back.png");
+					playArea.addModule(backButton);
+					
+					continueButton = Sprite(playArea.bounds.width-128, playArea.bounds.height-128, 128, 128, "images/dev/continue.png");
+					playArea.addModule(continueButton);
+					
+					quitButton = Sprite(playArea.bounds.x, playArea.bounds.y, 128, 128, "images/dev/quit.png");
+					playArea.addModule(quitButton);
+					
+					//Events
+					backButton.addEvent("mousedown", function(_clipBoard){
+						manager.removeModule(playArea);
+						switchState("qualitiesScreen");
+					},false);
+					
+					continueButton.addEvent("mousedown", function(_clipBoard){
+						manager.removeModule(playArea);
+						switchState("powersScreen");
+					},false);
+					
+					quitButton.addEvent("mousedown", function(_clipBoard){
+						manager.removeModule(playArea);
+						switchState("splashScreen");
+					},false);
 			}
 			function createToyBox(){
 				toybox = ToyBox(2*1920/3,0,1920/3,1080);

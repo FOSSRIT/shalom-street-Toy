@@ -52,9 +52,9 @@ Touch.Collisions = function(module){
 				if(module.contents[j].visible) {
 					//Collision detection
 
-					if(_clipBoard.eventType == "mousedown") {
+					/*if(_clipBoard.eventType == "mousedown") {
 							alert(_clipBoard.mousex + " " + _clipBoard.mousey);
-						}
+						}*/
 
 					//--------------------------------------------------------------------------------------------
 					if(_clipBoard.mousex > module.contents[j].bounds.x &&
@@ -135,7 +135,7 @@ Touch.Collisions = function(module){
 	}
 }
 
-//t
+//
 Touch.DragAndDrop = function(module){
 	module.mouseOffset = {"x":0, "y":0}
 	module.lastMouse = {"x":0, "y":0}
