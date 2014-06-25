@@ -121,8 +121,23 @@
 				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
 				sc.addModule(backButton);
 				
-				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
-				sc.addModule(continueButton);
+				scenario1Button = Sprite(sc.bounds.width/5, sc.bounds.height/3-128, 256, 256, "images/dev/scenarioButton.png");
+				sc.addModule(scenario1Button);
+				
+				scenario2Button = Sprite(2*sc.bounds.width/5, sc.bounds.height/3-128, 256, 256, "images/dev/scenarioButton2.png");
+				sc.addModule(scenario2Button);
+				
+				scenario3Button = Sprite(3*sc.bounds.width/5, sc.bounds.height/3-128, 256, 256, "images/dev/scenarioButton.png");
+				sc.addModule(scenario3Button);
+				
+				scenario4Button = Sprite(sc.bounds.width/5, 2*sc.bounds.height/3-128, 256, 256, "images/dev/scenarioButton.png");
+				sc.addModule(scenario4Button);
+				
+				scenario5Button = Sprite(2*sc.bounds.width/5, 2*sc.bounds.height/3-128, 256, 256, "images/dev/scenarioButton.png");
+				sc.addModule(scenario5Button);
+				
+				randomScenarioButton = Sprite(3*sc.bounds.width/5, 2*sc.bounds.height/3-128, 256, 256, "images/dev/randomScenarioButton.png");
+				sc.addModule(randomScenarioButton);
 				
 				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
 				sc.addModule(quitButton);
@@ -133,7 +148,32 @@
 					switchState("splashScreen");
 				},false);
 				
-				continueButton.addEvent("mousedown", function(_clipBoard){
+				scenario1Button.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("detailedScenarioScreen");
+				},false);
+				
+				scenario2Button.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("detailedScenarioScreen");
+				},false);
+				
+				scenario3Button.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("detailedScenarioScreen");
+				},false);
+				
+				scenario4Button.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("detailedScenarioScreen");
+				},false);
+				
+				scenario5Button.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("detailedScenarioScreen");
+				},false);
+				
+				randomScenarioButton.addEvent("mousedown", function(_clipBoard){
 					manager.removeModule(sc);
 					switchState("detailedScenarioScreen");
 				},false);
@@ -148,7 +188,7 @@
 				currentState.addModule(sc);
 				
 				//Dev Splash Image
-				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/detailedScenarioScreen.png");
+				splashImage = Sprite(sc.bounds.width/2-512,sc.bounds.height/2-256,1024,512, "images/dev/detailedScenarioScreen2.png");
 				sc.addModule(splashImage);
 				
 				//Buttons
