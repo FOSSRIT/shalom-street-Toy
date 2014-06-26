@@ -426,8 +426,33 @@
 				currentState.addModule(sc);
 				
 				//Dev Splash Image
-				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/resultsScreen.png");
+				splashImage = Sprite(0,0,1920,1080, "images/dev/resultsScreen.png");
 				sc.addModule(splashImage);
+				
+				//Logic
+				//See if based on qualities and powers if the player won or lost the scenario
+				powerFound = false;
+				qualityFound = false;
+				for(i = 0; i < superhero.powers.length; i++) {
+					if(superhero.powers[i] == "saveKitten"){
+						//If the logic finds its way here, then it means that the power is already in the list.
+						//So now we have to remove it
+						powerFound = true;
+					}
+				}
+				for(i = 0; i < superhero.virtues.length; i++) {
+					if(superhero.virtues[i] == "beingAwesome"){
+						//If the logic finds its way here, then it means that the power is already in the list.
+						//So now we have to remove it
+						qualityFound = true;
+					}
+				}
+				if(qualityFound && powerFound){
+					resultImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,256,256, "images/dev/win.png");
+				}else{
+					resultImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,256,256, "images/dev/lose.png");
+				}
+				sc.addModule(resultImage);
 				
 				//Buttons
 				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
