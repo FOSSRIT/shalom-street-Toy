@@ -51,12 +51,14 @@ function Sprite(_x, _y, _width, _height, _imageSource, _xOrigin, _yOrigin) {
 
 	//-----------------------------PROPERTIES-------------------------------------
 
-	function _setImage(_image) { 
+	function _setImage(_image, setBounds) { 
 		//Works with both strings and actual images.
 		if(typeof(_image) == "string") {
 			image.src = _image; 
-			toReturn.bounds.width = image.width;
-			toReturn.bounds.height = image.height;
+			if(setBounds){
+				toReturn.bounds.width = image.width;
+				toReturn.bounds.height = image.height;
+			}
 		} else  {
 			image = _image;
 			//Add load event. If the image is loaded, fire off the load event.
