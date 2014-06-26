@@ -34,9 +34,21 @@ function Manager() {
 		ctx = _ctx;
 		toReturn.scale = _scale;
 
-		canvas.onmousedown = function(e){ base.handleEvent("mousedown", { "eventType":"mousedown", "mousex":(e.offsetX /*|| e.*/)*toReturn.scale, "mousey": e.offsetY*toReturn.scale}); };
-		canvas.onmouseup = function(e){ base.handleEvent("mouseup", { "eventType":"mouseup", "mousex":e.offsetX*toReturn.scale, "mousey": e.offsetY*toReturn.scale}); };
-		canvas.onmousemove = function(e){ base.handleEvent("mousemove", { "eventType":"mousemove", "mousex":e.offsetX*toReturn.scale, "mousey": e.offsetY*toReturn.scale}); };
+		canvas.onmousedown = function(e){ base.handleEvent("mousedown", 
+            { "eventType":"mousedown", 
+            "mousex":((typeof e.offsetX !== "undefined")? e.offsetX : e.pageX - e.target.offsetLeft)*toReturn.scale, 
+            "mousey": ((typeof e.offsetY !== "undefined")? e.offsetY : e.pageY - e.target.offsetTop)*toReturn.scale
+            }); };
+		canvas.onmouseup = function(e){ base.handleEvent("mouseup", 
+            { "eventType":"mouseup", 
+            "mousex":((typeof e.offsetX !== "undefined")? e.offsetX : e.pageX - e.target.offsetLeft)*toReturn.scale, 
+            "mousey": ((typeof e.offsetY !== "undefined")? e.offsetY : e.pageY - e.target.offsetTop)*toReturn.scale
+            }); };
+		canvas.onmousemove = function(e){ base.handleEvent("mousemove", 
+            { "eventType":"mousemove", 
+            "mousex":((typeof e.offsetX !== "undefined")? e.offsetX : e.pageX - e.target.offsetLeft)*toReturn.scale, 
+            "mousey": ((typeof e.offsetY !== "undefined")? e.offsetY : e.pageY - e.target.offsetTop)*toReturn.scale
+            }); };
 
 		base.addEvent("redraw", function(_clipBoard){ _draw(); }, false);
 		//_tick();
