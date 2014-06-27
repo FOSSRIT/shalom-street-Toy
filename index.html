@@ -306,6 +306,9 @@
 				//Dev Splash Image
 				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/characterBioScreen.png");
 				sc.addModule(splashImage);
+
+				var bioSubmission = DomWrapper(document.getElementById("bioSubmitBox"));
+				sc.addModule(bioSubmission);
 				
 				//Buttons
 				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
@@ -626,7 +629,7 @@
 		for the canvas. Not sure if canvas properties itself, or 
 		Possibly due to the fact that the canvas was made full screen 
 		by the "onLoad" script at the top of this page.-->
-		<textarea id="finalSubmission" style="visibility:block; position:absolute;"25" rows="7"></textarea> 
+		<textarea id="bioSubmitBox" style="visibility:hidden; position:absolute; left:1000px; right:1000px" columns="25" rows="7"></textarea> 
 		<canvas id="main" width="1920px" height="1080px"></canvas>
 	</body>
 
