@@ -44,7 +44,24 @@ function Module(_x, _y, _width, _height){
 	}
 
 	function _setLoad(_function, _ctx) {
-		_onLoaded = _function; _contextOnLoaded = _ctx;
+		_onLoaded = _function || false; _contextOnLoaded = _ctx || false;
+	}
+
+	var _onRemoved = false;
+	var _contextOnRemoved = false;
+	function _onRemoval() {
+		for (var i=toReturn.contents.length-1; i=0; i--){
+			//Trigger the event in their children.
+			base.removeModule(toReturn.contents[i]);
+			alert("removing a module");
+		} 
+		if(_onRemoved) {
+			if(_contextOnRemoved) { _onRemoved(_contextOnRemoved); } else { _onRemoved(this); }
+		}
+	}
+
+	function _setRemove(_function, _ctx) {
+		_onLoaded = _function || false; _contextOnLoaded = _ctx || false;
 	}
 
 
@@ -161,6 +178,7 @@ function Module(_x, _y, _width, _height){
 		var i = toReturn.contents.indexOf(_object);
 		if(i != -1) {
 			_object.setLoad(false);
+			toReturn.contents[i].removeMe();
 			toReturn.contents.splice(i, 1);
 		}
 	}
@@ -299,6 +317,12 @@ function Module(_x, _y, _width, _height){
 		*/
 		"setLoad":_setLoad,
 
+		//Sets a function to be fired off when the module is removed.
+		/*
+		function: the function to be called, ctx: the object to set the context to (optional)
+		*/
+		"setRemove":_setRemove,
+
 		//Update sub-modules.
 		/*
 		dx: the amount of time, in miliseconds, since the last update.
@@ -348,6 +372,9 @@ function Module(_x, _y, _width, _height){
 			"setLoad":_setLoad,
 
 			//
+			"setRemove":_setRemove,
+
+			//
 			/*
 
 			*/
@@ -359,6 +386,12 @@ function Module(_x, _y, _width, _height){
 
 			*/
 			"removeModule":_removeModule,
+
+			//
+			/*
+
+			*/
+			"removeMe":_onRemoval,
 
 			//
 			/*

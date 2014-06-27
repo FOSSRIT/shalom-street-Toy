@@ -28,9 +28,9 @@
 
 			var canvas, ctx, manager, playArea;
 			var superhero = {
-				"powers":[],
+				"virtues":[],
 				"skeleton":undefined,
-				"virtues":[]
+				"powers":[]
 			}
 			function onLoad(){
 
@@ -59,12 +59,12 @@
 				
 				currentState = CurrentState(0, 0, 1920, 1080);
 				manager.addModule(currentState);
-				/*
+				
 				var domElementThing = DomWrapper(document.getElementById("myDomObject"));
 					
 				domElementThing.visible = true;
 				manager.addModule(domElementThing);
-				*/
+				
 				
 				//Load up the splash screen.
 				switchState("splashScreen");
@@ -100,6 +100,13 @@
 			function loadSplashScreen(){
 				sc = new SplashScreen(0,0,1920, 1080);
 				currentState.addModule(sc);
+				
+				//Reset the super hero
+				superhero.virtues = [];
+				//superhero.powers = [];
+				superhero.powers = [];
+				
+				
 				//Splash Image
 				splashImage = Sprite(0,0,1920,1080, "images/dev/splashTest2.png");
 				sc.addModule(splashImage);
@@ -113,6 +120,9 @@
 					manager.removeModule(sc);
 					switchState("scenarioScreen");
 				},false);
+				
+				
+				console.log("Current super powers: "+superhero.powers);
 			}
 			function loadScenarioScreen(){
 				sc = new ScenarioScreen(0,0,1920, 1080);
@@ -226,6 +236,11 @@
 				sc = new Screen(0,0,1920, 1080);
 				currentState.addModule(sc);
 				
+				//Reset the super hero
+				superhero.virtues = [];
+				//superhero.powers = [];
+				//superhero.powers = [];
+				
 				//Dev Splash Image
 				splashImage = Sprite(0,0,1920,1080, "images/dev/qualitiesScreenTest01.png");
 				sc.addModule(splashImage);
@@ -239,6 +254,13 @@
 				
 				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
 				sc.addModule(quitButton);
+				
+				//Qualities
+				quality1Button = Sprite(sc.bounds.width/5, sc.bounds.height/3-128, 256, 256, "images/dev/quality1_unselected.png");
+				sc.addModule(quality1Button);
+				
+				quality2Button = Sprite(sc.bounds.width/5, 2*sc.bounds.height/3-128, 256, 256, "images/dev/quality2_unselected.png");
+				sc.addModule(quality2Button);
 				
 				//Events
 				backButton.addEvent("mousedown", function(_clipBoard){
@@ -255,6 +277,14 @@
 					manager.removeModule(sc);
 					switchState("splashScreen");
 				},false);
+				
+				quality1Button.addEvent("mousedown", function(_clipBoard){
+					highlightQualityAndPowerButtons("virtues",quality1Button,"beingAwesome","images/dev/quality1_unselected.png","images/dev/quality1_selected.png", _clipBoard);
+				},false);
+				
+				quality2Button.addEvent("mousedown", function(_clipBoard){
+					highlightQualityAndPowerButtons("virtues",quality2Button,"beingLame","images/dev/quality2_unselected.png","images/dev/quality2_selected.png", _clipBoard);
+				},false);
 
 
 				//When you click on a button, you can add a quality like so.
@@ -264,6 +294,11 @@
 			function loadPowersScreen(){
 				sc = new Screen(0,0,1920, 1080);
 				currentState.addModule(sc);
+				
+				//Reset the super hero
+				//superhero.virtues = [];
+				//superhero.powers = [];
+				superhero.powers = [];
 				
 				//Dev Splash Image
 				splashImage = Sprite(0,0,1920,1080, "images/dev/powersScreenTest01.png");
@@ -278,6 +313,13 @@
 				
 				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
 				sc.addModule(quitButton);
+				
+				//Powers
+				power1Button = Sprite(sc.bounds.width/5, sc.bounds.height/3-128, 256, 256, "images/dev/power1_unselected.png");
+				sc.addModule(power1Button);
+				
+				power2Button = Sprite(sc.bounds.width/5, 2*sc.bounds.height/3-128, 256, 256, "images/dev/power2_unselected.png");
+				sc.addModule(power2Button);
 				
 				//Events
 				backButton.addEvent("mousedown", function(_clipBoard){
@@ -294,11 +336,55 @@
 					manager.removeModule(sc);
 					switchState("splashScreen");
 				},false);
-
+				
+				power1Button.addEvent("mousedown", function(_clipBoard){
+					highlightQualityAndPowerButtons("powers",power1Button,"saveKitten","images/dev/power1_unselected.png","images/dev/power1_selected.png", _clipBoard);
+				},false);
+				
+				power2Button.addEvent("mousedown", function(_clipBoard){
+					highlightQualityAndPowerButtons("powers",power2Button,"notSaveKitten","images/dev/power2_unselected.png","images/dev/power2_selected.png", _clipBoard);
+				},false);
+				
 				//When you click on a button, you can add a power like so.
 				//superhero.powers.push("fire");
 				//And reference it and all that good stuff like an array.
 			}
+			
+			//Helper Functions
+			/*
+			function: 	highlightQualityAndPowerButtons
+			parameters:	_list: which list you are looping through. IE: "qualities" or "powers"
+						_buttonName: name of the button you wish to alter
+						_attributeName: name of the quality or power you wish to add or remove
+						_unselectedImage: the "unselected" image url to switch to
+						_selectedImage: the "selected" image url to switch to
+						_clipBoard: clipboard. because Danny said to.
+			description: This function highlights and unhighlights powers and qualities. It also adds and removes powers and qualities from the current super hero.
+			returns: N/A
+			*/
+			function highlightQualityAndPowerButtons(_list, _buttonName, _attributeName, _unselectedImage, _selectedImage, _clipBoard){
+				tempFound = false;
+					for(i = 0; i < superhero[_list].length; i++) {
+						if(superhero[_list][i] == _attributeName){
+							//If the logic finds its way here, then it means that the power is already in the list.
+							//So now we have to remove it
+							tempFound = true;
+							superhero[_list].pop(_attributeName);
+							_buttonName.setImage(_unselectedImage);
+							if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+						}
+					}
+					if(tempFound == false){
+						//If the logic finds its way here, then it means that the power is not in the list.
+						//So now we have to add it
+						superhero[_list].push(_attributeName);
+						_buttonName.setImage(_selectedImage);
+						if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+					}
+				console.log("Current list content: "+superhero[_list]);
+			}
+			
+			
 			function loadCharacterBioScreen(){
 				sc = new Screen(0,0,1920, 1080);
 				currentState.addModule(sc);
@@ -306,6 +392,9 @@
 				//Dev Splash Image
 				splashImage = Sprite(0,0,1920,1080, "images/dev/characterBioScreenTest01.png");
 				sc.addModule(splashImage);
+
+				var bioSubmission = DomWrapper(document.getElementById("bioSubmitBox"));
+				sc.addModule(bioSubmission);
 				
 				//Buttons
 				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
@@ -617,7 +706,7 @@
 
 	<!--Main app-->
 	<body>
-		<!--<div id="myDomObject">HELLO HELLO HELLO</div>-->
+		<div id="myDomObject">HELLO HELLO HELLO</div>
 		<!--Canvas is width and height of the screen.-->
 		<!--We'll need to set this stuff up so it goes full screen I guess.-->
 		
@@ -626,7 +715,7 @@
 		for the canvas. Not sure if canvas properties itself, or 
 		Possibly due to the fact that the canvas was made full screen 
 		by the "onLoad" script at the top of this page.-->
-		<textarea id="finalSubmission" style="visibility:block; position:absolute;"25" rows="7"></textarea> 
+		<textarea id="bioSubmitBox" style="visibility:hidden; position:absolute; left:1000px; right:1000px" columns="25" rows="7"></textarea> 
 		<canvas id="main" width="1920px" height="1080px"></canvas>
 	</body>
 

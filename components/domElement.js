@@ -7,6 +7,10 @@ function DomWrapper(_domElement){
 	toReturn.type = "DomWrapper";
 	//toReturn.interface = true;
 	toReturn.loaded = true;
+	base.setRemove(function(){
+		alert("I was removed.");
+		_dom.style.visibility="hidden";
+	});
 
 	//Some init.
 
