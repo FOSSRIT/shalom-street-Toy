@@ -101,15 +101,15 @@
 				sc = new SplashScreen(0,0,1920, 1080);
 				currentState.addModule(sc);
 				//Splash Image
-				splashImage = Sprite(0,0,1920,1080, "images/dev/splashTest.png");
+				splashImage = Sprite(0,0,1920,1080, "images/dev/splashTest2.png");
 				sc.addModule(splashImage);
 				
 				//Buttons
-				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
-				sc.addModule(continueButton);
+				startButton = Sprite(1920/2-128, 3*1080/4-64, 256, 128, "images/dev/startButtonTest2.png");
+				sc.addModule(startButton);
 				
 				//Events
-				continueButton.addEvent("mousedown", function(_clipBoard){
+				startButton.addEvent("mousedown", function(_clipBoard){
 					manager.removeModule(sc);
 					switchState("scenarioScreen");
 				},false);
@@ -119,7 +119,7 @@
 				currentState.addModule(sc);
 				
 				//Dev Splash Image
-				splashImage = Sprite(0,0,1920,1080, "images/dev/scenarioScreen.png");
+				splashImage = Sprite(0,0,1920,1080, "images/dev/scenarioScreenTest01.png");
 				sc.addModule(splashImage);
 				
 				//Buttons
@@ -193,7 +193,7 @@
 				currentState.addModule(sc);
 				
 				//Dev Splash Image
-				splashImage = Sprite(sc.bounds.width/2-512,sc.bounds.height/2-256,1024,512, "images/dev/detailedScenarioScreen2.png");
+				splashImage = Sprite(0,0,1920,1080, "images/dev/detailedScenarioScreenTest01.png");
 				sc.addModule(splashImage);
 				
 				//Buttons
@@ -227,7 +227,7 @@
 				currentState.addModule(sc);
 				
 				//Dev Splash Image
-				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/qualitiesScreen.png");
+				splashImage = Sprite(0,0,1920,1080, "images/dev/qualitiesScreenTest01.png");
 				sc.addModule(splashImage);
 				
 				//Buttons
@@ -266,7 +266,7 @@
 				currentState.addModule(sc);
 				
 				//Dev Splash Image
-				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/powersScreen.png");
+				splashImage = Sprite(0,0,1920,1080, "images/dev/powersScreenTest01.png");
 				sc.addModule(splashImage);
 				
 				//Buttons
@@ -304,7 +304,7 @@
 				currentState.addModule(sc);
 				
 				//Dev Splash Image
-				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/characterBioScreen.png");
+				splashImage = Sprite(0,0,1920,1080, "images/dev/characterBioScreenTest01.png");
 				sc.addModule(splashImage);
 				
 				//Buttons
@@ -340,7 +340,7 @@
 				currentState.addModule(sc);
 				
 				//Dev Splash Image
-				splashImage = Sprite(0,0,1920,1080, "images/dev/resultsScreen.png");
+				splashImage = Sprite(0,0,1920,1080, "images/dev/resultsScreenTest01.png");
 				sc.addModule(splashImage);
 				
 				//Logic
@@ -433,7 +433,7 @@
 				currentState.addModule(sc);
 				
 				//Dev Splash Image
-				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/superPoseScreen.png");
+				splashImage = Sprite(0,0,1920,1080, "images/dev/superPoseScreenTest01.png");
 				sc.addModule(splashImage);
 				
 				//Buttons
