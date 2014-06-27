@@ -27,6 +27,7 @@
 		<script>
 
 			var canvas, ctx, manager, playArea;
+			var bioSubmission;
 			var superhero = {
 				"virtues":[],
 				"skeleton":undefined,
@@ -36,6 +37,8 @@
 
 
 				//Grab the Canvas.
+
+				bioSubmission = DomWrapper(document.getElementById("bioSubmitBox"));
 				canvas = document.getElementById("main");
 				ctx = canvas.getContext("2d");
 				//Make the canvas full screen
@@ -59,11 +62,6 @@
 				
 				currentState = CurrentState(0, 0, 1920, 1080);
 				manager.addModule(currentState);
-				
-				var domElementThing = DomWrapper(document.getElementById("myDomObject"));
-					
-				domElementThing.visible = true;
-				manager.addModule(domElementThing);
 				
 				
 				//Load up the splash screen.
@@ -392,9 +390,10 @@
 				//Dev Splash Image
 				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/characterBioScreen.png");
 				sc.addModule(splashImage);
-
-				var bioSubmission = DomWrapper(document.getElementById("bioSubmitBox"));
 				sc.addModule(bioSubmission);
+
+				/*var domElementThing = DomWrapper(document.getElementById("bioSubmitBox"));
+				manager.addModule(domElementThing);*/
 				
 				//Buttons
 				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
@@ -706,7 +705,6 @@
 
 	<!--Main app-->
 	<body>
-		<div id="myDomObject">HELLO HELLO HELLO</div>
 		<!--Canvas is width and height of the screen.-->
 		<!--We'll need to set this stuff up so it goes full screen I guess.-->
 		
@@ -715,7 +713,7 @@
 		for the canvas. Not sure if canvas properties itself, or 
 		Possibly due to the fact that the canvas was made full screen 
 		by the "onLoad" script at the top of this page.-->
-		<textarea id="bioSubmitBox" style="visibility:hidden; position:absolute; left:1000px; right:1000px" columns="25" rows="7"></textarea> 
+		<textarea id="bioSubmitBox" style="visibility:hidden; position:absolute; left:10px; top:10px; width:400px; height:400px"></textarea> 
 		<canvas id="main" width="1920px" height="1080px"></canvas>
 	</body>
 

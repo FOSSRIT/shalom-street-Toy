@@ -13,7 +13,7 @@ function Module(_x, _y, _width, _height){
 	//-------------------------------------------
 
 	//ToDo: Allow for null values.
-	_bounds = {"x": _x || 0, "y":_y || 0, "width":_width || 0, "height":_height || 0, };
+	_bounds = {"x": _x || 0, "y":_y || 0, "width":_width || 0, "height":_height || 0};
 
 	_loaded = true; //We'll set this to false when necessary.
 	_contents = []; //Sub-modules.
@@ -50,10 +50,10 @@ function Module(_x, _y, _width, _height){
 	var _onRemoved = false;
 	var _contextOnRemoved = false;
 	function _onRemoval() {
-		for (var i=toReturn.contents.length-1; i=0; i--){
+		//alert("removing a module: " + toReturn.interface.type);
+		for (var i=toReturn.contents.length-1; i>=0; i--){
 			//Trigger the event in their children.
-			base.removeModule(toReturn.contents[i]);
-			alert("removing a module");
+			toReturn.removeModule(toReturn.contents[i]);
 		} 
 		if(_onRemoved) {
 			if(_contextOnRemoved) { _onRemoved(_contextOnRemoved); } else { _onRemoved(this); }
@@ -61,7 +61,7 @@ function Module(_x, _y, _width, _height){
 	}
 
 	function _setRemove(_function, _ctx) {
-		_onLoaded = _function || false; _contextOnLoaded = _ctx || false;
+		_onRemoved = _function || false; _contextOnRemoved = _ctx || false;
 	}
 
 

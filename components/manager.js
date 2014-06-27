@@ -28,7 +28,7 @@ function Manager() {
 
 	//-----------------------------------------------------------------
 
-	//
+	//s
 	function _init(_canvas, _ctx, _scale) {
 		canvas = _canvas;
 		ctx = _ctx;
@@ -66,7 +66,7 @@ function Manager() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		//Loop through all objects and get list of sprites from them to return.
 		var toDraw = []; //Fill this with sprites.
-		for(var i=0; i<base.contents.length; i++){ //Theoretically, we could perform some opperations in here if need be.
+		for(var i=0; i<base.contents.length; i++){ //Theoretically, we could perform some oFpperations in here if need be.
 			//Objects at the front of the array get drawn before objects in the back.
 			toDraw = toDraw.concat(base.contents[i].draw());
 		}
@@ -81,7 +81,12 @@ function Manager() {
 				console.log(data);
 				ctx.fillText(data.text, data.x - data.originX, data.y - data.originY);
 				//Text draws from the lower left hand corner.
-			}
+			} else if(data.dom) {
+                data.dom.style.left = ((data.x /*- data.originX*/) * toReturn.scale) + canvas.offsetLeft;
+                data.dom.style.top = ((data.y /*- data.originY*/) * toReturn.scale) + canvas.offsetTop;
+                data.dom.style.width = data.width / toReturn.scale + "px";
+                data.dom.style.height = data.height / toReturn.scale + "px";
+            }
 		}
 	}
 
