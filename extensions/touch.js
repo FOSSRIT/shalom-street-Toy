@@ -45,16 +45,24 @@ Touch.Collisions = function(module){
 			//Handle toFire at the end.
 			var _finalToFire = [];
 
+
+
 			for(var j=0; j<module.contents.length; j++) {
 				//Only click on visible modules.
 				if(module.contents[j].visible) {
 					//Collision detection
+
+					/*if(_clipBoard.eventType == "mousedown") {
+							alert(_clipBoard.mousex + " " + _clipBoard.mousey);
+						}*/
+
 					//--------------------------------------------------------------------------------------------
 					if(_clipBoard.mousex > module.contents[j].bounds.x &&
 						_clipBoard.mousex < module.contents[j].bounds.x + module.contents[j].bounds.width &&
 						_clipBoard.mousey > module.contents[j].bounds.y &&
 						_clipBoard.mousey < module.contents[j].bounds.y + module.contents[j].bounds.height) {
 					//------------------------------------------------------------------------------------------
+						
 
 						//Link to the outer world.
 						var prevMousex = _clipBoard.mousex;
@@ -127,7 +135,7 @@ Touch.Collisions = function(module){
 	}
 }
 
-//t
+//
 Touch.DragAndDrop = function(module){
 	module.mouseOffset = {"x":0, "y":0}
 	module.lastMouse = {"x":0, "y":0}

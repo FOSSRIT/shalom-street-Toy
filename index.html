@@ -16,6 +16,8 @@
 		<script type="text/javascript" src="components/toyboxTab.js" ></script>
 		<script type="text/javascript" src="components/currentState.js" ></script>
 		<script type="text/javascript" src="components/splashScreen.js" ></script>
+		<script type="text/javascript" src="components/scenarioScreen.js" ></script>
+		<script type="text/javascript" src="components/Screen.js" ></script>
 		<script type="text/javascript" src="components/textbox.js"></script>
 		<script type="text/javascript" src="components/domElement.js"></script>
 		<!--Extensions-->
@@ -25,6 +27,11 @@
 		<script>
 
 			var canvas, ctx, manager, playArea;
+			var superhero = {
+				"virtues":[],
+				"skeleton":undefined,
+				"powers":[]
+			}
 			function onLoad(){
 
 
@@ -49,28 +56,22 @@
 					manager.draw();
 				});
 				
+				
 				currentState = CurrentState(0, 0, 1920, 1080);
 				manager.addModule(currentState);
-
+				
 				var domElementThing = DomWrapper(document.getElementById("myDomObject"));
 					
 				domElementThing.visible = true;
 				manager.addModule(domElementThing);
 				
+				
 				//Load up the splash screen.
-				sc = SplashScreen(0,0,1920, 1080);
-				currentState.addModule(sc);
-				testSprite = new Sprite();
-				sc.addModule(testSprite);
+				switchState("splashScreen");
 				
-				testSprite.addEvent("mousedown", function(_clipBoard){
-					switchState("characterBuilder");
-					_clipBoard.ToFire = ["redraw"];
-				},false);
 				
-
 				
-
+				
 				// dev1.addEvent("mousedown", function(_clipBoard){
 				// 	_clipBoard.ToFire = ["swapComponent"];
 				// 	_clipBoard.Body = {"image":"images/dev/_01.png", "slot":"body"}
@@ -78,6 +79,474 @@
 
 				
 				//\toy.addEvent("mouseup", function(_clipBoard){ alert("hi, I'm Esther!"); }, false);
+			}
+			function loadErrorScreen(){
+				sc = new SplashScreen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				//Splash Image
+				splashImage = Sprite(0,0,1920,1080, "images/dev/error.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				//Events
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+			}
+			function loadSplashScreen(){
+				sc = new SplashScreen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Reset the super hero
+				superhero.virtues = [];
+				//superhero.powers = [];
+				superhero.powers = [];
+				
+				
+				//Splash Image
+				splashImage = Sprite(0,0,1920,1080, "images/dev/splashTest.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				//Events
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("scenarioScreen");
+				},false);
+				
+				
+				console.log("Current super powers: "+superhero.powers);
+			}
+			function loadScenarioScreen(){
+				sc = new ScenarioScreen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Dev Splash Image
+				splashImage = Sprite(0,0,1920,1080, "images/dev/scenarioScreen.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				scenario1Button = Sprite(sc.bounds.width/5, sc.bounds.height/3-128, 256, 256, "images/dev/scenarioButton.png");
+				sc.addModule(scenario1Button);
+				
+				scenario2Button = Sprite(2*sc.bounds.width/5, sc.bounds.height/3-128, 256, 256, "images/dev/scenarioButton2.png");
+				sc.addModule(scenario2Button);
+				
+				scenario3Button = Sprite(3*sc.bounds.width/5, sc.bounds.height/3-128, 256, 256, "images/dev/scenarioButton.png");
+				sc.addModule(scenario3Button);
+				
+				scenario4Button = Sprite(sc.bounds.width/5, 2*sc.bounds.height/3-128, 256, 256, "images/dev/scenarioButton.png");
+				sc.addModule(scenario4Button);
+				
+				scenario5Button = Sprite(2*sc.bounds.width/5, 2*sc.bounds.height/3-128, 256, 256, "images/dev/scenarioButton.png");
+				sc.addModule(scenario5Button);
+				
+				randomScenarioButton = Sprite(3*sc.bounds.width/5, 2*sc.bounds.height/3-128, 256, 256, "images/dev/randomScenarioButton.png");
+				sc.addModule(randomScenarioButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+				
+				scenario1Button.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("detailedScenarioScreen");
+				},false);
+				
+				scenario2Button.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("detailedScenarioScreen");
+				},false);
+				
+				scenario3Button.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("detailedScenarioScreen");
+				},false);
+				
+				scenario4Button.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("detailedScenarioScreen");
+				},false);
+				
+				scenario5Button.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("detailedScenarioScreen");
+				},false);
+				
+				randomScenarioButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("detailedScenarioScreen");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+			}
+			function loadDetailedScenarioScreen(){
+				sc = new Screen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Dev Splash Image
+				splashImage = Sprite(sc.bounds.width/2-512,sc.bounds.height/2-256,1024,512, "images/dev/detailedScenarioScreen2.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("scenarioScreen");
+				},false);
+				
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("qualitiesScreen");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+			}
+			function loadQualitiesScreen(){
+				sc = new Screen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Reset the super hero
+				superhero.virtues = [];
+				//superhero.powers = [];
+				//superhero.powers = [];
+				
+				//Dev Splash Image
+				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/qualitiesScreen.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Qualities
+				quality1Button = Sprite(sc.bounds.width/5, sc.bounds.height/3-128, 256, 256, "images/dev/quality1_unselected.png");
+				sc.addModule(quality1Button);
+				
+				quality2Button = Sprite(sc.bounds.width/5, 2*sc.bounds.height/3-128, 256, 256, "images/dev/quality2_unselected.png");
+				sc.addModule(quality2Button);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("detailedScenarioScreen");
+				},false);
+				
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("characterBuilder");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+				
+				quality1Button.addEvent("mousedown", function(_clipBoard){
+					highlightQualityAndPowerButtons("virtues",quality1Button,"beingAwesome","images/dev/quality1_unselected.png","images/dev/quality1_selected.png", _clipBoard);
+				},false);
+				
+				quality2Button.addEvent("mousedown", function(_clipBoard){
+					highlightQualityAndPowerButtons("virtues",quality2Button,"beingLame","images/dev/quality2_unselected.png","images/dev/quality2_selected.png", _clipBoard);
+				},false);
+
+
+				//When you click on a button, you can add a quality like so.
+				//superhero.virtues.push("quality");
+				//And reference it and all that good stuff like an array.
+			}
+			function loadPowersScreen(){
+				sc = new Screen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Reset the super hero
+				//superhero.virtues = [];
+				//superhero.powers = [];
+				superhero.powers = [];
+				
+				//Dev Splash Image
+				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/powersScreen.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Powers
+				power1Button = Sprite(sc.bounds.width/5, sc.bounds.height/3-128, 256, 256, "images/dev/power1_unselected.png");
+				sc.addModule(power1Button);
+				
+				power2Button = Sprite(sc.bounds.width/5, 2*sc.bounds.height/3-128, 256, 256, "images/dev/power2_unselected.png");
+				sc.addModule(power2Button);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("characterBuilder");
+				},false);
+				
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("characterBioScreen");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+				
+				power1Button.addEvent("mousedown", function(_clipBoard){
+					highlightQualityAndPowerButtons("powers",power1Button,"saveKitten","images/dev/power1_unselected.png","images/dev/power1_selected.png", _clipBoard);
+				},false);
+				
+				power2Button.addEvent("mousedown", function(_clipBoard){
+					highlightQualityAndPowerButtons("powers",power2Button,"notSaveKitten","images/dev/power2_unselected.png","images/dev/power2_selected.png", _clipBoard);
+				},false);
+				
+				//When you click on a button, you can add a power like so.
+				//superhero.powers.push("fire");
+				//And reference it and all that good stuff like an array.
+			}
+			
+			//Helper Functions
+			/*
+			function: 	highlightQualityAndPowerButtons
+			parameters:	_list: which list you are looping through. IE: "qualities" or "powers"
+						_buttonName: name of the button you wish to alter
+						_attributeName: name of the quality or power you wish to add or remove
+						_unselectedImage: the "unselected" image url to switch to
+						_selectedImage: the "selected" image url to switch to
+						_clipBoard: clipboard. because Danny said to.
+			description: This function highlights and unhighlights powers and qualities. It also adds and removes powers and qualities from the current super hero.
+			returns: N/A
+			*/
+			function highlightQualityAndPowerButtons(_list, _buttonName, _attributeName, _unselectedImage, _selectedImage, _clipBoard){
+				tempFound = false;
+					for(i = 0; i < superhero[_list].length; i++) {
+						if(superhero[_list][i] == _attributeName){
+							//If the logic finds its way here, then it means that the power is already in the list.
+							//So now we have to remove it
+							tempFound = true;
+							superhero[_list].pop(_attributeName);
+							_buttonName.setImage(_unselectedImage);
+							if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+						}
+					}
+					if(tempFound == false){
+						//If the logic finds its way here, then it means that the power is not in the list.
+						//So now we have to add it
+						superhero[_list].push(_attributeName);
+						_buttonName.setImage(_selectedImage);
+						if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+					}
+				console.log("Current list content: "+superhero[_list]);
+			}
+			
+			
+			function loadCharacterBioScreen(){
+				sc = new Screen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Dev Splash Image
+				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/characterBioScreen.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("powersScreen");
+				},false);
+				
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("resultsScreen");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+
+				//Assumably, you could also attach this to the superhero object.
+			}
+			function loadResultsScreen(){
+				sc = new Screen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Dev Splash Image
+				splashImage = Sprite(0,0,1920,1080, "images/dev/resultsScreen.png");
+				sc.addModule(splashImage);
+				
+				//Logic
+				//See if based on qualities and powers if the player won or lost the scenario
+				powerFound = false;
+				qualityFound = false;
+				for(i = 0; i < superhero.powers.length; i++) {
+					if(superhero.powers[i] == "saveKitten"){
+						//If the logic finds its way here, then it means that the power is already in the list.
+						//So now we have to remove it
+						powerFound = true;
+					}
+				}
+				for(i = 0; i < superhero.virtues.length; i++) {
+					if(superhero.virtues[i] == "beingAwesome"){
+						//If the logic finds its way here, then it means that the power is already in the list.
+						//So now we have to remove it
+						qualityFound = true;
+					}
+				}
+				if(qualityFound && powerFound){
+					resultImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,256,256, "images/dev/win.png");
+				}else{
+					resultImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,256,256, "images/dev/lose.png");
+				}
+				sc.addModule(resultImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("characterBioScreen");
+				},false);
+				
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("whyItWorkedScreen");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+			}
+			function loadWhyItWorkedScreen(){
+				sc = new Screen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Dev Splash Image
+				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/whyItWorkedScreen.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("resultsScreen");
+				},false);
+				
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("superPoseScreen");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+			}
+			function loadSuperPoseScreen(){
+				sc = new Screen(0,0,1920, 1080);
+				currentState.addModule(sc);
+				
+				//Dev Splash Image
+				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/superPoseScreen.png");
+				sc.addModule(splashImage);
+				
+				//Buttons
+				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+				sc.addModule(backButton);
+				
+				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+				sc.addModule(continueButton);
+				
+				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+				sc.addModule(quitButton);
+				
+				//Events
+				backButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("whyItWorkedScreen");
+				},false);
+				
+				continueButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
+				
+				quitButton.addEvent("mousedown", function(_clipBoard){
+					manager.removeModule(sc);
+					switchState("splashScreen");
+				},false);
 			}
 			function createTabs(){
 				//TEMP DEV TABS
@@ -147,30 +616,54 @@
 				
 				//TEMP DEV TOY TEST
 					// ADD MODULES
+					//Here we do our test for stuff.
+					if(superhero.skeleton === undefined){
 						var toy = CharacterSkeleton(200, 150, 234, 400);
-						//visual test of character skeleton
-						playArea.addModule(toy);
 						//TEMP DEV SPRITE SET UP FOR TOY
 						toy.setSlot("head", Sprite());
 						toy.setSlot("body", Sprite());
 						toy.setSlot("feet", Sprite());
-						
-						testSprite = new Sprite();
-						playArea.addModule(testSprite);
-				
-						testSprite.addEvent("mousedown", function(_clipBoard){
-							switchState("splashScreen");
-							_clipBoard.ToFire = ["redraw"];
+						//Add events
+						toy.addEvent("swapComponent", function(_clipBoard){ 
+							console.log('swapping');
+							toy.setSlot(_clipBoard.ComponentSwap.slot, 
+							_clipBoard.ComponentSwap.image); 
+							if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+						}, false);
+
+						//And save for later.
+						superhero.skeleton = toy;
+					} else {
+						var toy = superhero.skeleton;
+					}
+					//add the character skeleton to the scene.
+					playArea.addModule(toy);
 					
-						},false);
-						
-				//Add events
-				toy.addEvent("swapComponent", function(_clipBoard){ 
-					console.log('swapping');
-					toy.setSlot(_clipBoard.ComponentSwap.slot, 
-					_clipBoard.ComponentSwap.image); 
-					if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
-				}, false);
+					//Buttons
+					backButton = Sprite(playArea.bounds.x, playArea.bounds.height-128, 128, 128, "images/dev/back.png");
+					playArea.addModule(backButton);
+					
+					continueButton = Sprite(playArea.bounds.width-128, playArea.bounds.height-128, 128, 128, "images/dev/continue.png");
+					playArea.addModule(continueButton);
+					
+					quitButton = Sprite(playArea.bounds.x, playArea.bounds.y, 128, 128, "images/dev/quit.png");
+					playArea.addModule(quitButton);
+					
+					//Events
+					backButton.addEvent("mousedown", function(_clipBoard){
+						manager.removeModule(playArea);
+						switchState("qualitiesScreen");
+					},false);
+					
+					continueButton.addEvent("mousedown", function(_clipBoard){
+						manager.removeModule(playArea);
+						switchState("powersScreen");
+					},false);
+					
+					quitButton.addEvent("mousedown", function(_clipBoard){
+						manager.removeModule(playArea);
+						switchState("splashScreen");
+					},false);
 			}
 			function createToyBox(){
 				toybox = ToyBox(2*1920/3,0,1920/3,1080);
@@ -185,26 +678,21 @@
 				manager.addModule(currentState);
 				
 				//set current state = _state
-				if(_state == "splashScreen"){
-
-					sc = new SplashScreen(0,0,1920, 1080);
-					currentState.addModule(sc);
-					testSprite = new Sprite();
-					sc.addModule(testSprite);
-					
-					testSprite.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("characterBuilder");
-					
-					},false);
-					
-				
+				if(_state == "splashScreen"){loadSplashScreen();
+				}else if(_state == "scenarioScreen"){loadScenarioScreen();
+				}else if(_state == "detailedScenarioScreen"){loadDetailedScenarioScreen();
+				}else if(_state == "qualitiesScreen"){loadQualitiesScreen();
 				}else if(_state == "characterBuilder"){
 					//The two main areas of our app inside of the canvas.
 					createPlayArea();
 					createToyBox();
+				}else if(_state == "powersScreen"){loadPowersScreen();
+				}else if(_state == "characterBioScreen"){loadCharacterBioScreen();
+				}else if(_state == "resultsScreen"){loadResultsScreen();
+				}else if(_state == "whyItWorkedScreen"){loadWhyItWorkedScreen();
+				}else if(_state == "superPoseScreen"){loadSuperPoseScreen();
 				}else{
-				
+					loadErrorScreen();
 				}
 			}
 		window.onload = onLoad;
