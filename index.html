@@ -7,13 +7,11 @@
 		<link rel="stylesheet" type="text/css" href="styles.css" />
 
 		<!--Javascript-->
+		<!--Core-->
 		<script type="text/javascript" src="components/module.js" ></script>
 		<script type="text/javascript" src="components/manager.js" ></script>
 		<script type="text/javascript" src="components/sprite.js" ></script>
 		<script type="text/javascript" src="components/characterSkeleton.js" ></script>
-		<script type="text/javascript" src="components/playArea.js" ></script>
-		<script type="text/javascript" src="components/toybox.js" ></script>
-		<script type="text/javascript" src="components/toyboxTab.js" ></script>
 		<script type="text/javascript" src="components/currentState.js" ></script>
 		<script type="text/javascript" src="components/splashScreen.js" ></script>
 		<script type="text/javascript" src="components/scenarioScreen.js" ></script>
@@ -21,6 +19,20 @@
 		<script type="text/javascript" src="components/textbox.js"></script>
 		<script type="text/javascript" src="components/domElement.js"></script>
 		<script type="text/javascript" src="components/grid.js"></script>
+		<script type="text/javascript" src="components/state.js"></script>
+		<script type="text/javascript" src="components/stateManager.js"></script>
+
+
+
+		<!--Our modules and states-->
+		<script type="text/javascript" src="components/superhero/playArea.js" ></script>
+		<script type="text/javascript" src="components/superhero/toybox.js" ></script>
+		<script type="text/javascript" src="components/superhero/toyboxTab.js" ></script>
+		<script type="text/javascript" src="components/superhero/scenarioScreen.js" ></script>
+		<script type="text/javascript" src="components/superhero/splashScreen.js" ></script>
+		<script type="text/javascript" src="components/superhero/detailedScenarioScreen.js"></script>
+		<script type="text/javascript" src="components/superhero/qualitiesScreen.js"></script>
+
 		<!--Extensions-->
 		<script type="text/javascript" src="extensions/touch.js" ></script>
 		<script type="text/javascript" src="extensions/jsonLoader.js"></script>
@@ -34,6 +46,8 @@
 				"skeleton":undefined,
 				"powers":[]
 			}
+
+
 			function onLoad(){
 
 
@@ -44,6 +58,7 @@
 				ctx = canvas.getContext("2d");
 				//Make the canvas full screen
 
+				//Size the canvas as far as we can.
 				var wantedHeightProp = window.innerHeight / 1080;
 				var wantedWidthProp = window.innerWidth / 1920;
 				var scale = (wantedHeightProp < wantedWidthProp)? wantedHeightProp : wantedWidthProp;
@@ -52,8 +67,7 @@
 				canvas.style.width = 1920 * scale;
 
 				//create and add elements
-				manager = Manager();
-				manager.init(canvas, ctx, 1/scale);
+				manager = Manager(canvas, ctx, 1/scale);
 				
 
 				manager.setLoad(function(){
@@ -61,26 +75,18 @@
 				});
 				
 				
-				currentState = CurrentState(0, 0, 1920, 1080);
+				//currentState = CurrentState(0, 0, 1920, 1080);
+				currentState = StateManager(SplashScreen({"superhero":superhero}));
 				manager.addModule(currentState);
+
 				
 				
 				//Load up the splash screen.
-				switchState("splashScreen");
-				
-				
-				
-				
-				// dev1.addEvent("mousedown", function(_clipBoard){
-				// 	_clipBoard.ToFire = ["swapComponent"];
-				// 	_clipBoard.Body = {"image":"images/dev/_01.png", "slot":"body"}
-				// }, false);
+				//switchState("splashScreen");
 
-				
-				//\toy.addEvent("mouseup", function(_clipBoard){ alert("hi, I'm Esther!"); }, false);
 			}
 			function loadErrorScreen(){
-				sc = new SplashScreen(0,0,1920, 1080);
+				sc = new SplashScreen();
 				currentState.addModule(sc);
 				//Splash Image
 				splashImage = Sprite(0,0,1920,1080, "images/dev/error.png");
@@ -96,205 +102,7 @@
 					switchState("splashScreen");
 				},false);
 			}
-			function loadSplashScreen(){
-				sc = new SplashScreen(0,0,1920, 1080);
-				currentState.addModule(sc);
-				
-				//Reset the super hero
-				superhero.virtues = [];
-				//superhero.powers = [];
-				superhero.powers = [];
-				
-				
-				//Splash Image
-				splashImage = Sprite(0,0,1920,1080, "images/dev/splashTest2.png");
-				sc.addModule(splashImage);
-				
-				//Buttons
-				startButton = Sprite(1920/2-128, 3*1080/4-64, 256, 128, "images/dev/startButtonTest2.png");
-				sc.addModule(startButton);
-				
-				//Events
-				startButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("scenarioScreen");
-				},false);
-				
-				
-				console.log("Current super powers: "+superhero.powers);
-			}
-			function loadScenarioScreen(){
-				sc = new ScenarioScreen(0,0,1920, 1080);
-				currentState.addModule(sc);
-				
-				//Dev Splash Image
-				splashImage = Sprite(0,0,1920,1080, "images/dev/scenarioScreenTest01.png");
-				sc.addModule(splashImage);
-				
-				//Buttons
-				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
-				sc.addModule(backButton);
-				
-				scenario1Button = Sprite(sc.bounds.width/5, sc.bounds.height/3-128, 256, 256, "images/dev/scenarioButton.png");
-				sc.addModule(scenario1Button);
-				
-				scenario2Button = Sprite(2*sc.bounds.width/5, sc.bounds.height/3-128, 256, 256, "images/dev/scenarioButton2.png");
-				sc.addModule(scenario2Button);
-				
-				scenario3Button = Sprite(3*sc.bounds.width/5, sc.bounds.height/3-128, 256, 256, "images/dev/scenarioButton.png");
-				sc.addModule(scenario3Button);
-				
-				scenario4Button = Sprite(sc.bounds.width/5, 2*sc.bounds.height/3-128, 256, 256, "images/dev/scenarioButton.png");
-				sc.addModule(scenario4Button);
-				
-				scenario5Button = Sprite(2*sc.bounds.width/5, 2*sc.bounds.height/3-128, 256, 256, "images/dev/scenarioButton.png");
-				sc.addModule(scenario5Button);
-				
-				randomScenarioButton = Sprite(3*sc.bounds.width/5, 2*sc.bounds.height/3-128, 256, 256, "images/dev/randomScenarioButton.png");
-				sc.addModule(randomScenarioButton);
-				
-				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
-				sc.addModule(quitButton);
-				
-				//Events
-				backButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("splashScreen");
-				},false);
-				
-				scenario1Button.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("detailedScenarioScreen");
-				},false);
-				
-				scenario2Button.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("detailedScenarioScreen");
-				},false);
-				
-				scenario3Button.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("detailedScenarioScreen");
-				},false);
-				
-				scenario4Button.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("detailedScenarioScreen");
-				},false);
-				
-				scenario5Button.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("detailedScenarioScreen");
-				},false);
-				
-				randomScenarioButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("detailedScenarioScreen");
-				},false);
-				
-				quitButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("splashScreen");
-				},false);
-			}
-			function loadDetailedScenarioScreen(){
-				sc = new Screen(0,0,1920, 1080);
-				currentState.addModule(sc);
-				
-				//Dev Splash Image
-				splashImage = Sprite(0,0,1920,1080, "images/dev/detailedScenarioScreenTest01.png");
-				sc.addModule(splashImage);
-				
-				//Buttons
-				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
-				sc.addModule(backButton);
-				
-				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
-				sc.addModule(continueButton);
-				
-				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
-				sc.addModule(quitButton);
-				
-				//Events
-				backButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("scenarioScreen");
-				},false);
-				
-				continueButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("qualitiesScreen");
-				},false);
-				
-				quitButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("splashScreen");
-				},false);
-			}
-			function loadQualitiesScreen(){
-				sc = new Screen(0,0,1920, 1080);
-				currentState.addModule(sc);
-				
-				//Reset the super hero
-				superhero.virtues = [];
-				//superhero.powers = [];
-				//superhero.powers = [];
-				
-				//Dev Splash Image
-				splashImage = Sprite(0,0,1920,1080, "images/dev/qualitiesScreenTest01.png");
-				sc.addModule(splashImage);
-				
-				//Buttons
-				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
-				sc.addModule(backButton);
-				
-				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
-				sc.addModule(continueButton);
-				
-				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
-				sc.addModule(quitButton);
-
-				var grid = Grid(sc.bounds.width/5, sc.bounds.height/3-128, 2, 1, 256, 256, 10);
-				sc.addModule(grid);
-				
-				//Qualities
-				quality1Button = Sprite(sc.bounds.width/5, sc.bounds.height/3-128, 256, 256, "images/dev/quality1_unselected.png");
-				//sc.addModule(quality1Button);
-				grid.setSpace(quality1Button, 0, 0, true);
-				
-				quality2Button = Sprite(sc.bounds.width/5, 2*sc.bounds.height/3-128, 256, 256, "images/dev/quality2_unselected.png");
-				grid.setSpace(quality2Button, 0, 1, true);
-				//sc.addModule(quality2Button);
-				
-				//Events
-				backButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("detailedScenarioScreen");
-				},false);
-				
-				continueButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("characterBuilder");
-				},false);
-				
-				quitButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("splashScreen");
-				},false);
-				
-				quality1Button.addEvent("mousedown", function(_clipBoard){
-					highlightQualityAndPowerButtons("virtues",quality1Button,"beingAwesome","images/dev/quality1_unselected.png","images/dev/quality1_selected.png", _clipBoard);
-				},false);
-				
-				quality2Button.addEvent("mousedown", function(_clipBoard){
-					highlightQualityAndPowerButtons("virtues",quality2Button,"beingLame","images/dev/quality2_unselected.png","images/dev/quality2_selected.png", _clipBoard);
-				},false);
-
-
-				//When you click on a button, you can add a quality like so.
-				//superhero.virtues.push("quality");
-				//And reference it and all that good stuff like an array.
-			}
+			
 			function loadPowersScreen(){
 				sc = new Screen(0,0,1920, 1080);
 				currentState.addModule(sc);
@@ -352,40 +160,6 @@
 				//When you click on a button, you can add a power like so.
 				//superhero.powers.push("fire");
 				//And reference it and all that good stuff like an array.
-			}
-			
-			//Helper Functions
-			/*
-			function: 	highlightQualityAndPowerButtons
-			parameters:	_list: which list you are looping through. IE: "qualities" or "powers"
-						_buttonName: name of the button you wish to alter
-						_attributeName: name of the quality or power you wish to add or remove
-						_unselectedImage: the "unselected" image url to switch to
-						_selectedImage: the "selected" image url to switch to
-						_clipBoard: clipboard. because Danny said to.
-			description: This function highlights and unhighlights powers and qualities. It also adds and removes powers and qualities from the current super hero.
-			returns: N/A
-			*/
-			function highlightQualityAndPowerButtons(_list, _buttonName, _attributeName, _unselectedImage, _selectedImage, _clipBoard){
-				tempFound = false;
-					for(i = 0; i < superhero[_list].length; i++) {
-						if(superhero[_list][i] == _attributeName){
-							//If the logic finds its way here, then it means that the power is already in the list.
-							//So now we have to remove it
-							tempFound = true;
-							superhero[_list].pop(_attributeName);
-							_buttonName.setImage(_unselectedImage);
-							if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
-						}
-					}
-					if(tempFound == false){
-						//If the logic finds its way here, then it means that the power is not in the list.
-						//So now we have to add it
-						superhero[_list].push(_attributeName);
-						_buttonName.setImage(_selectedImage);
-						if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
-					}
-				console.log("Current list content: "+superhero[_list]);
 			}
 			
 			

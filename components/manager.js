@@ -9,7 +9,7 @@
 --a method to pass in an event.
 */
 
-function Manager() {
+function Manager(_canvas, _ctx, _scale) {
 
 	//-------------VARIABLES-----------------------------------
 
@@ -22,37 +22,48 @@ function Manager() {
 	Touch.Collisions(base);
 
 	//Switch methods.
-	toReturn.init = _init;
 	toReturn.draw = _draw;
 
 
 	//-----------------------------------------------------------------
 
-	//s
-	function _init(_canvas, _ctx, _scale) {
-		canvas = _canvas;
-		ctx = _ctx;
-		toReturn.scale = _scale;
+	//setup and events.
+	//-----------------------------------------------------------------
+	canvas = _canvas;
+	ctx = _ctx;
+	toReturn.scale = _scale;
 
-		canvas.onmousedown = function(e){ base.handleEvent("mousedown", 
-            { "eventType":"mousedown", 
-            "mousex":((typeof e.offsetX !== "undefined")? e.offsetX : e.pageX - e.target.offsetLeft)*toReturn.scale, 
-            "mousey": ((typeof e.offsetY !== "undefined")? e.offsetY : e.pageY - e.target.offsetTop)*toReturn.scale
-            }); };
-		canvas.onmouseup = function(e){ base.handleEvent("mouseup", 
-            { "eventType":"mouseup", 
-            "mousex":((typeof e.offsetX !== "undefined")? e.offsetX : e.pageX - e.target.offsetLeft)*toReturn.scale, 
-            "mousey": ((typeof e.offsetY !== "undefined")? e.offsetY : e.pageY - e.target.offsetTop)*toReturn.scale
-            }); };
-		canvas.onmousemove = function(e){ base.handleEvent("mousemove", 
-            { "eventType":"mousemove", 
-            "mousex":((typeof e.offsetX !== "undefined")? e.offsetX : e.pageX - e.target.offsetLeft)*toReturn.scale, 
-            "mousey": ((typeof e.offsetY !== "undefined")? e.offsetY : e.pageY - e.target.offsetTop)*toReturn.scale
-            }); };
+	//Add in the events as needed.
+	canvas.onmousedown = function(e){ base.handleEvent("mousedown", 
+        { "eventType":"mousedown", 
+        "mousex":((typeof e.offsetX !== "undefined")? e.offsetX : e.pageX - e.target.offsetLeft)*toReturn.scale, 
+        "mousey": ((typeof e.offsetY !== "undefined")? e.offsetY : e.pageY - e.target.offsetTop)*toReturn.scale
+        }); };
+	canvas.onmouseup = function(e){ base.handleEvent("mouseup", 
+        { "eventType":"mouseup", 
+        "mousex":((typeof e.offsetX !== "undefined")? e.offsetX : e.pageX - e.target.offsetLeft)*toReturn.scale, 
+        "mousey": ((typeof e.offsetY !== "undefined")? e.offsetY : e.pageY - e.target.offsetTop)*toReturn.scale
+        }); };
+	canvas.onmousemove = function(e){ 
+		base.handleEvent("mousemove", 
+        { "eventType":"mousemove", 
+        "mousex":((typeof e.offsetX !== "undefined")? e.offsetX : e.pageX - e.target.offsetLeft)*toReturn.scale, 
+        "mousey": ((typeof e.offsetY !== "undefined")? e.offsetY : e.pageY - e.target.offsetTop)*toReturn.scale
+        }); 
 
-		base.addEvent("redraw", function(_clipBoard){ _draw(); }, false);
-		//_tick();
-	}
+        base.handleEvent("mouseover", 
+        { "eventType":"mouseover", 
+        "mousex":((typeof e.offsetX !== "undefined")? e.offsetX : e.pageX - e.target.offsetLeft)*toReturn.scale, 
+        "mousey": ((typeof e.offsetY !== "undefined")? e.offsetY : e.pageY - e.target.offsetTop)*toReturn.scale
+        });
+	};
+
+	base.addEvent("redraw", function(_clipBoard){ _draw(); }, false);
+	//base.addEvent("*", function(_clipBoard){ _clipBoard.Destroy = true; }); //When manager finishes with an event, it sets it to be destroyed.
+	//Needs additional testing before I leave it on.  I think adding this line will break a lot of things.
+	//_tick();
+
+
 
 	function _tick(){
 		base.handleEvent("tick", {});

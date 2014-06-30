@@ -81,9 +81,16 @@ function Module(_x, _y, _width, _height){
 					//FOR POSTERITY:  If you're utalizing this part of the code - ie, calling a custom function
 					//and then passing down events on your own, you should probably set bubble to false.
 					//You can handle passing the event down and managing the clipboard in all likelyhood - bubble is mostly for automation's sake.
-					
 					toReturn.events[_eventString].call[i](_clipBoard);
 
+				}
+			}
+
+			//Check for stuff that gets globally applied to all events.
+			if(toReturn.events["*"]) {
+				//See abover for logic.
+				for(var i=0; i<toReturn.events["*"].call.length; i++){
+					toReturn.events["*"].call[i](_clipBoard);
 				}
 			}
 
@@ -95,6 +102,7 @@ function Module(_x, _y, _width, _height){
 				//If the event exists and is set to bubble downward.
 				(toReturn.events[_eventString] && toReturn.events[_eventString].bubble)) 
 			{
+
 				//Pass the event on.
 				var fireList = _clipBoard.ToFire || [];
 				for(var j=0; j<toReturn.contents.length; j++) {
@@ -114,8 +122,8 @@ function Module(_x, _y, _width, _height){
 			//---------------END HANDLE TOFIRE-----------------------------
 		}
 
-			//Now that we've finished that off, check to see if the clipboard should be cleared.
-			//if(!_clipBoard.Preserve) { _clipBoard = {}; }
+		//Now that we've finished that off, check to see if the clipboard should be cleared.
+		if(_clipBoard.Destroy) { _clipBoard = {}; }
 
 		return _clipBoard;//If we modified it, we modified it.  Otherwise, just have your data back.
 		//Todo: make a way to clear the clipboard as necessary.
@@ -139,6 +147,7 @@ function Module(_x, _y, _width, _height){
 				//Fire off to everyone else except _returnFrom
 				for(j= 0; j<toReturn.contents.length; j++){
 					if(toReturn.contents[j] != _returnFrom){ //Not the same module.
+
 						//Fire off if not blocked.
 						if(!toReturn.clipBoard.BlockEvents || toReturn.clipBoard.BlockEvents.indexOf(_toFire[i]) != -1){
 							toReturn.contents[j].handleEvent(_toFire[i], _clipBoard);
