@@ -44,11 +44,18 @@ function Manager() {
             "mousex":((typeof e.offsetX !== "undefined")? e.offsetX : e.pageX - e.target.offsetLeft)*toReturn.scale, 
             "mousey": ((typeof e.offsetY !== "undefined")? e.offsetY : e.pageY - e.target.offsetTop)*toReturn.scale
             }); };
-		canvas.onmousemove = function(e){ base.handleEvent("mousemove", 
+		canvas.onmousemove = function(e){ 
+		base.handleEvent("mousemove", 
             { "eventType":"mousemove", 
             "mousex":((typeof e.offsetX !== "undefined")? e.offsetX : e.pageX - e.target.offsetLeft)*toReturn.scale, 
             "mousey": ((typeof e.offsetY !== "undefined")? e.offsetY : e.pageY - e.target.offsetTop)*toReturn.scale
-            }); };
+            });
+		base.handleEvent("mouseover", 
+			{ "eventType":"mouseover", 
+			"mousex":((typeof e.offsetX !== "undefined")? e.offsetX : e.pageX - e.target.offsetLeft)*toReturn.scale, 
+			"mousey": ((typeof e.offsetY !== "undefined")? e.offsetY : e.pageY - e.target.offsetTop)*toReturn.scale
+			});
+		};
 
 		base.addEvent("redraw", function(_clipBoard){ _draw(); }, false);
 		//_tick();
