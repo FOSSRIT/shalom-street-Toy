@@ -34,6 +34,7 @@
 		<script type="text/javascript" src="components/superhero/qualitiesScreen.js"></script>
 		<script type="text/javascript" src="components/superhero/characterBuilder.js"></script>
 		<script type="text/javascript" src="components/superhero/powersScreen.js"></script>
+		<script type="text/javascript" src="components/superhero/characterBioScreen.js"></script>
 
 		<!--Extensions-->
 		<script type="text/javascript" src="extensions/touch.js" ></script>
@@ -103,51 +104,6 @@
 				},false);
 			}
 			
-			
-			function loadCharacterBioScreen(){
-				sc = new Screen(0,0,1920, 1080);
-				currentState.addModule(sc);
-				
-				//Dev Splash Image
-				splashImage = Sprite(0,0,1920,1080, "images/dev/characterBioScreenTest01.png");
-				sc.addModule(splashImage);
-				sc.addModule(bioSubmission);
-				bioSubmission.bounds.x = 700;
-				bioSubmission.bounds.y = 250;
-				bioSubmission.bounds.width = 800;
-				bioSubmission.bounds.height = 300;
-
-				/*var domElementThing = DomWrapper(document.getElementById("bioSubmitBox"));
-				manager.addModule(domElementThing);*/
-				
-				//Buttons
-				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
-				sc.addModule(backButton);
-				
-				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
-				sc.addModule(continueButton);
-				
-				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
-				sc.addModule(quitButton);
-				
-				//Events
-				backButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("powersScreen");
-				},false);
-				
-				continueButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("resultsScreen");
-				},false);
-				
-				quitButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("splashScreen");
-				},false);
-
-				//Assumably, you could also attach this to the superhero object.
-			}
 			function loadResultsScreen(){
 				sc = new Screen(0,0,1920, 1080);
 				currentState.addModule(sc);
