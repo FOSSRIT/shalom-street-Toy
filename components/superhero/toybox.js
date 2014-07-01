@@ -25,9 +25,6 @@ function ToyBox(_x, _y, _width, _height) {
 	var tabs = [];
 	Touch.Collisions(base);
 
-	base.addEvent("swapComponent", function(){ console.log("Toybox recieved swapComponent");}, false)
-
-
 
 	//-------FOR DEV PURPOSES
 	var x = _x;

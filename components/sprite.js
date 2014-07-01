@@ -30,11 +30,11 @@ function Sprite(_x, _y, _width, _height, _imageSource, _xOrigin, _yOrigin) {
 	//-----------MODIFIED LOADING---------------
 
 	//Handles events.  
-	var _fireOnLoad = undefined;
-	var _ctxForLoad = undefined;
+	var _fireOnLoad = false;
+	var _ctxForLoad = false;
 	function onImageLoad(){ 
 		toReturn.loaded = true;
-		if(_fireOnLoad != undefined){  //If there's anything to fire off.
+		if(_fireOnLoad){  //If there's anything to fire off.
 			//Fire off in proper context if you can, otherwise, just use the current context.
 			//If we don't have width and height set, set them.
 			if(toReturn.bounds.width === 0 && toReturn.bounds.height === 0) {
@@ -46,7 +46,7 @@ function Sprite(_x, _y, _width, _height, _imageSource, _xOrigin, _yOrigin) {
 	}; image.onload = onImageLoad;
 
 	function _setLoad(_function, _ctx) {
-		_fireOnLoad = _function; _ctxForLoad = _ctx;
+		_fireOnLoad = _function || false; _ctxForLoad = _ctx || false;
 	}
 
 	//-----------------------------PROPERTIES-------------------------------------
