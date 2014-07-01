@@ -35,6 +35,9 @@
 		<script type="text/javascript" src="components/superhero/characterBuilder.js"></script>
 		<script type="text/javascript" src="components/superhero/powersScreen.js"></script>
 		<script type="text/javascript" src="components/superhero/characterBioScreen.js"></script>
+		<script type="text/javascript" src="components/superhero/resultsScreen.js"></script>
+		<script type="text/javascript" src="components/superhero/whyItWorkedScreen.js"></script>
+		<script type="text/javascript" src="components/superhero/superPoseScreen.js"></script>
 
 		<!--Extensions-->
 		<script type="text/javascript" src="extensions/touch.js" ></script>
@@ -86,176 +89,24 @@
 
 
 
-			function loadErrorScreen(){
-				sc = new SplashScreen();
-				currentState.addModule(sc);
-				//Splash Image
-				splashImage = Sprite(0,0,1920,1080, "images/dev/error.png");
-				sc.addModule(splashImage);
-				
-				//Buttons
-				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
-				sc.addModule(continueButton);
-				
-				//Events
-				continueButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("splashScreen");
-				},false);
-			}
-			
-			function loadResultsScreen(){
-				sc = new Screen(0,0,1920, 1080);
-				currentState.addModule(sc);
-				
-				//Dev Splash Image
-				splashImage = Sprite(0,0,1920,1080, "images/dev/resultsScreenTest01.png");
-				sc.addModule(splashImage);
-				
-				//Logic
-				//See if based on qualities and powers if the player won or lost the scenario
-				powerFound = false;
-				qualityFound = false;
-				for(i = 0; i < superhero.powers.length; i++) {
-					if(superhero.powers[i] == "saveKitten"){
-						//If the logic finds its way here, then it means that the power is already in the list.
-						//So now we have to remove it
-						powerFound = true;
-					}
+				function loadErrorScreen(){
+					sc = new SplashScreen();
+					currentState.addModule(sc);
+					//Splash Image
+					splashImage = Sprite(0,0,1920,1080, "images/dev/error.png");
+					sc.addModule(splashImage);
+					
+					//Buttons
+					continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+					sc.addModule(continueButton);
+					
+					//Events
+					continueButton.addEvent("mousedown", function(_clipBoard){
+						manager.removeModule(sc);
+						switchState("splashScreen");
+					},false);
 				}
-				for(i = 0; i < superhero.virtues.length; i++) {
-					if(superhero.virtues[i] == "beingAwesome"){
-						//If the logic finds its way here, then it means that the power is already in the list.
-						//So now we have to remove it
-						qualityFound = true;
-					}
-				}
-				if(qualityFound && powerFound){
-					resultImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,256,256, "images/dev/win.png");
-				}else{
-					resultImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,256,256, "images/dev/lose.png");
-				}
-				sc.addModule(resultImage);
-				
-				//Buttons
-				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
-				sc.addModule(backButton);
-				
-				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
-				sc.addModule(continueButton);
-				
-				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
-				sc.addModule(quitButton);
-				
-				//Events
-				backButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("characterBioScreen");
-				},false);
-				
-				continueButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("whyItWorkedScreen");
-				},false);
-				
-				quitButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("splashScreen");
-				},false);
-			}
-			function loadWhyItWorkedScreen(){
-				sc = new Screen(0,0,1920, 1080);
-				currentState.addModule(sc);
-				
-				//Dev Splash Image
-				splashImage = Sprite(sc.bounds.width/2-128,sc.bounds.height/2-128,128,128, "images/dev/whyItWorkedScreen.png");
-				sc.addModule(splashImage);
-				
-				//Buttons
-				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
-				sc.addModule(backButton);
-				
-				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
-				sc.addModule(continueButton);
-				
-				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
-				sc.addModule(quitButton);
-				
-				//Events
-				backButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("resultsScreen");
-				},false);
-				
-				continueButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("superPoseScreen");
-				},false);
-				
-				quitButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("splashScreen");
-				},false);
-			}
-			function loadSuperPoseScreen(){
-				sc = new Screen(0,0,1920, 1080);
-				currentState.addModule(sc);
-				
-				//Dev Splash Image
-				splashImage = Sprite(0,0,1920,1080, "images/dev/superPoseScreenTest01.png");
-				sc.addModule(splashImage);
-				
-				//Buttons
-				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
-				sc.addModule(backButton);
-				
-				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
-				sc.addModule(continueButton);
-				
-				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
-				sc.addModule(quitButton);
-				
-				//Events
-				backButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("whyItWorkedScreen");
-				},false);
-				
-				continueButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("splashScreen");
-				},false);
-				
-				quitButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("splashScreen");
-				},false);
-			}
 
-			function switchState(_state){
-				//Remove current state data
-				manager.removeModule(currentState);
-				currentState = CurrentState(0, 0, 1920, 1080);
-				manager.addModule(currentState);
-				
-				//set current state = _state
-				if(_state == "splashScreen"){loadSplashScreen();
-				}else if(_state == "scenarioScreen"){loadScenarioScreen();
-				}else if(_state == "detailedScenarioScreen"){loadDetailedScenarioScreen();
-				}else if(_state == "qualitiesScreen"){loadQualitiesScreen();
-				}else if(_state == "characterBuilder"){
-					//The two main areas of our app inside of the canvas.
-					createPlayArea();
-					createToyBox();
-				}else if(_state == "powersScreen"){loadPowersScreen();
-				}else if(_state == "characterBioScreen"){loadCharacterBioScreen();
-				}else if(_state == "resultsScreen"){loadResultsScreen();
-				}else if(_state == "whyItWorkedScreen"){loadWhyItWorkedScreen();
-				}else if(_state == "superPoseScreen"){loadSuperPoseScreen();
-				}else{
-					loadErrorScreen();
-				}
-			}
 		window.onload = onLoad;
 		</script>
 	</head>
