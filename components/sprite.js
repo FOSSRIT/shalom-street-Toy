@@ -51,13 +51,25 @@ function Sprite(_x, _y, _width, _height, _imageSource, _xOrigin, _yOrigin) {
 
 	//-----------------------------PROPERTIES-------------------------------------
 
-	function _setImage(_image, setBounds) { 
+	function _setImage(_image, setBounds, newX, newY, newWidth, newHeight) { 
 		//Works with both strings and actual images.
 		if(typeof(_image) == "string") {
 			image.src = _image; 
 			if(setBounds){
 				toReturn.bounds.width = image.width;
 				toReturn.bounds.height = image.height;
+			}
+			if(newX){
+				toReturn.bounds.x = newX;
+			}
+			if(newY){
+				toReturn.bounds.y = newY;
+			}
+			if(newWidth){
+				toReturn.bounds.width = newWidth;
+			}
+			if(newHeight){
+				toReturn.bounds.height = newHeight;
 			}
 		} else  {
 			image = _image;

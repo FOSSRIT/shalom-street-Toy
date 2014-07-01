@@ -6,68 +6,40 @@ function PowersScreen(_info){
 	var info = _info;
 
 
-	var splashImage = Sprite(0,0,1920,1080, "images/dev/powersScreenTest01.png");
-	base.addModule(splashImage);
-	
-	//Buttons
-	var backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
-	base.addModule(backButton);
-	
-	var continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
-	base.addModule(continueButton);
-	
-	var quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
-	base.addModule(quitButton);
-	
-	//Events
-	backButton.addEvent("mousedown", base.changeState("ScenarioScreen", _info), false);
-	continueButton.addEvent("mousedown", base.changeState("QualitiesScreen", _info), false);
-	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
-
-
-
-
-	//Reset the super hero virtues.
-	info.superhero.virtues = [];
-	
+	superhero.powers = [];
+				
 	//Dev Splash Image
-	var splashImage = Sprite(0,0,1920,1080, "images/dev/qualitiesScreenTest01.png");
+	splashImage = Sprite(0,0,1920,1080, "images/dev/powersScreenTest01.png");
 	base.addModule(splashImage);
 	
 	//Buttons
-	var backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+	backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
 	base.addModule(backButton);
 	
-	var continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+	continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
 	base.addModule(continueButton);
 	
-	var quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+	quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
 	base.addModule(quitButton);
-
-	var grid = Grid(toReturn.bounds.width/5, toReturn.bounds.height/3-128, 2, 1, 256, 256, 10);
-	base.addModule(grid);
 	
-	//Qualities
-	var quality1Button = Sprite(toReturn.bounds.width/5, toReturn.bounds.height/3-128, 256, 256, "images/dev/quality1_unselected.png");
-	base.addModule(quality1Button);
-	//grid.setSpace(quality1Button, 0, 0, true);
+	//Powers
+	power1Button = Sprite(toReturn.bounds.width/5, toReturn.bounds.height/3-128, 256, 256, "images/dev/power1_unselected.png");
+	base.addModule(power1Button);
 	
-	var quality2Button = Sprite(toReturn.bounds.width/5, 2*toReturn.bounds.height/3-128, 256, 256, "images/dev/quality2_unselected.png");
-	//grid.setSpace(quality2Button, 0, 1, true);
-	base.addModule(quality2Button);
+	power2Button = Sprite(toReturn.bounds.width/5, 2*toReturn.bounds.height/3-128, 256, 256, "images/dev/power2_unselected.png");
+	base.addModule(power2Button);
 	
 	//Events
-	backButton.addEvent("mousedown", base.changeState("DetailedScenarioScreen", _info), false);
-	continueButton.addEvent("mousedown", base.changeState("CharacterBuilder", _info), false);	
+	backButton.addEvent("mousedown", base.changeState("CharacterBuilder", _info), false);
+	continueButton.addEvent("mousedown", base.changeState("CharacterBioScreen", _info), false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
-
 	
-	quality1Button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("virtues",quality1Button,"beingAwesome","images/dev/quality1_unselected.png","images/dev/quality1_selected.png", _clipBoard);
+	power1Button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",power1Button,"saveKitten","images/dev/power1_unselected.png","images/dev/power1_selected.png", _clipBoard);
 	},false);
 	
-	quality2Button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("virtues",quality2Button,"beingLame","images/dev/quality2_unselected.png","images/dev/quality2_selected.png", _clipBoard);
+	power2Button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",power2Button,"notSaveKitten","images/dev/power2_unselected.png","images/dev/power2_selected.png", _clipBoard);
 	},false);
 
 

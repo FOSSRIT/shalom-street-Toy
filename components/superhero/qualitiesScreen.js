@@ -6,27 +6,6 @@ function QualitiesScreen(_info){
 	var info = _info;
 
 
-	var splashImage = Sprite(0,0,1920,1080, "images/dev/detailedScenarioScreenTest01.png");
-	base.addModule(splashImage);
-	
-	//Buttons
-	var backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
-	base.addModule(backButton);
-	
-	var continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
-	base.addModule(continueButton);
-	
-	var quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
-	base.addModule(quitButton);
-	
-	//Events
-	backButton.addEvent("mousedown", base.changeState("ScenarioScreen", _info), false);
-	continueButton.addEvent("mousedown", base.changeState("QualitiesScreen", _info), false);
-	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
-
-
-
-
 	//Reset the super hero virtues.
 	info.superhero.virtues = [];
 	

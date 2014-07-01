@@ -4,10 +4,6 @@ function State(_x, _y, _width, _height){
 	var base = Module(_x, _y, _width, _height); //Call base
 	Touch.Collisions(base);
 	base.interface.type = "State";
-
-	//Set up the title screen.
-	var _background = Sprite(0, 0, 1920, 1080, "images/dev/splashTest2.png");
-	base.addModule(_background);
 	
 
 	//Some stuff.

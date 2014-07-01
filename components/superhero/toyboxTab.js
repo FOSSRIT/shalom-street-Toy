@@ -11,8 +11,7 @@ function ToyBoxTab(_x, _y, _width, _height, _connectedSlot) {
 	toReturn.selected = false;
 	toReturn.visible = false; //By default.
 
-	base.addEvent("swapComponent", function(){ console.log('toyboxTab recieved swapComponent'); }, false);
-
+	
 	function _select(){
 		toReturn.visible = true;
 		toReturn.selected = true;
@@ -31,7 +30,6 @@ function ToyBoxTab(_x, _y, _width, _height, _connectedSlot) {
 		//Add in the proper event.
 		option.addEvent("mousedown", function(_clipBoard){
 			console.log("begin");
-			console.log(_clipBoard.ToFire)
 			_clipBoard.ToFire = ["swapComponent"];
 			//if(_clipBoard.ToFire) { _clipBoard.ToFire.push("swapComponent"); } else { _clipBoard.ToFire = ["swapComponent"]; }
 			_clipBoard.ComponentSwap = {"image":img, "slot":slot || connectedSlot};

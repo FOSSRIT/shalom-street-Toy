@@ -32,6 +32,8 @@
 		<script type="text/javascript" src="components/superhero/splashScreen.js" ></script>
 		<script type="text/javascript" src="components/superhero/detailedScenarioScreen.js"></script>
 		<script type="text/javascript" src="components/superhero/qualitiesScreen.js"></script>
+		<script type="text/javascript" src="components/superhero/characterBuilder.js"></script>
+		<script type="text/javascript" src="components/superhero/powersScreen.js"></script>
 
 		<!--Extensions-->
 		<script type="text/javascript" src="extensions/touch.js" ></script>
@@ -79,12 +81,10 @@
 				currentState = StateManager(SplashScreen({"superhero":superhero}));
 				manager.addModule(currentState);
 
-				
-				
-				//Load up the splash screen.
-				//switchState("splashScreen");
-
 			}
+
+
+
 			function loadErrorScreen(){
 				sc = new SplashScreen();
 				currentState.addModule(sc);
@@ -101,65 +101,6 @@
 					manager.removeModule(sc);
 					switchState("splashScreen");
 				},false);
-			}
-			
-			function loadPowersScreen(){
-				sc = new Screen(0,0,1920, 1080);
-				currentState.addModule(sc);
-				
-				//Reset the super hero
-				//superhero.virtues = [];
-				//superhero.powers = [];
-				superhero.powers = [];
-				
-				//Dev Splash Image
-				splashImage = Sprite(0,0,1920,1080, "images/dev/powersScreenTest01.png");
-				sc.addModule(splashImage);
-				
-				//Buttons
-				backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
-				sc.addModule(backButton);
-				
-				continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
-				sc.addModule(continueButton);
-				
-				quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
-				sc.addModule(quitButton);
-				
-				//Powers
-				power1Button = Sprite(sc.bounds.width/5, sc.bounds.height/3-128, 256, 256, "images/dev/power1_unselected.png");
-				sc.addModule(power1Button);
-				
-				power2Button = Sprite(sc.bounds.width/5, 2*sc.bounds.height/3-128, 256, 256, "images/dev/power2_unselected.png");
-				sc.addModule(power2Button);
-				
-				//Events
-				backButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("characterBuilder");
-				},false);
-				
-				continueButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("characterBioScreen");
-				},false);
-				
-				quitButton.addEvent("mousedown", function(_clipBoard){
-					manager.removeModule(sc);
-					switchState("splashScreen");
-				},false);
-				
-				power1Button.addEvent("mousedown", function(_clipBoard){
-					highlightQualityAndPowerButtons("powers",power1Button,"saveKitten","images/dev/power1_unselected.png","images/dev/power1_selected.png", _clipBoard);
-				},false);
-				
-				power2Button.addEvent("mousedown", function(_clipBoard){
-					highlightQualityAndPowerButtons("powers",power2Button,"notSaveKitten","images/dev/power2_unselected.png","images/dev/power2_selected.png", _clipBoard);
-				},false);
-				
-				//When you click on a button, you can add a power like so.
-				//superhero.powers.push("fire");
-				//And reference it and all that good stuff like an array.
 			}
 			
 			
@@ -334,129 +275,7 @@
 					switchState("splashScreen");
 				},false);
 			}
-			function createTabs(){
-				//TEMP DEV TABS
-				//the tabs themselves
-				var devTab1 = Sprite(0, 0, 128, 128, "images/dev/tab1.png");
-				var devTab2 = Sprite(128, 0, 128, 128, "images/dev/tab2.png");
-				var devTab3 = Sprite(256, 0, 128, 128, "images/dev/tab3.png");
-			
-				//Toybox tabs.
-				//the components inside each tab
-				var tab1 = ToyBoxTab(0, 128, toybox.bounds.width, toybox.bounds.height - 128, "head");
-					//Components in side of a tab
-					tab1.addOption(Sprite(0, 0, 128, 128, "images/Esther sets/Esther-1/esther-set-1-02.png"), "images/Esther sets/Esther-1/esther-set-1-02.png");
-					tab1.addOption(Sprite(128, 0, 128, 128, "images/Esther sets/Esther-2/esther-set-2-02.png"), "images/Esther sets/Esther-2/esther-set-2-02.png");
-					tab1.addOption(Sprite(0, 128, 128, 128, "images/Esther sets/Esther-3/esther-set-3-02.png"), "images/Esther sets/Esther-3/esther-set-3-02.png");
-					tab1.addOption(Sprite(128, 128, 128, 128, "images/dev/_04.png"), Sprite(0, 0, 230, 230, "images/dev/_04.png"));
-					//add the tab to the toybox
-				var tab2 = ToyBoxTab(0, 128, toybox.bounds.width, toybox.bounds.height - 128, "body");
-					tab2.addOption(Sprite(0, 0, 128, 128, "images/Esther sets/Esther-1/esther-set-1-03.png"), "images/Esther sets/Esther-1/esther-set-1-03.png");
-					tab2.addOption(Sprite(128, 0, 128, 128, "images/Esther sets/Esther-2/esther-set-2-03.png"), "images/Esther sets/Esther-2/esther-set-2-03.png");
-					tab2.addOption(Sprite(0, 128, 128, 128, "images/dev/_05.png"), "images/dev/_05.png");
-					tab2.addOption(Sprite(128, 128, 128, 128, "images/dev/_06.png"), "images/dev/_06.png");
-				var tab3 = ToyBoxTab(0, 128, toybox.bounds.width, toybox.bounds.height - 128, "feet");
-					tab3.addOption(Sprite(0, 0, 128, 128, "images/Esther sets/Esther-1/esther-set-1-04.png"), "images/Esther sets/Esther-1/esther-set-1-04.png");
-					tab3.addOption(Sprite(128, 0, 128, 128, "images/Esther sets/Esther-2/esther-set-2-04.png"), "images/Esther sets/Esther-2/esther-set-2-04.png");
-					tab3.addOption(Sprite(0, 128, 128, 128, "images/dev/_07.png"), "images/dev/_07.png");
-					tab3.addOption(Sprite(128, 128, 128, 128, "images/dev/_08.png"), "images/dev/_08.png");
-					
-					//specific to toybox -- TEMP DEV
-					//add all the things we just created to the toybox module
-					toybox.addModule(devTab1);
-					toybox.addModule(devTab2);
-					toybox.addModule(devTab3);
-					toybox.addModule(tab1);
-					toybox.addModule(tab2);
-					toybox.addModule(tab3);
-					
-					
-				//DEV adding events
-				devTab1.addEvent("mousedown", function(_clipBoard){ 
-					console.log('selected dev tab 1');
-					tab1.select();
-					tab2.deselect();
-					tab3.deselect();
-					//ToDo: This next line isn't working.
-					if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
-					//work.
-					//manager.draw();
-				}, false);
-				devTab2.addEvent("mousedown", function(_clipBoard){ 
-					if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
-					tab1.deselect();
-					tab2.select();
-					tab3.deselect();
-					//manager.draw();
-				}, false);
-				devTab3.addEvent("mousedown", function(_clipBoard){ 
-					if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
-					tab1.deselect();
-					tab2.deselect();
-					tab3.select();
-				}, false);
-			}
-			function createPlayArea(){
-				playArea = PlayArea(0,0,2*1920/3,1080);
-				currentState.addModule(playArea);
-				
-				//TEMP DEV TOY TEST
-					// ADD MODULES
-					//Here we do our test for stuff.
-					if(superhero.skeleton === undefined){
-						var toy = CharacterSkeleton(200, 150, 234, 400);
-						//TEMP DEV SPRITE SET UP FOR TOY
-						toy.setSlot("head", Sprite());
-						toy.setSlot("body", Sprite());
-						toy.setSlot("feet", Sprite());
-						//Add events
-						toy.addEvent("swapComponent", function(_clipBoard){ 
-							console.log('swapping');
-							toy.setSlot(_clipBoard.ComponentSwap.slot, 
-							_clipBoard.ComponentSwap.image); 
-							if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
-						}, false);
 
-						//And save for later.
-						superhero.skeleton = toy;
-					} else {
-						var toy = superhero.skeleton;
-					}
-					//add the character skeleton to the scene.
-					playArea.addModule(toy);
-					
-					//Buttons
-					backButton = Sprite(playArea.bounds.x, playArea.bounds.height-128, 128, 128, "images/dev/back.png");
-					playArea.addModule(backButton);
-					
-					continueButton = Sprite(playArea.bounds.width-128, playArea.bounds.height-128, 128, 128, "images/dev/continue.png");
-					playArea.addModule(continueButton);
-					
-					quitButton = Sprite(playArea.bounds.x, playArea.bounds.y, 128, 128, "images/dev/quit.png");
-					playArea.addModule(quitButton);
-					
-					//Events
-					backButton.addEvent("mousedown", function(_clipBoard){
-						manager.removeModule(playArea);
-						switchState("qualitiesScreen");
-					},false);
-					
-					continueButton.addEvent("mousedown", function(_clipBoard){
-						manager.removeModule(playArea);
-						switchState("powersScreen");
-					},false);
-					
-					quitButton.addEvent("mousedown", function(_clipBoard){
-						manager.removeModule(playArea);
-						switchState("splashScreen");
-					},false);
-			}
-			function createToyBox(){
-				toybox = ToyBox(2*1920/3,0,1920/3,1080);
-				currentState.addModule(toybox);
-				createTabs();
-				
-			}
 			function switchState(_state){
 				//Remove current state data
 				manager.removeModule(currentState);
