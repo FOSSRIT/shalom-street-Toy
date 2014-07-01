@@ -16,14 +16,14 @@ function ResultsScreen(_info){
 	powerFound = false;
 	qualityFound = false;
 	for(i = 0; i < superhero.powers.length; i++) {
-		if(superhero.powers[i] == "saveKitten"){
+		if(info.superhero.powers[i] == "saveKitten"){
 			//If the logic finds its way here, then it means that the power is already in the list.
 			//So now we have to remove it
 			powerFound = true;
 		}
 	}
 	for(i = 0; i < superhero.virtues.length; i++) {
-		if(superhero.virtues[i] == "beingAwesome"){
+		if(info.superhero.virtues[i] == "beingAwesome"){
 			//If the logic finds its way here, then it means that the power is already in the list.
 			//So now we have to remove it
 			qualityFound = true;
