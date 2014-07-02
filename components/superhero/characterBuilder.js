@@ -147,6 +147,8 @@ function CharacterBuilder(_info){
 				
 	playArea = PlayArea(2*1920/3,0,1920/3,1080);
 	base.addModule(playArea);
+
+	var x = Sprite(toReturn.bounds.x, 5, 10, 10);
 	
 	//If we don't have a skeleton yet.
 	var toy;
@@ -155,7 +157,7 @@ function CharacterBuilder(_info){
 		//TEMP DEV SPRITE SET UP FOR TOY
 		toy.setSlot("head", Sprite());
 		toy.setSlot("body", Sprite());
-		toy.setSlot("feet", Sprite());
+		toy.setSlot("feet", Sprite())
 		//Add events
 		toy.addEvent("swapComponent", function(_clipBoard){ 
 			console.log('swapping');
@@ -163,17 +165,15 @@ function CharacterBuilder(_info){
 			_clipBoard.ComponentSwap.image); 
 			if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
 		}, false);
-
-
 		
-		//And save for later.
-		console.log("Skeleton is: " + info.superhero.skeleton);
 		info.superhero.skeleton = toy;
-	} else {
+		playArea.addModule(toy);
+	} else { 
 		toy = info.superhero.skeleton;
+		playArea.addModule(toy);
 	}
 	//add the character skeleton to the scene
-	playArea.addModule(toy);
+	//playArea.addModule(toy);
 
 	//Buttons
 	backButton = Sprite(toReturn.bounds.x, toReturn.bounds.height-128, 128, 128, "images/dev/back.png");
@@ -186,9 +186,9 @@ function CharacterBuilder(_info){
 	toReturn.addModule(quitButton);
 	
 	//Events
-	backButton.addEvent("mousedown", base.changeState("QualitiesScreen", _info), false);	
-	continueButton.addEvent("mousedown", base.changeState("PowersScreen", _info), false);	
-	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
+	backButton.addEvent("mousedown", base.changeState("QualitiesScreen", info), false);	
+	continueButton.addEvent("mousedown", base.changeState("PowersScreen", info), false); 	
+	quitButton.addEvent("mousedown", base.changeState("SplashScreen", info), false); 
 
 
 
