@@ -4,6 +4,9 @@ function CharacterBuilder(_info){
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.type = "CharacterBuilder";
 	var info = _info;
+	
+	var splashImage = Sprite(0,0,1920,1080, "images/dev/characterBuilderTest01.png");
+	base.addModule(splashImage);
 
 				
 	playArea = PlayArea(0,0,2*1920/3,1080);
