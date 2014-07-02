@@ -19,6 +19,10 @@ function SplashScreen(_info){
 				"virtues":[], "skeleton":undefined, "powers":[] }  }), 
 		false );
 
+	Touch.onEnterExit(_startButton);
+	_startButton.addEvent("mouseenter", function(){console.log("enter"); });
+	_startButton.addEvent("mouseexit", function(){console.log("exit"); });
+
 
 	//For dev purposes.
 	console.log("Current super powers: " + _info.superhero.powers);

@@ -167,3 +167,34 @@ Touch.DragAndDrop = function(module){
 	}, false);
 }
 
+
+//Feel free to test it out, I'm not 100 percent sure it will work perfectly.
+//But... if you call this, you should have access to two events - 
+//mouseenter and mouseexit, that work how you would expect.
+//
+Touch.onEnterExit = function(module){
+	var _over = false;
+	module.addEvent("mouseover", function(_clipBoard) { 
+		if(_over == false) {
+			_over = true;
+			module.handleEvent("mouseenter", _clipBoard);
+		}
+	});
+
+	module.addEvent("mousemove", function(_clipBoard) {
+		//If !colliding and _over.
+		if(_over == true ) {
+			//----------------------------------------------
+			if(_clipBoard.prevMousex <= module.bounds.x ||
+						_clipBoard.prevMousex >= module.bounds.x + module.bounds.width ||
+						_clipBoard.prevMousey <= module.bounds.y ||
+						_clipBoard.prevMousey >= module.bounds.y + module.bounds.height) {
+			//-----------------------------------------------
+				_over = false;
+				module.handleEvent("mouseexit", _clipBoard);
+				
+			} //endif Collision
+		}
+	});
+}
+

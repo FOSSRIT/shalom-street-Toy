@@ -53,7 +53,8 @@ function Module(_x, _y, _width, _height){
 		//alert("removing a module: " + toReturn.interface.type);
 		for (var i=toReturn.contents.length-1; i>=0; i--){
 			//Trigger the event in their children.
-			toReturn.removeModule(toReturn.contents[i]);
+			//toReturn.removeModule(toReturn.contents[i]);
+			toReturn.contents[i].removeMe();
 		} 
 		if(_onRemoved) {
 			if(_contextOnRemoved) { _onRemoved(_contextOnRemoved); } else { _onRemoved(this); }

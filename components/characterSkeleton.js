@@ -65,10 +65,10 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	}
 	
 	function _addSlot(toAdd, _x, _y, _width, _height, _order){
-		slots[toAdd] = {"x":_x || 0, "y": _y || 0, "width":_width || 128, "height":_height || 128, "order": _order || 0 }
+		_slots[toAdd] = {"x":_x || 0, "y": _y || 0, "width":_width || 128, "height":_height || 128, "order": _order || 0 }
 	}
 	function _removeSlot(toRemove){
-		delete slots[toAdd];
+		delete _slots[toAdd];
 	}
 	
 	function _setSlot(slot, sprite){
@@ -83,7 +83,7 @@ function CharacterSkeleton(_x, _y, _width, _height){
 		} else {
 			//Remove the past contents of the slot if it exists.
 			if(toReturn.slots[slot]){
-				toReturn.removeModule(toReturn.slots[slot].sprite);
+				base.removeModule(toReturn.slots[slot].sprite);
 			}//
 
 
@@ -92,7 +92,7 @@ function CharacterSkeleton(_x, _y, _width, _height){
 			toReturn.slots[slot].sprite = sprite;
 			sprite.bounds.x = toReturn.slots[slot].x;
 			sprite.bounds.y = toReturn.slots[slot].y;
-
+			
 			//sprite.bounds.width = toReturn.slots[slot].width;
 			//sprite.bounds.height = toReturn.slots[slot].height;
 		}
