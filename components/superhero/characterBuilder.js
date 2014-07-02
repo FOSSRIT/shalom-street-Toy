@@ -19,11 +19,11 @@ function CharacterBuilder(_info){
 
 	//TEMP DEV TABS
 	//the tabs themselves
-	var devTab1 = Sprite(0, 2*toybox.bounds.width/9 - 64, 128, 128, "images/dev/hero/headTab.png");
-	var devTab2 = Sprite(0, 3*toybox.bounds.width/9 - 64, 128, 128, "images/dev/hero/suitTab.png");
-	var devTab3 = Sprite(0, 4*toybox.bounds.width/9 - 64, 128, 128, "images/dev/hero/shirtTab.png");
-	var devTab4 = Sprite(0, 5*toybox.bounds.width/9 - 64, 128, 128, "images/dev/hero/pantsTab.png");
-	var devTab5 = Sprite(0, 6*toybox.bounds.width/9 - 64, 128, 128, "images/dev/hero/accessoriesTab.png");
+	var headTab1 = Sprite(0, 2*toybox.bounds.width/9 - 64, 128, 128, "images/dev/hero/headTab.png");
+	var suitTab2 = Sprite(0, 3*toybox.bounds.width/9 - 64, 128, 128, "images/dev/hero/suitTab.png");
+	var shirtTab3 = Sprite(0, 4*toybox.bounds.width/9 - 64, 128, 128, "images/dev/hero/shirtTab.png");
+	var pantsTab4 = Sprite(0, 5*toybox.bounds.width/9 - 64, 128, 128, "images/dev/hero/pantsTab.png");
+	var accessoriesTab5 = Sprite(0, 6*toybox.bounds.width/9 - 64, 128, 128, "images/dev/hero/accessoriesTab.png");
 
 	//Toybox tabs.
 	//the components inside each tab
@@ -127,11 +127,11 @@ function CharacterBuilder(_info){
 		
 	//specific to toybox -- TEMP DEV
 	//add all the things we just created to the toybox module
-	toybox.addModule(devTab1);
-	toybox.addModule(devTab2);
-	toybox.addModule(devTab3);
-	toybox.addModule(devTab4);
-	toybox.addModule(devTab5);
+	toybox.addModule(headTab1);
+	toybox.addModule(suitTab2);
+	toybox.addModule(shirtTab3);
+	toybox.addModule(pantsTab4);
+	toybox.addModule(accessoriesTab5);
 	toybox.addModule(tab1);
 	toybox.addModule(head_subTab_01_hair);
 	toybox.addModule(head_subTab_03_face);
@@ -208,14 +208,16 @@ function CharacterBuilder(_info){
 	backButton.addEvent("mousedown", base.changeState("QualitiesScreen", info), false);	
 	continueButton.addEvent("mousedown", base.changeState("PowersScreen", info), false); 	
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", info), false); 
-
-
-
 	
 		
 		
 	//DEV adding events
-	devTab1.addEvent("mousedown", function(_clipBoard){ 
+	headTab1.addEvent("mousedown", function(_clipBoard){ 
+		headTab1.setImage("images/dev/hero/headTab_highlight.png");
+		suitTab2.setImage("images/dev/hero/suitTab.png");
+		shirtTab3.setImage("images/dev/hero/shirtTab.png");
+		pantsTab4.setImage("images/dev/hero/pantsTab.png");
+		accessoriesTab5.setImage("images/dev/hero/accessoriesTab.png");
 		tab1.select();
 		head_subTab_01_hair.select();
 		head_subTab_03_face.select();
@@ -226,8 +228,13 @@ function CharacterBuilder(_info){
 		//work.
 		//manager.draw();
 	}, false);
-	devTab2.addEvent("mousedown", function(_clipBoard){ 
+	suitTab2.addEvent("mousedown", function(_clipBoard){ 
 		if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+		headTab1.setImage("images/dev/hero/headTab.png");
+		suitTab2.setImage("images/dev/hero/suitTab_highlight.png");
+		shirtTab3.setImage("images/dev/hero/shirtTab.png");
+		pantsTab4.setImage("images/dev/hero/pantsTab.png");
+		accessoriesTab5.setImage("images/dev/hero/accessoriesTab.png");
 		tab1.deselect();
 		head_subTab_01_hair.deselect();
 		head_subTab_03_face.deselect();
@@ -235,8 +242,13 @@ function CharacterBuilder(_info){
 		tab3.deselect();
 		//manager.draw();
 	}, false);
-	devTab3.addEvent("mousedown", function(_clipBoard){ 
+	shirtTab3.addEvent("mousedown", function(_clipBoard){ 
 		if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+		headTab1.setImage("images/dev/hero/headTab.png");
+		suitTab2.setImage("images/dev/hero/suitTab.png");
+		shirtTab3.setImage("images/dev/hero/shirtTab_highlight.png");
+		pantsTab4.setImage("images/dev/hero/pantsTab.png");
+		accessoriesTab5.setImage("images/dev/hero/accessoriesTab.png");
 		tab1.deselect();
 		head_subTab_01_hair.deselect();
 		head_subTab_03_face.deselect();
@@ -245,8 +257,13 @@ function CharacterBuilder(_info){
 		tab4.deselect();
 		tab5.deselect();
 	}, false);
-	devTab4.addEvent("mousedown", function(_clipBoard){ 
+	pantsTab4.addEvent("mousedown", function(_clipBoard){ 
 		if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+		headTab1.setImage("images/dev/hero/headTab.png");
+		suitTab2.setImage("images/dev/hero/suitTab.png");
+		shirtTab3.setImage("images/dev/hero/shirtTab.png");
+		pantsTab4.setImage("images/dev/hero/pantsTab_highlight.png");
+		accessoriesTab5.setImage("images/dev/hero/accessoriesTab.png");
 		tab1.deselect();
 		head_subTab_01_hair.deselect();
 		head_subTab_03_face.deselect();
@@ -255,8 +272,13 @@ function CharacterBuilder(_info){
 		tab4.select();
 		tab5.deselect();
 	}, false);
-	devTab5.addEvent("mousedown", function(_clipBoard){ 
+	accessoriesTab5.addEvent("mousedown", function(_clipBoard){ 
 		if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+		headTab1.setImage("images/dev/hero/headTab.png");
+		suitTab2.setImage("images/dev/hero/suitTab.png");
+		shirtTab3.setImage("images/dev/hero/shirtTab.png");
+		pantsTab4.setImage("images/dev/hero/pantsTab.png");
+		accessoriesTab5.setImage("images/dev/hero/accessoriesTab_highlight.png");
 		tab1.deselect();
 		head_subTab_01_hair.deselect();
 		head_subTab_03_face.deselect();
