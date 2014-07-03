@@ -26,11 +26,19 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	//order means draw order
 	//0 gets drawn first
 	var _slots = {
-		"head": {"x":0 , "y":0, "width":234, "height":262, "sprite":undefined, "order":1},
-		"hair": {"x":0 , "y":0, "width":234, "height":262, "sprite":undefined, "order":2},
-		"face": {"x":0 , "y":0, "width":234, "height":262, "sprite":undefined, "order":3},
-		"body": {"x":0, "y":212, "width":220, "height":220, "sprite":undefined, "order":4},
-		"feet": {"x":0, "y":347, "width":128, "height":128, "sprite":undefined, "order":0},
+		
+	
+		"head": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":5},
+		"hair": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":6},
+		"face": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":7},
+		"suit": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":1},
+		"shirt": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":2},
+		"pants": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":3},
+		"feet": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":4},
+		"accessories": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":8},
+		
+		//unused
+		"body": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":99},
 	}
 	toReturn.slots = _slots;
 	

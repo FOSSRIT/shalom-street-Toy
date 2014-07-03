@@ -30,7 +30,7 @@ function CharacterBioScreen(_info){
 	base.addModule(quitButton);
 	
 	//Events
-	backButton.addEvent("mousedown", base.changeState("PowersScreen", _info), false);
+	backButton.addEvent("mousedown", base.changeState("CharacterBuilder", _info), false);
 	continueButton.addEvent("mousedown", base.changeState("ResultsScreen", _info), false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 
