@@ -172,7 +172,8 @@ Touch.DragAndDrop = function(module){
 //But... if you call this, you should have access to two events - 
 //mouseenter and mouseexit, that work how you would expect.
 //
-Touch.onEnterExit = function(module){
+Touch.onEnterExit = function(module) {
+	//-------------------------------------------------
 	var _over = false;
 	module.addEvent("mouseover", function(_clipBoard) { 
 		if(_over == false) {
