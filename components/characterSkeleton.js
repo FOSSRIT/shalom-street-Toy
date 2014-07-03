@@ -26,7 +26,7 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	//order means draw order
 	//0 gets drawn first
 	var _slots = {
-		"head": {"x":0 , "y":0, "width":234, "height":262, "sprite":undefined, "order":1},
+		"head": {"x":0 , "y":0, "width":234, "height":262, "sprite":undefined, "order":99},
 		"hair": {"x":0 , "y":0, "width":234, "height":262, "sprite":undefined, "order":2},
 		"face": {"x":0 , "y":0, "width":234, "height":262, "sprite":undefined, "order":3},
 		"body": {"x":0, "y":212, "width":220, "height":220, "sprite":undefined, "order":4},
@@ -39,6 +39,7 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	function _draw(){
 
 		var toDraw = [];
+
 		//Recursively get all sprite data to draw.
 		for(var i=0; i<base.contents.length; i++){
 			toDraw = toDraw.concat(base.contents[i].draw());
@@ -90,7 +91,14 @@ function CharacterSkeleton(_x, _y, _width, _height){
 			}//
 
 
+			console.log("adding: " + toReturn.slots[slot].order);
 			base.addModule(sprite, toReturn.slots[slot].order);
+
+			//Sort the slots.
+			for(var s in _slots) {
+				base.removeModule(_slots[s].sprite);
+				base.addModule(_slots[s].sprite, _slots[s].order);
+			}
 
 			toReturn.slots[slot].sprite = sprite;
 			sprite.bounds.x = toReturn.slots[slot].x;
