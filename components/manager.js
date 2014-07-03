@@ -93,8 +93,8 @@ function Manager(_canvas, _ctx, _scale) {
 				ctx.fillText(data.text, data.x - data.originX, data.y - data.originY);
 				//Text draws from the lower left hand corner.
 			} else if(data.dom) {
-                data.dom.style.left = ((data.x /*- data.originX*/) * toReturn.scale) + canvas.offsetLeft;
-                data.dom.style.top = ((data.y /*- data.originY*/) * toReturn.scale) + canvas.offsetTop;
+                data.dom.style.left = ((data.x /*- data.originX*/) / toReturn.scale) + canvas.offsetLeft;
+                data.dom.style.top = ((data.y /*- data.originY*/) / toReturn.scale) + canvas.offsetTop;
                 data.dom.style.width = data.width / toReturn.scale + "px";
                 data.dom.style.height = data.height / toReturn.scale + "px";
             }
