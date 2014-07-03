@@ -101,9 +101,12 @@ function CharacterSkeleton(_x, _y, _width, _height){
 			base.addModule(sprite, toReturn.slots[slot].order);
 
 			//Sort the slots.
+			//Little bit hacky.  We can do this better.
 			for(var s in _slots) {
-				base.removeModule(_slots[s].sprite);
-				base.addModule(_slots[s].sprite, _slots[s].order);
+				if(_slots[s].sprite != undefined){
+					base.removeModule(_slots[s].sprite);
+					base.addModule(_slots[s].sprite, _slots[s].order);
+				}
 			}
 
 			toReturn.slots[slot].sprite = sprite;
