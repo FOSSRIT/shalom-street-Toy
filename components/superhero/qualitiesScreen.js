@@ -10,8 +10,14 @@ function QualitiesScreen(_info){
 	info.superhero.virtues = [];
 	
 	//Dev Splash Image
-	var splashImage = Sprite(0,0,1920,1080, "images/dev/qualitiesScreenTest01.png");
+	var splashImage = Sprite(0,0,1920,1080, "images/dev/qualitiesBackground.png");
 	base.addModule(splashImage);
+	
+	var heroImage = Sprite(toReturn.bounds.width/2-256,toReturn.bounds.height/2-384,512,1024, "images/dev/bro.png");
+	base.addModule(heroImage);
+	
+	var definition = Sprite(3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-256,512,512, "images/dev/empathy_definition.png");
+	base.addModule(definition);
 	
 	//Buttons
 	var backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
@@ -35,6 +41,21 @@ function QualitiesScreen(_info){
 	//grid.setSpace(quality2Button, 0, 1, true);
 	base.addModule(quality2Button);
 	
+	var quality3_empathy_button = Sprite(0, 2*toReturn.bounds.height/8, 256, 128, "images/dev/qualitiesButtons/empathy.png");
+	base.addModule(quality3_empathy_button);
+	
+	var quality4_forgiveness_button = Sprite(0, 3*toReturn.bounds.height/8, 256, 128, "images/dev/qualitiesButtons/forgiveness.png");
+	base.addModule(quality4_forgiveness_button);
+	
+	var quality5_hate_button = Sprite(0, 4*toReturn.bounds.height/8, 256, 128, "images/dev/qualitiesButtons/hate.png");
+	base.addModule(quality5_hate_button);
+	
+	var quality6_honor_button = Sprite(0, 5*toReturn.bounds.height/8, 256, 128, "images/dev/qualitiesButtons/honor.png");
+	base.addModule(quality6_honor_button);
+	
+	var quality7_pride_button = Sprite(0, 6*toReturn.bounds.height/8, 256, 128, "images/dev/qualitiesButtons/pride.png");
+	base.addModule(quality7_pride_button);
+	
 	//Events
 	backButton.addEvent("mousedown", base.changeState("DetailedScenarioScreen", _info), false);
 	continueButton.addEvent("mousedown", base.changeState("CharacterBuilder", _info), false);	
@@ -47,6 +68,26 @@ function QualitiesScreen(_info){
 	
 	quality2Button.addEvent("mousedown", function(_clipBoard){
 		highlightQualityAndPowerButtons("virtues",quality2Button,"beingLame","images/dev/quality2_unselected.png","images/dev/quality2_selected.png", _clipBoard);
+	},false);
+	
+	quality3_empathy_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("virtues",quality3_empathy_button,"empathy","images/dev/qualitiesButtons/empathy.png","images/dev/qualitiesButtons/empathy_highlight.png", _clipBoard);
+	},false);
+	
+	quality4_forgiveness_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("virtues",quality4_forgiveness_button,"forgiveness","images/dev/qualitiesButtons/forgiveness.png","images/dev/qualitiesButtons/forgiveness_highlight.png", _clipBoard);
+	},false);
+	
+	quality5_hate_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("virtues",quality5_hate_button,"hate","images/dev/qualitiesButtons/hate.png","images/dev/qualitiesButtons/hate_highlight.png", _clipBoard);
+	},false);
+	
+	quality6_honor_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("virtues",quality6_honor_button,"honor","images/dev/qualitiesButtons/honor.png","images/dev/qualitiesButtons/honor_highlight.png", _clipBoard);
+	},false);
+	
+	quality7_pride_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("virtues",quality7_pride_button,"pride","images/dev/qualitiesButtons/pride.png","images/dev/qualitiesButtons/pride_highlight.png", _clipBoard);
 	},false);
 
 
@@ -74,8 +115,7 @@ function QualitiesScreen(_info){
 				//If the logic finds its way here, then it means that the power is already in the list.
 				//So now we have to remove it
 				tempFound = true;
-				/* = info.superhero[_list].splice(i, 1);// doesn't work*/
-				info.superhero[_list].pop(_attributeName);
+				info.superhero[_list].splice(i, 1);
 				_buttonName.setImage(_unselectedImage);
 				if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
 			}
@@ -84,7 +124,7 @@ function QualitiesScreen(_info){
 			//If the logic finds its way here, then it means that the power is not in the list.
 			//So now we have to add it
 			info.superhero[_list].push(_attributeName);
-			console.log(_attributeName);
+			//console.log(_attributeName);
 			_buttonName.setImage(_selectedImage);
 			if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
 		}
