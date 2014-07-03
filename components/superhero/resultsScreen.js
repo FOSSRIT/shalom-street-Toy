@@ -15,14 +15,14 @@ function ResultsScreen(_info){
 	//See if based on qualities and powers if the player won or lost the scenario
 	powerFound = false;
 	qualityFound = false;
-	for(i = 0; i < superhero.powers.length; i++) {
+	for(i = 0; i < info.superhero.powers.length; i++) {
 		if(info.superhero.powers[i] == "saveKitten"){
 			//If the logic finds its way here, then it means that the power is already in the list.
 			//So now we have to remove it
 			powerFound = true;
 		}
 	}
-	for(i = 0; i < superhero.virtues.length; i++) {
+	for(i = 0; i < info.superhero.virtues.length; i++) {
 		if(info.superhero.virtues[i] == "beingAwesome"){
 			//If the logic finds its way here, then it means that the power is already in the list.
 			//So now we have to remove it

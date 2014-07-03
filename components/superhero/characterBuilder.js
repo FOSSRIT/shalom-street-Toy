@@ -40,9 +40,9 @@ function CharacterBuilder(_info){
 			tab1.addModule(leftButton);
 			
 			//NICK: replace first one with preview version and second image url with one to send to the character skeleton
-			tab1.addOption(Sprite(2*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/_01.png"), "images/dev/_01.png");
-			tab1.addOption(Sprite(3*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/hero/01_head/01_head/head_01_dev_icon.png"), "images/dev/hero/01_head/01_head/head_01_dev.png");
-			tab1.addOption(Sprite(4*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/_03.png"), "images/dev/_03.png");
+			tab1.addOption(Sprite(2*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/_01.png"), "images/dev/alpha.png");
+			tab1.addOption(Sprite(3*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/hero/set/head_icon.png"), "images/dev/hero/set/characterset-11b.png");
+			tab1.addOption(Sprite(4*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/_03.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/right.png");
 			tab1.addModule(rightButton);
@@ -58,9 +58,9 @@ function CharacterBuilder(_info){
 			leftButton = Sprite(head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/left.png");
 			head_subTab_01_hair.addModule(leftButton);
 			
-			head_subTab_01_hair.addOption(Sprite(2*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/hero/01_head/02_hair/hair_01_cut_icon.png"), "images/dev/hero/01_head/02_hair/hair_01_cut.png");
-			head_subTab_01_hair.addOption(Sprite(3*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/hero/01_head/02_hair/hair_02_gel_icon.png"), "images/dev/hero/01_head/02_hair/hair_02_gel.png");
-			head_subTab_01_hair.addOption(Sprite(4*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/_05.png"), "images/dev/_05.png");
+			head_subTab_01_hair.addOption(Sprite(2*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/_03.png"), "images/dev/alpha.png");
+			head_subTab_01_hair.addOption(Sprite(3*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/hero/set/hair_icon.png"), "images/dev/hero/set/characterset-12.png");
+			head_subTab_01_hair.addOption(Sprite(4*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/_05.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/right.png");
 			head_subTab_01_hair.addModule(rightButton);
@@ -76,16 +76,16 @@ function CharacterBuilder(_info){
 			leftButton = Sprite(head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/left.png");
 			head_subTab_03_face.addModule(leftButton);
 			
-			head_subTab_03_face.addOption(Sprite(2*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/hero/01_head/03_face/face_01_happy_icon.png"), "images/dev/hero/01_head/03_face/face_01_happy.png");
-			head_subTab_03_face.addOption(Sprite(3*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/hero/01_head/03_face/face_02_mad_icon.png"), "images/dev/hero/01_head/03_face/face_02_mad.png");
-			head_subTab_03_face.addOption(Sprite(4*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/_08.png"), "images/dev/_08.png");
+			head_subTab_03_face.addOption(Sprite(2*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/_06.png"), "images/dev/alpha.png");
+			head_subTab_03_face.addOption(Sprite(3*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/hero/set/face_icon.png"), "images/dev/hero/set/characterset-11a.png");
+			head_subTab_03_face.addOption(Sprite(4*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/_08.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/right.png");
 			head_subTab_03_face.addModule(rightButton);
 			
 			
 			
-	var tab2 = ToyBoxTab(128, 128, toybox.bounds.width-128, toybox.bounds.height - 128, "body");
+	var tab2 = ToyBoxTab(128, 128, toybox.bounds.width-128, toybox.bounds.height - 128, "suit");
 	
 		//Line 01
 			//Label
@@ -96,14 +96,14 @@ function CharacterBuilder(_info){
 			leftButton = Sprite(tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/left.png");
 			tab2.addModule(leftButton);
 			
-			tab2.addOption(Sprite(2*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/_00.png"), "images/dev/_00.png");
-			tab2.addOption(Sprite(3*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/_01.png"), "images/dev/_01.png");
-			tab2.addOption(Sprite(4*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/_00.png"), "images/dev/_00.png");
+			tab2.addOption(Sprite(2*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/_00.png"), "images/dev/alpha.png");
+			tab2.addOption(Sprite(3*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/hero/set/suit_icon.png"), "images/dev/hero/set/characterset-01.png");
+			tab2.addOption(Sprite(4*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/_00.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/right.png");
 			tab2.addModule(rightButton);
 		
-	var tab3 = ToyBoxTab(128, 128, toybox.bounds.width -128, toybox.bounds.height - 128, "feet");
+	var tab3 = ToyBoxTab(128, 128, toybox.bounds.width -128, toybox.bounds.height - 128, "shirt");
 	
 		//Line 01
 			//Label
@@ -114,16 +114,46 @@ function CharacterBuilder(_info){
 			leftButton = Sprite(tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/left.png");
 			tab3.addModule(leftButton);
 			
-			tab3.addOption(Sprite(2*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/_04.png"), "images/dev/_04.png");
-			tab3.addOption(Sprite(3*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/_05.png"), "images/dev/_05.png");
-			tab3.addOption(Sprite(4*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/_06.png"), "images/dev/_06.png");
+			tab3.addOption(Sprite(2*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/_04.png"), "images/dev/alpha.png");
+			tab3.addOption(Sprite(3*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/hero/set/shirt_icon.png"), "images/dev/hero/set/characterset-03.png");
+			tab3.addOption(Sprite(4*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/_06.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/right.png");
 			tab3.addModule(rightButton);
 			
-	var tab4 = ToyBoxTab(128, 128, toybox.bounds.width -128, toybox.bounds.height - 128, "feet");
-	var tab5 = ToyBoxTab(128, 128, toybox.bounds.width -128, toybox.bounds.height - 128, "feet");	
+	var tab4 = ToyBoxTab(128, 128, toybox.bounds.width -128, toybox.bounds.height - 128, "pants");
+	//Line 01
+			//Label
+			line01Label = Sprite(tab4.bounds.width/6-64, tab4.bounds.height/8-64, 128, 128, "images/dev/minorTab.png");
+			tab4.addModule(line01Label);
+			
+			//Buttons
+			leftButton = Sprite(tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/left.png");
+			tab4.addModule(leftButton);
+			
+			tab4.addOption(Sprite(2*tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/_03.png"), "images/dev/alpha.png");
+			tab4.addOption(Sprite(3*tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/hero/set/pants_icon.png"), "images/dev/hero/set/characterset-02.png");
+			tab4.addOption(Sprite(4*tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/_05.png"), "images/dev/alpha.png");
+			
+			rightButton = Sprite(5*tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/right.png");
+			tab4.addModule(rightButton);
 	
+	var tab5 = ToyBoxTab(128, 128, toybox.bounds.width -128, toybox.bounds.height - 128, "accessories");	
+	//Line 01
+			//Label
+			line01Label = Sprite(tab5.bounds.width/6-64, tab5.bounds.height/8-64, 128, 128, "images/dev/minorTab.png");
+			tab5.addModule(line01Label);
+			
+			//Buttons
+			leftButton = Sprite(tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/left.png");
+			tab5.addModule(leftButton);
+			
+			tab5.addOption(Sprite(2*tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/_01.png"), "images/dev/alpha.png");
+			tab5.addOption(Sprite(3*tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/hero/set/mask_icon.png"), "images/dev/hero/set/characterset-05.png");
+			tab5.addOption(Sprite(4*tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/_03.png"), "images/dev/alpha.png");
+			
+			rightButton = Sprite(5*tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/right.png");
+			tab5.addModule(rightButton);
 		
 	//specific to toybox -- TEMP DEV
 	//add all the things we just created to the toybox module
@@ -137,6 +167,8 @@ function CharacterBuilder(_info){
 	toybox.addModule(head_subTab_03_face);
 	toybox.addModule(tab2);
 	toybox.addModule(tab3);
+	toybox.addModule(tab4);
+	toybox.addModule(tab5);
 	
 	
 	
@@ -172,11 +204,18 @@ function CharacterBuilder(_info){
 	if(info.superhero.skeleton === undefined){
 		toy = CharacterSkeleton(playArea.bounds.width/2-64, playArea.bounds.height/4, 256, 512);
 		//TEMP DEV SPRITE SET UP FOR TOY
-		toy.setSlot("head", Sprite(0,0,128,128, "images/dev/hero/01_head/01_head/head_01_dev.png"));
-		toy.setSlot("hair", Sprite(0, 0, 128, 128, "images/dev/alpha.png"));
-		toy.setSlot("face", Sprite(0, 0, 128, 128, "images/dev/alpha.png"));
-		toy.setSlot("body", Sprite());
-		toy.setSlot("feet", Sprite());
+		toy.setSlot("head", 		Sprite(0,0,186,479, "images/dev/alpha.png"));
+		toy.setSlot("hair", 		Sprite(0,0,186,479, "images/dev/alpha.png"));
+		toy.setSlot("face", 		Sprite(0,0,186,479, "images/dev/alpha.png"));
+		toy.setSlot("suit", 		Sprite(0,0,186,479, "images/dev/alpha.png"));
+		toy.setSlot("shirt", 		Sprite(0,0,186,479, "images/dev/alpha.png"));
+		toy.setSlot("pants", 		Sprite(0,0,186,479, "images/dev/alpha.png"));
+		toy.setSlot("feet", 		Sprite(0,0,186,479, "images/dev/alpha.png"));
+		toy.setSlot("accessories", 	Sprite(0,0,186,479, "images/dev/alpha.png"));
+		
+		//unused
+		toy.setSlot("body", Sprite(0,0,186,479, "images/dev/alpha.png"));
+		
 		//Add events
 		toy.addEvent("swapComponent", function(_clipBoard){ 
 			console.log('swapping');
@@ -205,8 +244,8 @@ function CharacterBuilder(_info){
 	toReturn.addModule(quitButton);
 	
 	//Events
-	backButton.addEvent("mousedown", base.changeState("QualitiesScreen", info), false);	
-	continueButton.addEvent("mousedown", base.changeState("PowersScreen", info), false); 	
+	backButton.addEvent("mousedown", base.changeState("PowersScreen", info), false);	
+	continueButton.addEvent("mousedown", base.changeState("CharacterBioScreen", info), false); 	
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", info), false); 
 	
 		
@@ -223,6 +262,8 @@ function CharacterBuilder(_info){
 		head_subTab_03_face.select();
 		tab2.deselect();
 		tab3.deselect();
+		tab4.deselect();
+		tab5.deselect();
 		//ToDo: This next line isn't working.
 		if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
 		//work.
@@ -240,6 +281,8 @@ function CharacterBuilder(_info){
 		head_subTab_03_face.deselect();
 		tab2.select();
 		tab3.deselect();
+		tab4.deselect();
+		tab5.deselect();
 		//manager.draw();
 	}, false);
 	shirtTab3.addEvent("mousedown", function(_clipBoard){ 
