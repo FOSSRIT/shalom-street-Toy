@@ -9,8 +9,14 @@ function PowersScreen(_info){
 	superhero.powers = [];
 				
 	//Dev Splash Image
-	splashImage = Sprite(0,0,1920,1080, "images/dev/powersScreenTest01.png");
+	splashImage = Sprite(0,0,1920,1080, "images/dev/powersBackground.png");
 	base.addModule(splashImage);
+	
+	var heroImage = Sprite(toReturn.bounds.width/2-256,toReturn.bounds.height/2-384,512,1024, "images/dev/bro.png");
+	base.addModule(heroImage);
+	
+	var definition = Sprite(3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-256,512,512, "images/dev/midrash_water.png");
+	base.addModule(definition);
 	
 	//Buttons
 	backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
@@ -29,6 +35,21 @@ function PowersScreen(_info){
 	power2Button = Sprite(toReturn.bounds.width/5, 2*toReturn.bounds.height/3-128, 256, 256, "images/dev/power2_unselected.png");
 	base.addModule(power2Button);
 	
+	var power3_fire_button = Sprite(0, 2*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/fire.png");
+	base.addModule(power3_fire_button);
+	
+	var power4_water_button = Sprite(0, 3*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/water.png");
+	base.addModule(power4_water_button);
+	
+	var power5_superStrength_button = Sprite(0, 4*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/superStrength.png");
+	base.addModule(power5_superStrength_button);
+	
+	var power6_diplomacy_button = Sprite(0, 5*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/diplomacy.png");
+	base.addModule(power6_diplomacy_button);
+	
+	var power7_superSmart_button = Sprite(0, 6*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/superSmart.png");
+	base.addModule(power7_superSmart_button);
+	
 	//Events
 	backButton.addEvent("mousedown", base.changeState("CharacterBuilder", _info), false);
 	continueButton.addEvent("mousedown", base.changeState("CharacterBioScreen", _info), false);
@@ -40,6 +61,26 @@ function PowersScreen(_info){
 	
 	power2Button.addEvent("mousedown", function(_clipBoard){
 		highlightQualityAndPowerButtons("powers",power2Button,"notSaveKitten","images/dev/power2_unselected.png","images/dev/power2_selected.png", _clipBoard);
+	},false);
+	
+	power3_fire_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",power3_fire_button,"fire","images/dev/powersButtons/fire.png","images/dev/powersButtons/fire_selected.png", _clipBoard);
+	},false);
+	
+	power4_water_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",power4_water_button,"water","images/dev/powersButtons/water.png","images/dev/powersButtons/water_selected.png", _clipBoard);
+	},false);
+	
+	power5_superStrength_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",power5_superStrength_button,"superStrength","images/dev/powersButtons/superStrength.png","images/dev/powersButtons/superStrength_selected.png", _clipBoard);
+	},false);
+	
+	power6_diplomacy_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",power6_diplomacy_button,"diplomacy","images/dev/powersButtons/diplomacy.png","images/dev/powersButtons/diplomacy_selected.png", _clipBoard);
+	},false);
+	
+	power7_superSmart_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",power7_superSmart_button,"superSmart","images/dev/powersButtons/superSmart.png","images/dev/powersButtons/superSmart_selected.png", _clipBoard);
 	},false);
 
 
@@ -67,8 +108,7 @@ function PowersScreen(_info){
 				//If the logic finds its way here, then it means that the power is already in the list.
 				//So now we have to remove it
 				tempFound = true;
-				/* = info.superhero[_list].splice(i, 1);// doesn't work*/
-				info.superhero[_list].pop(_attributeName);
+				info.superhero[_list].splice(i, 1);
 				_buttonName.setImage(_unselectedImage);
 				if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
 			}
