@@ -8,7 +8,7 @@ function ResultsScreen(_info){
 	//-----------------------------------------------------
 
 	//Dev Splash Image
-	splashImage = Sprite(0,0,1920,1080, "images/dev/resultsScreenTest01.png");
+	splashImage = Sprite(0,0,1920,1080, "images/dev/resultsScreenTest02.png");
 	base.addModule(splashImage);
 	
 	//Logic

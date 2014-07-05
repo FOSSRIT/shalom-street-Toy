@@ -48,6 +48,7 @@ function ScenarioScreen(_info){
 	scenario2Button.addEvent("mouseexit", function(_clipBoard){  scenario2Button.setImage("images/dev/scenarioButton2.png", true, 2*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512);  }, false);
 
 
+/*
 	Touch.onEnterExit(scenario3Button);
 	scenario3Button.addEvent("mouseover", function(_clipBoard){   scenario3Button.setImage("images/dev/error.png", true, 3*toReturn.bounds.width/5, toReturn.bounds.height/2-256, 256, 640);  },false);
 	scenario3Button.addEvent("mouseexit", function(_clipBoard){  scenario3Button.setImage("images/dev/scenarioButton.png", true, 3*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512);}, false);
@@ -56,6 +57,7 @@ function ScenarioScreen(_info){
 	Touch.onEnterExit(scenario4Button);
  	scenario4Button.addEvent("mouseover", function(_clipBoard){ scenario4Button.setImage("images/dev/error.png", true, 4*toReturn.bounds.width/5, toReturn.bounds.height/2-256, 256, 640);  },false);
  	scenario4Button.addEvent("mouseexit", function(_clipBoard){  scenario4Button.setImage("images/dev/randomScenarioButton.png", true, 4*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512);  }, false);
+*/
 	
 
 

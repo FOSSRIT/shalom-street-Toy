@@ -1,20 +1,41 @@
-function CharacterBioScreen(_info){
+function ModelSelect(_info){
 	//------------------------------VARIABLES-------------------------------------
 	var base = State(0, 0, 1920, 1080); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.type = "CharacterBioScreen";
 	var info = _info;
 
+	info.modelType = "Girl";
+
 
 	//--------------------------------------
 
 	splashImage = Sprite(0,0,1920,1080, "images/dev/characterBioScreenTest02.png");
 	base.addModule(splashImage);
-	base.addModule(bioSubmission);
-	bioSubmission.bounds.x = 700;
-	bioSubmission.bounds.y = 250;
-	bioSubmission.bounds.width = 800;
-	bioSubmission.bounds.height = 300;
+
+	selected = Sprite(1920 - 700 - 50, 400, 474, 420, "images/dev/BoyGirlScreen/Selection.png");
+	base.addModule(selected);
+
+	boyOption = Sprite(300, 450, 426, 298, "images/dev/BoyGirlScreen/BoyButton.png");
+	base.addModule(boyOption);
+
+	girlOption = Sprite(1220, 450, 392, 298, "images/dev/BoyGirlScreen/GirlButton.png");
+	base.addModule(girlOption);
+
+
+	boyOption.addEvent("mousedown", function(_clipBoard) { 
+		selected.bounds.x = 240;
+		selected.bounds.y = 400;
+		info.modelType = "Boy";
+		_clipBoard.ToFire = ["redraw"];
+	}, false);
+
+	girlOption.addEvent("mousedown", function(_clipBoard) { 
+		selected.bounds.x = 1160;
+		selected.bounds.y = 400;
+		info.modelType = "Girl";
+		_clipBoard.ToFire = ["redraw"];
+	}, false);
 
 	/*var domElementThing = DomWrapper(document.getElementById("bioSubmitBox"));
 	manager.addModule(domElementThing);*/
