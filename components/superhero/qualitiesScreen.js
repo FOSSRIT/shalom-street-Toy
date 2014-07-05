@@ -37,14 +37,6 @@ function QualitiesScreen(_info){
 	base.addModule(grid);
 	
 	//Qualities
-	var quality1Button = Sprite(toReturn.bounds.width/5, toReturn.bounds.height/3-128, 256, 256, "images/dev/quality1_unselected.png");
-	base.addModule(quality1Button);
-	//grid.setSpace(quality1Button, 0, 0, true);
-	
-	var quality2Button = Sprite(toReturn.bounds.width/5, 2*toReturn.bounds.height/3-128, 256, 256, "images/dev/quality2_unselected.png");
-	//grid.setSpace(quality2Button, 0, 1, true);
-	base.addModule(quality2Button);
-	
 	var quality3_empathy_button = Sprite(0, 2*toReturn.bounds.height/8, 256, 128, "images/dev/qualitiesButtons/empathy.png");
 	base.addModule(quality3_empathy_button);
 	
@@ -64,15 +56,6 @@ function QualitiesScreen(_info){
 	backButton.addEvent("mousedown", base.changeState("DetailedScenarioScreen", _info), false);
 	continueButton.addEvent("mousedown", base.changeState("PowersScreen", _info), false);	
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
-
-	
-	quality1Button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("virtues",quality1Button,"beingAwesome","images/dev/quality1_unselected.png","images/dev/quality1_selected.png", _clipBoard);
-	},false);
-	
-	quality2Button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("virtues",quality2Button,"beingLame","images/dev/quality2_unselected.png","images/dev/quality2_selected.png", _clipBoard);
-	},false);
 	
 	quality3_empathy_button.addEvent("mousedown", function(_clipBoard){
 		highlightQualityAndPowerButtons("virtues",quality3_empathy_button,"empathy","images/dev/qualitiesButtons/empathy.png","images/dev/qualitiesButtons/empathy_highlight.png", _clipBoard);
