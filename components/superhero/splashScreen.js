@@ -6,10 +6,10 @@ function SplashScreen(_info){
 	var info = _info;
 
 	//Set up the title screen.
-	var _background = Sprite(0, 0, 1920, 1080, "images/dev/splashTest03.png");
+	var _background = Sprite(0, 0, 1920, 1080, "images/dev/splashTest04.png");
 	base.addModule(_background);
 	/*set the position and origin*/
-	var _startButton = Sprite(1920/2, 1080 * 3/4, 256, 128, "images/dev/startButtonTest2.png");//*/, 128, 64);
+	var _startButton = Sprite(1920/2-128, 3*1080/4-64, 256, 128, "images/dev/startButtonTest03.png");//*/, 128, 64);
 	base.addModule(_startButton);
 
 	//Add option to move to the next state.
