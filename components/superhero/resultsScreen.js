@@ -5,6 +5,8 @@ function ResultsScreen(_info){
 	toReturn.type = "ResultsScreen";
 	var info = _info;
 
+	info.win = true;
+
 	//-----------------------------------------------------
 
 	//Dev Splash Image
@@ -31,8 +33,10 @@ function ResultsScreen(_info){
 	}
 	if(qualityFound && powerFound){
 		resultImage = Sprite(toReturn.bounds.width/2-128,toReturn.bounds.height/2-128,256,256, "images/dev/win.png");
+		info.win = true;
 	}else{
 		resultImage = Sprite(toReturn.bounds.width/2-128,toReturn.bounds.height/2-128,256,256, "images/dev/lose.png");
+		info.win = false;
 	}
 	base.addModule(resultImage);
 	
@@ -40,15 +44,29 @@ function ResultsScreen(_info){
 	backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
 	base.addModule(backButton);
 	
-	continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+	//Change the continue button based on whether or not we won.
+	if(info.win){
+		continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+	} else if(!info.win){
+		continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/tryAgain.png");
+	}
+	//Add it regardless.
 	base.addModule(continueButton);
 	
 	quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
 	base.addModule(quitButton);
 	
 	//Events
-	backButton.addEvent("mousedown", base.changeState("PowersScreen", _info), false);
-	continueButton.addEvent("mousedown", base.changeState("WhyItWorkedScreen", _info), false);
+	backButton.addEvent("mousedown", base.changeState("CharacterBioScreen", _info), false);
+
+	//We swap out the image and destination based on how you did.
+	if(info.win){
+		continueButton.addEvent("mousedown", base.changeState("WhyItWorkedScreen", _info), false);
+	} else if(!info.win){
+		continueButton.addEvent("mousedown", base.changeState("QualitiesScreen", _info), false);
+	}
+
+
 	quitButton.addEvent("mousedown", base.changeState("PowersScreen", _info), false);
 
 

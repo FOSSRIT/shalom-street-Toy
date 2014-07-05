@@ -31,11 +31,6 @@ function PowersScreen(_info){
 	base.addModule(quitButton);
 	
 	//Powers
-	power1Button = Sprite(toReturn.bounds.width/5, toReturn.bounds.height/3-128, 256, 256, "images/dev/power1_unselected.png");
-	base.addModule(power1Button);
-	
-	power2Button = Sprite(toReturn.bounds.width/5, 2*toReturn.bounds.height/3-128, 256, 256, "images/dev/power2_unselected.png");
-	base.addModule(power2Button);
 	
 	var power3_fire_button = Sprite(0, 2*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/fire.png");
 	base.addModule(power3_fire_button);
@@ -57,13 +52,6 @@ function PowersScreen(_info){
 	continueButton.addEvent("mousedown", base.changeState("ModelSelect", _info), false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 	
-	power1Button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("powers",power1Button,"saveKitten","images/dev/power1_unselected.png","images/dev/power1_selected.png", _clipBoard);
-	},false);
-	
-	power2Button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("powers",power2Button,"notSaveKitten","images/dev/power2_unselected.png","images/dev/power2_selected.png", _clipBoard);
-	},false);
 	
 	power3_fire_button.addEvent("mousedown", function(_clipBoard){
 		highlightQualityAndPowerButtons("powers",power3_fire_button,"fire","images/dev/powersButtons/fire.png","images/dev/powersButtons/fire_selected.png", _clipBoard);

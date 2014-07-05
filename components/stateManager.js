@@ -10,6 +10,7 @@ function StateManager(_startingState) {
 	base.addEvent("changeState", function(_clipBoard){ 
 
 		_prevState = _currentState;
+		console.log(_clipBoard.stateInfo.to);
 		eval("_currentState = " + _clipBoard.stateInfo.to + "(_clipBoard.stateInfo.pass);");
 		base.removeModule(_prevState);
 		base.addModule(_currentState);
