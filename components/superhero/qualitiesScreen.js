@@ -5,9 +5,13 @@ function QualitiesScreen(_info){
 	toReturn.type = "QualitiesScreen";
 	var info = _info;
 
+	var maxQualities = 2;
+
 
 	//Reset the super hero virtues.
 	info.superhero.virtues = [];
+	info.superhero.virtuesSelected = [];
+	//info.superhero.virtueSelected
 	
 	//Dev Splash Image
 	var splashImage = Sprite(0,0,1920,1080, "images/dev/qualitiesBackground.png");
@@ -116,6 +120,7 @@ function QualitiesScreen(_info){
 				//So now we have to remove it
 				tempFound = true;
 				info.superhero[_list].splice(i, 1);
+				info.superhero.virtuesSelected.splice(i, 1);
 				_buttonName.setImage(_unselectedImage);
 				if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
 			}
@@ -124,6 +129,12 @@ function QualitiesScreen(_info){
 			//If the logic finds its way here, then it means that the power is not in the list.
 			//So now we have to add it
 			info.superhero[_list].push(_attributeName);
+			info.superhero.virtuesSelected.push(_buttonName);
+			//Make sure that you odn't have more qualities than allowed.
+			if(info.superhero[_list].length > maxQualities) {
+				//info.superhero[_list].shift();
+				info.superhero.virtuesSelected[0].handleEvent("mousedown", {});
+			}
 			//console.log(_attributeName);
 			_buttonName.setImage(_selectedImage);
 			if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }

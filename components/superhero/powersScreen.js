@@ -4,9 +4,11 @@ function PowersScreen(_info){
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.type = "PowersScreen";
 	var info = _info;
+	var maxPowers = 1;
 
 
-	superhero.powers = [];
+	info.superhero.powers = [];
+	info.superhero.powersSelected = [];
 				
 	//Dev Splash Image
 	splashImage = Sprite(0,0,1920,1080, "images/dev/powersBackground.png");
@@ -109,6 +111,7 @@ function PowersScreen(_info){
 				//So now we have to remove it
 				tempFound = true;
 				info.superhero[_list].splice(i, 1);
+				info.superhero.powersSelected.splice(i, 1);
 				_buttonName.setImage(_unselectedImage);
 				if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
 			}
@@ -117,6 +120,13 @@ function PowersScreen(_info){
 			//If the logic finds its way here, then it means that the power is not in the list.
 			//So now we have to add it
 			info.superhero[_list].push(_attributeName);
+			info.superhero.powersSelected.push(_buttonName);
+
+			if(info.superhero[_list].length > maxPowers) {
+				info.superhero.powersSelected[0].handleEvent("mousedown", {});
+				//info.superhero[_list].shift();
+			}
+
 			console.log(_attributeName);
 			_buttonName.setImage(_selectedImage);
 			if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
