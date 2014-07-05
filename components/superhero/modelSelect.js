@@ -6,6 +6,7 @@ function ModelSelect(_info){
 	var info = _info;
 
 	info.modelType = "Girl";
+	info.superhero.skeleton = undefined;
 
 
 	//--------------------------------------
@@ -28,12 +29,14 @@ function ModelSelect(_info){
 		selected.bounds.y = 400;
 		info.modelType = "Boy";
 		_clipBoard.ToFire = ["redraw"];
+		console.log("selected boy." + info.modelType);
 	}, false);
 
 	girlOption.addEvent("mousedown", function(_clipBoard) { 
 		selected.bounds.x = 1160;
 		selected.bounds.y = 400;
 		info.modelType = "Girl";
+		console.log("selected girl." + info.modelType);
 		_clipBoard.ToFire = ["redraw"];
 	}, false);
 
@@ -51,8 +54,18 @@ function ModelSelect(_info){
 	base.addModule(quitButton);
 	
 	//Events
+	boyOptionFunc = base.changeState("CharacterBuilderBoy", _info);
+	girlOptionFunc = base.changeState("CharacterBuilderGirl", _info);
+
 	backButton.addEvent("mousedown", base.changeState("PowersScreen", _info), false);
-	continueButton.addEvent("mousedown", base.changeState("CharacterBuilder", _info), false);
+	continueButton.addEvent("mousedown", function(_clipBoard) { 
+		if(info.modelType == "Boy") {
+			boyOptionFunc(_clipBoard);
+		} else {
+			girlOptionFunc(_clipBoard);
+		}
+
+	} , false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 
 
