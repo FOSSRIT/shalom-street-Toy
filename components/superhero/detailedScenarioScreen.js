@@ -7,12 +7,14 @@ function DetailedScenarioScreen(_info){
 
 
 	if(info.currentScenario == "Cat") {
-		var splashImage = Sprite(0,0,1920,1080, "images/dev/detailedScenarioScreenTest02.png");
+		var splashImage = Sprite(0,0,1920,1080, "images/dev/testDetailedScenarios/detailedScenarioScreenTest_01_CatStuckInTree.png");
 	} else if(info.currentScenario == "Fire") {
-		var splashImage = Sprite(0,0,1920,1080 /*, "urlToBackgroundHere"*/);
+		var splashImage = Sprite(0,0,1920,1080, "images/dev/testDetailedScenarios/detailedScenarioScreenTest_02_BuildingOnFire.png");
+
 	}
 	else if(info.currentScenario = "Children") {
-		var splashImage = Sprite(0,0,1920,1080 /*, urlToBackgroundHere*/);
+		var splashImage = Sprite(0,0,1920,1080, "images/dev/testDetailedScenarios/detailedScenarioScreenTest_03_ChildrenFightingOverToy.png");
+
 	}
 	base.addModule(splashImage);
 	

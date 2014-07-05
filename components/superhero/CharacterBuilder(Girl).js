@@ -170,6 +170,7 @@ function CharacterBuilderGirl(_info){
 	toybox.addModule(tab3);
 	toybox.addModule(tab4);
 	toybox.addModule(tab5);
+
 	
 	
 	
@@ -331,6 +332,10 @@ function CharacterBuilderGirl(_info){
 		tab4.deselect();
 		tab5.select();
 	}, false);
+
+
+	
+	headTab1.handleEvent("mousedown", {});
 
 
 	return toReturn;

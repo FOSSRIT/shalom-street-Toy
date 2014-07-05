@@ -26,6 +26,7 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	//order means draw order
 	//0 gets drawn first
 	var _slots = {
+		"background": {"x":0, "y":0, "width":186, "height":479, "sprite":Sprite(0,0,186,479, "images/dev/hero/set/characterset-00.png"), "order":0},
 		"head": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":5},
 		"hair": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":6},
 		"face": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":7},
