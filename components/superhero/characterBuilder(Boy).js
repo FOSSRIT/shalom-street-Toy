@@ -334,5 +334,8 @@ function CharacterBuilderBoy(_info){
 	}, false);
 
 
+	headTab1.handleEvent("mousedown", {});
+
+
 	return toReturn;
 }
