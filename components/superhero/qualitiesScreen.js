@@ -17,6 +17,9 @@ function QualitiesScreen(_info){
 	var splashImage = Sprite(0,0,1920,1080, "images/dev/qualitiesBackground.png");
 	base.addModule(splashImage);
 	
+	var qualitiesHintImg = Sprite(toReturn.bounds.width/2-256,toReturn.bounds.height/8-64,512,128, "images/dev/qualitiesHint.png");
+	base.addModule(qualitiesHintImg);
+	
 	var heroImage = Sprite(toReturn.bounds.width/2-256,toReturn.bounds.height/2-384,512,1024, "images/dev/bro.png");
 	base.addModule(heroImage);
 	
