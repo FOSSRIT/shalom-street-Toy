@@ -60,10 +60,10 @@ function ResultsScreen(_info){
 	//---------------Just setting up the rest of the stuff here.---------------
 
 	if(qualityFound && powerFound){
-		resultImage = Sprite(toReturn.bounds.width/2-128,toReturn.bounds.height/2-128,256,256, "images/dev/win.png");
+		resultImage = Sprite(toReturn.bounds.width/2-128,toReturn.bounds.height/2-128,256,256, "images/dev/win02.png");
 		info.win = true;
 	}else{
-		resultImage = Sprite(toReturn.bounds.width/2-128,toReturn.bounds.height/2-128,256,256, "images/dev/lose.png");
+		resultImage = Sprite(toReturn.bounds.width/2-128,toReturn.bounds.height/2-128,256,256, "images/dev/lose02.png");
 		info.win = false;
 	}
 	base.addModule(resultImage);
