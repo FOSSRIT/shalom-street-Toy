@@ -6,7 +6,14 @@ function DetailedScenarioScreen(_info){
 	var info = _info;
 
 
-	var splashImage = Sprite(0,0,1920,1080, "images/dev/detailedScenarioScreenTest02.png");
+	if(info.currentScenario == "Cat") {
+		var splashImage = Sprite(0,0,1920,1080, "images/dev/detailedScenarioScreenTest02.png");
+	} else if(info.currentScenario == "Fire") {
+		var splashImage = Sprite(0,0,1920,1080 /*, "urlToBackgroundHere"*/);
+	}
+	else if(info.currentScenario = "Children") {
+		var splashImage = Sprite(0,0,1920,1080 /*, urlToBackgroundHere*/);
+	}
 	base.addModule(splashImage);
 	
 	//Buttons
