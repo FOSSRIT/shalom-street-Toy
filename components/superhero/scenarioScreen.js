@@ -5,6 +5,7 @@ function ScenarioScreen(_info){
 	Touch.Collisions(base);
 	toReturn.type = "ScenarioScreen";
 	var info = _info;
+	info.currentScenario = "";
 
 
 	var splashImage = Sprite(0, 0, 1920, 1080, "images/dev/scenarioScreenTest02.png");
@@ -63,10 +64,25 @@ function ScenarioScreen(_info){
 
 	//Add buttons for moving around states.
 	backButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false );
-	scenario1Button.addEvent("mousedown", base.changeState("DetailedScenarioScreen", _info), false );
-	scenario2Button.addEvent("mousedown", base.changeState("DetailedScenarioScreen", _info), false );
-	scenario3Button.addEvent("mousedown", base.changeState("DetailedScenarioScreen", _info), false );
-	scenario4Button.addEvent("mousedown", base.changeState("DetailedScenarioScreen", _info), false );
+
+	scenario1Button.addEvent("mousedown", function(_clipBoard){
+		info.currentScenario = "Cat";
+		base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+	}, false );
+	scenario2Button.addEvent("mousedown", function(_clipBoard){
+		info.currentScenario = "Fire";
+		base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+	}, false );
+	scenario3Button.addEvent("mousedown", function(_clipBoard){
+			info.currentScenario = "Children";
+			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+	}, false );
+
+
+	scenario4Button.addEvent("mousedown", function(_clipBoard) {
+		//Pass that stuff to another button.
+		scenario1Button.handleEvent("mousedown", _clipBoard);
+	}, false );
 	// scenario5Button.addEvent("mousedown", base.changeState("DetailedScenarioScreen", _info), false );
 	// randomScenarioButton.addEvent("mousedown", base.changeState("DetailedScenarioScreen", _info), false );
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false );
