@@ -49,8 +49,8 @@ function QualitiesScreen(_info){
 	var quality6_honor_button = Sprite(0, 5*toReturn.bounds.height/8, 256, 128, "images/dev/qualitiesButtons/honor.png");
 	base.addModule(quality6_honor_button);
 	
-	var quality7_pride_button = Sprite(0, 6*toReturn.bounds.height/8, 256, 128, "images/dev/qualitiesButtons/pride.png");
-	base.addModule(quality7_pride_button);
+	var quality7_courage_button = Sprite(0, 6*toReturn.bounds.height/8, 256, 128, "images/dev/qualitiesButtons/courage.png");
+	base.addModule(quality7_courage_button);
 	
 	//Events
 	backButton.addEvent("mousedown", base.changeState("DetailedScenarioScreen", _info), false);
@@ -73,8 +73,8 @@ function QualitiesScreen(_info){
 		highlightQualityAndPowerButtons("virtues",quality6_honor_button,"honor","images/dev/qualitiesButtons/honor.png","images/dev/qualitiesButtons/honor_highlight.png", _clipBoard);
 	},false);
 	
-	quality7_pride_button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("virtues",quality7_pride_button,"pride","images/dev/qualitiesButtons/pride.png","images/dev/qualitiesButtons/pride_highlight.png", _clipBoard);
+	quality7_courage_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("virtues",quality7_courage_button,"courage","images/dev/qualitiesButtons/courage.png","images/dev/qualitiesButtons/courage_highlight.png", _clipBoard);
 	},false);
 
 

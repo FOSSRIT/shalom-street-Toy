@@ -38,8 +38,8 @@ function PowersScreen(_info){
 	var power4_water_button = Sprite(0, 3*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/water.png");
 	base.addModule(power4_water_button);
 	
-	var power5_superStrength_button = Sprite(0, 4*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/superStrength.png");
-	base.addModule(power5_superStrength_button);
+	var power5_fly_button = Sprite(0, 4*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/fly.png");
+	base.addModule(power5_fly_button);
 	
 	var power6_diplomacy_button = Sprite(0, 5*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/diplomacy.png");
 	base.addModule(power6_diplomacy_button);
@@ -61,8 +61,8 @@ function PowersScreen(_info){
 		highlightQualityAndPowerButtons("powers",power4_water_button,"water","images/dev/powersButtons/water.png","images/dev/powersButtons/water_selected.png", _clipBoard);
 	},false);
 	
-	power5_superStrength_button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("powers",power5_superStrength_button,"superStrength","images/dev/powersButtons/superStrength.png","images/dev/powersButtons/superStrength_selected.png", _clipBoard);
+	power5_fly_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",power5_fly_button,"fly","images/dev/powersButtons/fly.png","images/dev/powersButtons/fly_selected.png", _clipBoard);
 	},false);
 	
 	power6_diplomacy_button.addEvent("mousedown", function(_clipBoard){

@@ -8,6 +8,8 @@ function ResultsScreen(_info){
 	info.win = true;
 
 	//-----------------------------------------------------
+	//
+	//Super inneficient, will fix later.
 
 	//Dev Splash Image
 	splashImage = Sprite(0,0,1920,1080, "images/dev/resultsScreenTest02.png");
@@ -17,20 +19,46 @@ function ResultsScreen(_info){
 	//See if based on qualities and powers if the player won or lost the scenario
 	powerFound = false;
 	qualityFound = false;
-	for(i = 0; i < info.superhero.powers.length; i++) {
-		if(info.superhero.powers[i] == "saveKitten"){
-			//If the logic finds its way here, then it means that the power is already in the list.
-			//So now we have to remove it
-			powerFound = true;
-		}
+
+	var powerRequirements = [];
+	var qualityRequirements = [];
+
+	//Load up your requirements.
+	if(info.currentScenario == "Cat") {
+		powerRequirements.push("fly");
+		qualityRequirements.push("empathy");
+		qualityRequirements.push("courage");
+	} else if(info.currentScenario == "Fire") {
+		powerRequirements.push("water");
+		qualityRequirements.push("courage");
+		qualityRequirements.push("empathy");
+		qualityRequirements.push("honor");
+	} else if(info.currentScenario == "Children") {
+		console.log("pushing for Children");
+		powerRequirements.push("diplomacy");
+		powerRequirements.push("superSmart");
+		qualityRequirements.push("empathy");
+		qualityRequirements.push("forgiveness");
+		qualityRequirements.push("honor");
+		qualityRequirements.push("courage")
+	} else {
+		//
 	}
-	for(i = 0; i < info.superhero.virtues.length; i++) {
-		if(info.superhero.virtues[i] == "beingAwesome"){
-			//If the logic finds its way here, then it means that the power is already in the list.
-			//So now we have to remove it
-			qualityFound = true;
-		}
+
+	//Search to see if you have the requirements.
+	//Right now you just need one of each.  In the future, this should change.
+	for(var i=0; i<powerRequirements.length; i++){//} in powerRequirements) {
+		if(info.superhero.powers.indexOf(powerRequirements[i]) != -1) { powerFound = true; };
 	}
+	for(var i=0; i<qualityRequirements.length; i++){//} in qualityRequirements) {
+		if(info.superhero.virtues.indexOf(qualityRequirements[i]) != -1) { qualityFound = true; };
+	}
+
+
+
+
+	//---------------Just setting up the rest of the stuff here.---------------
+
 	if(qualityFound && powerFound){
 		resultImage = Sprite(toReturn.bounds.width/2-128,toReturn.bounds.height/2-128,256,256, "images/dev/win.png");
 		info.win = true;
