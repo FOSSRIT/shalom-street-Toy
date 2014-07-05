@@ -17,10 +17,10 @@ function ScenarioScreen(_info){
 	var scenario1Button = Sprite(toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512, "images/dev/scenarioButton.png");
 	base.addModule(scenario1Button);
 	
-	scenario2Button = Sprite(2*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512, "images/dev/scenarioButton2.png");
+	scenario2Button = Sprite(2*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/scenario02_BuildingOnFire.png");
 	base.addModule(scenario2Button);
 	
-	scenario3Button = Sprite(3*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512, "images/dev/scenarioButton.png");
+	scenario3Button = Sprite(3*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/scenario03_ChildrenFightingOverToy.png");
   	base.addModule(scenario3Button);
 	
 	scenario4Button = Sprite(4*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512, "images/dev/randomScenarioButton.png");
@@ -39,23 +39,23 @@ function ScenarioScreen(_info){
 	//Add mouseover events. 
 	
 	Touch.onEnterExit(scenario1Button);
-	scenario1Button.addEvent("mouseenter", function(_clipBoard){  scenario1Button.setImage("images/dev/error.png", true, toReturn.bounds.width/5, toReturn.bounds.height/2-256, 256, 640); },false);
+	scenario1Button.addEvent("mouseenter", function(_clipBoard){  scenario1Button.setImage("images/dev/scenarioButton.png", true, toReturn.bounds.width/5-48, toReturn.bounds.height/2-256, 384, 640); },false);
 	scenario1Button.addEvent("mouseexit", function(_clipBoard){  scenario1Button.setImage("images/dev/scenarioButton.png", true, toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512); },false);
 
 
 	Touch.onEnterExit(scenario2Button);
-	scenario2Button.addEvent("mouseenter", function(_clipBoard){   scenario2Button.setImage("images/dev/error.png", true, 2*toReturn.bounds.width/5, toReturn.bounds.height/2-256, 256, 640);  },false);
-	scenario2Button.addEvent("mouseexit", function(_clipBoard){  scenario2Button.setImage("images/dev/scenarioButton2.png", true, 2*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512);  }, false);
+	scenario2Button.addEvent("mouseenter", function(_clipBoard){   scenario2Button.setImage("images/dev/testScenarios/scenario02_BuildingOnFire.png", true, 2*toReturn.bounds.width/5-48, toReturn.bounds.height/2-256, 384, 640);  },false);
+	scenario2Button.addEvent("mouseexit", function(_clipBoard){  scenario2Button.setImage("images/dev/testScenarios/scenario02_BuildingOnFire.png", true, 2*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512);  }, false);
 
 
 
 	Touch.onEnterExit(scenario3Button);
-	scenario3Button.addEvent("mouseover", function(_clipBoard){   scenario3Button.setImage("images/dev/error.png", true, 3*toReturn.bounds.width/5, toReturn.bounds.height/2-256, 256, 640);  },false);
-	scenario3Button.addEvent("mouseexit", function(_clipBoard){  scenario3Button.setImage("images/dev/scenarioButton.png", true, 3*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512);}, false);
+	scenario3Button.addEvent("mouseover", function(_clipBoard){   scenario3Button.setImage("images/dev/testScenarios/scenario03_ChildrenFightingOverToy.png", true, 3*toReturn.bounds.width/5-48, toReturn.bounds.height/2-256, 384, 640);  },false);
+	scenario3Button.addEvent("mouseexit", function(_clipBoard){  scenario3Button.setImage("images/dev/testScenarios/scenario03_ChildrenFightingOverToy.png", true, 3*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512);}, false);
 
 
 	Touch.onEnterExit(scenario4Button);
- 	scenario4Button.addEvent("mouseover", function(_clipBoard){ scenario4Button.setImage("images/dev/error.png", true, 4*toReturn.bounds.width/5, toReturn.bounds.height/2-256, 256, 640);  },false);
+ 	scenario4Button.addEvent("mouseover", function(_clipBoard){ scenario4Button.setImage("images/dev/randomScenarioButton.png", true, 4*toReturn.bounds.width/5-48, toReturn.bounds.height/2-256, 384, 640);  },false);
  	scenario4Button.addEvent("mouseexit", function(_clipBoard){  scenario4Button.setImage("images/dev/randomScenarioButton.png", true, 4*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512);  }, false);
 
 	
