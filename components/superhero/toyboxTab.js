@@ -80,9 +80,6 @@ function ToyBoxTab(_x, _y, _width, _height, _connectedSlot) {
 		for(i=startingIndex; i<startingIndex+display; i++){
 			options[i.mod(options.length)].visible = true;
 		}
-
-
-		
 	}
 
 
