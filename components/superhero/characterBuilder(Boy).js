@@ -39,6 +39,11 @@ function CharacterBuilderBoy(_info){
 			
 			//Buttons
 			leftButton = Sprite(tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/left.png");
+			leftButton.addEvent("mousedown", function(_clipBoard){ 
+				//Add rotate code here.
+				tab1.rotate(1, 128+64);
+				_clipBoard.ToFire = ["redraw"];
+			}, false);
 			tab1.addModule(leftButton);
 			
 			//NICK: replace first one with preview version and second image url with one to send to the character skeleton
@@ -47,6 +52,10 @@ function CharacterBuilderBoy(_info){
 			tab1.addOption(Sprite(4*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/_01.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/right.png");
+			rightButton.addEvent("mousedown", function(_clipBoard){ 
+				tab1.rotate(-1, 128+64);
+				_clipBoard.ToFire = ["redraw"];
+			}, false);
 			tab1.addModule(rightButton);
 		
 		//Line 02 - Hair
@@ -58,6 +67,11 @@ function CharacterBuilderBoy(_info){
 			
 			//Buttons
 			leftButton = Sprite(head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/left.png");
+			leftButton.addEvent("mousedown", function(_clipBoard){ 
+				//Add rotate code here.
+				head_subTab_01_hair.rotate(1, 128+64);
+				_clipBoard.ToFire = ["redraw"];
+			}, false);
 			head_subTab_01_hair.addModule(leftButton);
 			
 			head_subTab_01_hair.addOption(Sprite(2*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-08_icon.png"), "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-08.png");
@@ -65,6 +79,10 @@ function CharacterBuilderBoy(_info){
 			head_subTab_01_hair.addOption(Sprite(4*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/_05.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/right.png");
+			rightButton.addEvent("mousedown", function(_clipBoard){ 
+				head_subTab_01_hair.rotate(-1, 128+64);
+				_clipBoard.ToFire = ["redraw"];
+			}, false);
 			head_subTab_01_hair.addModule(rightButton);
 			
 		//Line 03 - Face
@@ -72,10 +90,14 @@ function CharacterBuilderBoy(_info){
 			
 			//Label
 			line01Label = Sprite(head_subTab_03_face.bounds.width/6-64, 5*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/hero/01_head/03_face/faceTab.png");
-			head_subTab_03_face.addModule(line01Label);
 			
 			//Buttons
 			leftButton = Sprite(head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/left.png");
+			leftButton.addEvent("mousedown", function(_clipBoard){ 
+				//Add rotate code here.
+				head_subTab_03_face.rotate(1, 128+64);
+				_clipBoard.ToFire = ["redraw"];
+			}, false);
 			head_subTab_03_face.addModule(leftButton);
 			
 			head_subTab_03_face.addOption(Sprite(2*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-07_icon.png"), "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-07.png");
@@ -83,6 +105,10 @@ function CharacterBuilderBoy(_info){
 			head_subTab_03_face.addOption(Sprite(4*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/_08.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/right.png");
+			rightButton.addEvent("mousedown", function(_clipBoard){ 
+				head_subTab_03_face.rotate(-1, 128+64);
+				_clipBoard.ToFire = ["redraw"];
+			}, false);
 			head_subTab_03_face.addModule(rightButton);
 			
 			
@@ -96,6 +122,11 @@ function CharacterBuilderBoy(_info){
 			
 			//Buttons
 			leftButton = Sprite(tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/left.png");
+			leftButton.addEvent("mousedown", function(_clipBoard){ 
+				//Add rotate code here.
+				tab2.rotate(1, 128+64);
+				_clipBoard.ToFire = ["redraw"];
+			}, false);
 			tab2.addModule(leftButton);
 			
 			tab2.addOption(Sprite(2*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-01_icon.png"), "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-01.png");
@@ -103,6 +134,10 @@ function CharacterBuilderBoy(_info){
 			tab2.addOption(Sprite(4*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/_00.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/right.png");
+			rightButton.addEvent("mousedown", function(_clipBoard){ 
+				tab2.rotate(-1, 128+64);
+				_clipBoard.ToFire = ["redraw"];
+			}, false);
 			tab2.addModule(rightButton);
 		
 	var tab3 = ToyBoxTab(128, 128, toybox.bounds.width -128, toybox.bounds.height - 128, "shirt");
@@ -114,6 +149,11 @@ function CharacterBuilderBoy(_info){
 			
 			//Buttons
 			leftButton = Sprite(tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/left.png");
+			leftButton.addEvent("mousedown", function(_clipBoard){ 
+				//Add rotate code here.
+				tab3.rotate(1, 128+64);
+				_clipBoard.ToFire = ["redraw"];
+			}, false);
 			tab3.addModule(leftButton);
 			
 			tab3.addOption(Sprite(2*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-02_icon.png"), "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-02.png");
@@ -121,6 +161,10 @@ function CharacterBuilderBoy(_info){
 			tab3.addOption(Sprite(4*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/_06.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/right.png");
+			rightButton.addEvent("mousedown", function(_clipBoard){ 
+				tab3.rotate(-1, 128+64);
+				_clipBoard.ToFire = ["redraw"];
+			}, false);
 			tab3.addModule(rightButton);
 			
 	var tab4 = ToyBoxTab(128, 128, toybox.bounds.width -128, toybox.bounds.height - 128, "pants");
@@ -131,6 +175,11 @@ function CharacterBuilderBoy(_info){
 			
 			//Buttons
 			leftButton = Sprite(tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/left.png");
+			leftButton.addEvent("mousedown", function(_clipBoard){ 
+				//Add rotate code here.
+				tab4.rotate(1, 128+64);
+				_clipBoard.ToFire = ["redraw"];
+			}, false);
 			tab4.addModule(leftButton);
 			
 			tab4.addOption(Sprite(2*tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-05_icon.png"), "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-05.png");
@@ -138,6 +187,10 @@ function CharacterBuilderBoy(_info){
 			tab4.addOption(Sprite(4*tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/_05.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/right.png");
+			rightButton.addEvent("mousedown", function(_clipBoard){ 
+				tab4.rotate(-1, 128+64);
+				_clipBoard.ToFire = ["redraw"];
+			}, false);
 			tab4.addModule(rightButton);
 	
 	var tab5 = ToyBoxTab(128, 128, toybox.bounds.width -128, toybox.bounds.height - 128, "accessories");	
@@ -148,6 +201,11 @@ function CharacterBuilderBoy(_info){
 			
 			//Buttons
 			leftButton = Sprite(tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/left.png");
+			leftButton.addEvent("mousedown", function(_clipBoard){ 
+				//Add rotate code here.
+				tab5.rotate(1, 128+64);
+				_clipBoard.ToFire = ["redraw"];
+			}, false);
 			tab5.addModule(leftButton);
 			
 			tab5.addOption(Sprite(2*tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-10_icon.png"), "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-10.png");
@@ -155,6 +213,10 @@ function CharacterBuilderBoy(_info){
 			tab5.addOption(Sprite(4*tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/_03.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/right.png");
+			rightButton.addEvent("mousedown", function(_clipBoard){ 
+				tab5.rotate(-1, 128+64);
+				_clipBoard.ToFire = ["redraw"];
+			}, false);
 			tab5.addModule(rightButton);
 		
 	//specific to toybox -- TEMP DEV
