@@ -33,7 +33,7 @@ function CharacterBuilderBoy(_info){
 		//Components in side of a tab
 		
 		//Line 01
-			//Label
+			//Label - head
 			line01Label = Sprite(tab1.bounds.width/6-64, tab1.bounds.height/8-64, 128, 128, "images/dev/hero/01_head/01_head/headTab.png");
 			tab1.addModule(line01Label);
 			
@@ -42,9 +42,9 @@ function CharacterBuilderBoy(_info){
 			tab1.addModule(leftButton);
 			
 			//NICK: replace first one with preview version and second image url with one to send to the character skeleton
-			tab1.addOption(Sprite(2*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/_01.png"), "images/dev/alpha.png");
-			tab1.addOption(Sprite(3*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/hero/set/head_icon.png"), "images/dev/hero/set/characterset-11b.png");
-			tab1.addOption(Sprite(4*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/_03.png"), "images/dev/alpha.png");
+			tab1.addOption(Sprite(2*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-09_icon.png"), "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-09.png");
+			tab1.addOption(Sprite(3*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/hero/set/head_icon.png"), "images/dev/hero/set/demo/malecharacter1/new male 1 set/malecharacter1-14.png");
+			tab1.addOption(Sprite(4*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/_01.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*tab1.bounds.width/6-64, 2*tab1.bounds.height/8-64, 128, 128, "images/dev/right.png");
 			tab1.addModule(rightButton);
@@ -60,8 +60,8 @@ function CharacterBuilderBoy(_info){
 			leftButton = Sprite(head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/left.png");
 			head_subTab_01_hair.addModule(leftButton);
 			
-			head_subTab_01_hair.addOption(Sprite(2*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/_03.png"), "images/dev/alpha.png");
-			head_subTab_01_hair.addOption(Sprite(3*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/hero/set/hair_icon.png"), "images/dev/hero/set/characterset-12.png");
+			head_subTab_01_hair.addOption(Sprite(2*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-08_icon.png"), "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-08.png");
+			head_subTab_01_hair.addOption(Sprite(3*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/hero/set/hair_icon.png"), "images/dev/hero/set/demo/malecharacter1/new male 1 set/malecharacter1-13.png");
 			head_subTab_01_hair.addOption(Sprite(4*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/_05.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*head_subTab_01_hair.bounds.width/6-64, 4*head_subTab_01_hair.bounds.height/8-64, 128, 128, "images/dev/right.png");
@@ -78,8 +78,8 @@ function CharacterBuilderBoy(_info){
 			leftButton = Sprite(head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/left.png");
 			head_subTab_03_face.addModule(leftButton);
 			
-			head_subTab_03_face.addOption(Sprite(2*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/_06.png"), "images/dev/alpha.png");
-			head_subTab_03_face.addOption(Sprite(3*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/hero/set/face_icon.png"), "images/dev/hero/set/characterset-11a.png");
+			head_subTab_03_face.addOption(Sprite(2*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-07_icon.png"), "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-07.png");
+			head_subTab_03_face.addOption(Sprite(3*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/hero/set/face_icon.png"), "images/dev/hero/set/demo/malecharacter1/new male 1 set/malecharacter1-06.png");
 			head_subTab_03_face.addOption(Sprite(4*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/_08.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*head_subTab_03_face.bounds.width/6-64, 6*head_subTab_03_face.bounds.height/8-64, 128, 128, "images/dev/right.png");
@@ -89,7 +89,7 @@ function CharacterBuilderBoy(_info){
 			
 	var tab2 = ToyBoxTab(128, 128, toybox.bounds.width-128, toybox.bounds.height - 128, "suit");
 	
-		//Line 01
+		//Line 01 - suit
 			//Label
 			line01Label = Sprite(tab2.bounds.width/6-64, tab2.bounds.height/8-64, 128, 128, "images/dev/minorTab.png");
 			tab2.addModule(line01Label);
@@ -98,8 +98,8 @@ function CharacterBuilderBoy(_info){
 			leftButton = Sprite(tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/left.png");
 			tab2.addModule(leftButton);
 			
-			tab2.addOption(Sprite(2*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/_00.png"), "images/dev/alpha.png");
-			tab2.addOption(Sprite(3*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/hero/set/suit_icon.png"), "images/dev/hero/set/characterset-01.png");
+			tab2.addOption(Sprite(2*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-01_icon.png"), "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-01.png");
+			tab2.addOption(Sprite(3*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/hero/set/suit_icon.png"), "images/dev/hero/set/demo/malecharacter1/new male 1 set/malecharacter1-02.png");
 			tab2.addOption(Sprite(4*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/_00.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*tab2.bounds.width/6-64, 2*tab2.bounds.height/8-64, 128, 128, "images/dev/right.png");
@@ -116,8 +116,8 @@ function CharacterBuilderBoy(_info){
 			leftButton = Sprite(tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/left.png");
 			tab3.addModule(leftButton);
 			
-			tab3.addOption(Sprite(2*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/_04.png"), "images/dev/alpha.png");
-			tab3.addOption(Sprite(3*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/hero/set/shirt_icon.png"), "images/dev/hero/set/characterset-03.png");
+			tab3.addOption(Sprite(2*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-02_icon.png"), "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-02.png");
+			tab3.addOption(Sprite(3*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/hero/set/shirt_icon.png"), "images/dev/hero/set/demo/malecharacter1/new male 1 set/malecharacter1-03.png");
 			tab3.addOption(Sprite(4*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/_06.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*tab3.bounds.width/6-64, 2*tab3.bounds.height/8-64, 128, 128, "images/dev/right.png");
@@ -133,8 +133,8 @@ function CharacterBuilderBoy(_info){
 			leftButton = Sprite(tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/left.png");
 			tab4.addModule(leftButton);
 			
-			tab4.addOption(Sprite(2*tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/_03.png"), "images/dev/alpha.png");
-			tab4.addOption(Sprite(3*tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/hero/set/pants_icon.png"), "images/dev/hero/set/characterset-02.png");
+			tab4.addOption(Sprite(2*tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-05_icon.png"), "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-05.png");
+			tab4.addOption(Sprite(3*tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/hero/set/pants_icon.png"), "images/dev/hero/set/demo/malecharacter1/new male 1 set/malecharacter1-04.png");
 			tab4.addOption(Sprite(4*tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/_05.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*tab4.bounds.width/6-64, 2*tab4.bounds.height/8-64, 128, 128, "images/dev/right.png");
@@ -150,8 +150,8 @@ function CharacterBuilderBoy(_info){
 			leftButton = Sprite(tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/left.png");
 			tab5.addModule(leftButton);
 			
-			tab5.addOption(Sprite(2*tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/_01.png"), "images/dev/alpha.png");
-			tab5.addOption(Sprite(3*tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/hero/set/mask_icon.png"), "images/dev/hero/set/characterset-05.png");
+			tab5.addOption(Sprite(2*tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-10_icon.png"), "images/dev/hero/set/demo/malecharacterset2/new male set 2/malecharacter2-10.png");
+			tab5.addOption(Sprite(3*tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/hero/set/mask_icon.png"), "images/dev/hero/set/demo/malecharacter1/new male 1 set/malecharacter1-07.png");
 			tab5.addOption(Sprite(4*tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/_03.png"), "images/dev/alpha.png");
 			
 			rightButton = Sprite(5*tab5.bounds.width/6-64, 2*tab5.bounds.height/8-64, 128, 128, "images/dev/right.png");
@@ -204,19 +204,20 @@ function CharacterBuilderBoy(_info){
 	//If we don't have a skeleton yet.
 	var toy;
 	if(info.superhero.skeleton === undefined){
-		toy = CharacterSkeleton(playArea.bounds.width/2-64, playArea.bounds.height/4, 256, 512);
+		toy = CharacterSkeleton(playArea.bounds.width/2-128, playArea.bounds.height/4, 258, 655);
 		//TEMP DEV SPRITE SET UP FOR TOY
-		toy.setSlot("head", 		Sprite(0,0,186,479, "images/dev/alpha.png"));
-		toy.setSlot("hair", 		Sprite(0,0,186,479, "images/dev/alpha.png"));
-		toy.setSlot("face", 		Sprite(0,0,186,479, "images/dev/alpha.png"));
-		toy.setSlot("suit", 		Sprite(0,0,186,479, "images/dev/alpha.png"));
-		toy.setSlot("shirt", 		Sprite(0,0,186,479, "images/dev/alpha.png"));
-		toy.setSlot("pants", 		Sprite(0,0,186,479, "images/dev/alpha.png"));
-		toy.setSlot("feet", 		Sprite(0,0,186,479, "images/dev/alpha.png"));
-		toy.setSlot("accessories", 	Sprite(0,0,186,479, "images/dev/alpha.png"));
+		toy.setSlot("background", 	Sprite(0,0,258,655, "images/dev/hero/set/demo/malecharacter1/new male 1 set/malecharacter1-00.png"));
+		toy.setSlot("head", 		Sprite(0,0,258,655, "images/dev/alpha.png"));
+		toy.setSlot("hair", 		Sprite(0,0,258,655, "images/dev/alpha.png"));
+		toy.setSlot("face", 		Sprite(0,0,258,655, "images/dev/alpha.png"));
+		toy.setSlot("suit", 		Sprite(0,0,258,655, "images/dev/alpha.png"));
+		toy.setSlot("shirt", 		Sprite(0,0,258,655, "images/dev/alpha.png"));
+		toy.setSlot("pants", 		Sprite(0,0,258,655, "images/dev/alpha.png"));
+		toy.setSlot("feet", 		Sprite(0,0,258,655, "images/dev/alpha.png"));
+		toy.setSlot("accessories", 	Sprite(0,0,258,655, "images/dev/alpha.png"));
 		
 		//unused
-		toy.setSlot("body", Sprite(0,0,186,479, "images/dev/alpha.png"));
+		toy.setSlot("body", Sprite(0,0,258,655, "images/dev/alpha.png"));
 		
 		//Add events
 		toy.addEvent("swapComponent", function(_clipBoard){ 

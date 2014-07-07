@@ -26,18 +26,18 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	//order means draw order
 	//0 gets drawn first
 	var _slots = {
-		"background": {"x":0, "y":0, "width":186, "height":479, "sprite":Sprite(0,0,186,479, "images/dev/hero/set/characterset-00.png"), "order":0},
-		"head": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":5},
-		"hair": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":6},
-		"face": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":7},
-		"suit": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":1},
-		"shirt": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":2},
-		"pants": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":3},
-		"feet": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":4},
-		"accessories": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":8},
+		"background": {"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":0},
+		"head": {"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":5},
+		"hair": {"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":6},
+		"face": {"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":7},
+		"suit": {"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":1},
+		"shirt": {"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":2},
+		"pants": {"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":3},
+		"feet": {"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":4},
+		"accessories": {"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":8},
 		
 		//unused
-		"body": {"x":0, "y":0, "width":186, "height":479, "sprite":undefined, "order":99},
+		"body": {"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":99},
 	}
 	toReturn.slots = _slots;
 	
