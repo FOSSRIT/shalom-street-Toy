@@ -4,6 +4,7 @@ function SuperPoseScreen(_info){
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.type = "SuperPoseScreen";
 	var info = _info;
+	Touch.Collisions(base);
 
 	//--------------------------------------------------------------------
 

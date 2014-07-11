@@ -5,6 +5,7 @@ function PowersScreen(_info){
 	toReturn.type = "PowersScreen";
 	var info = _info;
 	var maxPowers = 1;
+	Touch.Collisions(base);
 
 
 	info.superhero.powers = [];

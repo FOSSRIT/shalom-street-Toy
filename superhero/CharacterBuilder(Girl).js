@@ -4,6 +4,7 @@ function CharacterBuilderGirl(_info){
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.type = "CharacterBuilderGirl";
 	var info = _info;
+	Touch.Collisions(base);
 	
 	var splashImage = Sprite(0,0,1920,1080, "images/dev/createYourHero_Background.png");
 	base.addModule(splashImage);

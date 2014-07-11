@@ -4,6 +4,7 @@ function ModelSelect(_info){
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.type = "CharacterBioScreen";
 	var info = _info;
+	Touch.Collisions(base);
 
 	info.modelType = "Girl";
 	info.superhero.skeleton = undefined;

@@ -2,6 +2,7 @@ function SplashScreen(_info){
 	//------------------------------VARIABLES-------------------------------------
 	var base = State(0, 0, 1920, 1080); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
+	Touch.Collisions(base);
 	toReturn.type = "SplashScreen";
 	var info = _info;
 
@@ -19,9 +20,6 @@ function SplashScreen(_info){
 				"virtues":[], "skeleton":undefined, "powers":[] }  }), 
 		false );
 
-	Touch.onEnterExit(_startButton);
-	_startButton.addEvent("mouseenter", function(){console.log("enter"); });
-	_startButton.addEvent("mouseexit", function(){console.log("exit"); });
 
 
 	//For dev purposes.

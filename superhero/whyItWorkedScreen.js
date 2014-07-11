@@ -4,7 +4,7 @@ function WhyItWorkedScreen(_info){
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.type = "WhyItWorkedScreen";
 	var info = _info;
-
+	Touch.Collisions(base);
 
 	//------------------------------------------------------------------
 

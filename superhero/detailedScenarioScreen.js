@@ -4,6 +4,7 @@ function DetailedScenarioScreen(_info){
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.type = "DetailedScenarioScreen";
 	var info = _info;
+	Touch.Collisions(base);
 
 
 	if(info.currentScenario == "Cat") {

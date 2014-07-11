@@ -4,6 +4,7 @@ function ResultsScreen(_info){
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.type = "ResultsScreen";
 	var info = _info;
+	Touch.Collisions(base);
 
 	info.win = true;
 

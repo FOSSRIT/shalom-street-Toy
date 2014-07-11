@@ -4,6 +4,7 @@ function QualitiesScreen(_info){
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.type = "QualitiesScreen";
 	var info = _info;
+	Touch.Collisions(base);
 
 	var maxQualities = 2;
 
