@@ -21,25 +21,18 @@ Adding an image: [path_to_image, xPosition, yPosition, width, height]
 Adding an animation: ***NOT YET SUPPORTED***
 ----------------------------------------------------------------------
 */
+
+
+
 jsonLoader.result = {
-	//This is the background image for the app.
-	//url, xPosition, yPosition, width, height
-	"background": ["images/test.png", 0, 0, 1920, 1080],
+	//Here you should define backgrounds that you want for each scenario.
+	"Cat": "images/dev/testDetailedScenarios/detailedScenarioScreenTest_01_CatStuckInTree.png",
+	"Fire": "images/dev/testDetailedScenarios/detailedScenarioScreenTest_02_BuildingOnFire.png",
+	"Children": "images/dev/testDetailedScenarios/detailedScenarioScreenTest_03_ChildrenFightingOverToy.png",
 
-	//This should have the way you want the background to animate.
-	//sprite, xStart, yStart, xEnd, yEnd, time(in seconds)
-	"backgroundAnimation":["background", 0, 0, 30, 30, .15],
-
-	//This is the number of sparkles that come out of the button.
-	"myVariable": [15],
 };
 
 jsonLoader.onresult();
-
-
-
-
-
 
 
 
