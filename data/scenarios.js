@@ -22,10 +22,13 @@ Adding an animation: ***NOT YET SUPPORTED***
 ----------------------------------------------------------------------
 */
 
-
-
 jsonLoader.result = {
-	//Here you should define backgrounds that you want for each scenario.
+	//Here you should the tabs you want.
+
+
+	//include the actual tabs here.
+	"tabs": [],
+
 	"Cat": "images/dev/testDetailedScenarios/detailedScenarioScreenTest_01_CatStuckInTree.png",
 	"Fire": "images/dev/testDetailedScenarios/detailedScenarioScreenTest_02_BuildingOnFire.png",
 	"Children": "images/dev/testDetailedScenarios/detailedScenarioScreenTest_03_ChildrenFightingOverToy.png",
