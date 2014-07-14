@@ -496,6 +496,7 @@ function CharacterBuilderBoy(_info){
 		//TEMP DEV SPRITE SET UP FOR TOY
 		//template
 		toy.setSlot("background", 		Sprite(0,0,258,655, "images/dev/hero/set/demo/malecharacter1/new male 1 set/malecharacter1-00.png"));
+		toy.setSlot("head", 			Sprite(0,0,258,655, "images/dev/hero/set/demo/malecharacter1/new male 1 set/malecharacter1-14.png"));
 		//head
 		toy.setSlot("face", 			Sprite(0,0,258,655, "images/dev/alpha.png"));
 		toy.setSlot("hair", 			Sprite(0,0,258,655, "images/dev/alpha.png"));
