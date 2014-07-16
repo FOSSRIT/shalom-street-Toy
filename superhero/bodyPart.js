@@ -24,6 +24,8 @@ function BodyPart(x, y, width, height){
 	}
 
 	toReturn.addBodyType = function(bodyType, img){
+
+		console.log("adding a bodyType: " + bodyType + ", " + img);
 		bodyTypes[bodyType] = img;
 	}
 

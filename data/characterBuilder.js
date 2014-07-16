@@ -11,6 +11,9 @@ Adding an animation: ***NOT YET SUPPORTED***
 ----------------------------------------------------------------------
 */
 
+// this bug
+//
+
 jsonLoader.result = {
 
 	"defaults" : {
@@ -24,13 +27,13 @@ jsonLoader.result = {
 
 		"head": {
 			//URL of selected/unselected sprite.
-			"sprite": [undefined, undefined],
+			"sprite": ["images/dev/hero/headTab_highlight.png", "images/dev/hero/headTab.png"],
 			//these are the tabs that are included in each category.
 			"tabs": {
 				//This name should correspond to the name of the superhero slot it's going to go into.
 				"face": {
 					//URL of banner image for the tab.
-					"sprite": undefined,
+					"sprite": "images/dev/hero/01_head/03_face/faceTab.png",
 					//An option that will be included in the tab.
 					"options": {
 						//In each tab, we have a list of options that the user can click on.
@@ -38,33 +41,33 @@ jsonLoader.result = {
 							//Face_1 applies to multiple body types.  Each one is rendered differently.
 							"male_1": {
 								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": [undefined, undefined],
+								"option_sprite": ["images/dev/hero/01_head/03_face/face_01_happy_icon.png", "images/dev/hero/01_head/03_face/face_01_happy_icon.png"],
 								//The url of the image that is loaded onto the character.
-								"sprite": undefined
+								"sprite": "images/dev/hero/01_head/03_face/face_01_happy.png"
 							},
 							//Another body type would go here.
 							"female_1": {
 								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": [undefined, undefined],
+								"option_sprite": ["images/dev/hero/01_head/03_face/face_02_mad_icon.png", "images/dev/hero/01_head/03_face/face_02_mad_icon.png"],
 								//The url of the image that is loaded onto the character.
-								"sprite": undefined
+								"sprite": "images/dev/hero/01_head/03_face/face_02_mad.png"
 							},
 						},
 
 						"face_2": {
 							//Face_1 applies to multiple body types.  Each one is rendered differently.
-							"male_1": {
-								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": [undefined, undefined],
-								//The url of the image that is loaded onto the character.
-								"sprite": undefined
-							},
-							//Another body type would go here.
 							"female_1": {
 								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": [undefined, undefined],
+								"option_sprite": ["images/dev/hero/01_head/03_face/face_01_happy_icon.png", "images/dev/hero/01_head/03_face/face_01_happy_icon.png"],
 								//The url of the image that is loaded onto the character.
-								"sprite": undefined
+								"sprite": "images/dev/hero/01_head/03_face/face_01_happy.png"
+							},
+							//Another body type would go here.
+							"male_1": {
+								//The url of the selected/unselected image that you click on to choose this customization for your character.
+								"option_sprite": ["images/dev/hero/01_head/03_face/face_02_mad_icon.png", "images/dev/hero/01_head/03_face/face_02_mad_icon.png"],
+								//The url of the image that is loaded onto the character.
+								"sprite": "images/dev/hero/01_head/03_face/face_02_mad.png"
 							},
 						},
 

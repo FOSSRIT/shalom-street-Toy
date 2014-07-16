@@ -112,7 +112,7 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	
 
 
-	function _setSlot(slot, sprite, optionString){
+	function _setSlot(slot, sprite, bodyType){
 
 		//If you were passed in an image.
 		if(typeof(sprite) == "string") {
@@ -124,24 +124,26 @@ function CharacterSkeleton(_x, _y, _width, _height){
 		} else {
 			//Remove the past contents of the slot if it exists.
 			if(toReturn.slots[slot]) {
-				base.removeModule(toReturn.slots[slot].sprite);
+				console.log("Swapping "+slot+". Attempted to remove current module: " + base.removeModule(toReturn.slots[slot].sprite));
+				console.log("current size is: " + base.contents.length);
 			}//
 
-			console.log(slot);
-			console.log("adding: " + toReturn.slots[slot].order);
+			//Added.
 			base.addModule(sprite, toReturn.slots[slot].order);
+			toReturn.slots[slot].sprite = sprite;
 
 			//Sort the slots.
 			//Little bit hacky.  We can do this better.
 			for(var s in _slots) {
 				if(_slots[s].sprite != undefined) {
-					base.removeModule(_slots[s].sprite);
-					base.addModule(_slots[s].sprite, _slots[s].order);
+					if(base.removeModule(toReturn.slots[s].sprite)){ //If you could remove the slot, re-add it in the correct place.
+						base.addModule(toReturn.slots[s].sprite,toReturn.slots[s].order);
+					}
 				}
 			}
 
-			toReturn.slots[slot].option = optionString;
-			toReturn.slots[slot].sprite = sprite;
+			
+			toReturn.slots[slot].sprite.setBodyType(bodyType || "default");
 			sprite.bounds.x = toReturn.slots[slot].x;
 			sprite.bounds.y = toReturn.slots[slot].y;
 			

@@ -82,19 +82,20 @@ function CharacterBuilder(_info){
 					//base.jsonData.categories[v].tabs[t]
 					//Other stuff with this is knowing the body type.
 					var sex = info.superhero.bodyType;
-					var option = base.jsonData.categories[v].tabs[t].options;//Get the proper info for the option with this body type.
+					var option = base.jsonData.categories[v].tabs[t].options[o];//Get the proper info for the option with this body type.
 					//
 
 					var bodyPart = BodyPart(0, 0, 0, 0);//Some stuff here.
 					//foreach bodyType for that bodyPart
 					for(var b in option){
-						bodyPart.addBodyType(b, option[b].option_sprite);
+
+						bodyPart.addBodyType(b, option[b].sprite);
 					}
 					tab.addOption( Sprite(
 						(2+k)*tab.bounds.width/6-64, 
 						2*tab.bounds.height/8-64, 
 						128, 128, 
-						option[o][sex].option_sprite[0]), bodyPart);
+						option[sex].option_sprite[0]), bodyPart);
 				}
 			}
 
@@ -155,8 +156,7 @@ function CharacterBuilder(_info){
 
 			//Add events
 			toy.addEvent("swapComponent", function(_clipBoard){ 
-				console.log('swapping');
-				toy.setSlot(_clipBoard.ComponentSwap.slot, _clipBoard.ComponentSwap.image, _clipBoard.ComponentSwap.option); 
+				toy.setSlot(_clipBoard.ComponentSwap.slot, _clipBoard.ComponentSwap.image, _info.superhero.bodyType); 
 				if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
 			}, false);
 			
