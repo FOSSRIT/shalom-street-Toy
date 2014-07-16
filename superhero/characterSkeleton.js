@@ -16,8 +16,6 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	var base = Module(_x, _y, _width, _height); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.setSlot = _setSlot;
-	Touch.DragAndDrop(base);
-	//Touch.Collisions(base);
 
 
 	toReturn.draw = _draw; //Modify public interface.
@@ -104,7 +102,10 @@ function CharacterSkeleton(_x, _y, _width, _height){
 
 		//
 		for(var s in _slots) {
-			_slots[s].sprite.setBodyType(bodyType);
+			if(_slots[s].sprite) { //If the slot is filled.
+				//Swap it.
+				_slots[s].sprite.setBodyType(bodyType);
+			}
 		}
 
 	}

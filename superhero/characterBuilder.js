@@ -129,18 +129,57 @@ function CharacterBuilder(_info){
 		//                    END PROPOGATION
 		//--------------------------------------------------------------------------------------------
 
-		// update the skeleton if the body type has changed.
+		//--------Add playArea.
+		var playArea = PlayArea(2*1920/3,0,1920/3,1080);
+		base.addModule(playArea);
+
+		//--------------------------------------------------------------------------------------------
+		//                   SKELETON BUILD/UPDATE
+		//--------------------------------------------------------------------------------------------
+		var toy;
+		if(info.superhero.skeleton == undefined){
+			toy = CharacterSkeleton(playArea.bounds.width/2-320, playArea.bounds.height/5, 640, 864);
+			//Make base.
+			//Loop through all defaults.
+			for (var d in base.jsonData.defaults){
+				//Make a bodypart that will be pushed to this slot.
+				var part = BodyPart(0,0,0,0);
+				for(var b in base.jsonData.defaults[d]){
+					part.addBodyType(b, base.jsonData.defaults[d][b]);
+				}
+
+				toy.setSlot(d, part);
+			}
+
+			//Set bodyType.
+			toy.setBodyType(info.superhero.bodyType);
+
+			//Add events
+			toy.addEvent("swapComponent", function(_clipBoard){ 
+				console.log('swapping');
+				toy.setSlot(_clipBoard.ComponentSwap.slot, _clipBoard.ComponentSwap.image, _clipBoard.ComponentSwap.option); 
+				if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+			}, false);
+			
+			//Update that this is fixed.
+			info.superhero.skeleton = toy;
+
+		} else { 
+			toy = info.superhero.skeleton;
+			//Update skeleton if body type has changed.
+		}
+		//Add module.
+		playArea.addModule(toy);
+
+		//---
 
 		
 		// Add playArea
 
-		playArea = PlayArea(2*1920/3,0,1920/3,1080);
-		base.addModule(playArea);
-
 		var x = Sprite(toReturn.bounds.x, 5, 10, 10);
 		
 		//If we don't have a skeleton yet.
-		var toy;
+		/*var toy;
 		if(info.superhero.skeleton === undefined){
 			toy = CharacterSkeleton(playArea.bounds.width/2-128, playArea.bounds.height/4, 258, 655);
 			//TEMP DEV SPRITE SET UP FOR TOY
@@ -185,6 +224,8 @@ function CharacterBuilder(_info){
 		}
 		//add the character skeleton to the scene
 		//playArea.addModule(toy);
+		*/
+
 
 		//Buttons
 		backButton = Sprite(toReturn.bounds.x, toReturn.bounds.height-128, 128, 128, "images/dev/back.png");
