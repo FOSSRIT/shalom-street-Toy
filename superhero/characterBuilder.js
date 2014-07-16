@@ -138,15 +138,20 @@ function CharacterBuilder(_info){
 		//--------------------------------------------------------------------------------------------
 		var toy;
 		if(info.superhero.skeleton == undefined){
-			toy = CharacterSkeleton(playArea.bounds.width/2-128, playArea.bounds.height/4, 258, 655);
+			toy = CharacterSkeleton(playArea.bounds.width/2-320, playArea.bounds.height/5, 640, 864);
 			//Make base.
-			var bodyBase = BodyPart(0,0,0,0);
-			for(var b in base.jsonData.defaults.body){
-				bodyBase.addBodyType(b, base.jsonData.defaults.body[b]);
+			//Loop through all defaults.
+			for (var d in base.jsonData.defaults){
+				//Make a bodypart that will be pushed to this slot.
+				var part = BodyPart(0,0,0,0);
+				for(var b in base.jsonData.defaults[d]){
+					part.addBodyType(b, base.jsonData.defaults[d][b]);
+				}
+
+				toy.setSlot(d, part);
 			}
 
-			//Add base.
-			toy.setSlot("background", bodyBase);
+			//Set bodyType.
 			toy.setBodyType(info.superhero.bodyType);
 
 			//Add events
