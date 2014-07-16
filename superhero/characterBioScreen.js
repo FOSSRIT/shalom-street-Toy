@@ -36,9 +36,5 @@ function CharacterBioScreen(_info){
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 
 
-
-
-
-
 	return toReturn;
 }

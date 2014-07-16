@@ -6,7 +6,6 @@ function GenderSelect(_info){
 	var info = _info;
 	Touch.Collisions(base);
 
-	info.superhero.bodyType = "female_1";
 	info.superhero.gender = "female";
 
 
@@ -30,7 +29,6 @@ function GenderSelect(_info){
 		selected.bounds.y = 400;
 		info.modelType = "Boy";
 		info.superhero.gender = "male";
-		info.superhero.bodyType = "male_1";
 		_clipBoard.ToFire = ["redraw"];
 	}, false);
 
@@ -39,7 +37,6 @@ function GenderSelect(_info){
 		selected.bounds.y = 400;
 		info.modelType = "Girl";
 		info.superhero.gender = "female";
-		info.superhero.bodyType = "female_1";
 		_clipBoard.ToFire = ["redraw"];
 	}, false);
 

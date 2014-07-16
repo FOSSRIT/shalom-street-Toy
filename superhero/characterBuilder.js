@@ -9,6 +9,7 @@ function CharacterBuilder(_info){
 
 
 	jsonLoader.Load("data/characterBuilder.js", function(result){
+		console.log('type is: ' + info.superhero.bodyType);
 		jsonBuilder.GetJson(base, result);
 
 		var selectedCategory = undefined;
@@ -101,8 +102,6 @@ function CharacterBuilder(_info){
 			//Attach everything else.
 			category.addEvent("mousedown", function(_clipBoard){
 
-
-				console.log('selecting category');
 				//If we need to unselect things.
 				if(selectedCategory != undefined) {
 					selectedCategory.setImage(selectedCategory.unselectedImage); //Unselect
@@ -166,6 +165,7 @@ function CharacterBuilder(_info){
 
 		} else { 
 			toy = info.superhero.skeleton;
+			toy.setBodyType(info.superhero.bodyType);
 			//Update skeleton if body type has changed.
 		}
 		//Add module.
