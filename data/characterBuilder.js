@@ -13,6 +13,12 @@ Adding an animation: ***NOT YET SUPPORTED***
 
 jsonLoader.result = {
 
+	"defaults" : {
+		"background": {
+			"male_1": "character_wireframes/Final-Body type wireframes-03.png",
+			"female_1": "character_wireframes/Final-Body type wireframes-04.png"
+		},
+	},
 	//These are what the user can click on (far left of screen)
 	"categories" : {
 
