@@ -104,7 +104,10 @@ function CharacterSkeleton(_x, _y, _width, _height){
 
 		//
 		for(var s in _slots) {
-			_slots[s].sprite.setBodyType(bodyType);
+			if(_slots[s].sprite) { //If the slot is filled.
+				//Swap it.
+				_slots[s].sprite.setBodyType(bodyType);
+			}
 		}
 
 	}

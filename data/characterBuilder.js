@@ -13,6 +13,12 @@ Adding an animation: ***NOT YET SUPPORTED***
 
 jsonLoader.result = {
 
+	"defaults" : {
+		"body": {
+			"male_1": "",
+			"female_1": ""
+		},
+	},
 	//These are what the user can click on (far left of screen)
 	"categories" : {
 
