@@ -1,24 +1,215 @@
-function CharacterBuilderBoy(_info){
+function CharacterBuilder(_info){
 	//------------------------------VARIABLES-------------------------------------
 	var base = State(0, 0, 1920, 1080); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.type = "CharacterBuilderBoy";
 	var info = _info;
 	Touch.Collisions(base);
-	
-	var splashImage = Sprite(0,0,1920,1080, "images/dev/createYourHero_Background.png");
-	base.addModule(splashImage);
-	
+
+
+
+	jsonLoader.Load("data/characterBuilder.js", function(result){
+		jsonBuilder.GetJson(base, result);
+
+		var selectedCategory = undefined;
+
+
+		//Load in the basics.
+		var splashImage = Sprite(0,0,1920,1080, "images/dev/createYourHero_Background.png");
+		base.addModule(splashImage);
+
+
+		//Build toybox, which is a weird name for this.
+		var toybox = ToyBox(0,0,2*1920/3,1080);
+		base.addModule(toybox);
+
+
+		//---------------------------------------------------------------------------------------------
+		//               PROPOGATE CATEGORIES/TABS/OPTIONS FROM JSON
+		//---------------------------------------------------------------------------------------------
+		
+		//Now we add the tabs themselves, based on what we've pulled out of the json.
+		var i = -1; //And we loop through the properties.
+		console.log(base.jsonData.categories);
+		for (var v in base.jsonData.categories) {
+			i++; //I moved this up here and started at -1 to 0 to make it easier to read.
+			//Not sure what the positioning is doing with this, but I guess I trust it.
+			var category = Sprite(0, (2+i)*toybox.bounds.width/9 - 64, 128, 128, base.jsonData.categories[v].sprite[0]); //Start with unselected.
+			//We add a property on for selected/unselected and for what tabs it's linked to.  
+			//We can do this because javascript.
+			//In the future, we might possibly make a better more modular approach to this?
+			category.selectedImage = base.jsonData.categories[v].sprite[0];
+			category.unselectedImage = base.jsonData.categories[v].sprite[0];
+			category.tabs = [];
+
+			//Add tabs into each category.
+			var j = -1;
+			for(var t in base.jsonData.categories[v].tabs) {
+				j++; //Same deal here.
+				//Again, I don't really know how the positioning here works, but I'm copying and pasting it.
+				var tab = ToyBoxTab(128, 128, toybox.bounds.width-128, toybox.bounds.height - 128, t);
+				category.tabs.push(tab);
+				toybox.addModule(tab);
+
+				//Add left/right buttons to tab.  These dimensions and stuff need to be changed to something that makes sense.
+				//Left
+				var leftButton = Sprite(tab.bounds.width/6-64, (2+j)*tab.bounds.height/8-64, 128, 128, "images/dev/left.png");
+				leftButton.addEvent("mousedown", (function(tab) { //Passing in variable by value gets rid of the closure problem. 
+					var f = function(_clipBoard){ 
+						tab.rotate(1, 128+64)
+						_clipBoard.ToFire = ["redraw"];
+					}
+					return f;
+				})(tab), false);
+				tab.addModule(leftButton);
+				//Right
+				var rightButton = Sprite(5*tab.bounds.width/6-64, (2+j)*tab.bounds.height/8-64, 128, 128, "images/dev/right.png");
+				rightButton.addEvent("mousedown", (function(tab) { //Passing in variable by value gets rid of the closure problem. 
+					var f = function(_clipBoard){ 
+						tab.rotate(-1, 128+64)
+						_clipBoard.ToFire = ["redraw"];
+					}
+					return f;
+				})(tab), false);
+				tab.addModule(rightButton);
+
+				//Add options to each tab.
+				var k = -1;
+				for(var o in base.jsonData.categories[v].tabs[t].options) {
+					k++; //Same deal again.
+
+					//base.jsonData.categories[v].tabs[t]
+					//Other stuff with this is knowing the body type.
+					var sex = info.superhero.bodyType;
+					var option = base.jsonData.categories[v].tabs[t].options;//Get the proper info for the option with this body type.
+					//
+
+					var bodyPart = BodyPart(0, 0, 0, 0);//Some stuff here.
+					//foreach bodyType for that bodyPart
+					for(var b in option){
+						bodyPart.addBodyType(b, option[b].option_sprite);
+					}
+					tab.addOption( Sprite(
+						(2+k)*tab.bounds.width/6-64, 
+						2*tab.bounds.height/8-64, 
+						128, 128, 
+						option[o][sex].option_sprite[0]), bodyPart);
+				}
+			}
+
+
+			//Attach everything else.
+			category.addEvent("mousedown", function(_clipBoard){
+
+
+				console.log('selecting category');
+				//If we need to unselect things.
+				if(selectedCategory != undefined) {
+					selectedCategory.setImage(selectedCategory.unselectedImage); //Unselect
+					for(var t in selectedCategory.tabs){
+						// /
+						selectedCategory.tabs[t].deselect();
+					}
+				}
+				//Set our own image.  And mark that we're selected.
+				selectedCategory = this;
+				this.setImage(this.selectedImage);
+				//And load in all of our tabs.
+				for(var t in this.tabs){
+					//
+					this.tabs[t].select();
+				}
+
+			}, false);
+
+			toybox.addModule(category);
+		}
+
+		//--------------------------------------------------------------------------------------------
+		//                    END PROPOGATION
+		//--------------------------------------------------------------------------------------------
+
+		// update the skeleton if the body type has changed.
+
+		
+		// Add playArea
+
+		playArea = PlayArea(2*1920/3,0,1920/3,1080);
+		base.addModule(playArea);
+
+		var x = Sprite(toReturn.bounds.x, 5, 10, 10);
+		
+		//If we don't have a skeleton yet.
+		var toy;
+		if(info.superhero.skeleton === undefined){
+			toy = CharacterSkeleton(playArea.bounds.width/2-128, playArea.bounds.height/4, 258, 655);
+			//TEMP DEV SPRITE SET UP FOR TOY
+			//template
+			toy.setSlot("background", 		Sprite(0,0,258,655, "images/dev/hero/set/demo/malecharacter1/new male 1 set/malecharacter1-00.png"));
+			//head
+			toy.setSlot("face", 			Sprite(0,0,258,655, "images/dev/alpha.png"));
+			toy.setSlot("hair", 			Sprite(0,0,258,655, "images/dev/alpha.png"));
+			toy.setSlot("mask", 			Sprite(0,0,258,655, "images/dev/alpha.png"));
+			//suit
+			toy.setSlot("jumpsuit", 		Sprite(0,0,258,655, "images/dev/alpha.png"));
+			toy.setSlot("cape", 			Sprite(0,0,258,655, "images/dev/alpha.png"));
+			toy.setSlot("boots", 			Sprite(0,0,258,655, "images/dev/alpha.png"));
+			//shirt
+			toy.setSlot("shirt", 			Sprite(0,0,258,655, "images/dev/alpha.png"));
+			toy.setSlot("jacket", 			Sprite(0,0,258,655, "images/dev/alpha.png"));
+			toy.setSlot("logo", 			Sprite(0,0,258,655, "images/dev/alpha.png"));
+			//pants
+			toy.setSlot("pants", 			Sprite(0,0,258,655, "images/dev/alpha.png"));
+			toy.setSlot("belt", 			Sprite(0,0,258,655, "images/dev/alpha.png"));
+			toy.setSlot("pants_accessory", 	Sprite(0,0,258,655, "images/dev/alpha.png"));
+			//accessories
+			toy.setSlot("arm_guards", 		Sprite(0,0,258,655, "images/dev/alpha.png"));
+			toy.setSlot("shin_guards", 		Sprite(0,0,258,655, "images/dev/alpha.png"));
+			toy.setSlot("hoods_and_helmets", Sprite(0,0,258,655, "images/dev/alpha.png"));
+			
+			//unused
+			toy.setSlot("body", Sprite(0,0,258,655, "images/dev/alpha.png"));
+			
+			//Add events
+			toy.addEvent("swapComponent", function(_clipBoard){ 
+				console.log('swapping');
+				toy.setSlot(_clipBoard.ComponentSwap.slot, _clipBoard.ComponentSwap.image, _clipBoard.ComponentSwap.option); 
+				if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
+			}, false);
+			
+			info.superhero.skeleton = toy;
+			playArea.addModule(toy);
+		} else { 
+			toy = info.superhero.skeleton;
+			playArea.addModule(toy);
+		}
+		//add the character skeleton to the scene
+		//playArea.addModule(toy);
+
+		//Buttons
+		backButton = Sprite(toReturn.bounds.x, toReturn.bounds.height-128, 128, 128, "images/dev/back.png");
+		toReturn.addModule(backButton);
+		
+		continueButton = Sprite(toReturn.bounds.width-128, toReturn.bounds.height-128, 128, 128, "images/dev/continue.png");
+		toReturn.addModule(continueButton);
+		
+		quitButton = Sprite(toReturn.bounds.x, toReturn.bounds.y, 128, 128, "images/dev/quit.png");
+		toReturn.addModule(quitButton);
+		
+		//Events
+		backButton.addEvent("mousedown", base.changeState("PowersScreen", info), false);	
+		continueButton.addEvent("mousedown", base.changeState("CharacterBioScreen", info), false); 	
+		quitButton.addEvent("mousedown", base.changeState("SplashScreen", info), false); 
+
+	});
+
+
+/*
 
 	console.log("now I'm a boy!");
 	//--------------------------
 	//These still could use some cleanup.  It's weird that we're adding the other modules on top of this.
 	//----------------------------
-
-	//Now we add the workbench.
-	toybox = ToyBox(0,0,2*1920/3,1080);
-	
-	base.addModule(toybox);
 
 	//TEMP DEV TABS
 	//the tabs themselves
@@ -523,8 +714,7 @@ function CharacterBuilderBoy(_info){
 		//Add events
 		toy.addEvent("swapComponent", function(_clipBoard){ 
 			console.log('swapping');
-			toy.setSlot(_clipBoard.ComponentSwap.slot, 
-			_clipBoard.ComponentSwap.image); 
+			toy.setSlot(_clipBoard.ComponentSwap.slot, _clipBoard.ComponentSwap.image, _clipBoard.ComponentSwap.option); 
 			if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
 		}, false);
 		
@@ -677,7 +867,7 @@ function CharacterBuilderBoy(_info){
 
 
 	headTab1.handleEvent("mousedown", {});
-
+*/
 
 	return toReturn;
 }

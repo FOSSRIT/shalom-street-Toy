@@ -21,6 +21,7 @@ function ToyBoxTab(_x, _y, _width, _height, _connectedSlot) {
 
 	
 	function _select(){
+		console.log(options);
 		toReturn.visible = true;
 		toReturn.selected = true;
 	}
@@ -31,18 +32,16 @@ function ToyBoxTab(_x, _y, _width, _height, _connectedSlot) {
 	}
 
 	//Slot is optional.
-	function _addOption(option, img, slot){
+	function _addOption(option, bodyPart, slot){
 		base.addModule(option);
 		options.push(option);
 
 		//Add in the proper event.
 		option.addEvent("mousedown", function(_clipBoard){
-			console.log("begin");
 			_clipBoard.ToFire = ["swapComponent"];
 			//if(_clipBoard.ToFire) { _clipBoard.ToFire.push("swapComponent"); } else { _clipBoard.ToFire = ["swapComponent"]; }
-			_clipBoard.ComponentSwap = {"image":img, "slot":slot || connectedSlot};
+			_clipBoard.ComponentSwap = {"image":bodyPart, "slot":slot || connectedSlot};
 			console.log(_clipBoard.ToFire);
-			console.log("end");
 			//alert(img);
 		}, false);
 
@@ -54,6 +53,7 @@ function ToyBoxTab(_x, _y, _width, _height, _connectedSlot) {
 		for(i=startingIndex; i<startingIndex+display; i++){
 			options[i.mod(options.length)].visible = true;
 		}//Stuff.
+
 	}
 
 	Number.prototype.mod = function(n) {
@@ -62,6 +62,7 @@ function ToyBoxTab(_x, _y, _width, _height, _connectedSlot) {
 
 	//Used to make things rotate with the carasoules.
 	function _rotate(positive, width){
+		console.log(options.length);
 		//Make everything invisible.
 		for(i=0; i<options.length; i++){
 			options[i].visible = false;

@@ -40,7 +40,7 @@ function ScenarioScreen(_info){
 	//Add mouseover events. 
 	
 	Touch.onEnterExit(scenario1Button);
-	scenario1Button.addEvent("mouseenter", function(_clipBoard){  scenario1Button.setImage("images/dev/scenarioButton.png", true, toReturn.bounds.width/5-48, toReturn.bounds.height/2-256, 384, 640); },false);
+	scenario1Button.addEvent("mouseenter", function(_clipBoard){  this.setImage("images/dev/scenarioButton.png", true, toReturn.bounds.width/5-48, toReturn.bounds.height/2-256, 384, 640); },false);
 	scenario1Button.addEvent("mouseexit", function(_clipBoard){  scenario1Button.setImage("images/dev/scenarioButton.png", true, toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512); },false);
 
 

@@ -7,6 +7,7 @@ function ModelSelect(_info){
 	Touch.Collisions(base);
 
 	info.modelType = "Girl";
+	info.superhero.bodyType = "female_1";
 	info.superhero.skeleton = undefined;
 
 
@@ -29,15 +30,15 @@ function ModelSelect(_info){
 		selected.bounds.x = 240;
 		selected.bounds.y = 400;
 		info.modelType = "Boy";
+		info.superhero.bodyType = "male_1";
 		_clipBoard.ToFire = ["redraw"];
-		console.log("selected boy." + info.modelType);
 	}, false);
 
 	girlOption.addEvent("mousedown", function(_clipBoard) { 
 		selected.bounds.x = 1160;
 		selected.bounds.y = 400;
 		info.modelType = "Girl";
-		console.log("selected girl." + info.modelType);
+		info.superhero.bodyType = "female_1";
 		_clipBoard.ToFire = ["redraw"];
 	}, false);
 
@@ -55,8 +56,8 @@ function ModelSelect(_info){
 	base.addModule(quitButton);
 	
 	//Events
-	boyOptionFunc = base.changeState("CharacterBuilderBoy", _info);
-	girlOptionFunc = base.changeState("CharacterBuilderGirl", _info);
+	boyOptionFunc = base.changeState("CharacterBuilder", _info);
+	girlOptionFunc = base.changeState("CharacterBuilder", _info);
 
 	backButton.addEvent("mousedown", base.changeState("PowersScreen", _info), false);
 	continueButton.addEvent("mousedown", function(_clipBoard) { 
