@@ -53,7 +53,7 @@ function PowersScreen(_info){
 	
 	//Events
 	backButton.addEvent("mousedown", base.changeState("QualitiesScreen", _info), false);
-	continueButton.addEvent("mousedown", base.changeState("ModelSelect", _info), false);
+	continueButton.addEvent("mousedown", base.changeState("GenderSelect", _info), false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 	
 	

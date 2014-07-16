@@ -15,9 +15,9 @@ jsonLoader.result = {
 
 	"defaults" : {
 		"background": {
-			"male_1": "character_wireframes/Final-Body type wireframes-03.png",
-			"female_1": "character_wireframes/Final-Body type wireframes-04.png"
-		},
+			"male_1": "images/production/character_wireframes/adult_male.png",
+			"female_1": "images/production/character_wireframes/adult_female.png"
+		}, 
 	},
 	//These are what the user can click on (far left of screen)
 	"categories" : {

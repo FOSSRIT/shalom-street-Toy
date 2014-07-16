@@ -8,7 +8,6 @@ function GenderSelect(_info){
 
 	info.superhero.bodyType = "female_1";
 	info.superhero.gender = "female";
-	info.superhero.skeleton = undefined;
 
 
 	//--------------------------------------
@@ -30,6 +29,7 @@ function GenderSelect(_info){
 		selected.bounds.x = 240;
 		selected.bounds.y = 400;
 		info.modelType = "Boy";
+		info.superhero.gender = "male";
 		info.superhero.bodyType = "male_1";
 		_clipBoard.ToFire = ["redraw"];
 	}, false);
@@ -38,6 +38,7 @@ function GenderSelect(_info){
 		selected.bounds.x = 1160;
 		selected.bounds.y = 400;
 		info.modelType = "Girl";
+		info.superhero.gender = "female";
 		info.superhero.bodyType = "female_1";
 		_clipBoard.ToFire = ["redraw"];
 	}, false);
@@ -56,18 +57,8 @@ function GenderSelect(_info){
 	base.addModule(quitButton);
 	
 	//Events
-	boyOptionFunc = base.changeState("CharacterBuilder", _info);
-	girlOptionFunc = base.changeState("CharacterBuilder", _info);
-
 	backButton.addEvent("mousedown", base.changeState("PowersScreen", _info), false);
-	continueButton.addEvent("mousedown", function(_clipBoard) { 
-		if(info.modelType == "Boy") {
-			boyOptionFunc(_clipBoard);
-		} else {
-			girlOptionFunc(_clipBoard);
-		}
-
-	} , false);
+	continueButton.addEvent("mousedown",  base.changeState("ModelSelect", _info), false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 
 
