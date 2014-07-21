@@ -8,11 +8,8 @@ function ModelSelect(_info){
 
 
 
-	var splashImage = Sprite(0,0,1920,1080, "images/dev/characterBioScreenTest02.png");
+	var splashImage = Sprite(0,0,1920,1080, "images/dev/createYourHero_Background.png");
 	base.addModule(splashImage);
-
-	var selected = Sprite(1920 - 700 - 50, 400, 474, 420, "images/dev/BoyGirlScreen/Selection.png");
-	base.addModule(selected);
 
 	if(info.superhero.gender == "female"){
 
@@ -21,26 +18,30 @@ function ModelSelect(_info){
 
 		//--------------------------------------
 
-		var boyOption = Sprite(300, 450, 426, 298, "images/dev/BoyGirlScreen/BoyButton.png");
-		base.addModule(boyOption);
+		var youth = Sprite(0, 216, 640, 864, "images/production/character_wireframes/child_female.png");
+		base.addModule(youth);
+		
+		var adult = Sprite(1920/3, 216, 640, 864, "images/production/character_wireframes/adult_female.png");
+		base.addModule(adult);
 
-		var girlOption = Sprite(1220, 450, 392, 298, "images/dev/BoyGirlScreen/GirlButton.png");
-		base.addModule(girlOption);
+		var buff = Sprite(2*1920/3, 216, 640, 864, "images/production/character_wireframes/buff_female.png");
+		base.addModule(buff);
 
-
-		boyOption.addEvent("mousedown", function(_clipBoard) { 
-			selected.bounds.x = 240;
-			selected.bounds.y = 400;
+		youth.addEvent("mousedown", function(_clipBoard) {
 			info.superhero.bodyType = "female_1";
-			_clipBoard.ToFire = ["redraw"];
+			base.handleEvent("changeScreen", _clipBoard);
 		}, false);
-
-		girlOption.addEvent("mousedown", function(_clipBoard) { 
-			selected.bounds.x = 1160;
-			selected.bounds.y = 400;
-			info.superhero.bodyType = "female_1";
-			_clipBoard.ToFire = ["redraw"];
+		
+		adult.addEvent("mousedown", function(_clipBoard) {
+			info.superhero.bodyType = "female_2";
+			base.handleEvent("changeScreen", _clipBoard);
 		}, false);
+		
+		buff.addEvent("mousedown", function(_clipBoard) {
+			info.superhero.bodyType = "female_3";
+			base.handleEvent("changeScreen", _clipBoard);
+		}, false);
+		
 
 	} else if(info.superhero.gender == "male"){
 
@@ -48,28 +49,34 @@ function ModelSelect(_info){
 		console.log('showing body types for male.')
 
 		//--------------------------------------
+		
+		var youth = Sprite(0, 216, 640, 864, "images/production/character_wireframes/child_male.png");
+		base.addModule(youth);
+		
+		var adult = Sprite(1920/3, 216, 640, 864, "images/production/character_wireframes/adult_male.png");
+		base.addModule(adult);
 
-		var boyOption = Sprite(300, 450, 426, 298, "images/dev/BoyGirlScreen/BoyButton.png");
-		base.addModule(boyOption);
-
-		var girlOption = Sprite(1220, 450, 392, 298, "images/dev/BoyGirlScreen/GirlButton.png");
-		base.addModule(girlOption);
+		var buff = Sprite(2*1920/3, 216, 640, 864, "images/production/character_wireframes/buff_male.png");
+		base.addModule(buff);
 
 
-		boyOption.addEvent("mousedown", function(_clipBoard) { 
-			selected.bounds.x = 240;
-			selected.bounds.y = 400;
+		youth.addEvent("mousedown", function(_clipBoard) {
 			info.superhero.bodyType = "male_1";
-			_clipBoard.ToFire = ["redraw"];
+			base.handleEvent("changeScreen", _clipBoard);
 		}, false);
-
-		girlOption.addEvent("mousedown", function(_clipBoard) { 
-			selected.bounds.x = 1160;
-			selected.bounds.y = 400;
-			info.superhero.bodyType = "male_1";
-			_clipBoard.ToFire = ["redraw"];
+		
+		adult.addEvent("mousedown", function(_clipBoard) {
+			info.superhero.bodyType = "male_2";
+			base.handleEvent("changeScreen", _clipBoard);
+		}, false);
+		
+		buff.addEvent("mousedown", function(_clipBoard) {
+			info.superhero.bodyType = "male_3";
+			base.handleEvent("changeScreen", _clipBoard);
 		}, false);
 	}
+	
+	base.addEvent("changeScreen", base.changeState("CharacterBuilder", _info), false);
 
 	/*var domElementThing = DomWrapper(document.getElementById("bioSubmitBox"));
 	manager.addModule(domElementThing);*/
@@ -78,15 +85,11 @@ function ModelSelect(_info){
 	var backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
 	base.addModule(backButton);
 	
-	var continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
-	base.addModule(continueButton);
-	
 	var quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
 	base.addModule(quitButton);
 	
 	//Events
 	backButton.addEvent("mousedown", base.changeState("PowersScreen", _info), false);
-	continueButton.addEvent("mousedown",  base.changeState("CharacterBuilder", info), false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 
 
