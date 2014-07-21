@@ -73,7 +73,7 @@ function ToyBoxTab(_x, _y, _width, _height, _connectedSlot) {
 		if(positive > 0) {
 			options[(startingIndex-positive).mod(options.length)].bounds.x -= positive*width*options.length;
 		} else if(positive < 0){
-			options[startingIndex].bounds.x += width*options.length-1;
+			options[startingIndex].bounds.x += width*options.length;
 		}
 
 		//Make the invisible visible again.
