@@ -48,26 +48,33 @@ function CharacterBuilder(_info){
 			for(var t in base.jsonData.categories[v].tabs) {
 				j++; //Same deal here.
 				//Again, I don't really know how the positioning here works, but I'm copying and pasting it.
-				var tab = ToyBoxTab(128, 128, toybox.bounds.width-128, toybox.bounds.height - 128, t);
+				//(toybox.bounds.height-128)/8-64
+				var tab = ToyBoxTab(256, (j*(toybox.bounds.height-256)/3.2)+256, toybox.bounds.width-256, toybox.bounds.height-256, t);
 				category.tabs.push(tab);
 				toybox.addModule(tab);
 
+				//Add label.
+				console.log(t);
+				var header = Sprite(0, -68, 128, 128, base.jsonData.categories[v].tabs[t].sprite);
+				tab.addModule(header);
+
 				//Add left/right buttons to tab.  These dimensions and stuff need to be changed to something that makes sense.
 				//Left
-				var leftButton = Sprite(tab.bounds.width/6-64, (2+j)*tab.bounds.height/8-64, 128, 128, "images/dev/left.png");
+				//tab.bounds.width/6-64
+				var leftButton = Sprite(0, tab.bounds.height/8-64, 128, 128, "images/dev/left.png");
 				leftButton.addEvent("mousedown", (function(tab) { //Passing in variable by value gets rid of the closure problem. 
 					var f = function(_clipBoard){ 
-						tab.rotate(1, 128+64)
+						tab.rotate(1, tab.bounds.width/6)
 						_clipBoard.ToFire = ["redraw"];
 					}
 					return f;
 				})(tab), false);
 				tab.addModule(leftButton);
 				//Right
-				var rightButton = Sprite(5*tab.bounds.width/6-64, (2+j)*tab.bounds.height/8-64, 128, 128, "images/dev/right.png");
+				var rightButton = Sprite(4*tab.bounds.width/6-64, tab.bounds.height/8-64, 128, 128, "images/dev/right.png");
 				rightButton.addEvent("mousedown", (function(tab) { //Passing in variable by value gets rid of the closure problem. 
 					var f = function(_clipBoard){ 
-						tab.rotate(-1, 128+64)
+						tab.rotate(-1, tab.bounds.width/6)
 						_clipBoard.ToFire = ["redraw"];
 					}
 					return f;
@@ -92,8 +99,8 @@ function CharacterBuilder(_info){
 						bodyPart.addBodyType(b, option[b].sprite);
 					}
 					tab.addOption( Sprite(
-						(2+k)*tab.bounds.width/6-64, 
-						2*tab.bounds.height/8-64, 
+						(1+k)*tab.bounds.width/6-64, 
+						tab.bounds.height/8-64, 
 						128, 128, 
 						option[sex].option_sprite[0]), bodyPart);
 				}
