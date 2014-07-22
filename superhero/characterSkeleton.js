@@ -134,13 +134,24 @@ function CharacterSkeleton(_x, _y, _width, _height){
 
 			//Sort the slots.
 			//Little bit hacky.  We can do this better.
+			var tempArray = []
 			for(var s in _slots) {
 				if(_slots[s].sprite != undefined) {
-					if(base.removeModule(toReturn.slots[s].sprite)){ //If you could remove the slot, re-add it in the correct place.
-						base.addModule(toReturn.slots[s].sprite,toReturn.slots[s].order);
-					}
+					tempArray.push(_slots[s]);
 				}
 			}
+			tempArray.sort(function(a, b){ return a.order > b.order; })
+			for(var s in tempArray){
+				if(base.removeModule(tempArray[s].sprite)){ //If you could remove the slot, re-add it in the correct place.
+						base.addModule(tempArray[s].sprite, tempArray[s].order);
+				}
+			}
+			
+			/*
+			if(base.removeModule(toReturn.slots[s].sprite)){ //If you could remove the slot, re-add it in the correct place.
+						base.addModule(toReturn.slots[s].sprite,toReturn.slots[s].order);
+					}
+					*/
 
 			
 			toReturn.slots[slot].sprite.setBodyType(bodyType || "default");
