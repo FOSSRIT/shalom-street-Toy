@@ -181,6 +181,33 @@ jsonLoader.result = {
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
+						"mask_01":{
+							"male_1": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/production/dressup/female/young/set1/mask.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+						}
 					},
 				},
 			},
