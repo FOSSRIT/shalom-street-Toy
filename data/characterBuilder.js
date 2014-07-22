@@ -139,7 +139,7 @@ jsonLoader.result = {
 
 				"mask": {
 					//URL of banner image for the tab.
-					"sprite": undefined,
+					"sprite": "images/dev/hero/subtabs/subTab_01_masks.png",
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
@@ -148,11 +148,11 @@ jsonLoader.result = {
 			},
 		},
 		"suit": {
-			"sprite": [undefined, undefined],
+			"sprite": ["images/dev/hero/suitTab_highlight.png", "images/dev/hero/suitTab.png"],
 			"tabs": {
 				"jumpsuit": {
 					//URL of banner image for the tab.
-					"sprite": undefined,
+					"sprite": "images/dev/hero/subtabs/subTab_02_jumpsuits.png",
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
@@ -161,7 +161,7 @@ jsonLoader.result = {
 
 				"cape": {
 					//URL of banner image for the tab.
-					"sprite": undefined,
+					"sprite": "images/dev/hero/subtabs/subTab_02_capes.png",
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
@@ -170,7 +170,7 @@ jsonLoader.result = {
 
 				"boots": {
 					//URL of banner image for the tab.
-					"sprite": undefined,
+					"sprite": "images/dev/hero/subtabs/subTab_02_boots.png",
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
@@ -179,11 +179,11 @@ jsonLoader.result = {
 			},
 		},
 		"shirt": {
-			"sprite": [undefined, undefined],
+			"sprite": ["images/dev/hero/shirtTab_highlight.png", "images/dev/hero/shirtTab.png"],
 			"tabs": {
 				"shirt": {
 					//URL of banner image for the tab.
-					"sprite": undefined,
+					"sprite": "images/dev/hero/subtabs/subTab_03_shirts.png",
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
@@ -192,7 +192,7 @@ jsonLoader.result = {
 
 				"jacket": {
 					//URL of banner image for the tab.
-					"sprite": undefined,
+					"sprite": "images/dev/hero/subtabs/subTab_03_jackets.png",
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
@@ -201,7 +201,7 @@ jsonLoader.result = {
 
 				"logo": {
 					//URL of banner image for the tab.
-					"sprite": undefined,
+					"sprite": "images/dev/hero/subtabs/subTab_03_logos.png",
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
@@ -210,11 +210,11 @@ jsonLoader.result = {
 			},
 		},
 		"pants": {
-			"sprite": [undefined, undefined],
+			"sprite": ["images/dev/hero/pantsTab_highlight.png", "images/dev/hero/pantsTab.png"],
 			"tabs": {
 				"pants": {
 					//URL of banner image for the tab.
-					"sprite": undefined,
+					"sprite": "images/dev/hero/subtabs/subTab_04_pants.png",
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
@@ -223,7 +223,7 @@ jsonLoader.result = {
 
 				"belt": {
 					//URL of banner image for the tab.
-					"sprite": undefined,
+					"sprite": "images/dev/hero/subtabs/subTab_04_belts.png",
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
@@ -232,7 +232,7 @@ jsonLoader.result = {
 
 				"pants_accessory": {
 					//URL of banner image for the tab.
-					"sprite": undefined,
+					"sprite": "images/dev/hero/subtabs/subTab_04_pantAccessories.png",
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
@@ -241,11 +241,11 @@ jsonLoader.result = {
 			},
 		},
 		"accessories": {
-			"sprite": [undefined, undefined],
+			"sprite": ["images/dev/hero/accessoriesTab_highlight.png", "images/dev/hero/accessoriesTab.png"],
 			"tabs": {
 				"arm_guards": {
 					//URL of banner image for the tab.
-					"sprite": undefined,
+					"sprite": "images/dev/hero/subtabs/subTab_05_armGuards.png",
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
@@ -254,7 +254,7 @@ jsonLoader.result = {
 
 				"shin_guards": {
 					//URL of banner image for the tab.
-					"sprite": undefined,
+					"sprite": "images/dev/hero/subtabs/subTab_05_shinGuards.png",
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
@@ -263,7 +263,7 @@ jsonLoader.result = {
 
 				"hoods_and_helmets": {
 					//URL of banner image for the tab.
-					"sprite": undefined,
+					"sprite": "images/dev/hero/subtabs/subTab_05_hoodsAndHelmets.png",
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
