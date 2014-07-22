@@ -130,7 +130,7 @@ jsonLoader.result = {
 
 				"hair": {
 					//URL of banner image for the tab.
-					"sprite": undefined,
+					"sprite": "images/dev/hero/01_head/02_hair/hairTab.png",
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
