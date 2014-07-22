@@ -40,7 +40,7 @@ function CharacterBuilder(_info){
 			//We can do this because javascript.
 			//In the future, we might possibly make a better more modular approach to this?
 			category.selectedImage = base.jsonData.categories[v].sprite[0];
-			category.unselectedImage = base.jsonData.categories[v].sprite[0];
+			category.unselectedImage = base.jsonData.categories[v].sprite[1];
 			category.tabs = [];
 
 			//Add tabs into each category.
@@ -125,6 +125,12 @@ function CharacterBuilder(_info){
 				for(var t in this.tabs){
 					//
 					this.tabs[t].select();
+				}
+
+				if(_clipBoard.ToFire){
+					_clipBoard.ToFire.push("redraw");
+				} else {
+					_clipBoard.ToFire = ["redraw"];
 				}
 
 			}, false);
