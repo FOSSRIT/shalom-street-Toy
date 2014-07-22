@@ -49,7 +49,7 @@ function CharacterBuilder(_info){
 				j++; //Same deal here.
 				//Again, I don't really know how the positioning here works, but I'm copying and pasting it.
 				//(toybox.bounds.height-128)/8-64
-				var tab = ToyBoxTab(256, (j*(toybox.bounds.height-256)/3.2)+256, toybox.bounds.width-256, toybox.bounds.height-256, t);
+				var tab = ToyBoxTab(256, (j*(toybox.bounds.height-256)/3)+256, toybox.bounds.width-256, toybox.bounds.height-256, t);
 				category.tabs.push(tab);
 				toybox.addModule(tab);
 
@@ -61,7 +61,7 @@ function CharacterBuilder(_info){
 				//Add left/right buttons to tab.  These dimensions and stuff need to be changed to something that makes sense.
 				//Left
 				//tab.bounds.width/6-64
-				var leftButton = Sprite(0, tab.bounds.height/8-64, 128, 128, "images/dev/left.png");
+				var leftButton = Sprite(-64, tab.bounds.height/8-64, 128, 128, "images/dev/left.png");
 				leftButton.addEvent("mousedown", (function(tab) { //Passing in variable by value gets rid of the closure problem. 
 					var f = function(_clipBoard){ 
 						tab.rotate(1, tab.bounds.width/6)
