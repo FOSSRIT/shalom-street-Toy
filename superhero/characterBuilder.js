@@ -258,7 +258,7 @@ function CharacterBuilder(_info){
 		toReturn.addModule(quitButton);
 		
 		//Events
-		backButton.addEvent("mousedown", base.changeState("PowersScreen", info), false);	
+		backButton.addEvent("mousedown", base.changeState("ModelSelect", info), false);	
 		continueButton.addEvent("mousedown", base.changeState("CharacterBioScreen", info), false); 	
 		quitButton.addEvent("mousedown", base.changeState("SplashScreen", info), false); 
 

@@ -89,7 +89,7 @@ function ModelSelect(_info){
 	base.addModule(quitButton);
 	
 	//Events
-	backButton.addEvent("mousedown", base.changeState("PowersScreen", _info), false);
+	backButton.addEvent("mousedown", base.changeState("GenderSelect", _info), false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 
 
