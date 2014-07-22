@@ -16,7 +16,7 @@ function BodyPart(x, y, width, height){
 	//Change the bodytype.
 	toReturn.setBodyType = function(bodyType){
 		if(bodyTypes[bodyType]) {
-			sprite.setImage(bodyTypes[bodyType]);
+			sprite.setImage(bodyTypes[bodyType], true);
 		}
 		else {
 			console.log("body type: " + bodyType + " does not exist.");
@@ -24,8 +24,6 @@ function BodyPart(x, y, width, height){
 	}
 
 	toReturn.addBodyType = function(bodyType, img){
-
-		console.log("adding a bodyType: " + bodyType + ", " + img);
 		bodyTypes[bodyType] = img;
 	}
 

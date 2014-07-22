@@ -26,32 +26,33 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	//0 gets drawn first
 	var _slots = {
 		//template
-		"background": 		{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":0},
-		"head": 			{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":5},
+		"background": 		{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":1},
+		"head": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":3},
+		"hands":			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":15},
 		//head
-		"face": 			{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":6},
-		"hair": 			{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":7},
-		"mask": 			{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":15},
+		"face": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":8},
+		"hair": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":10},
+		"mask": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":9},
 		//suit
-		"jumpsuit": 		{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":2},
-		"cape": 			{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":5},
-		"boots": 			{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":6},
+		"jumpsuit": 		{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":2},
+		"cape": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":0},
+		"boots": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":13},
 		//shirt
-		"shirt": 			{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":7},
-		"jacket": 			{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":8},
-		"logo": 			{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":9},
+		"shirt": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":4},
+		"jacket": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":7},
+		"logo": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":6},
 		//pants
-		"pants": 			{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":10},
-		"belt": 			{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":11},
-		"pants_accessory": 	{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":12},
+		"pants": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":5},
+		"belt": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":14},
+		"pants_accessory": 	{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":12},
 		//accessories
-		"arm_guards": 		{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":13},
-		"shin_guards": 		{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":14},
-		"hoods_and_helmets":{"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":16},
+		"arm_guards": 		{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":16},
+		"shin_guards": 		{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":17},
+		"hoods_and_helmets":{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":11},
 		
 		//unused
-		"body": {"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":99},
-		"butt": {"x":0, "y":0, "width":258, "height":655, "sprite":undefined, "order":69},
+		"body": {"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":99},
+		"butt": {"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":69},
 	}
 	toReturn.slots = _slots;
 	
@@ -134,13 +135,24 @@ function CharacterSkeleton(_x, _y, _width, _height){
 
 			//Sort the slots.
 			//Little bit hacky.  We can do this better.
+			var tempArray = []
 			for(var s in _slots) {
 				if(_slots[s].sprite != undefined) {
-					if(base.removeModule(toReturn.slots[s].sprite)){ //If you could remove the slot, re-add it in the correct place.
-						base.addModule(toReturn.slots[s].sprite,toReturn.slots[s].order);
-					}
+					tempArray.push(_slots[s]);
 				}
 			}
+			tempArray.sort(function(a, b){ return a.order > b.order; })
+			for(var s in tempArray){
+				if(base.removeModule(tempArray[s].sprite)){ //If you could remove the slot, re-add it in the correct place.
+						base.addModule(tempArray[s].sprite, tempArray[s].order);
+				}
+			}
+			
+			/*
+			if(base.removeModule(toReturn.slots[s].sprite)){ //If you could remove the slot, re-add it in the correct place.
+						base.addModule(toReturn.slots[s].sprite,toReturn.slots[s].order);
+					}
+					*/
 
 			
 			toReturn.slots[slot].sprite.setBodyType(bodyType || "default");
