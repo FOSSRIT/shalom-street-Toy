@@ -35,12 +35,12 @@ function CharacterBuilder(_info){
 		for (var v in base.jsonData.categories) {
 			i++; //I moved this up here and started at -1 to 0 to make it easier to read.
 			//Not sure what the positioning is doing with this, but I guess I trust it.
-			var category = Sprite(0, (2+i)*toybox.bounds.width/9 - 64, 128, 128, base.jsonData.categories[v].sprite[0]); //Start with unselected.
+			var category = Sprite(0, (2+i)*toybox.bounds.width/9 - 64, 128, 128, base.jsonData.categories[v].sprite[1]); //Start with unselected.
 			//We add a property on for selected/unselected and for what tabs it's linked to.  
 			//We can do this because javascript.
 			//In the future, we might possibly make a better more modular approach to this?
 			category.selectedImage = base.jsonData.categories[v].sprite[0];
-			category.unselectedImage = base.jsonData.categories[v].sprite[0];
+			category.unselectedImage = base.jsonData.categories[v].sprite[1];
 			category.tabs = [];
 
 			//Add tabs into each category.
@@ -49,7 +49,7 @@ function CharacterBuilder(_info){
 				j++; //Same deal here.
 				//Again, I don't really know how the positioning here works, but I'm copying and pasting it.
 				//(toybox.bounds.height-128)/8-64
-				var tab = ToyBoxTab(256, (j*(toybox.bounds.height-256)/3.2)+256, toybox.bounds.width-256, toybox.bounds.height-256, t);
+				var tab = ToyBoxTab(256, (j*(toybox.bounds.height-256)/3)+256, toybox.bounds.width-256, toybox.bounds.height-256, t);
 				category.tabs.push(tab);
 				toybox.addModule(tab);
 
@@ -61,7 +61,7 @@ function CharacterBuilder(_info){
 				//Add left/right buttons to tab.  These dimensions and stuff need to be changed to something that makes sense.
 				//Left
 				//tab.bounds.width/6-64
-				var leftButton = Sprite(0, tab.bounds.height/8-64, 128, 128, "images/dev/left.png");
+				var leftButton = Sprite(-64, tab.bounds.height/8-64, 128, 128, "images/dev/left.png");
 				leftButton.addEvent("mousedown", (function(tab) { //Passing in variable by value gets rid of the closure problem. 
 					var f = function(_clipBoard){ 
 						tab.rotate(1, tab.bounds.width/6)
@@ -127,10 +127,23 @@ function CharacterBuilder(_info){
 					this.tabs[t].select();
 				}
 
+				if(_clipBoard.ToFire){
+					_clipBoard.ToFire.push("redraw");
+				} else {
+					_clipBoard.ToFire = ["redraw"];
+				}
+
 			}, false);
 
 			toybox.addModule(category);
+
+			if( i == 0 ) //Not the best solution, but fairly reliable.
+			{
+				category.handleEvent("mousedown", {});
+			}
 		}
+
+
 
 		//--------------------------------------------------------------------------------------------
 		//                    END PROPOGATION
@@ -245,7 +258,7 @@ function CharacterBuilder(_info){
 		toReturn.addModule(quitButton);
 		
 		//Events
-		backButton.addEvent("mousedown", base.changeState("PowersScreen", info), false);	
+		backButton.addEvent("mousedown", base.changeState("ModelSelect", info), false);	
 		continueButton.addEvent("mousedown", base.changeState("CharacterBioScreen", info), false); 	
 		quitButton.addEvent("mousedown", base.changeState("SplashScreen", info), false); 
 
