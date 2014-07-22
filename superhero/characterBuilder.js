@@ -35,7 +35,7 @@ function CharacterBuilder(_info){
 		for (var v in base.jsonData.categories) {
 			i++; //I moved this up here and started at -1 to 0 to make it easier to read.
 			//Not sure what the positioning is doing with this, but I guess I trust it.
-			var category = Sprite(0, (2+i)*toybox.bounds.width/9 - 64, 128, 128, base.jsonData.categories[v].sprite[0]); //Start with unselected.
+			var category = Sprite(0, (2+i)*toybox.bounds.width/9 - 64, 128, 128, base.jsonData.categories[v].sprite[1]); //Start with unselected.
 			//We add a property on for selected/unselected and for what tabs it's linked to.  
 			//We can do this because javascript.
 			//In the future, we might possibly make a better more modular approach to this?
@@ -136,7 +136,14 @@ function CharacterBuilder(_info){
 			}, false);
 
 			toybox.addModule(category);
+
+			if( i == 0 ) //Not the best solution, but fairly reliable.
+			{
+				category.handleEvent("mousedown", {});
+			}
 		}
+
+
 
 		//--------------------------------------------------------------------------------------------
 		//                    END PROPOGATION
