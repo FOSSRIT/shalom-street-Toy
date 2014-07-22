@@ -18,10 +18,10 @@ jsonLoader.result = {
 
 	"defaults" : {
 		"background": {
-			"male_1": "images/production/character_wireframes/young_male.png",
+			"male_1": "images/production/character_wireframes/child_male.png",
 			"male_2": "images/production/character_wireframes/adult_male.png",
 			"male_3": "images/production/character_wireframes/buff_male.png",
-			"female_1": "images/production/character_wireframes/young_female.png",
+			"female_1": "images/production/character_wireframes/child_female.png",
 			"female_2": "images/production/character_wireframes/adult_female.png",
 			"female_3": "images/production/character_wireframes/buff_female.png"
 		}, 
@@ -45,9 +45,9 @@ jsonLoader.result = {
 							//Face_1 applies to multiple body types.  Each one is rendered differently.
 							"male_1": {
 								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": ["images/dev/hero/01_head/03_face/face_01_happy_icon.png", "images/dev/hero/01_head/03_face/face_01_happy_icon.png"],
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
 								//The url of the image that is loaded onto the character.
-								"sprite": "images/dev/hero/01_head/03_face/face_01_happy.png"
+								"sprite": "images/dev/alpha.png"
 							},
 							//Another body type would go here.
 							"male_2": {
@@ -57,71 +57,109 @@ jsonLoader.result = {
 								"sprite": "images/dev/hero/01_head/03_face/face_01_happy.png"
 							},
 							"male_3": {
-								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": ["images/dev/hero/01_head/03_face/face_01_happy_icon.png", "images/dev/hero/01_head/03_face/face_01_happy_icon.png"],
-								//The url of the image that is loaded onto the character.
-								"sprite": "images/dev/hero/01_head/03_face/face_01_happy.png"
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
+								"sprite": "images/dev/alpha.png"
 							},
 							
 							"female_1": {
-								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": ["images/dev/hero/01_head/03_face/face_02_mad_icon.png", "images/dev/hero/01_head/03_face/face_02_mad_icon.png"],
-								//The url of the image that is loaded onto the character.
-								"sprite": "images/dev/hero/01_head/03_face/face_02_mad.png"
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
+								"sprite": "images/dev/alpha.png"
 							},
 							"female_2": {
-								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": ["images/dev/hero/01_head/03_face/face_02_mad_icon.png", "images/dev/hero/01_head/03_face/face_02_mad_icon.png"],
-								//The url of the image that is loaded onto the character.
-								"sprite": "images/dev/hero/01_head/03_face/face_02_mad.png"
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
+								"sprite": "images/dev/alpha.png"
 							},
 							"female_3": {
-								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": ["images/dev/hero/01_head/03_face/face_02_mad_icon.png", "images/dev/hero/01_head/03_face/face_02_mad_icon.png"],
-								//The url of the image that is loaded onto the character.
-								"sprite": "images/dev/hero/01_head/03_face/face_02_mad.png"
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
+								"sprite": "images/dev/alpha.png"
 							},
 						},
 
 						"face_2": {
-							//Face_1 applies to multiple body types.  Each one is rendered differently.
-							"female_1": {
-								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": ["images/dev/hero/01_head/03_face/face_01_happy_icon.png", "images/dev/hero/01_head/03_face/face_01_happy_icon.png"],
-								//The url of the image that is loaded onto the character.
-								"sprite": "images/dev/hero/01_head/03_face/face_01_happy.png"
-							},
-							"female_2": {
-								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": ["images/dev/hero/01_head/03_face/face_01_happy_icon.png", "images/dev/hero/01_head/03_face/face_01_happy_icon.png"],
-								//The url of the image that is loaded onto the character.
-								"sprite": "images/dev/hero/01_head/03_face/face_01_happy.png"
-							},
-							"female_3": {
-								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": ["images/dev/hero/01_head/03_face/face_01_happy_icon.png", "images/dev/hero/01_head/03_face/face_01_happy_icon.png"],
-								//The url of the image that is loaded onto the character.
-								"sprite": "images/dev/hero/01_head/03_face/face_01_happy.png"
-							},
-							//Another body type would go here.
 							"male_1": {
-								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": ["images/dev/hero/01_head/03_face/face_02_mad_icon.png", "images/dev/hero/01_head/03_face/face_02_mad_icon.png"],
-								//The url of the image that is loaded onto the character.
-								"sprite": "images/dev/hero/01_head/03_face/face_02_mad.png"
+								"option_sprite": ["images/dev/_02.png", "images/dev/_02.png"],
+								"sprite": "images/dev/alpha.png"
 							},
 							"male_2": {
-								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": ["images/dev/hero/01_head/03_face/face_02_mad_icon.png", "images/dev/hero/01_head/03_face/face_02_mad_icon.png"],
-								//The url of the image that is loaded onto the character.
-								"sprite": "images/dev/hero/01_head/03_face/face_02_mad.png"
+								"option_sprite": ["images/dev/_02.png", "images/dev/_02.png"],
+								"sprite": "images/dev/alpha.png"
 							},
 							"male_3": {
-								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": ["images/dev/hero/01_head/03_face/face_02_mad_icon.png", "images/dev/hero/01_head/03_face/face_02_mad_icon.png"],
-								//The url of the image that is loaded onto the character.
-								"sprite": "images/dev/hero/01_head/03_face/face_02_mad.png"
+								"option_sprite": ["images/dev/_02.png", "images/dev/_02.png"],
+								"sprite": "images/dev/alpha.png"
 							},
+							
+							"female_1": {
+								"option_sprite": ["images/dev/_02.png", "images/dev/_02.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/dev/_02.png", "images/dev/_02.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/dev/_02.png", "images/dev/_02.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							
+						},
+						
+						"face_3": {
+							"male_1": {
+								"option_sprite": ["images/dev/_03.png", "images/dev/_03.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/dev/_03.png", "images/dev/_03.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/dev/_03.png", "images/dev/_03.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/dev/_03.png", "images/dev/_03.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/dev/_03.png", "images/dev/_03.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/dev/_03.png", "images/dev/_03.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							
+						},
+						
+						"face_4": {
+							"male_1": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							
 						},
 
 					},
