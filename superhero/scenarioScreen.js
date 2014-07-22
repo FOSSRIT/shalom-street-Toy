@@ -40,24 +40,24 @@ function ScenarioScreen(_info){
 	//Add mouseover events. 
 	
 	Touch.onEnterExit(scenario1Button);
-	scenario1Button.addEvent("mouseenter", function(_clipBoard){  this.setImage("images/dev/scenarioButton.png", true, toReturn.bounds.width/5-48, toReturn.bounds.height/2-256, 384, 640); },false);
-	scenario1Button.addEvent("mouseexit", function(_clipBoard){  scenario1Button.setImage("images/dev/scenarioButton.png", true, toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512); },false);
+	scenario1Button.addEvent("mouseenter", function(_clipBoard){  this.setImage("images/dev/scenarioButton.png", true, toReturn.bounds.width/5-48, toReturn.bounds.height/2-256, 384, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	scenario1Button.addEvent("mouseexit", function(_clipBoard){  scenario1Button.setImage("images/dev/scenarioButton.png", true, toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 
 
 	Touch.onEnterExit(scenario2Button);
-	scenario2Button.addEvent("mouseenter", function(_clipBoard){   scenario2Button.setImage("images/dev/testScenarios/scenario02_BuildingOnFire.png", true, 2*toReturn.bounds.width/5-48, toReturn.bounds.height/2-256, 384, 640);  },false);
-	scenario2Button.addEvent("mouseexit", function(_clipBoard){  scenario2Button.setImage("images/dev/testScenarios/scenario02_BuildingOnFire.png", true, 2*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512);  }, false);
+	scenario2Button.addEvent("mouseenter", function(_clipBoard){   scenario2Button.setImage("images/dev/testScenarios/scenario02_BuildingOnFire.png", true, 2*toReturn.bounds.width/5-48, toReturn.bounds.height/2-256, 384, 640);  _clipBoard.ToFire = ["redraw"]; },false);
+	scenario2Button.addEvent("mouseexit", function(_clipBoard){  scenario2Button.setImage("images/dev/testScenarios/scenario02_BuildingOnFire.png", true, 2*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512);  _clipBoard.ToFire = ["redraw"]; }, false);
 
 
 
 	Touch.onEnterExit(scenario3Button);
-	scenario3Button.addEvent("mouseover", function(_clipBoard){   scenario3Button.setImage("images/dev/testScenarios/scenario03_ChildrenFightingOverToy.png", true, 3*toReturn.bounds.width/5-48, toReturn.bounds.height/2-256, 384, 640);  },false);
-	scenario3Button.addEvent("mouseexit", function(_clipBoard){  scenario3Button.setImage("images/dev/testScenarios/scenario03_ChildrenFightingOverToy.png", true, 3*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512);}, false);
+	scenario3Button.addEvent("mouseenter", function(_clipBoard){   scenario3Button.setImage("images/dev/testScenarios/scenario03_ChildrenFightingOverToy.png", true, 3*toReturn.bounds.width/5-48, toReturn.bounds.height/2-256, 384, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	scenario3Button.addEvent("mouseexit", function(_clipBoard){  scenario3Button.setImage("images/dev/testScenarios/scenario03_ChildrenFightingOverToy.png", true, 3*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; }, false);
 
 
 	Touch.onEnterExit(scenario4Button);
- 	scenario4Button.addEvent("mouseover", function(_clipBoard){ scenario4Button.setImage("images/dev/randomScenarioButton.png", true, 4*toReturn.bounds.width/5-48, toReturn.bounds.height/2-256, 384, 640);  },false);
- 	scenario4Button.addEvent("mouseexit", function(_clipBoard){  scenario4Button.setImage("images/dev/randomScenarioButton.png", true, 4*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512);  }, false);
+ 	scenario4Button.addEvent("mouseenter", function(_clipBoard){ scenario4Button.setImage("images/dev/randomScenarioButton.png", true, 4*toReturn.bounds.width/5-48, toReturn.bounds.height/2-256, 384, 640); _clipBoard.ToFire = ["redraw"]; },false);
+ 	scenario4Button.addEvent("mouseexit", function(_clipBoard){  scenario4Button.setImage("images/dev/randomScenarioButton.png", true, 4*toReturn.bounds.width/5, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; }, false);
 
 	
 
