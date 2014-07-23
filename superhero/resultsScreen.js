@@ -61,10 +61,10 @@ function ResultsScreen(_info){
 	//---------------Just setting up the rest of the stuff here.---------------
 
 	if(qualityFound && powerFound){
-		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/Background-01-06.png");
+		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-06.png");
 		info.win = true;
 	}else{
-		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/Background-01-07.png");
+		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-07.png");
 		info.win = false;
 	}
 	base.addModule(resultImage);

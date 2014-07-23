@@ -8,7 +8,7 @@ function SuperPoseScreen(_info){
 
 	//--------------------------------------------------------------------
 
-	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/Background-01-08.png");
+	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-08.png");
 	base.addModule(splashImage);
 	
 	//Buttons

@@ -8,7 +8,7 @@ function ScenarioScreen(_info){
 	info.currentScenario = "";
 
 
-	var splashImage = Sprite(0, 0, 1920, 1080, "images/Backgrounds/Background-01-01.png");
+	var splashImage = Sprite(0, 0, 1920, 1080, "images/Backgrounds/background-01.png");
 	base.addModule(splashImage);
 	
 	
