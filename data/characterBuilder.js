@@ -25,13 +25,21 @@ jsonLoader.result = {
 			"female_2": "images/production/character_wireframes/adult_female.png",
 			"female_3": "images/production/character_wireframes/buff_female.png"
 		}, 
+		"head": {
+			"male_1": "images/production/dressup/male/young/hands.png",
+			"male_2": "images/production/dressup/male/adult/hands.png",
+			"male_3": "images/production/dressup/male/buff/hands.png",
+			"female_1": "images/production/dressup/female/young/hands.png",
+			"female_2": "images/production/dressup/female/adult/hands.png",
+			"female_3": "images/production/dressup/female/buff/hands.png"
+		},
 		"hands": {
 			"male_1": "images/dev/alpha.png",
 			"male_2": "images/dev/alpha.png",
-			"male_3": "images/production/dressup/male/buff/hands.png",
-			"female_1": "images/dev/alpha.png",
+			"male_3": "images/dev/alpha.png",
+			"female_1": "images/production/dressup/female/young/head.png",
 			"female_2": "images/dev/alpha.png",
-			"female_3": "images/production/dressup/female/buff/hands.png"
+			"female_3": "images/dev/alpha.png"
 		}
 	},
 	//These are what the user can click on (far left of screen)
@@ -353,7 +361,7 @@ jsonLoader.result = {
 							
 							"female_1": {
 								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
-								"sprite": "images/dev/alpha.png"
+								"sprite": "images/production/dressup/female/young/set_01/jumpsuit.png"
 							},
 							"female_2": {
 								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
