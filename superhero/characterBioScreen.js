@@ -9,7 +9,7 @@ function CharacterBioScreen(_info){
 
 	//--------------------------------------
 
-	splashImage = Sprite(0,0,1920,1080, "images/dev/characterBioScreenTest02.png");
+	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/Background-01-05.png");
 	base.addModule(splashImage);
 	base.addModule(bioSubmission);
 	bioSubmission.bounds.x = 700;
