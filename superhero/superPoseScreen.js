@@ -8,7 +8,7 @@ function SuperPoseScreen(_info){
 
 	//--------------------------------------------------------------------
 
-	splashImage = Sprite(0,0,1920,1080, "images/dev/superPoseScreenTest01.png");
+	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-08.png");
 	base.addModule(splashImage);
 	
 	//Buttons
@@ -22,7 +22,7 @@ function SuperPoseScreen(_info){
 	base.addModule(quitButton);
 	
 	//Events
-	backButton.addEvent("mousedown", base.changeState("WhyItWorkedScreen", _info), false);
+	backButton.addEvent("mousedown", base.changeState("ResultsScreen", _info), false);
 	continueButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 

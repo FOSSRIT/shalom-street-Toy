@@ -61,10 +61,10 @@ function ResultsScreen(_info){
 	//---------------Just setting up the rest of the stuff here.---------------
 
 	if(qualityFound && powerFound){
-		resultImage = Sprite(toReturn.bounds.width/2-128,toReturn.bounds.height/2-128,256,256, "images/dev/win02.png");
+		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-06.png");
 		info.win = true;
 	}else{
-		resultImage = Sprite(toReturn.bounds.width/2-128,toReturn.bounds.height/2-128,256,256, "images/dev/lose02.png");
+		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-07.png");
 		info.win = false;
 	}
 	base.addModule(resultImage);
@@ -90,7 +90,7 @@ function ResultsScreen(_info){
 
 	//We swap out the image and destination based on how you did.
 	if(info.win){
-		continueButton.addEvent("mousedown", base.changeState("WhyItWorkedScreen", _info), false);
+		continueButton.addEvent("mousedown", base.changeState("SuperPoseScreen", _info), false);
 	} else if(!info.win){
 		continueButton.addEvent("mousedown", base.changeState("QualitiesScreen", _info), false);
 	}
