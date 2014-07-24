@@ -26,21 +26,22 @@ jsonLoader.result = {
 			"female_3": "images/production/character_wireframes/buff_female.png"
 		}, 
 		"head": {
-			"male_1": "images/production/dressup/male/young/hands.png",
-			"male_2": "images/production/dressup/male/adult/hands.png",
-			"male_3": "images/production/dressup/male/buff/hands.png",
-			"female_1": "images/production/dressup/female/young/hands.png",
-			"female_2": "images/production/dressup/female/adult/hands.png",
-			"female_3": "images/production/dressup/female/buff/hands.png"
-		},
-		"hands": {
 			"male_1": "images/dev/alpha.png",
 			"male_2": "images/dev/alpha.png",
 			"male_3": "images/dev/alpha.png",
 			"female_1": "images/production/dressup/female/young/head.png",
 			"female_2": "images/dev/alpha.png",
 			"female_3": "images/dev/alpha.png"
+		},
+		"hands": {
+			"male_1": "images/production/dressup/male/young/hands.png",
+			"male_2": "images/production/dressup/male/adult/hands.png",
+			"male_3": "images/production/dressup/male/buff/hands.png",
+			"female_1": "images/production/dressup/female/young/hands.png",
+			"female_2": "images/production/dressup/female/adult/hands.png",
+			"female_3": "images/production/dressup/female/buff/hands.png"
 		}
+		
 	},
 	//These are what the user can click on (far left of screen)
 	"categories" : {
