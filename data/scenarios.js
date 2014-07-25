@@ -28,10 +28,90 @@ jsonLoader.result = {
 
 	//include the actual tabs here.
 	"tabs": [],
-
-	"Cat": "images/dev/testDetailedScenarios/detailedScenarioScreenTest_01_CatStuckInTree.png",
-	"Fire": "images/dev/testDetailedScenarios/detailedScenarioScreenTest_02_BuildingOnFire.png",
-	"Children": "images/dev/testDetailedScenarios/detailedScenarioScreenTest_03_ChildrenFightingOverToy.png",
+	//old
+	"Cat": {
+		"background": 	"images/dev/testDetailedScenarios/detailedScenarioScreenTest_01_CatStuckInTree.png",
+		"title": 		"images/dev/alpha.png",
+		"summary": 		"images/dev/alpha.png",
+		"comic": 		"images/dev/alpha.png",
+	},
+	"Fire": {
+		"background": 	"images/dev/testDetailedScenarios/detailedScenarioScreenTest_02_BuildingOnFire.png",
+		"title": 		"images/dev/alpha.png",
+		"summary": 		"images/dev/alpha.png",
+		"comic": 		"images/dev/alpha.png",
+	},
+	"Children": {
+		"background": 	"images/dev/testDetailedScenarios/detailedScenarioScreenTest_03_ChildrenFightingOverToy.png",
+		"title": 		"images/dev/alpha.png",
+		"summary": 		"images/dev/alpha.png",
+		"comic": 		"images/dev/alpha.png",
+	},
+	//default template
+	"default": {
+		"background": 	"images/dev/testDetailedScenarios/detailedScenarioScreen_back.png",
+		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
+		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
+		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+	},
+	//Easy
+	"team" :{
+		"background": 	"images/dev/testDetailedScenarios/detailedScenarioScreen_back.png",
+		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
+		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
+		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+	},
+	"bank" :{
+		"background": 	"images/dev/testDetailedScenarios/detailedScenarioScreen_back.png",
+		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
+		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
+		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+	},
+	"villain" :{
+		"background": 	"images/dev/testDetailedScenarios/detailedScenarioScreen_back.png",
+		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
+		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
+		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+	},
+	//Medium
+	"bully" :{
+		"background": 	"images/dev/testDetailedScenarios/detailedScenarioScreen_back.png",
+		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
+		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
+		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+	},
+	"whale" :{
+		"background": 	"images/dev/testDetailedScenarios/detailedScenarioScreen_back.png",
+		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
+		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
+		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+	},
+	"volcano" :{
+		"background": 	"images/dev/testDetailedScenarios/detailedScenarioScreen_back.png",
+		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
+		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
+		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+	},
+	//Hard
+	"toy" :{
+		"background": 	"images/dev/testDetailedScenarios/detailedScenarioScreen_back.png",
+		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
+		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
+		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+	},
+	"fire" :{
+		"background": 	"images/dev/testDetailedScenarios/detailedScenarioScreen_back.png",
+		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
+		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
+		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+	},
+	"aliens" :{
+		"background": 	"images/dev/testDetailedScenarios/detailedScenarioScreen_back.png",
+		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
+		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
+		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+	},
+	
 
 };
 
