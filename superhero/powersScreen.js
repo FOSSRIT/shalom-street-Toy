@@ -4,7 +4,7 @@ function PowersScreen(_info){
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.type = "PowersScreen";
 	var info = _info;
-	var maxPowers = 1;
+	var maxPowers = 2;
 	Touch.Collisions(base);
 
 
@@ -12,14 +12,18 @@ function PowersScreen(_info){
 	info.superhero.powersSelected = [];
 				
 	//Dev Splash Image
-	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-03.png");
+	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-03_alt.png");
 	base.addModule(splashImage);
 	
+	/*
 	var powersHintImg = Sprite(toReturn.bounds.width/2-256,toReturn.bounds.height/8-64,512,128, "images/dev/powersHint.png");
 	base.addModule(powersHintImg);
+	*/
 	
+	/*
 	var heroImage = Sprite(toReturn.bounds.width/2-256,toReturn.bounds.height/2-384,512,1024, "images/dev/bro.png");
 	base.addModule(heroImage);
+	*/
 	
 	var definition = Sprite(3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-256,512,512, "images/dev/midrash_water.png");
 	base.addModule(definition);
@@ -36,6 +40,10 @@ function PowersScreen(_info){
 	
 	//Powers
 	
+	var cat1_element_button = Sprite(64, 6*toReturn.bounds.height/16, 256, 64, "images/dev/qualitiesButtons/brave.png");
+	base.addModule(cat1_element_button);
+	
+	/*
 	var power3_fire_button = Sprite(0, 2*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/fire.png");
 	base.addModule(power3_fire_button);
 	
@@ -50,13 +58,14 @@ function PowersScreen(_info){
 	
 	var power7_superSmart_button = Sprite(0, 6*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/superSmart.png");
 	base.addModule(power7_superSmart_button);
+	*/
 	
 	//Events
 	backButton.addEvent("mousedown", base.changeState("QualitiesScreen", _info), false);
 	continueButton.addEvent("mousedown", base.changeState("GenderSelect", _info), false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 	
-	
+	/*
 	power3_fire_button.addEvent("mousedown", function(_clipBoard){
 		highlightQualityAndPowerButtons("powers",power3_fire_button,"fire","images/dev/powersButtons/fire.png","images/dev/powersButtons/fire_selected.png", _clipBoard);
 	},false);
@@ -76,6 +85,9 @@ function PowersScreen(_info){
 	power7_superSmart_button.addEvent("mousedown", function(_clipBoard){
 		highlightQualityAndPowerButtons("powers",power7_superSmart_button,"superSmart","images/dev/powersButtons/superSmart.png","images/dev/powersButtons/superSmart_selected.png", _clipBoard);
 	},false);
+	*/
+	
+	
 
 
 	/*------------------INTERNAL FUNCTIONS----------------------------------*/

@@ -6,7 +6,7 @@ function QualitiesScreen(_info){
 	var info = _info;
 	Touch.Collisions(base);
 
-	var maxQualities = 2;
+	var maxQualities = 1;
 
 
 	//Reset the super hero virtues.
@@ -29,7 +29,7 @@ function QualitiesScreen(_info){
 	*/
 	
 	
-	var definition = Sprite(3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512, "images/dev/qualitiesButtons/temp_midrash.png");
+	var definition = Sprite(3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512, "images/dev/alpha.png");
 	base.addModule(definition);
 	
 	//Buttons
@@ -77,34 +77,50 @@ function QualitiesScreen(_info){
 	
 	quality1_brave_button.addEvent("mousedown", function(_clipBoard){
 		highlightQualityAndPowerButtons("virtues",quality1_brave_button,"brave","images/dev/qualitiesButtons/brave.png","images/dev/qualitiesButtons/brave_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_bravery.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
 	},false);
 	
 	quality2_caring_button.addEvent("mousedown", function(_clipBoard){
 		highlightQualityAndPowerButtons("virtues",quality2_caring_button,"caring","images/dev/qualitiesButtons/caring.png","images/dev/qualitiesButtons/caring_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_caring.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
 	},false);
 	
 	quality3_friendship_button.addEvent("mousedown", function(_clipBoard){
 		highlightQualityAndPowerButtons("virtues",quality3_friendship_button,"friendship","images/dev/qualitiesButtons/friendship.png","images/dev/qualitiesButtons/friendship_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_friendship.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
 	},false);
 	
 	quality4_listening_button.addEvent("mousedown", function(_clipBoard){
 		highlightQualityAndPowerButtons("virtues",quality4_listening_button,"listening","images/dev/qualitiesButtons/listening.png","images/dev/qualitiesButtons/listening_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_listening.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
 	},false);
 	
 	quality5_respect_button.addEvent("mousedown", function(_clipBoard){
 		highlightQualityAndPowerButtons("virtues",quality5_respect_button,"respect","images/dev/qualitiesButtons/respect.png","images/dev/qualitiesButtons/respect_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_respect.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
 	},false);
 	
 	quality6_responsibility_button.addEvent("mousedown", function(_clipBoard){
 		highlightQualityAndPowerButtons("virtues",quality6_responsibility_button,"responsibility","images/dev/qualitiesButtons/responsibility.png","images/dev/qualitiesButtons/responsibility_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_responsibility.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
 	},false);
 	
 	quality7_satisfied_button.addEvent("mousedown", function(_clipBoard){
 		highlightQualityAndPowerButtons("virtues",quality7_satisfied_button,"satisfied","images/dev/qualitiesButtons/satisfied.png","images/dev/qualitiesButtons/satisfied_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_satisfied.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
 	},false);
 	
 	quality8_understanding_button.addEvent("mousedown", function(_clipBoard){
 		highlightQualityAndPowerButtons("virtues",quality8_understanding_button,"understanding","images/dev/qualitiesButtons/understanding.png","images/dev/qualitiesButtons/understanding_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_understanding.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
 	},false);
 
 
