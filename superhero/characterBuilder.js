@@ -254,7 +254,7 @@ function CharacterBuilder(_info){
 		continueButton = Sprite(toReturn.bounds.width-128, toReturn.bounds.height-128, 128, 128, "images/dev/continue.png");
 		toReturn.addModule(continueButton);
 		
-		quitButton = Sprite(toReturn.bounds.x, toReturn.bounds.y, 128, 128, "images/dev/quit.png");
+		quitButton = Sprite(toReturn.bounds.x, toReturn.bounds.y, 256, 216, "images/dev/buttons/quit.png");
 		toReturn.addModule(quitButton);
 		
 		//Events

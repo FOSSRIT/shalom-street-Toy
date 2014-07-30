@@ -82,7 +82,7 @@ function ResultsScreen(_info){
 	//Add it regardless.
 	base.addModule(continueButton);
 	
-	quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+	var quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
 	base.addModule(quitButton);
 	
 	//Events

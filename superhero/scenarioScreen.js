@@ -106,7 +106,7 @@ function ScenarioScreen(_info){
 	var backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
 	base.addModule(backButton);
 	
-	var quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+	var quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
 	base.addModule(quitButton);
 
 

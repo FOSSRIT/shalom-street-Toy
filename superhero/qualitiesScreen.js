@@ -39,7 +39,7 @@ function QualitiesScreen(_info){
 	var continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
 	base.addModule(continueButton);
 	
-	var quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+	var quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
 	base.addModule(quitButton);
 
 	var grid = Grid(toReturn.bounds.width/5, toReturn.bounds.height/3-128, 2, 1, 256, 256, 10);
