@@ -17,6 +17,7 @@ function BodyPart(x, y, width, height){
 	toReturn.setBodyType = function(bodyType){
 		if(bodyTypes[bodyType]) {
 			sprite.setImage(bodyTypes[bodyType], true);
+			ColorAdjust.multiplyFilter(255, 0, 0, sprite);
 		}
 		else {
 			console.log("body type: " + bodyType + " does not exist.");
