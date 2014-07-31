@@ -100,7 +100,6 @@ function CharacterSkeleton(_x, _y, _width, _height){
 
 	//Set the body type for this characterSkeleton.
 	function _setBodyType(bodyType){
-
 		//
 		for(var s in _slots) {
 			if(_slots[s].sprite) { //If the slot is filled.
@@ -125,8 +124,7 @@ function CharacterSkeleton(_x, _y, _width, _height){
 		} else {
 			//Remove the past contents of the slot if it exists.
 			if(toReturn.slots[slot]) {
-				console.log("Swapping "+slot+". Attempted to remove current module: " + base.removeModule(toReturn.slots[slot].sprite));
-				console.log("current size is: " + base.contents.length);
+				base.removeModule(toReturn.slots[slot].sprite);
 			}//
 
 			//Added.

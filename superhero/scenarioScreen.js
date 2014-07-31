@@ -46,56 +46,56 @@ function ScenarioScreen(_info){
 	//Content
 	
 	//easy
-	var scenario1Button = Sprite(2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/scenarioButton.png");
+	var scenario1Button = Sprite(2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/team.png");
 	easyContent.addModule(scenario1Button);
 	
-	scenario2Button = Sprite(3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/scenario02_BuildingOnFire.png");
+	scenario2Button = Sprite(3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/bank.png");
 	easyContent.addModule(scenario2Button);
 	
-	scenario3Button = Sprite(4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/scenario03_ChildrenFightingOverToy.png");
+	scenario3Button = Sprite(4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/villain.png");
   	easyContent.addModule(scenario3Button);
 	
-	scenario4Button = Sprite(5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/randomScenarioButton.png");
+	scenario4Button = Sprite(5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/easy.png");
 	easyContent.addModule(scenario4Button);
 	
 	
 	//medium
-	var bullyButton = Sprite(2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/bully.png");
+	var bullyButton = Sprite(2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/bully.png");
 	mediumContent.addModule(bullyButton);
 	
-	aliensButton = Sprite(3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/aliens.png");
+	aliensButton = Sprite(3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/whale.png");
 	mediumContent.addModule(aliensButton);
 	
-	mediumButton3 = Sprite(4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/_03.png");
+	mediumButton3 = Sprite(4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/volcano.png");
 	mediumContent.addModule(mediumButton3);
 	
-	mediumButton4 = Sprite(5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/_04.png");
+	mediumButton4 = Sprite(5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/medium.png");
 	mediumContent.addModule(mediumButton4);
 	
 	//hardTab
-	var testButton1 = Sprite(2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/_01.png");
+	var testButton1 = Sprite(2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/scenario03_ChildrenFightingOverToy.png");
 	hardContent.addModule(testButton1);
 	
-	var testButton3 = Sprite(3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/_03.png");
+	var testButton3 = Sprite(3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/scenario02_BuildingOnFire.png");
 	hardContent.addModule(testButton3);
 	
-	var testButton5 = Sprite(4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/_05.png");
+	var testButton5 = Sprite(4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/aliens.png");
 	hardContent.addModule(testButton5);
 	
-	var testButton7 = Sprite(5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/_07.png");
+	var testButton7 = Sprite(5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/hard.png");
 	hardContent.addModule(testButton7);
 	
 	//random
-	var testButton2 = Sprite(2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/_02.png");
+	var testButton2 = Sprite(2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/easy.png");
 	randomContent.addModule(testButton2);
 	
-	var testButton4 = Sprite(3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/_04.png");
+	var testButton4 = Sprite(3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/medium.png");
 	randomContent.addModule(testButton4);
 	
-	var testButton6 = Sprite(4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/_06.png");
+	var testButton6 = Sprite(4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/hard.png");
 	randomContent.addModule(testButton6);
 	
-	var testButton8 = Sprite(5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/_08.png");
+	var testButton8 = Sprite(5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512, "images/dev/testScenarios/dev/total.png");
 	randomContent.addModule(testButton8);
 	
 	//prep for screen
@@ -106,7 +106,7 @@ function ScenarioScreen(_info){
 	var backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
 	base.addModule(backButton);
 	
-	var quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+	var quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
 	base.addModule(quitButton);
 
 
@@ -190,71 +190,71 @@ function ScenarioScreen(_info){
 	
 	//Easy
 	Touch.onEnterExit(scenario1Button);
-	scenario1Button.addEvent("mouseenter", function(_clipBoard){  this.setImage("images/dev/scenarioButton.png", true, 2*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	scenario1Button.addEvent("mouseexit", function(_clipBoard){  scenario1Button.setImage("images/dev/scenarioButton.png", true, 2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	scenario1Button.addEvent("mouseenter", function(_clipBoard){  this.setImage("images/dev/testScenarios/dev/team.png", true, 2*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	scenario1Button.addEvent("mouseexit", function(_clipBoard){  scenario1Button.setImage("images/dev/testScenarios/dev/team.png", true, 2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(scenario2Button);
-	scenario2Button.addEvent("mouseenter", function(_clipBoard){   scenario2Button.setImage("images/dev/testScenarios/scenario02_BuildingOnFire.png", true, 3*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640);  _clipBoard.ToFire = ["redraw"]; },false);
-	scenario2Button.addEvent("mouseexit", function(_clipBoard){  scenario2Button.setImage("images/dev/testScenarios/scenario02_BuildingOnFire.png", true, 3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512);  _clipBoard.ToFire = ["redraw"]; }, false);
+	scenario2Button.addEvent("mouseenter", function(_clipBoard){   scenario2Button.setImage("images/dev/testScenarios/dev/bank.png", true, 3*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640);  _clipBoard.ToFire = ["redraw"]; },false);
+	scenario2Button.addEvent("mouseexit", function(_clipBoard){  scenario2Button.setImage("images/dev/testScenarios/dev/bank.png", true, 3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512);  _clipBoard.ToFire = ["redraw"]; }, false);
 
 	Touch.onEnterExit(scenario3Button);
-	scenario3Button.addEvent("mouseenter", function(_clipBoard){   scenario3Button.setImage("images/dev/testScenarios/scenario03_ChildrenFightingOverToy.png", true, 4*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	scenario3Button.addEvent("mouseexit", function(_clipBoard){  scenario3Button.setImage("images/dev/testScenarios/scenario03_ChildrenFightingOverToy.png", true, 4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; }, false);
+	scenario3Button.addEvent("mouseenter", function(_clipBoard){   scenario3Button.setImage("images/dev/testScenarios/dev/villain.png", true, 4*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	scenario3Button.addEvent("mouseexit", function(_clipBoard){  scenario3Button.setImage("images/dev/testScenarios/dev/villain.png", true, 4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; }, false);
 
 	Touch.onEnterExit(scenario4Button);
- 	scenario4Button.addEvent("mouseenter", function(_clipBoard){ scenario4Button.setImage("images/dev/randomScenarioButton.png", true, 5*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
- 	scenario4Button.addEvent("mouseexit", function(_clipBoard){  scenario4Button.setImage("images/dev/randomScenarioButton.png", true, 5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; }, false);
+ 	scenario4Button.addEvent("mouseenter", function(_clipBoard){ scenario4Button.setImage("images/dev/testScenarios/dev/easy.png", true, 5*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+ 	scenario4Button.addEvent("mouseexit", function(_clipBoard){  scenario4Button.setImage("images/dev/testScenarios/dev/easy.png", true, 5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; }, false);
 	
 	//Medium
 	Touch.onEnterExit(bullyButton);
-	bullyButton.addEvent("mouseenter", function(_clipBoard){  bullyButton.setImage("images/dev/testScenarios/bully.png", true, 2*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	bullyButton.addEvent("mouseexit", function(_clipBoard){  bullyButton.setImage("images/dev/testScenarios/bully.png", true, 2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	bullyButton.addEvent("mouseenter", function(_clipBoard){  bullyButton.setImage("images/dev/testScenarios/dev/bully.png", true, 2*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	bullyButton.addEvent("mouseexit", function(_clipBoard){  bullyButton.setImage("images/dev/testScenarios/dev/bully.png", true, 2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(aliensButton);
-	aliensButton.addEvent("mouseenter", function(_clipBoard){  aliensButton.setImage("images/dev/testScenarios/aliens.png", true, 3*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	aliensButton.addEvent("mouseexit", function(_clipBoard){  aliensButton.setImage("images/dev/testScenarios/aliens.png", true, 3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	aliensButton.addEvent("mouseenter", function(_clipBoard){  aliensButton.setImage("images/dev/testScenarios/dev/whale.png", true, 3*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	aliensButton.addEvent("mouseexit", function(_clipBoard){  aliensButton.setImage("images/dev/testScenarios/dev/whale.png", true, 3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(mediumButton3);
-	mediumButton3.addEvent("mouseenter", function(_clipBoard){  mediumButton3.setImage("images/dev/_03.png", true, 4*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	mediumButton3.addEvent("mouseexit", function(_clipBoard){  mediumButton3.setImage("images/dev/_03.png", true, 4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	mediumButton3.addEvent("mouseenter", function(_clipBoard){  mediumButton3.setImage("images/dev/testScenarios/dev/volcano.png", true, 4*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	mediumButton3.addEvent("mouseexit", function(_clipBoard){  mediumButton3.setImage("images/dev/testScenarios/dev/volcano.png", true, 4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(mediumButton4);
-	mediumButton4.addEvent("mouseenter", function(_clipBoard){  mediumButton4.setImage("images/dev/_04.png", true, 5*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	mediumButton4.addEvent("mouseexit", function(_clipBoard){  mediumButton4.setImage("images/dev/_04.png", true, 5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	mediumButton4.addEvent("mouseenter", function(_clipBoard){  mediumButton4.setImage("images/dev/testScenarios/dev/medium.png", true, 5*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	mediumButton4.addEvent("mouseexit", function(_clipBoard){  mediumButton4.setImage("images/dev/testScenarios/dev/medium.png", true, 5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	//Hard
 	Touch.onEnterExit(testButton1);
-	testButton1.addEvent("mouseenter", function(_clipBoard){  testButton1.setImage("images/dev/_01.png", true, 2*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	testButton1.addEvent("mouseexit", function(_clipBoard){  testButton1.setImage("images/dev/_01.png", true, 2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton1.addEvent("mouseenter", function(_clipBoard){  testButton1.setImage("images/dev/testScenarios/dev/scenario03_ChildrenFightingOverToy.png", true, 2*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton1.addEvent("mouseexit", function(_clipBoard){  testButton1.setImage("images/dev/testScenarios/dev/scenario03_ChildrenFightingOverToy.png", true, 2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(testButton3);
-	testButton3.addEvent("mouseenter", function(_clipBoard){  testButton3.setImage("images/dev/_03.png", true, 3*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	testButton3.addEvent("mouseexit", function(_clipBoard){  testButton3.setImage("images/dev/_03.png", true, 3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton3.addEvent("mouseenter", function(_clipBoard){  testButton3.setImage("images/dev/testScenarios/dev/scenario02_BuildingOnFire.png", true, 3*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton3.addEvent("mouseexit", function(_clipBoard){  testButton3.setImage("images/dev/testScenarios/dev/scenario02_BuildingOnFire.png", true, 3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(testButton5);
-	testButton5.addEvent("mouseenter", function(_clipBoard){  testButton5.setImage("images/dev/_05.png", true, 4*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	testButton5.addEvent("mouseexit", function(_clipBoard){  testButton5.setImage("images/dev/_05.png", true, 4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton5.addEvent("mouseenter", function(_clipBoard){  testButton5.setImage("images/dev/testScenarios/dev/aliens.png", true, 4*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton5.addEvent("mouseexit", function(_clipBoard){  testButton5.setImage("images/dev/testScenarios/dev/aliens.png", true, 4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(testButton7);
-	testButton7.addEvent("mouseenter", function(_clipBoard){  testButton7.setImage("images/dev/_07.png", true, 5*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	testButton7.addEvent("mouseexit", function(_clipBoard){  testButton7.setImage("images/dev/_07.png", true, 5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton7.addEvent("mouseenter", function(_clipBoard){  testButton7.setImage("images/dev/testScenarios/dev/hard.png", true, 5*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton7.addEvent("mouseexit", function(_clipBoard){  testButton7.setImage("images/dev/testScenarios/dev/hard.png", true, 5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	//Random
 	Touch.onEnterExit(testButton2);
-	testButton2.addEvent("mouseenter", function(_clipBoard){  testButton2.setImage("images/dev/_02.png", true, 2*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	testButton2.addEvent("mouseexit", function(_clipBoard){  testButton2.setImage("images/dev/_02.png", true, 2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton2.addEvent("mouseenter", function(_clipBoard){  testButton2.setImage("images/dev/testScenarios/dev/easy.png", true, 2*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton2.addEvent("mouseexit", function(_clipBoard){  testButton2.setImage("images/dev/testScenarios/dev/easy.png", true, 2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(testButton4);
-	testButton4.addEvent("mouseenter", function(_clipBoard){  testButton4.setImage("images/dev/_04.png", true, 3*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	testButton4.addEvent("mouseexit", function(_clipBoard){  testButton4.setImage("images/dev/_04.png", true, 3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton4.addEvent("mouseenter", function(_clipBoard){  testButton4.setImage("images/dev/testScenarios/dev/medium.png", true, 3*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton4.addEvent("mouseexit", function(_clipBoard){  testButton4.setImage("images/dev/testScenarios/dev/medium.png", true, 3*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(testButton6);
-	testButton6.addEvent("mouseenter", function(_clipBoard){  testButton6.setImage("images/dev/_06.png", true, 4*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	testButton6.addEvent("mouseexit", function(_clipBoard){  testButton6.setImage("images/dev/_06.png", true, 4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton6.addEvent("mouseenter", function(_clipBoard){  testButton6.setImage("images/dev/testScenarios/dev/hard.png", true, 4*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton6.addEvent("mouseexit", function(_clipBoard){  testButton6.setImage("images/dev/testScenarios/dev/hard.png", true, 4*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(testButton8);
-	testButton8.addEvent("mouseenter", function(_clipBoard){  testButton8.setImage("images/dev/_08.png", true, 5*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	testButton8.addEvent("mouseexit", function(_clipBoard){  testButton8.setImage("images/dev/_08.png", true, 5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton8.addEvent("mouseenter", function(_clipBoard){  testButton8.setImage("images/dev/testScenarios/dev/total.png", true, 5*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton8.addEvent("mouseexit", function(_clipBoard){  testButton8.setImage("images/dev/testScenarios/dev/total.png", true, 5*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	
 	
@@ -365,35 +365,80 @@ function ScenarioScreen(_info){
 
 	//Add buttons for moving around states.
 	backButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false );
+	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false );
 
 	//Easy
 	scenario1Button.addEvent("mousedown", function(_clipBoard){
-		info.currentScenario = "Cat";
+		info.currentScenario = "default";
 		base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
 	scenario2Button.addEvent("mousedown", function(_clipBoard){
-		info.currentScenario = "Fire";
+		info.currentScenario = "default";
 		base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
 	scenario3Button.addEvent("mousedown", function(_clipBoard){
-			info.currentScenario = "Children";
-			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+		info.currentScenario = "default";
+		base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
-
-
 	scenario4Button.addEvent("mousedown", function(_clipBoard) {
-		//Pass that stuff to another button.
-		scenario1Button.handleEvent("mousedown", _clipBoard);
+		info.currentScenario = "default";
+		base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
-	// scenario5Button.addEvent("mousedown", base.changeState("DetailedScenarioScreen", _info), false );
-	// randomScenarioButton.addEvent("mousedown", base.changeState("DetailedScenarioScreen", _info), false );
-	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false );
+	
 	
 	//Medium
+	bullyButton.addEvent("mousedown", function(_clipBoard){
+			info.currentScenario = "default";
+			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+	}, false );
+	aliensButton.addEvent("mousedown", function(_clipBoard){
+			info.currentScenario = "default";
+			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+	}, false );
+	mediumButton3.addEvent("mousedown", function(_clipBoard){
+			info.currentScenario = "default";
+			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+	}, false );
+	mediumButton4.addEvent("mousedown", function(_clipBoard){
+			info.currentScenario = "default";
+			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+	}, false );
 	
 	//Hard
+	testButton1.addEvent("mousedown", function(_clipBoard){
+			info.currentScenario = "default";
+			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+	}, false );
+	testButton3.addEvent("mousedown", function(_clipBoard){
+			info.currentScenario = "default";
+			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+	}, false );
+	testButton5.addEvent("mousedown", function(_clipBoard){
+			info.currentScenario = "default";
+			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+	}, false );
+	testButton7.addEvent("mousedown", function(_clipBoard){
+			info.currentScenario = "default";
+			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+	}, false );
 	
 	//Random
+	testButton2.addEvent("mousedown", function(_clipBoard){
+			info.currentScenario = "default";
+			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+	}, false );
+	testButton4.addEvent("mousedown", function(_clipBoard){
+			info.currentScenario = "default";
+			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+	}, false );
+	testButton6.addEvent("mousedown", function(_clipBoard){
+			info.currentScenario = "default";
+			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+	}, false );
+	testButton8.addEvent("mousedown", function(_clipBoard){
+			info.currentScenario = "default";
+			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
+	}, false );
 	
 
 	//For dev purposes.

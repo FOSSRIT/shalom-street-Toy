@@ -21,7 +21,7 @@ function ToyBoxTab(_x, _y, _width, _height, _connectedSlot) {
 
 	
 	function _select(){
-		console.log(options);
+		//console.log(options);
 		toReturn.visible = true;
 		toReturn.selected = true;
 	}
@@ -41,7 +41,7 @@ function ToyBoxTab(_x, _y, _width, _height, _connectedSlot) {
 			_clipBoard.ToFire = ["swapComponent"];
 			//if(_clipBoard.ToFire) { _clipBoard.ToFire.push("swapComponent"); } else { _clipBoard.ToFire = ["swapComponent"]; }
 			_clipBoard.ComponentSwap = {"image":bodyPart, "slot":slot || connectedSlot};
-			console.log(_clipBoard.ToFire);
+			//console.log(_clipBoard.ToFire);
 			//alert(img);
 		}, false);
 
@@ -62,7 +62,7 @@ function ToyBoxTab(_x, _y, _width, _height, _connectedSlot) {
 
 	//Used to make things rotate with the carasoules.
 	function _rotate(positive, width){
-		console.log(options.length);
+		//console.log(options.length);
 		//Make everything invisible.
 		for(i=0; i<options.length; i++){
 			options[i].visible = false;

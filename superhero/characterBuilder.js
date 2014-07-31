@@ -9,7 +9,6 @@ function CharacterBuilder(_info){
 
 
 	jsonLoader.Load("data/characterBuilder.js", function(result){
-		console.log('type is: ' + info.superhero.bodyType);
 		jsonBuilder.GetJson(base, result);
 
 		var selectedCategory = undefined;
@@ -31,7 +30,6 @@ function CharacterBuilder(_info){
 		
 		//Now we add the tabs themselves, based on what we've pulled out of the json.
 		var i = -1; //And we loop through the properties.
-		console.log(base.jsonData.categories);
 		for (var v in base.jsonData.categories) {
 			i++; //I moved this up here and started at -1 to 0 to make it easier to read.
 			//Not sure what the positioning is doing with this, but I guess I trust it.
@@ -54,7 +52,7 @@ function CharacterBuilder(_info){
 				toybox.addModule(tab);
 
 				//Add label.
-				console.log(t);
+				//console.log(t);
 				var header = Sprite(0, -68, 128, 128, base.jsonData.categories[v].tabs[t].sprite);
 				tab.addModule(header);
 
@@ -254,7 +252,7 @@ function CharacterBuilder(_info){
 		continueButton = Sprite(toReturn.bounds.width-128, toReturn.bounds.height-128, 128, 128, "images/dev/continue.png");
 		toReturn.addModule(continueButton);
 		
-		quitButton = Sprite(toReturn.bounds.x, toReturn.bounds.y, 128, 128, "images/dev/quit.png");
+		quitButton = Sprite(toReturn.bounds.x, toReturn.bounds.y, 256, 216, "images/dev/buttons/quit.png");
 		toReturn.addModule(quitButton);
 		
 		//Events
