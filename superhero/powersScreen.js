@@ -133,6 +133,8 @@ function PowersScreen(_info){
 			_clipBoard.ToFire = ["redraw"];
 		}
 
+		_clipBoard.BlockEvents = ["mousedown"];
+
 	}, false);
 	
 	cat2_energy_button.addEvent("mousedown", function(_clipBoard){
@@ -157,6 +159,8 @@ function PowersScreen(_info){
 		} else {
 			_clipBoard.ToFire = ["redraw"];
 		}
+
+		_clipBoard.BlockEvents = ["mousedown"];
 
 	}, false);
 	
@@ -183,6 +187,8 @@ function PowersScreen(_info){
 			_clipBoard.ToFire = ["redraw"];
 		}
 
+		_clipBoard.BlockEvents = ["mousedown"];
+
 	}, false);
 	
 	cat4_super_button.addEvent("mousedown", function(_clipBoard){
@@ -207,6 +213,8 @@ function PowersScreen(_info){
 		} else {
 			_clipBoard.ToFire = ["redraw"];
 		}
+
+		_clipBoard.BlockEvents = ["mousedown"];
 
 	}, false);
 	
