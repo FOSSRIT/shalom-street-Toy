@@ -1,3 +1,6 @@
 [submodule "Modex.js"]
 	path = Modex.js
 	url = https://github.com/danShumway/Modex.js.git
+[submodule "PHPMailer"]
+	path = PHPMailer
+	url = https://github.com/Synchro/PHPMailer.git
