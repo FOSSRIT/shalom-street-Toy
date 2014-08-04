@@ -68,7 +68,6 @@ function SuperPoseScreen(_info){
 				ctx.drawImage(data.image, 0, 0, data.image.width, data.image.height, data.x - data.originX, data.y - data.originY, data.width, data.height);
 			} else if(data.text) { //If it's text.
 				ctx.font = data.font;
-				console.log(data);
 				ctx.fillText(data.text, data.x - data.originX, data.y - data.originY);
 				//Text draws from the lower left hand corner.
 			}
@@ -77,8 +76,8 @@ function SuperPoseScreen(_info){
     	//Send imaginary canvas to data.
     	return canvas.toDataURL();
     	//Testing purposes, add it to the screen.
-    	document.getElementsByTagName("body")[0].appendChild(canvas);
-    	console.log('saved');
+    	//document.getElementsByTagName("body")[0].appendChild(canvas);
+    	//console.log('saved');
     }
 
     function email(data){
@@ -101,12 +100,11 @@ function SuperPoseScreen(_info){
 	    	}
 	    }).done(function(o){
 	    	console.log(o);
-	    	console.log('sent message, response: ' + o);
 	    });
 	}
 
-	save();
-	email('hello');;
+	var data = save();
+	email(data);;
 
 
 	return toReturn;
