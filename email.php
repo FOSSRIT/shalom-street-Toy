@@ -14,7 +14,7 @@ try {
 	//$mail->SMTPSecure = 'tls'; 				  //For God's sake remove this before you commit.
 	$mail->Priority = 1;
 	$mail->Port = 25;
-	$mail->From = 'shumway.danny@gmail.com';
+	$mail->From = 'webmaster@127.0.0.1';
 	$mail->FromName = 'Mailer';
 	$mail->addAddress('shumway.danny@gmail.com', 'Joe User');     // Add a recipient
 	//$mail->addAddress('ellen@example.com');               // Name is optional

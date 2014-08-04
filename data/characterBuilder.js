@@ -305,6 +305,34 @@ jsonLoader.result = {
 								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
 								"sprite": "images/production/dressup/female/buff/set_01/mask.png"
 							},
+						},
+
+						"mask_02":{
+							"male_1": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/production/dressup/male/young/masks/2.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/production/dressup/male/adult/masks/2.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/production/dressup/male/buff/masks/2.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/production/dressup/female/young/masks/2.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/production/dressup/female/adult/masks/2.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"sprite": "images/production/dressup/female/buff/masks/2.png"
+							},
 						}
 					},
 				},
