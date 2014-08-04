@@ -92,7 +92,9 @@ function ResultsScreen(_info){
 	if(info.win){
 		continueButton.addEvent("mousedown", base.changeState("SuperPoseScreen", _info), false);
 	} else if(!info.win){
-		continueButton.addEvent("mousedown", base.changeState("QualitiesScreen", _info), false);
+		//continueButton.addEvent("mousedown", base.changeState("QualitiesScreen", _info), false);
+		//For dev purposes - change back after we know emails work.
+		continueButton.addEvent("mousedown", base.changeState("SuperPoseScreen", _info), false);
 	}
 
 

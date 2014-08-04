@@ -38,7 +38,7 @@ function ToyBoxTab(_x, _y, _width, _height, _connectedSlot) {
 
 		//Add in the proper event.
 		option.addEvent("mousedown", function(_clipBoard){
-			_clipBoard.ToFire = ["swapComponent"];
+			_clipBoard.ToFire = ["swapComponent", "redraw"];
 			//if(_clipBoard.ToFire) { _clipBoard.ToFire.push("swapComponent"); } else { _clipBoard.ToFire = ["swapComponent"]; }
 			_clipBoard.ComponentSwap = {"image":bodyPart, "slot":slot || connectedSlot};
 			//console.log(_clipBoard.ToFire);

@@ -16,6 +16,7 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	var base = Module(_x, _y, _width, _height); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.setSlot = _setSlot;
+	toReturn.type = "CharacterSkeleton";
 
 
 	toReturn.draw = _draw; //Modify public interface.

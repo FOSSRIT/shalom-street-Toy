@@ -20,7 +20,6 @@ function BodyPart(x, y, width, height){
 			currentColor = [r, g, b];
 		} catch(e) {
 			//You must be offline.
-			//Just fail gracefully.
 			console.log(e.message);
 		}
 	}
