@@ -82,7 +82,7 @@ function ModelSelect(_info){
 	manager.addModule(domElementThing);*/
 	
 	//Buttons
-	var backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+	var backButton = Sprite(0, 1080-128, 256, 128, "images/dev/buttons/back.png");
 	base.addModule(backButton);
 	
 	quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
