@@ -255,6 +255,33 @@ function CharacterBuilder(_info){
 		quitButton = Sprite(toReturn.bounds.x, toReturn.bounds.y, 256, 216, "images/dev/buttons/quit.png");
 		toReturn.addModule(quitButton);
 		
+		//colors button
+		colorButton = Sprite(toybox.bounds.width-256, 216, 256, 128, "images/dev/_00.png");
+		toReturn.addModule(colorButton);
+		
+		redButton = Sprite(toybox.bounds.width-256, 216+128, 128, 128, "images/dev/_01.png");
+		toReturn.addModule(redButton);
+		orangeButton = Sprite(toybox.bounds.width-256, 216+(2*128), 128, 128, "images/dev/_02.png");
+		toReturn.addModule(orangeButton);
+		yellowButton = Sprite(toybox.bounds.width-256, 216+(3*128), 128, 128, "images/dev/_03.png");
+		toReturn.addModule(yellowButton);
+		greenButton = Sprite(toybox.bounds.width-256, 216+(4*128), 128, 128, "images/dev/_04.png");
+		toReturn.addModule(greenButton);
+		blueButton = Sprite(toybox.bounds.width-256, 216+(5*128), 128, 128, "images/dev/_05.png");
+		toReturn.addModule(blueButton);
+		
+		purpleButton = Sprite(toybox.bounds.width-128, 216+128, 128, 128, "images/dev/_06.png");
+		toReturn.addModule(purpleButton);
+		pinkButton = Sprite(toybox.bounds.width-128, 216+(2*128), 128, 128, "images/dev/_07.png");
+		toReturn.addModule(pinkButton);
+		brownButton = Sprite(toybox.bounds.width-128, 216+(3*128), 128, 128, "images/dev/_08.png");
+		toReturn.addModule(brownButton);
+		whiteButton = Sprite(toybox.bounds.width-128, 216+(4*128), 128, 128, "images/dev/_00.png");
+		toReturn.addModule(whiteButton);
+		blackButton = Sprite(toybox.bounds.width-128, 216+(5*128), 128, 128, "images/error.png");
+		toReturn.addModule(blackButton);
+		
+		
 		//Events
 		backButton.addEvent("mousedown", base.changeState("ModelSelect", info), false);	
 		continueButton.addEvent("mousedown", base.changeState("CharacterBioScreen", info), false); 	
