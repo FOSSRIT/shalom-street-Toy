@@ -27,8 +27,10 @@ function PowersScreen(_info){
 	
 	
 	
-	var definition = Sprite(3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-256,512,512, "images/dev/midrash_water.png");
-	base.addModule(definition);
+	var definition1 = Sprite(3*toReturn.bounds.width/4-128,6*toReturn.bounds.height/16,512,256, "images/dev/alpha.png");
+	base.addModule(definition1);
+	var definition2 = Sprite(3*toReturn.bounds.width/4-128,6*toReturn.bounds.height/16+256,512,256, "images/dev/alpha.png");
+	base.addModule(definition2);
 	
 	//Buttons
 	backButton = Sprite(0, 1080-128, 256, 128, "images/dev/buttons/back.png");
@@ -323,6 +325,17 @@ function PowersScreen(_info){
 			if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
 		}
 		console.log("Current list content: "+info.superhero[_list]);
+		
+		if(info.superhero[_list][0] != undefined){
+			definition1.setImage("images/dev/power_descriptions/"+info.superhero[_list][0]+".png");
+		}else{
+			definition1.setImage("images/dev/alpha.png");
+		}
+		if(info.superhero[_list][1] != undefined){
+			definition2.setImage("images/dev/power_descriptions/"+info.superhero[_list][1]+".png");
+		}else{
+			definition2.setImage("images/dev/alpha.png");
+		}
 
 
 		//ToDo: Sometime switch it out for javascript .find
