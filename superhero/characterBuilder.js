@@ -246,10 +246,10 @@ function CharacterBuilder(_info){
 
 
 		//Buttons
-		backButton = Sprite(toReturn.bounds.x, toReturn.bounds.height-128, 128, 128, "images/dev/back.png");
+		backButton = Sprite(toReturn.bounds.x, toReturn.bounds.height-128, 256, 128, "images/dev/buttons/back.png");
 		toReturn.addModule(backButton);
 		
-		continueButton = Sprite(toReturn.bounds.width-128, toReturn.bounds.height-128, 128, 128, "images/dev/continue.png");
+		continueButton = Sprite(toReturn.bounds.width-256, toReturn.bounds.height-128, 256, 128, "images/dev/buttons/continue.png");
 		toReturn.addModule(continueButton);
 		
 		quitButton = Sprite(toReturn.bounds.x, toReturn.bounds.y, 256, 216, "images/dev/buttons/quit.png");
