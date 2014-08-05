@@ -192,7 +192,7 @@ function CharacterBuilder(_info){
 
 		//---
 
-		
+		 
 		// Add playArea
 
 		var x = Sprite(toReturn.bounds.x, 5, 10, 10);
@@ -217,6 +217,8 @@ function CharacterBuilder(_info){
 
 
 		//----------COLORS-----------------------------------------
+		//WORKING
+		//-------------------------------------------------------
 
 		//Register events.
 		base.addEvent("swapComponent", function(_clipBoard){ 
