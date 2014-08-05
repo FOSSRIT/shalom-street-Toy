@@ -46,28 +46,28 @@ function QualitiesScreen(_info){
 	base.addModule(grid);
 	
 	//Qualities
-	var quality1_brave_button = Sprite(64, 6*toReturn.bounds.height/16, 256, 64, "images/dev/qualitiesButtons/brave.png");
+	var quality1_brave_button = Sprite(64, 23*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/brave.png");
 	base.addModule(quality1_brave_button);
 	
-	var quality2_caring_button = Sprite(64, 7*toReturn.bounds.height/16, 256, 64, "images/dev/qualitiesButtons/caring.png");
+	var quality2_caring_button = Sprite(64, 27*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/caring.png");
 	base.addModule(quality2_caring_button);
 	
-	var quality3_friendship_button = Sprite(64, 8*toReturn.bounds.height/16, 256, 64, "images/dev/qualitiesButtons/friendship.png");
+	var quality3_friendship_button = Sprite(64, 31*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/friendship.png");
 	base.addModule(quality3_friendship_button);
 	
-	var quality4_listening_button = Sprite(64, 9*toReturn.bounds.height/16, 256, 64, "images/dev/qualitiesButtons/listening.png");
+	var quality4_listening_button = Sprite(64, 35*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/listening.png");
 	base.addModule(quality4_listening_button);
 	
-	var quality5_respect_button = Sprite(64, 10*toReturn.bounds.height/16, 256, 64, "images/dev/qualitiesButtons/respect.png");
+	var quality5_respect_button = Sprite(64, 39*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/respect.png");
 	base.addModule(quality5_respect_button);
 	
-	var quality6_responsibility_button = Sprite(64, 11*toReturn.bounds.height/16, 256, 64, "images/dev/qualitiesButtons/responsibility.png");
+	var quality6_responsibility_button = Sprite(64, 43*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/responsibility.png");
 	base.addModule(quality6_responsibility_button);
 	
-	var quality7_satisfied_button = Sprite(64, 12*toReturn.bounds.height/16, 256, 64, "images/dev/qualitiesButtons/satisfied.png");
+	var quality7_satisfied_button = Sprite(64, 47*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/satisfied.png");
 	base.addModule(quality7_satisfied_button);
 	
-	var quality8_understanding_button = Sprite(64, 13*toReturn.bounds.height/16, 256, 64, "images/dev/qualitiesButtons/understanding.png");
+	var quality8_understanding_button = Sprite(64, 51*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/understanding.png");
 	base.addModule(quality8_understanding_button);
 	
 	//Events
