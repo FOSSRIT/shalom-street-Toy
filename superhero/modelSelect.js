@@ -8,23 +8,25 @@ function ModelSelect(_info){
 
 
 
-	var splashImage = Sprite(0,0,1920,1080, "images/dev/createYourHero_Background.png");
-	base.addModule(splashImage);
+	
 
 	if(info.superhero.gender == "female"){
+	
+		var splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-15_alt.png");
+		base.addModule(splashImage);
 
 		info.superhero.bodyType = "female_1";
 		console.log('showing body types for female.')
 
 		//--------------------------------------
 
-		var youth = Sprite(0, 216, 640, 864, "images/production/character_wireframes/child_female.png");
+		var youth = Sprite(512, 216, 360, 864, "images/dev/alpha.png");
 		base.addModule(youth);
 		
-		var adult = Sprite(1920/3, 216, 640, 864, "images/production/character_wireframes/adult_female.png");
+		var adult = Sprite(512+360, 216, 469, 864, "images/dev/alpha.png");
 		base.addModule(adult);
 
-		var buff = Sprite(2*1920/3, 216, 640, 864, "images/production/character_wireframes/buff_female.png");
+		var buff = Sprite(512+360+469, 216, 469+109, 864, "images/dev/alpha.png");
 		base.addModule(buff);
 
 		youth.addEvent("mousedown", function(_clipBoard) {
@@ -44,19 +46,22 @@ function ModelSelect(_info){
 		
 
 	} else if(info.superhero.gender == "male"){
+	
+		var splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-16_alt.png");
+		base.addModule(splashImage);
 
 		info.superhero.bodyType = "male_1";
 		console.log('showing body types for male.')
 
 		//--------------------------------------
 		
-		var youth = Sprite(0, 216, 640, 864, "images/production/character_wireframes/child_male.png");
+		var youth = Sprite(512, 216, 360, 864, "images/dev/alpha.png");
 		base.addModule(youth);
 		
-		var adult = Sprite(1920/3, 216, 640, 864, "images/production/character_wireframes/adult_male.png");
+		var adult = Sprite(512+360, 216, 469, 864, "images/dev/alpha.png");
 		base.addModule(adult);
 
-		var buff = Sprite(2*1920/3, 216, 640, 864, "images/production/character_wireframes/buff_male.png");
+		var buff = Sprite(512+360+469, 216, 469+109, 864, "images/dev/alpha.png");
 		base.addModule(buff);
 
 
