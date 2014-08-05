@@ -16,7 +16,7 @@ function CharacterBuilder(_info){
 
 
 		//Load in the basics.
-		var splashImage = Sprite(0,0,1920,1080, "images/dev/createYourHero_Background.png");
+		var splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-04.png");
 		base.addModule(splashImage);
 
 
