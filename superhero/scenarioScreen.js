@@ -270,6 +270,7 @@ function ScenarioScreen(_info){
 	//Easy
 	scenario1Button.addEvent("mousedown", function(_clipBoard){
 		info.currentScenario = "default";
+		//info.currentHeader = Sprite("")
 		base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
 	scenario2Button.addEvent("mousedown", function(_clipBoard){

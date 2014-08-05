@@ -15,6 +15,8 @@ function DetailedScenarioScreen(_info){
 		var splashImage = Sprite(0, 0, 1920, 1080, base.jsonData[info.currentScenario].background);
 		base.addModule(splashImage);
 		
+
+		info.banner = Sprite(0, 0, 1920, 1080, base.jsonData[info.currentScenario].banner);
 		//info
 		comic = Sprite(128, 3*toReturn.bounds.height/7-64, 256, 512, base.jsonData[info.currentScenario].comic);
 		base.addModule(comic);
