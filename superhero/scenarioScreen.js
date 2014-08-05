@@ -190,8 +190,8 @@ function ScenarioScreen(_info){
 	
 	//Easy
 	Touch.onEnterExit(scenario1Button);
-	scenario1Button.addEvent("mouseenter", function(_clipBoard){  this.setImage("images/dev/testScenarios/dev/team.png", true, 2*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	scenario1Button.addEvent("mouseexit", function(_clipBoard){  scenario1Button.setImage("images/dev/testScenarios/dev/team.png", true, 2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	scenario1Button.addEvent("mouseenter", function(_clipBoard){  this.setImage("images/dev/testScenarios/dev/team.png", false, 2*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	scenario1Button.addEvent("mouseexit", function(_clipBoard){  scenario1Button.setImage("images/dev/testScenarios/dev/team.png", false, 2*toReturn.bounds.width/6-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(scenario2Button);
 	scenario2Button.addEvent("mouseenter", function(_clipBoard){   scenario2Button.setImage("images/dev/testScenarios/dev/bank.png", false, 3*toReturn.bounds.width/6-160, toReturn.bounds.height/2-256, 320, 640);  _clipBoard.ToFire = ["redraw"]; },false);
