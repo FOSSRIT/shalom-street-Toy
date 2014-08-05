@@ -6,7 +6,7 @@ function QualitiesScreen(_info){
 	var info = _info;
 	Touch.Collisions(base);
 
-	var maxQualities = 2;
+	var maxQualities = 1;
 
 
 	//Reset the super hero virtues.
@@ -15,70 +15,112 @@ function QualitiesScreen(_info){
 	//info.superhero.virtueSelected
 	
 	//Dev Splash Image
-	var splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-02.png");
+	var splashImage = Sprite(0,0,1920,1080, "images/dev/qualitiesButtons/background.png");
 	base.addModule(splashImage);
 	
+	/*
 	var qualitiesHintImg = Sprite(toReturn.bounds.width/2-256,toReturn.bounds.height/8-64,512,128, "images/dev/qualitiesHint.png");
 	base.addModule(qualitiesHintImg);
+	*/
 	
+	/*
 	var heroImage = Sprite(toReturn.bounds.width/2-256,toReturn.bounds.height/2-384,512,1024, "images/dev/bro.png");
 	base.addModule(heroImage);
+	*/
 	
-	var definition = Sprite(3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-256,512,512, "images/dev/empathy_definition.png");
+	
+	var definition = Sprite(3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512, "images/dev/alpha.png");
 	base.addModule(definition);
 	
 	//Buttons
-	var backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+	var backButton = Sprite(0, 1080-128, 256, 128, "images/dev/buttons/back.png");
 	base.addModule(backButton);
 	
-	var continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+	var continueButton = Sprite(1920-256, 1080-128, 256, 128, "images/dev/buttons/continue.png");
 	base.addModule(continueButton);
 	
-	var quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+	var quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
 	base.addModule(quitButton);
 
 	var grid = Grid(toReturn.bounds.width/5, toReturn.bounds.height/3-128, 2, 1, 256, 256, 10);
 	base.addModule(grid);
 	
 	//Qualities
-	var quality3_empathy_button = Sprite(0, 2*toReturn.bounds.height/8, 256, 128, "images/dev/qualitiesButtons/empathy.png");
-	base.addModule(quality3_empathy_button);
+	var quality1_brave_button = Sprite(64, 23*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/brave.png");
+	base.addModule(quality1_brave_button);
 	
-	var quality4_forgiveness_button = Sprite(0, 3*toReturn.bounds.height/8, 256, 128, "images/dev/qualitiesButtons/forgiveness.png");
-	base.addModule(quality4_forgiveness_button);
+	var quality2_caring_button = Sprite(64, 27*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/caring.png");
+	base.addModule(quality2_caring_button);
 	
-	var quality5_hate_button = Sprite(0, 4*toReturn.bounds.height/8, 256, 128, "images/dev/qualitiesButtons/hate.png");
-	base.addModule(quality5_hate_button);
+	var quality3_friendship_button = Sprite(64, 31*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/friendship.png");
+	base.addModule(quality3_friendship_button);
 	
-	var quality6_honor_button = Sprite(0, 5*toReturn.bounds.height/8, 256, 128, "images/dev/qualitiesButtons/honor.png");
-	base.addModule(quality6_honor_button);
+	var quality4_listening_button = Sprite(64, 35*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/listening.png");
+	base.addModule(quality4_listening_button);
 	
-	var quality7_courage_button = Sprite(0, 6*toReturn.bounds.height/8, 256, 128, "images/dev/qualitiesButtons/courage.png");
-	base.addModule(quality7_courage_button);
+	var quality5_respect_button = Sprite(64, 39*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/respect.png");
+	base.addModule(quality5_respect_button);
+	
+	var quality6_responsibility_button = Sprite(64, 43*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/responsibility.png");
+	base.addModule(quality6_responsibility_button);
+	
+	var quality7_satisfied_button = Sprite(64, 47*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/satisfied.png");
+	base.addModule(quality7_satisfied_button);
+	
+	var quality8_understanding_button = Sprite(64, 51*toReturn.bounds.height/64, 256, 64, "images/dev/qualitiesButtons/understanding.png");
+	base.addModule(quality8_understanding_button);
 	
 	//Events
 	backButton.addEvent("mousedown", base.changeState("DetailedScenarioScreen", _info), false);
 	continueButton.addEvent("mousedown", base.changeState("PowersScreen", _info), false);	
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 	
-	quality3_empathy_button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("virtues",quality3_empathy_button,"empathy","images/dev/qualitiesButtons/empathy.png","images/dev/qualitiesButtons/empathy_highlight.png", _clipBoard);
+	quality1_brave_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("virtues",quality1_brave_button,"brave","images/dev/qualitiesButtons/brave.png","images/dev/qualitiesButtons/brave_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_bravery.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
 	},false);
 	
-	quality4_forgiveness_button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("virtues",quality4_forgiveness_button,"forgiveness","images/dev/qualitiesButtons/forgiveness.png","images/dev/qualitiesButtons/forgiveness_highlight.png", _clipBoard);
+	quality2_caring_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("virtues",quality2_caring_button,"caring","images/dev/qualitiesButtons/caring.png","images/dev/qualitiesButtons/caring_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_caring.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
 	},false);
 	
-	quality5_hate_button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("virtues",quality5_hate_button,"hate","images/dev/qualitiesButtons/hate.png","images/dev/qualitiesButtons/hate_highlight.png", _clipBoard);
+	quality3_friendship_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("virtues",quality3_friendship_button,"friendship","images/dev/qualitiesButtons/friendship.png","images/dev/qualitiesButtons/friendship_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_friendship.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
 	},false);
 	
-	quality6_honor_button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("virtues",quality6_honor_button,"honor","images/dev/qualitiesButtons/honor.png","images/dev/qualitiesButtons/honor_highlight.png", _clipBoard);
+	quality4_listening_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("virtues",quality4_listening_button,"listening","images/dev/qualitiesButtons/listening.png","images/dev/qualitiesButtons/listening_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_listening.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
 	},false);
 	
-	quality7_courage_button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("virtues",quality7_courage_button,"courage","images/dev/qualitiesButtons/courage.png","images/dev/qualitiesButtons/courage_highlight.png", _clipBoard);
+	quality5_respect_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("virtues",quality5_respect_button,"respect","images/dev/qualitiesButtons/respect.png","images/dev/qualitiesButtons/respect_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_respect.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
+	},false);
+	
+	quality6_responsibility_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("virtues",quality6_responsibility_button,"responsibility","images/dev/qualitiesButtons/responsibility.png","images/dev/qualitiesButtons/responsibility_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_responsibility.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
+	},false);
+	
+	quality7_satisfied_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("virtues",quality7_satisfied_button,"satisfied","images/dev/qualitiesButtons/satisfied.png","images/dev/qualitiesButtons/satisfied_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_satisfied.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
+	},false);
+	
+	quality8_understanding_button.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("virtues",quality8_understanding_button,"understanding","images/dev/qualitiesButtons/understanding.png","images/dev/qualitiesButtons/understanding_highlight.png", _clipBoard);
+		definition.setImage("images/dev/qualitiesButtons/midrash_understanding.png", true, 3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-128,512,512);
+		_clipBoard.ToFire = ["redraw"];
 	},false);
 
 

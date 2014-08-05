@@ -22,6 +22,7 @@
 		<script type="text/javascript" src="Modex.js/extensions/touch.js" ></script>
 		<script type="text/javascript" src="Modex.js/extensions/jsonLoader.js"></script>
 		<script type="text/javascript" src="Modex.js/extensions/jsonBuilder.js"></script>
+		<script type="text/javascript" src="Modex.js/extensions/colorAdjust.js"></script>
 
 
 
@@ -43,6 +44,10 @@
 		<script type="text/javascript" src="superhero/characterBuilder.js"></script>
 		<script type="text/javascript" src="superhero/characterSkeleton.js"></script>
 		<script type="text/javascript" src="superhero/bodyPart.js"></script>
+
+		<!--Other libraries-->
+		<!--Used for ajax-->
+		<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
 
 		<script>
 
@@ -74,7 +79,7 @@
 				canvas.style.width = 1920 * scale;
 
 				//create and add elements
-				console.log(1/scale);
+				//console.log(1/scale);
 				manager = Manager(canvas, ctx, 1/scale);
 				
 
@@ -87,27 +92,38 @@
 				currentState = StateManager(SplashScreen({"superhero":superhero}));
 				manager.addModule(currentState);
 
+
+				//Set up timeout.
+				var timeReset = 60*1;
+				var timeLeft = timeReset;
+				document.onmousemove = function(){ timeLeft = timeReset; }
+				setInterval(timeOut, 1000);
+
+				//Time out the app.
+				function timeOut(){
+					timeLeft--;
+
+					//If you have no time left, reset.
+					if(timeLeft <= 0) {
+						//Reset for the next person.
+						timeLeft = timeReset;
+						//Remove the current module.
+						manager.removeModule(currentState);
+						//Reset superhero.
+						superhero = {
+							"virtues":[],
+							"skeleton":undefined,
+							"powers":[]
+						}
+						//Go to main screen.
+						currentState = StateManager(SplashScreen({"superhero":superhero}));
+						manager.addModule(currentState);
+					}
+				}
+
+
 			}
 
-
-
-				function loadErrorScreen(){
-					sc = new SplashScreen();
-					currentState.addModule(sc);
-					//Splash Image
-					splashImage = Sprite(0,0,1920,1080, "images/dev/error.png");
-					sc.addModule(splashImage);
-					
-					//Buttons
-					continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
-					sc.addModule(continueButton);
-					
-					//Events
-					continueButton.addEvent("mousedown", function(_clipBoard){
-						manager.removeModule(sc);
-						switchState("splashScreen");
-					},false);
-				}
 
 		window.onload = onLoad;
 		</script>

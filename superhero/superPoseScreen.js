@@ -18,13 +18,93 @@ function SuperPoseScreen(_info){
 	continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
 	base.addModule(continueButton);
 	
-	quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+	var quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
 	base.addModule(quitButton);
 	
 	//Events
 	backButton.addEvent("mousedown", base.changeState("ResultsScreen", _info), false);
 	continueButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
+
+
+	console.log('post results here');
+
+
+	//Copied from http://stackoverflow.com/questions/5292689/sending-images-from-canvas-elements-using-ajax-and-php-files
+	/*xhr: function () {
+        var myXHR = new XMLHttpRequest();
+        if (myXHR.sendAsBinary == undefined) {
+            myXHR.legacySend = myXHR.send;
+            myXHR.sendAsBinary = function (string) {
+                var bytes = Array.prototype.map.call(string, function (c) {
+                    return c.charCodeAt(0) & 0xff;
+                });
+                this.legacySend(new Uint8Array(bytes).buffer);
+            };
+        }
+        myXHR.send = myXHR.sendAsBinary;
+        return myXHR;
+    }*/
+
+
+
+    function save(){
+    	var canvas = document.createElement("canvas");
+    	var ctx = canvas.getContext('2d');
+    	canvas.width = 640;
+    	canvas.height = 864;
+
+
+    	//Basically copied from manager, draw the superhero on the canvas.
+    	ctx.clearRect(0, 0, canvas.width, canvas.height);
+		//Loop through all objects and get list of sprites from them to return.
+		var toDraw = info.superhero.skeleton.draw()
+
+		for(var i=0; i<toDraw.length; i++) {
+			var data = toDraw[i];
+			if(data.image) { //If it's an image.
+				//Currently no support for spritesheets.
+				console.log('draw image');
+				ctx.drawImage(data.image, 0, 0, data.image.width, data.image.height, data.x - data.originX, data.y - data.originY, data.width, data.height);
+			} else if(data.text) { //If it's text.
+				ctx.font = data.font;
+				ctx.fillText(data.text, data.x - data.originX, data.y - data.originY);
+				//Text draws from the lower left hand corner.
+			}
+		}
+
+    	//Send imaginary canvas to data.
+    	return canvas.toDataURL();
+    	//Testing purposes, add it to the screen.
+    	//document.getElementsByTagName("body")[0].appendChild(canvas);
+    	//console.log('saved');
+    }
+
+    function email(data){
+	    //Make new xmlhttprequest object.
+	    /*var myRequest = xhr();
+	    // Build request.
+	   	myRequest.onreadystatechange = function(){
+	   		//Unneccessary.
+	    	//if(myRequest.readyState == 4 &&)
+	    }*/
+
+	    //myRequest.setRequestHeader('Content-Type')
+
+	    //Use jquery for Ajax, it's easier and I don't know Ajax very well.
+	    $.ajax({
+	    	type: "POST",
+	    	url: "email.php",
+	    	data: {
+	    		imgBase64: data
+	    	}
+	    }).done(function(o){
+	    	console.log(o);
+	    });
+	}
+
+	var data = save();
+	email(data);;
 
 
 	return toReturn;

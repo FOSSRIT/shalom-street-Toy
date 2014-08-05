@@ -16,10 +16,12 @@ function CharacterSkeleton(_x, _y, _width, _height){
 	var base = Module(_x, _y, _width, _height); //Call base
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.setSlot = _setSlot;
+	toReturn.type = "CharacterSkeleton";
 
 
 	toReturn.draw = _draw; //Modify public interface.
 	toReturn.setBodyType = _setBodyType;
+	toReturn.setSlotColor = _setSlotColor;
 	
 
 	//order means draw order
@@ -31,8 +33,8 @@ function CharacterSkeleton(_x, _y, _width, _height){
 		"hands":			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":15},
 		//head
 		"face": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":8},
-		"hair": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":10},
-		"mask": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":9},
+		"hair": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":9},
+		"mask": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":10},
 		//suit
 		"jumpsuit": 		{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":2},
 		"cape": 			{"x":0, "y":0, "width":640, "height":864, "sprite":undefined, "order":0},
@@ -97,10 +99,15 @@ function CharacterSkeleton(_x, _y, _width, _height){
 		delete _slots[toAdd];
 	}
 
+	function _setSlotColor(slot, r, g, b){
+		if(toReturn.slots[slot] && toReturn.slots[slot].sprite) {
+			toReturn.slots[slot].sprite.setColor(r, g, b, true);
+		}
+	}
+
 
 	//Set the body type for this characterSkeleton.
 	function _setBodyType(bodyType){
-
 		//
 		for(var s in _slots) {
 			if(_slots[s].sprite) { //If the slot is filled.
@@ -120,13 +127,20 @@ function CharacterSkeleton(_x, _y, _width, _height){
 			//Some error checking, we could be doing more here.
 			if(toReturn.slots[slot]) {
 				toReturn.slots[slot].sprite.setImage(sprite);
+				//Change the color of the new slot.
+				//Code would go here if this was ever being called.
+				/*
+				toReturn.slots[slot].sprite.setColor(toReturn.slots[slot].sprite.currentColor[0], 
+														toReturn.slots[slot].sprite.currentColor[1], 
+														toReturn.slots[slot].sprite.currentColor[2], 
+													false);
+				*/
 			}
 		//Otherwise.
 		} else {
 			//Remove the past contents of the slot if it exists.
 			if(toReturn.slots[slot]) {
-				console.log("Swapping "+slot+". Attempted to remove current module: " + base.removeModule(toReturn.slots[slot].sprite));
-				console.log("current size is: " + base.contents.length);
+				base.removeModule(toReturn.slots[slot].sprite);
 			}//
 
 			//Added.

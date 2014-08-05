@@ -4,7 +4,7 @@ function PowersScreen(_info){
 	var toReturn = base.interface; //Set toReturn via base.
 	toReturn.type = "PowersScreen";
 	var info = _info;
-	var maxPowers = 1;
+	var maxPowers = 2;
 	Touch.Collisions(base);
 
 
@@ -12,70 +12,271 @@ function PowersScreen(_info){
 	info.superhero.powersSelected = [];
 				
 	//Dev Splash Image
-	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-03.png");
+	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-03_alt.png");
 	base.addModule(splashImage);
 	
+	/*
 	var powersHintImg = Sprite(toReturn.bounds.width/2-256,toReturn.bounds.height/8-64,512,128, "images/dev/powersHint.png");
 	base.addModule(powersHintImg);
+	*/
 	
+	/*
 	var heroImage = Sprite(toReturn.bounds.width/2-256,toReturn.bounds.height/2-384,512,1024, "images/dev/bro.png");
 	base.addModule(heroImage);
+	*/
 	
-	var definition = Sprite(3*toReturn.bounds.width/4-128,toReturn.bounds.height/2-256,512,512, "images/dev/midrash_water.png");
-	base.addModule(definition);
+	
+	
+	var definition1 = Sprite(3*toReturn.bounds.width/4-128,6*toReturn.bounds.height/16,512,256, "images/dev/alpha.png");
+	base.addModule(definition1);
+	var definition2 = Sprite(3*toReturn.bounds.width/4-128,6*toReturn.bounds.height/16+256,512,256, "images/dev/alpha.png");
+	base.addModule(definition2);
 	
 	//Buttons
-	backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+	backButton = Sprite(0, 1080-128, 256, 128, "images/dev/buttons/back.png");
 	base.addModule(backButton);
 	
-	continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+	continueButton = Sprite(1920-256, 1080-128, 256, 128, "images/dev/buttons/continue.png");
 	base.addModule(continueButton);
 	
-	quitButton = Sprite(0, 0, 128, 128, "images/dev/quit.png");
+	quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
 	base.addModule(quitButton);
 	
 	//Powers
 	
-	var power3_fire_button = Sprite(0, 2*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/fire.png");
-	base.addModule(power3_fire_button);
+	var cat1_element_button = Sprite(64, 6*toReturn.bounds.height/16, 256, 64, "images/dev/powersButtons/elements.png");
+	base.addModule(cat1_element_button);
 	
-	var power4_water_button = Sprite(0, 3*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/water.png");
-	base.addModule(power4_water_button);
+	var cat2_energy_button = Sprite(64, 9*toReturn.bounds.height/16, 256, 64, "images/dev/powersButtons/energy.png");
+	base.addModule(cat2_energy_button);
 	
-	var power5_fly_button = Sprite(0, 4*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/fly.png");
-	base.addModule(power5_fly_button);
+	var cat3_mutant_button = Sprite(64, 10*toReturn.bounds.height/16, 256, 64, "images/dev/powersButtons/mutant.png");
+	base.addModule(cat3_mutant_button);
 	
-	var power6_diplomacy_button = Sprite(0, 5*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/diplomacy.png");
-	base.addModule(power6_diplomacy_button);
+	var cat4_super_button = Sprite(64, 11*toReturn.bounds.height/16, 256, 64, "images/dev/powersButtons/super.png");
+	base.addModule(cat4_super_button);
 	
-	var power7_superSmart_button = Sprite(0, 6*toReturn.bounds.height/8, 256, 128, "images/dev/powersButtons/superSmart.png");
-	base.addModule(power7_superSmart_button);
+	//ToyboxTab
+	var elementContent = ToyBoxTab(64,7*toReturn.bounds.height/16,256,128, "powers");
+	base.addModule(elementContent);
+	
+	var energyContent = ToyBoxTab(64,8*toReturn.bounds.height/16,256,128, "powers");
+	base.addModule(energyContent);
+	
+	var mutantContent = ToyBoxTab(64,9*toReturn.bounds.height/16,256,256, "powers");
+	base.addModule(mutantContent);
+	
+	var superContent = ToyBoxTab(64,10*toReturn.bounds.height/16,256,256, "powers");
+	base.addModule(superContent);
+	
+	//content powers
+	var elementOffset = 32;
+	//element
+	var fireButton = Sprite(elementOffset, 0, 256, 64, "images/dev/powersButtons/fire_roboto.png");
+	elementContent.addModule(fireButton);
+	var waterButton = Sprite(elementOffset, 64, 256, 64, "images/dev/powersButtons/water_roboto.png");
+	elementContent.addModule(waterButton);
+	//energy
+	var healButton = Sprite(elementOffset, 0, 256, 64, "images/dev/powersButtons/healing.png");
+	energyContent.addModule(healButton);
+	var laserButton = Sprite(elementOffset, 64, 256, 64, "images/dev/powersButtons/laser.png");
+	energyContent.addModule(laserButton);
+	//mutant
+	var duplicate = Sprite(elementOffset, 0, 256, 64, "images/dev/powersButtons/duplicate.png");
+	mutantContent.addModule(duplicate);
+	var mind = Sprite(elementOffset, 64, 256, 64, "images/dev/powersButtons/mind.png");
+	mutantContent.addModule(mind);
+	var teleport = Sprite(elementOffset, 128, 256, 64, "images/dev/powersButtons/teleport.png");
+	mutantContent.addModule(teleport);
+	var xray = Sprite(elementOffset, 192, 256, 64, "images/dev/powersButtons/xray.png");
+	mutantContent.addModule(xray);
+	//super
+	var flight = Sprite(elementOffset, 0, 256, 64, "images/dev/powersButtons/flight.png");
+	superContent.addModule(flight);
+	var speed = Sprite(elementOffset, 64, 256, 64, "images/dev/powersButtons/speed.png");
+	superContent.addModule(speed);
+	var smart = Sprite(elementOffset, 128, 256, 64, "images/dev/powersButtons/smart.png");
+	superContent.addModule(smart);
+	var strength = Sprite(elementOffset, 192, 256, 64, "images/dev/powersButtons/strength.png");
+	superContent.addModule(strength);
+	
+	//prep for screen
+	var selectedCategory = elementContent;
+	elementContent.select();
 	
 	//Events
 	backButton.addEvent("mousedown", base.changeState("QualitiesScreen", _info), false);
 	continueButton.addEvent("mousedown", base.changeState("GenderSelect", _info), false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 	
+	//Swap content Events
+	cat1_element_button.addEvent("mousedown", function(_clipBoard){
+
+		//If we need to unselect things.
+		if(selectedCategory != undefined) {
+			cat1_element_button.setImage("images/dev/powersButtons/elements.png"); //Unselect
+			selectedCategory.deselect();
+		}
+		
+		//Set our own image.  And mark that we're selected.
+		selectedCategory = elementContent;
+		cat1_element_button.setImage("images/dev/powersButtons/elements.png");
+		//And load in all of our tabs.
+		elementContent.select();
+		
+		//reset pos of tabs
+		cat2_energy_button.setImage("images/dev/powersButtons/energy.png", false, 64, 9*toReturn.bounds.height/16, 256, 64); 
+		cat3_mutant_button.setImage("images/dev/powersButtons/mutant.png", false, 64, 10*toReturn.bounds.height/16, 256, 64); 
+		cat4_super_button.setImage("images/dev/powersButtons/super.png", false, 64, 11*toReturn.bounds.height/16, 256, 64); 
+
+		if(_clipBoard.ToFire){
+			_clipBoard.ToFire.push("redraw");
+		} else {
+			_clipBoard.ToFire = ["redraw"];
+		}
+
+		_clipBoard.BlockEvents = ["mousedown"];
+
+	}, false);
 	
-	power3_fire_button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("powers",power3_fire_button,"fire","images/dev/powersButtons/fire.png","images/dev/powersButtons/fire_selected.png", _clipBoard);
+	cat2_energy_button.addEvent("mousedown", function(_clipBoard){
+
+		//If we need to unselect things.
+		if(selectedCategory != undefined) {
+			cat2_energy_button.setImage("images/dev/powersButtons/energy.png", false, 64, 7*toReturn.bounds.height/16, 256, 64); //Unselect
+			selectedCategory.deselect();
+		}
+		
+		//Set our own image.  And mark that we're selected.
+		selectedCategory = energyContent;
+		cat2_energy_button.setImage("images/dev/powersButtons/energy.png");
+		//And load in all of our tabs.
+		energyContent.select();
+		
+		cat3_mutant_button.setImage("images/dev/powersButtons/mutant.png", false, 64, 10*toReturn.bounds.height/16, 256, 64); 
+		cat4_super_button.setImage("images/dev/powersButtons/super.png", false, 64, 11*toReturn.bounds.height/16, 256, 64); 
+
+		if(_clipBoard.ToFire){
+			_clipBoard.ToFire.push("redraw");
+		} else {
+			_clipBoard.ToFire = ["redraw"];
+		}
+
+		_clipBoard.BlockEvents = ["mousedown"];
+
+	}, false);
+	
+	cat3_mutant_button.addEvent("mousedown", function(_clipBoard){
+
+		//If we need to unselect things.
+		if(selectedCategory != undefined) {
+			cat3_mutant_button.setImage("images/dev/powersButtons/mutant.png", false, 64, 8*toReturn.bounds.height/16, 256, 64); //Unselect
+			selectedCategory.deselect();
+		}
+		
+		//Set our own image.  And mark that we're selected.
+		selectedCategory = mutantContent;
+		cat3_mutant_button.setImage("images/dev/powersButtons/mutant.png");
+		//And load in all of our tabs.
+		mutantContent.select();
+		
+		cat2_energy_button.setImage("images/dev/powersButtons/energy.png", false, 64, 7*toReturn.bounds.height/16, 256, 64); 
+		cat4_super_button.setImage("images/dev/powersButtons/super.png", false, 64, 13*toReturn.bounds.height/16, 256, 64); 
+
+		if(_clipBoard.ToFire){
+			_clipBoard.ToFire.push("redraw");
+		} else {
+			_clipBoard.ToFire = ["redraw"];
+		}
+
+		_clipBoard.BlockEvents = ["mousedown"];
+
+	}, false);
+	
+	cat4_super_button.addEvent("mousedown", function(_clipBoard){
+
+		//If we need to unselect things.
+		if(selectedCategory != undefined) {
+			cat4_super_button.setImage("images/dev/powersButtons/super.png", false, 64, 9*toReturn.bounds.height/16, 256, 64); //Unselect
+			selectedCategory.deselect();
+		}
+		
+		//Set our own image.  And mark that we're selected.
+		selectedCategory = superContent;
+		cat4_super_button.setImage("images/dev/powersButtons/super.png");
+		//And load in all of our tabs.
+		superContent.select();
+		
+		cat2_energy_button.setImage("images/dev/powersButtons/energy.png", false, 64, 7*toReturn.bounds.height/16, 256, 64); 
+		cat3_mutant_button.setImage("images/dev/powersButtons/mutant.png", false, 64, 8*toReturn.bounds.height/16, 256, 64);
+
+		if(_clipBoard.ToFire){
+			_clipBoard.ToFire.push("redraw");
+		} else {
+			_clipBoard.ToFire = ["redraw"];
+		}
+
+		_clipBoard.BlockEvents = ["mousedown"];
+
+	}, false);
+	
+	//select powers events
+	//element
+	fireButton.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",fireButton,"fire","images/dev/powersButtons/fire_roboto.png","images/dev/powersButtons/fire_roboto_selected.png", _clipBoard);
+		_clipBoard.ToFire = ["redraw"];
+	},false);
+	waterButton.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",waterButton,"water","images/dev/powersButtons/water_roboto.png","images/dev/powersButtons/water_roboto_selected.png", _clipBoard);
+		_clipBoard.ToFire = ["redraw"];
+	},false);
+	//energy
+	healButton.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",healButton,"healing","images/dev/powersButtons/healing.png","images/dev/powersButtons/healing_selected.png", _clipBoard);
+		_clipBoard.ToFire = ["redraw"];
+	},false);
+	laserButton.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",laserButton,"laser","images/dev/powersButtons/laser.png","images/dev/powersButtons/laser_selected.png", _clipBoard);
+		_clipBoard.ToFire = ["redraw"];
+	},false);
+	//mutant
+	duplicate.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",duplicate,"duplicate","images/dev/powersButtons/duplicate.png","images/dev/powersButtons/duplicate_selected.png", _clipBoard);
+		_clipBoard.ToFire = ["redraw"];
+	},false);
+	mind.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",mind,"mind","images/dev/powersButtons/mind.png","images/dev/powersButtons/mind_selected.png", _clipBoard);
+		_clipBoard.ToFire = ["redraw"];
+	},false);
+	teleport.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",teleport,"teleport","images/dev/powersButtons/teleport.png","images/dev/powersButtons/teleport_selected.png", _clipBoard);
+		_clipBoard.ToFire = ["redraw"];
+	},false);
+	xray.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",xray,"xray","images/dev/powersButtons/xray.png","images/dev/powersButtons/xray_selected.png", _clipBoard);
+		_clipBoard.ToFire = ["redraw"];
+	},false);
+	//super
+	flight.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",flight,"flight","images/dev/powersButtons/flight.png","images/dev/powersButtons/flight_selected.png", _clipBoard);
+		_clipBoard.ToFire = ["redraw"];
+	},false);
+	speed.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",speed,"speed","images/dev/powersButtons/speed.png","images/dev/powersButtons/speed_selected.png", _clipBoard);
+		_clipBoard.ToFire = ["redraw"];
+	},false);
+	smart.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",smart,"smart","images/dev/powersButtons/smart.png","images/dev/powersButtons/smart_selected.png", _clipBoard);
+		_clipBoard.ToFire = ["redraw"];
+	},false);
+	strength.addEvent("mousedown", function(_clipBoard){
+		highlightQualityAndPowerButtons("powers",strength,"strength","images/dev/powersButtons/strength.png","images/dev/powersButtons/strength_selected.png", _clipBoard);
+		_clipBoard.ToFire = ["redraw"];
 	},false);
 	
-	power4_water_button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("powers",power4_water_button,"water","images/dev/powersButtons/water.png","images/dev/powersButtons/water_selected.png", _clipBoard);
-	},false);
 	
-	power5_fly_button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("powers",power5_fly_button,"fly","images/dev/powersButtons/fly.png","images/dev/powersButtons/fly_selected.png", _clipBoard);
-	},false);
 	
-	power6_diplomacy_button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("powers",power6_diplomacy_button,"diplomacy","images/dev/powersButtons/diplomacy.png","images/dev/powersButtons/diplomacy_selected.png", _clipBoard);
-	},false);
 	
-	power7_superSmart_button.addEvent("mousedown", function(_clipBoard){
-		highlightQualityAndPowerButtons("powers",power7_superSmart_button,"superSmart","images/dev/powersButtons/superSmart.png","images/dev/powersButtons/superSmart_selected.png", _clipBoard);
-	},false);
 
 
 	/*------------------INTERNAL FUNCTIONS----------------------------------*/
@@ -124,6 +325,17 @@ function PowersScreen(_info){
 			if(_clipBoard.ToFire) { _clipBoard.ToFire.push("redraw"); } else { _clipBoard.ToFire = ["redraw"]; }
 		}
 		console.log("Current list content: "+info.superhero[_list]);
+		
+		if(info.superhero[_list][0] != undefined){
+			definition1.setImage("images/dev/power_descriptions/"+info.superhero[_list][0]+".png");
+		}else{
+			definition1.setImage("images/dev/alpha.png");
+		}
+		if(info.superhero[_list][1] != undefined){
+			definition2.setImage("images/dev/power_descriptions/"+info.superhero[_list][1]+".png");
+		}else{
+			definition2.setImage("images/dev/alpha.png");
+		}
 
 
 		//ToDo: Sometime switch it out for javascript .find
