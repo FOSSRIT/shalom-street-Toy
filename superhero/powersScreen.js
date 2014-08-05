@@ -125,9 +125,9 @@ function PowersScreen(_info){
 		elementContent.select();
 		
 		//reset pos of tabs
-		cat2_energy_button.setImage("images/dev/powersButtons/energy.png", true, 64, 9*toReturn.bounds.height/16, 256, 64); 
-		cat3_mutant_button.setImage("images/dev/powersButtons/mutant.png", true, 64, 10*toReturn.bounds.height/16, 256, 64); 
-		cat4_super_button.setImage("images/dev/powersButtons/super.png", true, 64, 11*toReturn.bounds.height/16, 256, 64); 
+		cat2_energy_button.setImage("images/dev/powersButtons/energy.png", false, 64, 9*toReturn.bounds.height/16, 256, 64); 
+		cat3_mutant_button.setImage("images/dev/powersButtons/mutant.png", false, 64, 10*toReturn.bounds.height/16, 256, 64); 
+		cat4_super_button.setImage("images/dev/powersButtons/super.png", false, 64, 11*toReturn.bounds.height/16, 256, 64); 
 
 		if(_clipBoard.ToFire){
 			_clipBoard.ToFire.push("redraw");
@@ -143,7 +143,7 @@ function PowersScreen(_info){
 
 		//If we need to unselect things.
 		if(selectedCategory != undefined) {
-			cat2_energy_button.setImage("images/dev/powersButtons/energy.png", true, 64, 7*toReturn.bounds.height/16, 256, 64); //Unselect
+			cat2_energy_button.setImage("images/dev/powersButtons/energy.png", false, 64, 7*toReturn.bounds.height/16, 256, 64); //Unselect
 			selectedCategory.deselect();
 		}
 		
@@ -153,8 +153,8 @@ function PowersScreen(_info){
 		//And load in all of our tabs.
 		energyContent.select();
 		
-		cat3_mutant_button.setImage("images/dev/powersButtons/mutant.png", true, 64, 10*toReturn.bounds.height/16, 256, 64); 
-		cat4_super_button.setImage("images/dev/powersButtons/super.png", true, 64, 11*toReturn.bounds.height/16, 256, 64); 
+		cat3_mutant_button.setImage("images/dev/powersButtons/mutant.png", false, 64, 10*toReturn.bounds.height/16, 256, 64); 
+		cat4_super_button.setImage("images/dev/powersButtons/super.png", false, 64, 11*toReturn.bounds.height/16, 256, 64); 
 
 		if(_clipBoard.ToFire){
 			_clipBoard.ToFire.push("redraw");
@@ -170,7 +170,7 @@ function PowersScreen(_info){
 
 		//If we need to unselect things.
 		if(selectedCategory != undefined) {
-			cat3_mutant_button.setImage("images/dev/powersButtons/mutant.png", true, 64, 8*toReturn.bounds.height/16, 256, 64); //Unselect
+			cat3_mutant_button.setImage("images/dev/powersButtons/mutant.png", false, 64, 8*toReturn.bounds.height/16, 256, 64); //Unselect
 			selectedCategory.deselect();
 		}
 		
@@ -180,8 +180,8 @@ function PowersScreen(_info){
 		//And load in all of our tabs.
 		mutantContent.select();
 		
-		cat2_energy_button.setImage("images/dev/powersButtons/energy.png", true, 64, 7*toReturn.bounds.height/16, 256, 64); 
-		cat4_super_button.setImage("images/dev/powersButtons/super.png", true, 64, 13*toReturn.bounds.height/16, 256, 64); 
+		cat2_energy_button.setImage("images/dev/powersButtons/energy.png", false, 64, 7*toReturn.bounds.height/16, 256, 64); 
+		cat4_super_button.setImage("images/dev/powersButtons/super.png", false, 64, 13*toReturn.bounds.height/16, 256, 64); 
 
 		if(_clipBoard.ToFire){
 			_clipBoard.ToFire.push("redraw");
@@ -197,7 +197,7 @@ function PowersScreen(_info){
 
 		//If we need to unselect things.
 		if(selectedCategory != undefined) {
-			cat4_super_button.setImage("images/dev/powersButtons/super.png", true, 64, 9*toReturn.bounds.height/16, 256, 64); //Unselect
+			cat4_super_button.setImage("images/dev/powersButtons/super.png", false, 64, 9*toReturn.bounds.height/16, 256, 64); //Unselect
 			selectedCategory.deselect();
 		}
 		
@@ -207,8 +207,8 @@ function PowersScreen(_info){
 		//And load in all of our tabs.
 		superContent.select();
 		
-		cat2_energy_button.setImage("images/dev/powersButtons/energy.png", true, 64, 7*toReturn.bounds.height/16, 256, 64); 
-		cat3_mutant_button.setImage("images/dev/powersButtons/mutant.png", true, 64, 8*toReturn.bounds.height/16, 256, 64);
+		cat2_energy_button.setImage("images/dev/powersButtons/energy.png", false, 64, 7*toReturn.bounds.height/16, 256, 64); 
+		cat3_mutant_button.setImage("images/dev/powersButtons/mutant.png", false, 64, 8*toReturn.bounds.height/16, 256, 64);
 
 		if(_clipBoard.ToFire){
 			_clipBoard.ToFire.push("redraw");
