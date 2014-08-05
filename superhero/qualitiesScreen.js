@@ -17,6 +17,7 @@ function QualitiesScreen(_info){
 	//Dev Splash Image
 	var splashImage = Sprite(0,0,1920,1080, "images/dev/qualitiesButtons/background.png");
 	base.addModule(splashImage);
+	base.addModule(info.banner);
 	
 	/*
 	var qualitiesHintImg = Sprite(toReturn.bounds.width/2-256,toReturn.bounds.height/8-64,512,128, "images/dev/qualitiesHint.png");

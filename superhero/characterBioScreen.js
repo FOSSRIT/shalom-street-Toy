@@ -11,6 +11,8 @@ function CharacterBioScreen(_info){
 
 	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-05.png");
 	base.addModule(splashImage);
+	base.addModule(info.banner);
+	
 	base.addModule(bioSubmission);
 	bioSubmission.bounds.x = 700;
 	bioSubmission.bounds.y = 250;

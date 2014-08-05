@@ -13,6 +13,7 @@ function GenderSelect(_info){
 
 	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-14.png");
 	base.addModule(splashImage);
+	base.addModule(info.banner);
 
 	boyOption = Sprite(512, 216, 658, 864, "images/dev/alpha.png");
 	base.addModule(boyOption);

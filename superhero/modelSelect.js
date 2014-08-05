@@ -14,9 +14,9 @@ function ModelSelect(_info){
 	
 		var splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-15_alt.png");
 		base.addModule(splashImage);
+		base.addModule(info.banner);
 
 		info.superhero.bodyType = "female_1";
-		console.log('showing body types for female.')
 
 		//--------------------------------------
 
@@ -49,6 +49,7 @@ function ModelSelect(_info){
 	
 		var splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-16_alt.png");
 		base.addModule(splashImage);
+		base.addModule(info.banner);
 
 		info.superhero.bodyType = "male_1";
 		console.log('showing body types for male.')
