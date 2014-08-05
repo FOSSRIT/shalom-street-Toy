@@ -7,7 +7,7 @@ function SplashScreen(_info){
 	var info = _info;
 
 	//Set up the title screen.
-	var _background = Sprite(0, 0, 1920, 1080, "images/dev/splashTest04.png");
+	var _background = Sprite(0, 0, 1920, 1080, "images/Backgrounds/splashscreen-18.png");
 	base.addModule(_background);
 	/*set the position and origin*/
 	var _startButton = Sprite(1920/2-128, 3*1080/4-64, 256, 128, "images/dev/startButtonTest03.png");//*/, 128, 64);
