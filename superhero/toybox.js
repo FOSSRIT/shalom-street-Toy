@@ -21,7 +21,6 @@ function ToyBox(_x, _y, _width, _height) {
 	toReturn.type = "Toybox"
 
 	//Modify public interface and add variables as necessary.
-	toReturn.draw = _draw;
 	var tabs = [];
 	Touch.Collisions(base);
 
@@ -79,39 +78,6 @@ function ToyBox(_x, _y, _width, _height) {
 
 	}
 	
-	
-	function _draw(){
-
-		var toDraw = base.draw();
-
-		//Temp Dev Test
-		//--------ctx is not a variable that normally would be available here--------
-		//--------Comment this out outside of testing environment-----------------------
-		// Blue rectangle
-		ctx.beginPath();
-		ctx.lineWidth="10";
-		ctx.strokeStyle="blue";
-		ctx.rect(x,y,width,height);
-		ctx.stroke();
-		//Temp Dev Tab Section
-		//Green Rect
-		ctx.beginPath();
-		ctx.lineWidth="5";
-		ctx.strokeStyle="green";
-		ctx.rect(tabX,tabY,tabWidth,tabHeight);
-		ctx.stroke();
-		//Temp Dev Component Section
-		//Yellow Rect
-		ctx.beginPath();
-		ctx.lineWidth="5";
-		ctx.strokeStyle="yellow";
-		ctx.rect(componentsX,componentsY,componentsWidth,componentsHeight);
-		ctx.stroke();
-		//------------------End testing environment code--------------------------------
-		//------------------------------------------------------------------------------
-		
-		return toDraw;
-	}	
 
 	return toReturn;
 }

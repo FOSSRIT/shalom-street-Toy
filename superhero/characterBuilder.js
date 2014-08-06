@@ -55,13 +55,13 @@ function CharacterBuilder(_info){
 
 				//Add label.
 				//console.log(t);
-				var header = Sprite(0, -68, 128, 128, base.jsonData.categories[v].tabs[t].sprite);
+				var header = Sprite(128, -68, 128, 128, base.jsonData.categories[v].tabs[t].sprite);
 				tab.addModule(header);
 
 				//Add left/right buttons to tab.  These dimensions and stuff need to be changed to something that makes sense.
 				//Left
 				//tab.bounds.width/6-64
-				var leftButton = Sprite(-64, tab.bounds.height/8-64, 128, 128, "images/dev/left.png");
+				var leftButton = Sprite(64, tab.bounds.height/8-64, 128, 128, "images/dev/left.png");
 				leftButton.addEvent("mousedown", (function(tab) { //Passing in variable by value gets rid of the closure problem. 
 					var f = function(_clipBoard){ 
 						tab.rotate(1, tab.bounds.width/6)
@@ -99,7 +99,7 @@ function CharacterBuilder(_info){
 						bodyPart.addBodyType(b, option[b].sprite);
 					}
 					tab.addOption( Sprite(
-						(1+k)*tab.bounds.width/6-64, 
+						(1+k)*tab.bounds.width/6, 
 						tab.bounds.height/8-64, 
 						128, 128, 
 						option[sex].option_sprite[0]), bodyPart);
@@ -227,7 +227,7 @@ function CharacterBuilder(_info){
 		}, true);
 		
 		//colors buttons
-		var colorBanner = Sprite(toybox.bounds.width-256, 216, 256, 128, "images/dev/_00.png"); base.addModule(colorBanner);
+		var colorBanner = Sprite(toybox.bounds.width-276, 216, 256, 128, "images/dev/_00.png"); base.addModule(colorBanner);
 		//Define what colors we want to use.
 		var colors = { "purple":[205,105,201], "pink":[255,182,193], "brown":[139,69,19], "white":[255,255,255], "black":[1,1,1],
 			"red":[220, 20, 60], "orange":[238,118,1], "yellow":[255,215,1], "green":[1,201,87], "blue":[61,89,171] };
@@ -239,7 +239,7 @@ function CharacterBuilder(_info){
 			//Make the button.
 
 			//Could be formatted better.
-			var button = Sprite(toybox.bounds.width- (256-c_column*128), 344 + (128*c_row), 128, 128, "images/production/dressup/icons/colors/" + color + ".png");
+			var button = Sprite(toybox.bounds.width- (276-c_column*128), 364 + (128*c_row), 128, 128, "images/production/dressup/icons/colors/" + color + ".png");
 			
 			(function(color) { //Wrapping a function around the way we add events fixes closure issues.
 				button.addEvent("mousedown", function(){ 
