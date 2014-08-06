@@ -15,6 +15,7 @@ function ResultsScreen(_info){
 	//Dev Splash Image
 	splashImage = Sprite(0,0,1920,1080, "images/dev/resultsScreenTest02.png");
 	base.addModule(splashImage);
+	base.addModule(info.banner);
 	
 	//Logic
 	//See if based on qualities and powers if the player won or lost the scenario

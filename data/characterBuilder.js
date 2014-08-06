@@ -48,7 +48,7 @@ jsonLoader.result = {
 
 		"head": {
 			//URL of selected/unselected sprite.
-			"sprite": ["images/dev/hero/headTab_highlight.png", "images/dev/hero/headTab.png"],
+			"sprite": ["images/production/dressup/icons/categories/Head_selected.png", "images/production/dressup/icons/categories/Head.png"],
 			//these are the tabs that are included in each category.
 			"tabs": {
 				//This name should correspond to the name of the superhero slot it's going to go into.
@@ -451,7 +451,7 @@ jsonLoader.result = {
 			},
 		},
 		"suit": {
-			"sprite": ["images/dev/hero/suitTab_highlight.png", "images/dev/hero/suitTab.png"],
+			"sprite": ["images/production/dressup/icons/categories/Suit_selected.png", "images/production/dressup/icons/categories/Suit.png"],
 			"tabs": {
 				"jumpsuit": {
 					//URL of banner image for the tab.
@@ -617,7 +617,7 @@ jsonLoader.result = {
 			},
 		},
 		"shirt": {
-			"sprite": ["images/dev/hero/shirtTab_highlight.png", "images/dev/hero/shirtTab.png"],
+			"sprite": ["images/production/dressup/icons/categories/Shirt_selected.png", "images/production/dressup/icons/categories/Shirt.png"],
 			"tabs": {
 				"shirt": {
 					//URL of banner image for the tab.
@@ -756,7 +756,7 @@ jsonLoader.result = {
 			},
 		},
 		"pants": {
-			"sprite": ["images/dev/hero/pantsTab_highlight.png", "images/dev/hero/pantsTab.png"],
+			"sprite": ["images/production/dressup/icons/categories/Pants_selected.png", "images/production/dressup/icons/categories/Pants.png"],
 			"tabs": {
 				"pants": {
 					//URL of banner image for the tab.
@@ -949,7 +949,7 @@ jsonLoader.result = {
 			},
 		},
 		"accessories": {
-			"sprite": ["images/dev/hero/accessoriesTab_highlight.png", "images/dev/hero/accessoriesTab.png"],
+			"sprite": ["images/production/dressup/icons/categories/Accessories_selected.png", "images/production/dressup/icons/categories/Accessories.png"],
 			"tabs": {
 				"arm_guards": {
 					//URL of banner image for the tab.

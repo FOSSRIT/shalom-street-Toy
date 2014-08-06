@@ -14,6 +14,7 @@ function PowersScreen(_info){
 	//Dev Splash Image
 	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-03_alt.png");
 	base.addModule(splashImage);
+	base.addModule(info.banner);
 	
 	/*
 	var powersHintImg = Sprite(toReturn.bounds.width/2-256,toReturn.bounds.height/8-64,512,128, "images/dev/powersHint.png");

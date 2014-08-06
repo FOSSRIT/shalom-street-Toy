@@ -66,6 +66,7 @@
 				//Grab the Canvas.
 
 				bioSubmission = DomWrapper(document.getElementById("bioSubmitBox"));
+				//bioSubmission.visible = false;
 				canvas = document.getElementById("main");
 				ctx = canvas.getContext("2d");
 				//Make the canvas full screen
@@ -136,12 +137,25 @@
 		<!--Canvas is width and height of the screen.-->
 		<!--We'll need to set this stuff up so it goes full screen I guess.-->
 		
-		<!--I don't really understand how the width and height is functioning 
-		below on the canvas in line style. It seems to be acting as a resolution 
-		for the canvas. Not sure if canvas properties itself, or 
-		Possibly due to the fact that the canvas was made full screen 
-		by the "onLoad" script at the top of this page.-->
-		<textarea id="bioSubmitBox" style="resize: none; visibility:hidden; position:absolute; left:10px; top:10px; width:400px; height:400px">Enter your superhero's bio here!</textarea> 
+	
+		<textarea id="bioSubmitBox" style="resize: none; display:none; position:absolute; left:0; top:0; width:400px; height:400px">Enter your superhero's bio here!</textarea> 
+		<!--Form that we use for submitting the email address.-->
+		<form name="email" style=" font-size:24pt; padding:15px; width:20%; border-radius:10px; position:absolute; left:35%; top:40%; background-color:white; box-shadow: 0px 0px 10px black;" >
+			Email Adress: <input type="text" style="font-size:18pt; width:95%; padding:3px;" name="address" />
+			<input type="button" style="font-size:18pt; padding:4px;" value="Send Email" onclick="manager.handleEvent('sendEmail', {'address':document.forms['email']['address'].value});"/>
+			<input type="button" style="font-size:18pt; padding:4px;" value="Cancel" onclick="document.forms['email']['address'].value = ''; document.forms['email'].style.visibility = 'hidden';"/>
+		</form>
+		<!--Response forms-->
+		<form name="sent" style="visibility:hidden; font-size:24pt; padding:15px; width:20%; border-radius:10px; position:absolute; left:35%; top:40%; background-color:white; box-shadow: 0px 0px 10px black;" onsubmit="manager.handleEvent('sendEmail', {'address':document.forms['email']['address'].value});" >
+			Your Superhero has been successfully sent!
+			<input type="button" style="font-size:18pt; padding:4px;" value="Ok" onclick="document.forms['sent'].style.visibility = 'hidden';"/>
+		</form>
+
+		<form name="sent_error" style="visibility:hidden; font-size:24pt; padding:15px; width:20%; border-radius:10px; position:absolute; left:35%; top:40%; background-color:white; box-shadow: 0px 0px 10px black;" onsubmit="manager.handleEvent('sendEmail', {'address':document.forms['email']['address'].value});" >
+			There was an error sending your Superhero :( <br> Maybe the email address is wrong?
+			<input type="button" style="font-size:18pt; padding:4px;" value="Ok" onclick="document.forms['sent_error'].style.visibility = 'hidden';"/>
+		</form>
+
 		<canvas id="main" width="1920px" height="1080px"></canvas>
 	</body>
 

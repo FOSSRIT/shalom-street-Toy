@@ -80,31 +80,55 @@ function SuperPoseScreen(_info){
     	//console.log('saved');
     }
 
-    function email(data){
-	    //Make new xmlhttprequest object.
-	    /*var myRequest = xhr();
-	    // Build request.
-	   	myRequest.onreadystatechange = function(){
-	   		//Unneccessary.
-	    	//if(myRequest.readyState == 4 &&)
-	    }*/
-
-	    //myRequest.setRequestHeader('Content-Type')
+    function email(data, address){
 
 	    //Use jquery for Ajax, it's easier and I don't know Ajax very well.
 	    $.ajax({
 	    	type: "POST",
 	    	url: "email.php",
 	    	data: {
-	    		imgBase64: data
+	    		imgBase64: data,
+	    		address: address,
 	    	}
 	    }).done(function(o){
-	    	console.log(o);
+	    	if(o == 'success') {
+	    		_sentMail(true); //If we didn't get an error or did get an error.
+	    	} else {
+	    		_sentMail(false);
+	    	}
 	    });
 	}
 
-	var data = save();
-	email(data);;
+
+
+	backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+	function _sendMail(address){
+		try {
+			var data = save();
+			email(data, address);
+		} catch(e) {
+			//You must be offline.
+			console.log(e);
+			//console.log("You must be running on a server or set up correctly on a local server to send emails.");
+			_sentMail(false);
+		}
+	}
+	toReturn.sendMail = _sendMail;
+
+	function _sentMail(no_error) {
+		document.forms["email"].style.visibility = "hidden";
+		if(no_error) {
+			document.forms["sent"].style.visibility = "visible";
+		} else {
+			document.forms["sent_error"].style.visibility = "visible";
+		}
+	}
+
+	base.addEvent('sendEmail', function(_clipBoard){
+		toReturn.sendMail(_clipBoard.address);
+	}, false);
+
+
 
 
 	return toReturn;
