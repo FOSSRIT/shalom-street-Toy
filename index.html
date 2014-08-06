@@ -66,6 +66,7 @@
 				//Grab the Canvas.
 
 				bioSubmission = DomWrapper(document.getElementById("bioSubmitBox"));
+				//bioSubmission.visible = false;
 				canvas = document.getElementById("main");
 				ctx = canvas.getContext("2d");
 				//Make the canvas full screen
@@ -137,7 +138,7 @@
 		<!--We'll need to set this stuff up so it goes full screen I guess.-->
 		
 	
-		<textarea id="bioSubmitBox" style="resize: none; display: none; position:absolute; left:35%; top:100px; width:30%; height:400px">Enter your superhero's bio here!</textarea> 
+		<textarea id="bioSubmitBox" style="resize: none; display:none; position:absolute; left:0; top:0; width:400px; height:400px">Enter your superhero's bio here!</textarea> 
 		<!--Form that we use for submitting the email address.-->
 		<form name="email" style=" font-size:24pt; padding:15px; width:20%; border-radius:10px; position:absolute; left:35%; top:40%; background-color:white; box-shadow: 0px 0px 10px black;" >
 			Email Adress: <input type="text" style="font-size:18pt; width:95%; padding:3px;" name="address" />

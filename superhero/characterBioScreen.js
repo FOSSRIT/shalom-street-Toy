@@ -13,11 +13,7 @@ function CharacterBioScreen(_info){
 	base.addModule(splashImage);
 	base.addModule(info.banner);
 	
-	base.addModule(bioSubmission);
-	bioSubmission.bounds.x = 700;
-	bioSubmission.bounds.y = 250;
-	bioSubmission.bounds.width = 800;
-	bioSubmission.bounds.height = 300;
+
 	
 	//option tabs
 	var option1 = Sprite(32,8*toReturn.bounds.height/16-32,64,64, "images/dev/charBioPage/1_highlight.png");
@@ -50,7 +46,13 @@ function CharacterBioScreen(_info){
 	var bioDescription3 = Sprite(0,0,896,384, "images/dev/_03.png");
 	content3.addModule(bioDescription3); 
 	//bio_custom
-	var bioDescription4 = Sprite(0,0,896,384, "images/dev/_04.png");
+	//var bioDescription4 = Sprite(0,0,896,384, "images/dev/_04.png");
+	var bioDescription4 = bioSubmission;
+	bioDescription4.bounds.x = 0;
+	bioDescription4.bounds.y = 0;
+	bioDescription4.bounds.width = 800;
+	bioDescription4.bounds.height = 300;
+	//bioSubmission.getDom().
 	content4.addModule(bioDescription4); 
 
 	/*var domElementThing = DomWrapper(document.getElementById("bioSubmitBox"));
