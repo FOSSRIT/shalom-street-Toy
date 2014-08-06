@@ -80,11 +80,14 @@ function ScenarioScreen(_info){
 	easyContent.select();
 	
 	//Nav Buttons
+	/*
 	var backButton = Sprite(0, 1080-128, 256, 128, "images/dev/buttons/back.png");
 	base.addModule(backButton);
 	
 	var quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
 	base.addModule(quitButton);
+	
+	*/
 
 
 	//Add mouseover events. 
@@ -264,42 +267,44 @@ function ScenarioScreen(_info){
 
 
 	//Add buttons for moving around states.
+	/*
 	backButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false );
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false );
+	*/
 
 	//Easy
 	scenario1Button.addEvent("mousedown", function(_clipBoard){
-		info.currentScenario = "default";
+		info.currentScenario = "team";
 		//info.currentHeader = Sprite("")
 		base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
 	scenario2Button.addEvent("mousedown", function(_clipBoard){
-		info.currentScenario = "default";
+		info.currentScenario = "bank";
 		base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
 	scenario3Button.addEvent("mousedown", function(_clipBoard){
-		info.currentScenario = "default";
+		info.currentScenario = "villain";
 		base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
 	
 	
 	//Medium
 	bullyButton.addEvent("mousedown", function(_clipBoard){
-			info.currentScenario = "default";
+			info.currentScenario = "bully";
 			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
 	aliensButton.addEvent("mousedown", function(_clipBoard){
-			info.currentScenario = "default";
+			info.currentScenario = "whale";
 			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
 	mediumButton3.addEvent("mousedown", function(_clipBoard){
-			info.currentScenario = "default";
+			info.currentScenario = "volcano";
 			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
 	
 	//Hard
 	testButton1.addEvent("mousedown", function(_clipBoard){
-			info.currentScenario = "default";
+			info.currentScenario = "toy";
 			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
 	testButton3.addEvent("mousedown", function(_clipBoard){
@@ -307,7 +312,7 @@ function ScenarioScreen(_info){
 			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
 	testButton5.addEvent("mousedown", function(_clipBoard){
-			info.currentScenario = "default";
+			info.currentScenario = "aliens";
 			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
 

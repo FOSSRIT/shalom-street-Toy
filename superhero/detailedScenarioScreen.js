@@ -11,13 +11,10 @@ function DetailedScenarioScreen(_info){
 	jsonLoader.Load("data/scenarios.js", function(result){
 		jsonBuilder.GetJson(base, result);
 		
-		var splashImage = Sprite(0, 0, 1920, 1080, "images/Backgrounds/background-09.png");
-		base.addModule(splashImage);
+		
 
-		/*
-		var comicImage = Sprite(0, 0, 1920, 1080, base.jsonData[info.currentScenario].background);
-		base.addModule(comicImage);
-		*/
+		var splashImage = Sprite(0, 0, 1920, 1080, base.jsonData[info.currentScenario].background);
+		base.addModule(splashImage);
 		
 
 		//Other data.
@@ -45,14 +42,16 @@ function DetailedScenarioScreen(_info){
 		*/
 		
 		//Buttons
-		var backButton = Sprite(0, 1080-128, 256, 128, "images/dev/buttons/back.png");
+		var backButton = Sprite(0, 1080-128, 512, 150, "images/dev/alpha.png");
 		base.addModule(backButton);
 		
-		var continueButton = Sprite(1920-256, 1080-128, 256, 128, "images/dev/buttons/continue.png");
+		var continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
 		base.addModule(continueButton);
 		
+		/*
 		var quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
 		base.addModule(quitButton);
+		*/
 		
 		//Events
 		backButton.addEvent("mousedown", base.changeState("ScenarioScreen", _info), false);

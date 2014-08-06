@@ -12,17 +12,20 @@ function SuperPoseScreen(_info){
 	base.addModule(splashImage);
 	
 	//Buttons
+	/*
 	backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
 	base.addModule(backButton);
+	*/
 	
-	continueButton = Sprite(1920-128, 1080-128, 128, 128, "images/dev/continue.png");
+	continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
 	base.addModule(continueButton);
 	
 	var quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
 	base.addModule(quitButton);
 	
 	//Events
-	backButton.addEvent("mousedown", base.changeState("ResultsScreen", _info), false);
+	//backButton.addEvent("mousedown", base.changeState("ResultsScreen", _info), false);
+	
 	continueButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 
@@ -101,7 +104,7 @@ function SuperPoseScreen(_info){
 
 
 
-	backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+	
 	function _sendMail(address){
 		try {
 			var data = save();

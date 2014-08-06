@@ -50,14 +50,16 @@ function ResultsScreen(_info){
 	base.addModule(resultImage);
 	
 	//Buttons
+	/*
 	backButton = Sprite(0, 1080-128, 256, 128, "images/dev/buttons/back.png");
 	base.addModule(backButton);
+	*/
 	
 	//Change the continue button based on whether or not we won.
 	if(info.win){
-		continueButton = Sprite(1920-256, 1080-128, 256, 128, "images/dev/buttons/continue.png");
+		continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
 	} else if(!info.win){
-		continueButton = Sprite(1920-256, 1080-128, 256, 128, "images/dev/tryAgain.png");
+		continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
 	}
 	//Add it regardless.
 	base.addModule(continueButton);
@@ -66,7 +68,9 @@ function ResultsScreen(_info){
 	base.addModule(quitButton);
 	
 	//Events
+	/*
 	backButton.addEvent("mousedown", base.changeState("CharacterBioScreen", _info), false);
+	*/
 
 	//We swap out the image and destination based on how you did.
 	if(info.win){
