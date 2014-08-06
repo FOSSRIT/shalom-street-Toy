@@ -35,7 +35,7 @@ function CharacterBuilder(_info){
 		for (var v in base.jsonData.categories) {
 			i++; //I moved this up here and started at -1 to 0 to make it easier to read.
 			//Not sure what the positioning is doing with this, but I guess I trust it.
-			var category = Sprite(0, (2+i)*toybox.bounds.width/9 - 64, 128, 128, base.jsonData.categories[v].sprite[1]); //Start with unselected.
+			var category = Sprite(0, 400+(i*84), 320, 80, base.jsonData.categories[v].sprite[1]); //Start with unselected.
 			//We add a property on for selected/unselected and for what tabs it's linked to.  
 			//We can do this because javascript.
 			//In the future, we might possibly make a better more modular approach to this?
@@ -227,7 +227,7 @@ function CharacterBuilder(_info){
 		}, true);
 		
 		//colors buttons
-		var colorBanner = Sprite(toybox.bounds.width-276, 216, 256, 128, "images/dev/_00.png"); base.addModule(colorBanner);
+		var colorBanner = Sprite(toybox.bounds.width-276, 231, 256, 128, "images/dev/_00.png"); base.addModule(colorBanner);
 		//Define what colors we want to use.
 		var colors = { "purple":[205,105,201], "pink":[255,182,193], "brown":[139,69,19], "white":[255,255,255], "black":[1,1,1],
 			"red":[220, 20, 60], "orange":[238,118,1], "yellow":[255,215,1], "green":[1,201,87], "blue":[61,89,171] };
@@ -239,7 +239,7 @@ function CharacterBuilder(_info){
 			//Make the button.
 
 			//Could be formatted better.
-			var button = Sprite(toybox.bounds.width- (276-c_column*128), 364 + (128*c_row), 128, 128, "images/production/dressup/icons/colors/" + color + ".png");
+			var button = Sprite(toybox.bounds.width- (276-c_column*128), 379 + (128*c_row), 128, 128, "images/production/dressup/icons/colors/" + color + ".png");
 			
 			(function(color) { //Wrapping a function around the way we add events fixes closure issues.
 				button.addEvent("mousedown", function(){ 
