@@ -35,6 +35,10 @@ jsonLoader.result = {
 		"title": 		"images/dev/alpha.png",
 		"summary": 		"images/dev/alpha.png",
 		"comic": 		"images/dev/alpha.png",
+		"required": {
+			"powers": [],
+			"qualities": ["bravery"]
+		}
 	},
 	"Fire": {
 		"banner": 		"images/production/scenarios/banners/fire.png", 
@@ -49,6 +53,10 @@ jsonLoader.result = {
 		"title": 		"images/dev/alpha.png",
 		"summary": 		"images/dev/alpha.png",
 		"comic": 		"images/dev/alpha.png",
+		"required": {
+			"powers": [],
+			"qualities": ["bravery"]
+		}
 	},
 	//default template
 	"default": {
@@ -57,6 +65,10 @@ jsonLoader.result = {
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+		"required": {
+			"powers": [],
+			"qualities": ["bravery"]
+		}
 	},
 	//Easy
 	"team" :{
@@ -65,6 +77,10 @@ jsonLoader.result = {
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+		"required": {
+			"powers": [],
+			"qualities": ["bravery"]
+		}
 	},
 	"bank" :{
 		"banner": 		"images/production/scenarios/banners/fire.png", 
@@ -72,6 +88,10 @@ jsonLoader.result = {
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+		"required": {
+			"powers": [],
+			"qualities": ["bravery"]
+		}
 	},
 	"villain" :{
 		"banner": 		"images/production/scenarios/banners/fire.png", 
@@ -79,6 +99,10 @@ jsonLoader.result = {
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+		"required": {
+			"powers": [],
+			"qualities": ["bravery"]
+		}
 	},
 	//Medium
 	"bully" :{
@@ -87,6 +111,10 @@ jsonLoader.result = {
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+		"required": {
+			"powers": [],
+			"qualities": ["bravery"]
+		}
 	},
 	"whale" :{
 		"banner": 		"images/production/scenarios/banners/fire.png", 
@@ -94,6 +122,10 @@ jsonLoader.result = {
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+		"required": {
+			"powers": [],
+			"qualities": ["bravery"]
+		}
 	},
 	"volcano" :{
 		"banner": 		"images/production/scenarios/banners/fire.png", 
@@ -101,6 +133,10 @@ jsonLoader.result = {
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+		"required": {
+			"powers": [],
+			"qualities": ["bravery"]
+		}
 	},
 	//Hard
 	"toy" :{
@@ -109,6 +145,10 @@ jsonLoader.result = {
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+		"required": {
+			"powers": ["water"],
+			"qualities": ["bravery"]
+		}
 	},
 	"fire" :{
 		"banner": 		"images/production/scenarios/banners/fire.png", 
@@ -116,6 +156,10 @@ jsonLoader.result = {
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+		"required": {
+			"powers": ["water"],
+			"qualities": ["bravery"]
+		}
 	},
 	"aliens" :{
 		"banner": 		"images/production/scenarios/banners/fire.png", 
@@ -123,6 +167,10 @@ jsonLoader.result = {
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
+		"required": {
+			"powers": ["water"],
+			"qualities": ["bravery"]
+		}
 	},
 	
 

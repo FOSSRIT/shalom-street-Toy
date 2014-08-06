@@ -22,38 +22,17 @@ function ResultsScreen(_info){
 	powerFound = false;
 	qualityFound = false;
 
-	var powerRequirements = [];
-	var qualityRequirements = [];
-
-	//Load up your requirements.
-	if(info.currentScenario == "Cat") {
-		powerRequirements.push("fly");
-		qualityRequirements.push("empathy");
-		qualityRequirements.push("courage");
-	} else if(info.currentScenario == "Fire") {
-		powerRequirements.push("water");
-		qualityRequirements.push("courage");
-		qualityRequirements.push("empathy");
-		qualityRequirements.push("honor");
-	} else if(info.currentScenario == "Children") {
-		console.log("pushing for Children");
-		powerRequirements.push("diplomacy");
-		powerRequirements.push("superSmart");
-		qualityRequirements.push("empathy");
-		qualityRequirements.push("forgiveness");
-		qualityRequirements.push("honor");
-		qualityRequirements.push("courage")
-	} else {
-		//
-	}
-
 	//Search to see if you have the requirements.
-	//Right now you just need one of each.  In the future, this should change.
-	for(var i=0; i<powerRequirements.length; i++){//} in powerRequirements) {
-		if(info.superhero.powers.indexOf(powerRequirements[i]) != -1) { powerFound = true; };
+	console.log(info.requiredPowers);
+	console.log(info.superhero.powers);
+	//Right now you just need one of each.  In the future, this could change.
+	for(var i=0; i<info.requiredPowers.length; i++){//} in powerRequirements) {
+		if(info.superhero.powers.indexOf(info.requiredPowers[i]) != -1) { powerFound = true; };
+		console.log('found power!');
 	}
-	for(var i=0; i<qualityRequirements.length; i++){//} in qualityRequirements) {
-		if(info.superhero.virtues.indexOf(qualityRequirements[i]) != -1) { qualityFound = true; };
+	for(var i=0; i<info.requiredQualities.length; i++){//} in qualityRequirements) {
+		if(info.superhero.virtues.indexOf(info.requiredQualities[i]) != -1) { qualityFound = true; };
+		console.log('found quality!');
 	}
 
 

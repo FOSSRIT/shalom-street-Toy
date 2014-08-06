@@ -303,7 +303,7 @@ function ScenarioScreen(_info){
 			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
 	testButton3.addEvent("mousedown", function(_clipBoard){
-			info.currentScenario = "default";
+			info.currentScenario = "fire";
 			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
 	testButton5.addEvent("mousedown", function(_clipBoard){
