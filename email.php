@@ -16,7 +16,7 @@ try {
 	$mail->Port = 25;
 	$mail->From = 'webmaster@127.0.0.1';
 	$mail->FromName = 'Mailer';
-	$mail->addAddress('shumway.danny@gmail.com', 'Joe User');     // Add a recipient
+	$mail->addAddress($_POST["address"]);     // Add a recipient
 	//$mail->addAddress('ellen@example.com');               // Name is optional
 	//$mail->addReplyTo('info@example.com', 'Information');
 	//$mail->addCC('cc@example.com');
@@ -37,9 +37,9 @@ try {
 
 	$mail->isHTML(true);                                  // Set email format to HTML
 
-	$mail->Subject = 'Shalom Street Image';
-	$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-	$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+	$mail->Subject = 'Shalom Street Superhero';
+	$mail->Body    = "Thanks for using our app and visiting our museum!  We've attached an image of the superhero you created!<br><br>On behalf of everyone here at Shalom Street Museum, have a great day!";
+	$mail->AltBody = "Thanks for using our app and visiting our museum!  We've attached an image of the superhero you created!";
 
 	$mail->send();
 } catch (phpmailerException $e) {
@@ -47,5 +47,5 @@ try {
 }
 
 
-echo 'sent correctly';
+echo 'success';
 ?>
