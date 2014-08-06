@@ -37,21 +37,21 @@ function CharacterBioScreen(_info){
 	
 	//Content
 	//bio1
-	var bioDescription1 = Sprite(0,0,896,384, "images/dev/charBioPage/bio_Lorem.png");
+	var bioDescription1 = Sprite(0,0,896,384, "images/dev/charBioPage/bio_1.png");
 	content1.addModule(bioDescription1); 
 	//bio1
-	var bioDescription2 = Sprite(0,0,896,384, "images/dev/_02.png");
+	var bioDescription2 = Sprite(0,0,896,384, "images/dev/charBioPage/bio_2.png");
 	content2.addModule(bioDescription2); 
 	//bio1
-	var bioDescription3 = Sprite(0,0,896,384, "images/dev/_03.png");
+	var bioDescription3 = Sprite(0,0,896,384, "images/dev/charBioPage/bio_3.png");
 	content3.addModule(bioDescription3); 
 	//bio_custom
 	//var bioDescription4 = Sprite(0,0,896,384, "images/dev/_04.png");
 	var bioDescription4 = bioSubmission;
 	bioDescription4.bounds.x = 0;
 	bioDescription4.bounds.y = 0;
-	bioDescription4.bounds.width = 800;
-	bioDescription4.bounds.height = 300;
+	bioDescription4.bounds.width = 896;
+	bioDescription4.bounds.height = 384;
 	//bioSubmission.getDom().
 	content4.addModule(bioDescription4); 
 
