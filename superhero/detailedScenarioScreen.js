@@ -20,7 +20,19 @@ function DetailedScenarioScreen(_info){
 		*/
 		
 
+		//Other data.
+		console.log(info.currentScenario);
 		info.banner = Sprite(0, 0, 1920, 1080, base.jsonData[info.currentScenario].banner);
+		info.requiredPowers = [];
+		info.requiredQualities = [];
+		for(var i = 0; i < base.jsonData[info.currentScenario].required.powers.length; i++){
+			info.requiredPowers.push(base.jsonData[info.currentScenario].required.powers[i]);
+		}
+		for(i = 0; i < base.jsonData[info.currentScenario].required.qualities.length; i++){
+			info.requiredQualities.push(base.jsonData[info.currentScenario].required.qualities[i]);
+		}
+
+
 		//info
 		
 		/*
