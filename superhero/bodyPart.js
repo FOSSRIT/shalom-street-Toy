@@ -20,7 +20,7 @@ function BodyPart(x, y, width, height){
 			currentColor = [r, g, b];
 		} catch(e) {
 			//You must be offline.
-			console.log(e.message);
+			console.log("You must be running on a server or set up correctly on a local server to change colors.");
 		}
 	}
 

@@ -81,15 +81,6 @@ function SuperPoseScreen(_info){
     }
 
     function email(data){
-	    //Make new xmlhttprequest object.
-	    /*var myRequest = xhr();
-	    // Build request.
-	   	myRequest.onreadystatechange = function(){
-	   		//Unneccessary.
-	    	//if(myRequest.readyState == 4 &&)
-	    }*/
-
-	    //myRequest.setRequestHeader('Content-Type')
 
 	    //Use jquery for Ajax, it's easier and I don't know Ajax very well.
 	    $.ajax({
@@ -103,8 +94,19 @@ function SuperPoseScreen(_info){
 	    });
 	}
 
-	var data = save();
-	email(data);;
+
+
+	backButton = Sprite(0, 1080-128, 128, 128, "images/dev/back.png");
+	function _sendMail(address){
+		try {
+			var data = save();
+			email(data);
+		} catch(e) {
+			//You must be offline.
+			console.log("You must be running on a server or set up correctly on a local server to send emails.");
+		}
+	}
+	toReturn.sendMail = _sendMail;
 
 
 	return toReturn;
