@@ -227,10 +227,12 @@ function CharacterBuilder(_info){
 		}, true);
 		
 		//colors buttons
-		var colorBanner = Sprite(toybox.bounds.width-276, 231, 256, 128, "images/dev/_00.png"); base.addModule(colorBanner);
+		var colorBanner = Sprite(toybox.bounds.width-276, 231, 256, 128, "images/dev/buttons/colorsTitle.png"); base.addModule(colorBanner);
 		//Define what colors we want to use.
-		var colors = { "purple":[205,105,201], "pink":[255,182,193], "brown":[139,69,19], "white":[255,255,255], "black":[1,1,1],
-			"red":[220, 20, 60], "orange":[238,118,1], "yellow":[255,215,1], "green":[1,201,87], "blue":[61,89,171] };
+		var colors = { 
+			"red":[220, 20, 60], "orange":[238,118,1], "yellow":[255,215,1], "green":[1,201,87], "blue":[61,89,171],
+			"purple":[205,105,201], "pink":[255,182,193], "brown":[139,69,19], "white":[255,255,255], "black":[1,1,1]
+			 };
 		var columns = 2; var rows = 5; //How many rows and columns are showing up in our grid.
 
 		var c_row = 0; var c_column = 0;

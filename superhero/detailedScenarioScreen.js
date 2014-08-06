@@ -10,20 +10,27 @@ function DetailedScenarioScreen(_info){
 	//Load data in.
 	jsonLoader.Load("data/scenarios.js", function(result){
 		jsonBuilder.GetJson(base, result);
-
-
-		var splashImage = Sprite(0, 0, 1920, 1080, base.jsonData[info.currentScenario].background);
+		
+		var splashImage = Sprite(0, 0, 1920, 1080, "images/Backgrounds/background-09.png");
 		base.addModule(splashImage);
+
+		/*
+		var comicImage = Sprite(0, 0, 1920, 1080, base.jsonData[info.currentScenario].background);
+		base.addModule(comicImage);
+		*/
 		
 
 		info.banner = Sprite(0, 0, 1920, 1080, base.jsonData[info.currentScenario].banner);
 		//info
+		
+		/*
 		comic = Sprite(128, 3*toReturn.bounds.height/7-64, 256, 512, base.jsonData[info.currentScenario].comic);
 		base.addModule(comic);
 		title = Sprite(2*toReturn.bounds.width/6-128, 2*toReturn.bounds.height/6-64, 512, 128, base.jsonData[info.currentScenario].title);
 		base.addModule(title);
 		summary = Sprite(2*toReturn.bounds.width/6-128, 4*toReturn.bounds.height/6-256, 1024, 512, base.jsonData[info.currentScenario].summary);
 		base.addModule(summary);
+		*/
 		
 		//Buttons
 		var backButton = Sprite(0, 1080-128, 256, 128, "images/dev/buttons/back.png");
