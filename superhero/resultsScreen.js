@@ -22,38 +22,17 @@ function ResultsScreen(_info){
 	powerFound = false;
 	qualityFound = false;
 
-	var powerRequirements = [];
-	var qualityRequirements = [];
-
-	//Load up your requirements.
-	if(info.currentScenario == "Cat") {
-		powerRequirements.push("fly");
-		qualityRequirements.push("empathy");
-		qualityRequirements.push("courage");
-	} else if(info.currentScenario == "Fire") {
-		powerRequirements.push("water");
-		qualityRequirements.push("courage");
-		qualityRequirements.push("empathy");
-		qualityRequirements.push("honor");
-	} else if(info.currentScenario == "Children") {
-		console.log("pushing for Children");
-		powerRequirements.push("diplomacy");
-		powerRequirements.push("superSmart");
-		qualityRequirements.push("empathy");
-		qualityRequirements.push("forgiveness");
-		qualityRequirements.push("honor");
-		qualityRequirements.push("courage")
-	} else {
-		//
-	}
-
 	//Search to see if you have the requirements.
-	//Right now you just need one of each.  In the future, this should change.
-	for(var i=0; i<powerRequirements.length; i++){//} in powerRequirements) {
-		if(info.superhero.powers.indexOf(powerRequirements[i]) != -1) { powerFound = true; };
+	console.log(info.requiredPowers);
+	console.log(info.superhero.powers);
+	//Right now you just need one of each.  In the future, this could change.
+	for(var i=0; i<info.requiredPowers.length; i++){//} in powerRequirements) {
+		if(info.superhero.powers.indexOf(info.requiredPowers[i]) != -1) { powerFound = true; };
+		console.log('found power!');
 	}
-	for(var i=0; i<qualityRequirements.length; i++){//} in qualityRequirements) {
-		if(info.superhero.virtues.indexOf(qualityRequirements[i]) != -1) { qualityFound = true; };
+	for(var i=0; i<info.requiredQualities.length; i++){//} in qualityRequirements) {
+		if(info.superhero.virtues.indexOf(info.requiredQualities[i]) != -1) { qualityFound = true; };
+		console.log('found quality!');
 	}
 
 
@@ -71,14 +50,16 @@ function ResultsScreen(_info){
 	base.addModule(resultImage);
 	
 	//Buttons
+	/*
 	backButton = Sprite(0, 1080-128, 256, 128, "images/dev/buttons/back.png");
 	base.addModule(backButton);
+	*/
 	
 	//Change the continue button based on whether or not we won.
 	if(info.win){
-		continueButton = Sprite(1920-256, 1080-128, 256, 128, "images/dev/buttons/continue.png");
+		continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
 	} else if(!info.win){
-		continueButton = Sprite(1920-256, 1080-128, 256, 128, "images/dev/tryAgain.png");
+		continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
 	}
 	//Add it regardless.
 	base.addModule(continueButton);
@@ -87,7 +68,9 @@ function ResultsScreen(_info){
 	base.addModule(quitButton);
 	
 	//Events
+	/*
 	backButton.addEvent("mousedown", base.changeState("CharacterBioScreen", _info), false);
+	*/
 
 	//We swap out the image and destination based on how you did.
 	if(info.win){
