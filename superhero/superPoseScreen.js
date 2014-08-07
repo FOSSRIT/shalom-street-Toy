@@ -120,6 +120,7 @@ function SuperPoseScreen(_info){
 
 	function _sentMail(no_error) {
 		document.forms["email"].style.visibility = "hidden";
+		document.forms["shalom_confirm"].style.visibility = "hidden";
 		if(no_error) {
 			document.forms["sent"].style.visibility = "visible";
 		} else {
@@ -129,6 +130,18 @@ function SuperPoseScreen(_info){
 
 	base.addEvent('sendEmail', function(_clipBoard){
 		toReturn.sendMail(_clipBoard.address);
+	}, false);
+
+
+	var facebook = Sprite(60, 980, 800, 100, "images/dev/alpha.png");
+	base.addModule(facebook);
+	facebook.addEvent("mousedown", function(_clipBoard){
+		document.forms["shalom_confirm"].style.visibility = "visible";
+	}, false);
+	var email = Sprite(60, 880, 800, 100,  "images/dev/alpha.png");
+	base.addModule(email);
+	email.addEvent("mousedown", function(_clipBoard){
+		document.forms["email"].style.visibility = "visible";
 	}, false);
 
 

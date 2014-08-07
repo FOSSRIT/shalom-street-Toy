@@ -47,6 +47,7 @@ function DetailedScenarioScreen(_info){
 		
 		var continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
 		base.addModule(continueButton);
+
 		
 		/*
 		var quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
