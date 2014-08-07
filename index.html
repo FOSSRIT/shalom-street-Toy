@@ -52,7 +52,7 @@
 		<script>
 
 			var canvas, ctx, manager, playArea;
-			var bioSubmission;
+			var bioSubmission, bioName;
 			var superhero = {
 				"virtues":[],
 				"skeleton":undefined,
@@ -66,6 +66,7 @@
 				//Grab the Canvas.
 
 				bioSubmission = DomWrapper(document.getElementById("bioSubmitBox"));
+				bioName = DomWrapper(document.getElementById("bioNameBox"));
 				//bioSubmission.visible = false;
 				canvas = document.getElementById("main");
 				ctx = canvas.getContext("2d");
@@ -138,7 +139,7 @@
 		<!--We'll need to set this stuff up so it goes full screen I guess.-->
 		
 	
-		<textarea id="bioSubmitBox" style="resize: none; display:none; position:absolute; left:0; top:0; width:400px; height:400px">Enter your superhero's bio here!</textarea> 
+		<textarea id="bioSubmitBox" style="font-size:18px; resize: none; display:none; position:absolute; left:0; top:0; width:400px; height:400px">Enter your superhero's bio here!</textarea> 
 		<!--Form that we use for submitting the email address.-->
 		<form name="email" style=" font-size:24pt; padding:15px; width:20%; border-radius:10px; position:absolute; left:35%; top:40%; background-color:white; box-shadow: 0px 0px 10px black;" >
 			Email Adress: <input type="text" style="font-size:18pt; width:95%; padding:3px;" name="address" />
@@ -155,6 +156,8 @@
 			There was an error sending your Superhero :( <br> Maybe the email address is wrong?
 			<input type="button" style="font-size:18pt; padding:4px;" value="Ok" onclick="document.forms['sent_error'].style.visibility = 'hidden';"/>
 		</form>
+
+		<input id="bioNameBox" style="font-size:18px; resize: none; display:none; position:absolute; left:0; top:0; width:100px; height:100px">
 
 		<canvas id="main" width="1920px" height="1080px"></canvas>
 	</body>
