@@ -55,6 +55,14 @@ function CharacterBioScreen(_info){
 	//bioSubmission.getDom().
 	content4.addModule(bioDescription4); 
 
+	//Name tag.
+	var name = bioName;
+	name.bounds.x = 125;
+	name.bounds.y = 400;
+	name.bounds.width = 400;
+	name.bounds.height = 80;
+	base.addModule(name);
+
 	/*var domElementThing = DomWrapper(document.getElementById("bioSubmitBox"));
 	manager.addModule(domElementThing);*/
 	
