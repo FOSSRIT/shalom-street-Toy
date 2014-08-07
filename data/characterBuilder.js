@@ -246,29 +246,29 @@ jsonLoader.result = {
 
 						"hair_01":{
 							"male_1": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
-								"sprite": "images/production/dressup/male/young/hair/1.png"
+								"option_sprite": ["images/production/dressup/icons/hair/0-01.png", "images/production/dressup/icons/hair/0-01.png"],
+								"sprite": "images/production/dressup/hair/0-01.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
-								"sprite": "images/production/dressup/male/adult/hair/1.png"
+								"option_sprite": ["images/production/dressup/icons/hair/0-03.png", "images/production/dressup/icons/hair/0-03.png"],
+								"sprite": "images/production/dressup/hair/0-03.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
-								"sprite": "images/production/dressup/male/buff/hair/1.png"
+								"option_sprite": ["images/production/dressup/icons/hair/0-05.png", "images/production/dressup/icons/hair/0-05.png"],
+								"sprite": "images/production/dressup/hair/0-05.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
-								"sprite": "images/production/dressup/female/young/hair/1.png"
+								"option_sprite": ["images/production/dressup/icons/hair/0-02.png", "images/production/dressup/icons/hair/0-02.png"],
+								"sprite": "images/production/dressup/hair/0-02.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
-								"sprite": "images/production/dressup/female/adult/hair/1.png"
+								"option_sprite": ["images/production/dressup/icons/hair/0-04.png", "images/production/dressup/icons/hair/0-04.png"],
+								"sprite": "images/production/dressup/hair/0-04.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
-								"sprite": "images/production/dressup/female/buff/hair/1.png"
+								"option_sprite": ["images/production/dressup/icons/hair/0-06.png", "images/production/dressup/icons/hair/0-06.png"],
+								"sprite": "images/production/dressup/hair/0-06.png"
 							},
 						}, 
 
