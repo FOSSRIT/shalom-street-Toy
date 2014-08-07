@@ -11,18 +11,21 @@ function ScenarioScreen(_info){
 	var splashImage = Sprite(0, 0, 1920, 1080, "images/dev/testScenarios/background.png");
 	base.addModule(splashImage);
 	
+	var scenarioHint = Sprite(0, 0, 384, 384, "images/dev/hints/hint1.png");
+	base.addModule(scenarioHint);
+	
 	
 	
 	//Set up all the components.
 	
 	//Tab Buttons
-	easyTab = Sprite(64, 2*toReturn.bounds.height/7-64, 256, 128, "images/dev/testScenarios/easy_roboto_highlight.png");
+	easyTab = Sprite(64, 3*toReturn.bounds.height/7-64, 256, 128, "images/dev/testScenarios/easy_roboto_highlight.png");
 	base.addModule(easyTab);
 	
-	mediumTab = Sprite(64, 3*toReturn.bounds.height/7-64, 256, 128, "images/dev/testScenarios/medium_roboto.png");
+	mediumTab = Sprite(64, 4*toReturn.bounds.height/7-64, 256, 128, "images/dev/testScenarios/medium_roboto.png");
 	base.addModule(mediumTab);
 	
-	hardTab = Sprite(64, 4*toReturn.bounds.height/7-64, 256, 128, "images/dev/testScenarios/hard_roboto.png");
+	hardTab = Sprite(64, 5*toReturn.bounds.height/7-64, 256, 128, "images/dev/testScenarios/hard_roboto.png");
 	base.addModule(hardTab);
 	
 	
@@ -96,17 +99,17 @@ function ScenarioScreen(_info){
 	Touch.onEnterExit(easyTab);
 	easyTab.addEvent("mouseenter", function(_clipBoard){ 
 		if(selectedCategory == easyContent){
-			this.setImage("images/dev/testScenarios/easy_roboto_highlight.png", false, 0, 2*toReturn.bounds.height/7-80, 288, 160); 
+			this.setImage("images/dev/testScenarios/easy_roboto_highlight.png", false, 0, 3*toReturn.bounds.height/7-80, 288, 160); 
 		}else{
-			this.setImage("images/dev/testScenarios/easy_roboto.png", false, 0, 2*toReturn.bounds.height/7-80, 288, 160); 
+			this.setImage("images/dev/testScenarios/easy_roboto.png", false, 0, 3*toReturn.bounds.height/7-80, 288, 160); 
 		}
 		_clipBoard.ToFire = ["redraw"]; 
 	},false);
 	easyTab.addEvent("mouseexit", function(_clipBoard){ 
 		if(selectedCategory == easyContent){
-			easyTab.setImage("images/dev/testScenarios/easy_roboto_highlight.png", false, 0, 2*toReturn.bounds.height/7-64, 256, 128); 
+			easyTab.setImage("images/dev/testScenarios/easy_roboto_highlight.png", false, 0, 3*toReturn.bounds.height/7-64, 256, 128); 
 		}else{
-			easyTab.setImage("images/dev/testScenarios/easy_roboto.png", false, 0, 2*toReturn.bounds.height/7-64, 256, 128); 
+			easyTab.setImage("images/dev/testScenarios/easy_roboto.png", false, 0, 3*toReturn.bounds.height/7-64, 256, 128); 
 		}
 		_clipBoard.ToFire = ["redraw"]; 
 	},false);
@@ -114,17 +117,17 @@ function ScenarioScreen(_info){
 	Touch.onEnterExit(mediumTab);
 	mediumTab.addEvent("mouseenter", function(_clipBoard){  
 		if(selectedCategory == mediumContent){
-			this.setImage("images/dev/testScenarios/medium_roboto_highlight.png", false, 0, 3*toReturn.bounds.height/7-80, 288, 160); 
+			this.setImage("images/dev/testScenarios/medium_roboto_highlight.png", false, 0, 4*toReturn.bounds.height/7-80, 288, 160); 
 		}else{
-			this.setImage("images/dev/testScenarios/medium_roboto.png", false, 0, 3*toReturn.bounds.height/7-80, 288, 160); 
+			this.setImage("images/dev/testScenarios/medium_roboto.png", false, 0, 4*toReturn.bounds.height/7-80, 288, 160); 
 		}
 		_clipBoard.ToFire = ["redraw"]; 
 	},false);
 	mediumTab.addEvent("mouseexit", function(_clipBoard){  
 		if(selectedCategory == mediumContent){
-			mediumTab.setImage("images/dev/testScenarios/medium_roboto_highlight.png", false, 0, 3*toReturn.bounds.height/7-64, 256, 128); 
+			mediumTab.setImage("images/dev/testScenarios/medium_roboto_highlight.png", false, 0, 4*toReturn.bounds.height/7-64, 256, 128); 
 		}else{
-			mediumTab.setImage("images/dev/testScenarios/medium_roboto.png", false, 0, 3*toReturn.bounds.height/7-64, 256, 128); 
+			mediumTab.setImage("images/dev/testScenarios/medium_roboto.png", false, 0, 4*toReturn.bounds.height/7-64, 256, 128); 
 		}
 		_clipBoard.ToFire = ["redraw"]; 
 	},false);
@@ -132,17 +135,17 @@ function ScenarioScreen(_info){
 	Touch.onEnterExit(hardTab);
 	hardTab.addEvent("mouseenter", function(_clipBoard){  
 		if(selectedCategory == hardContent){
-			this.setImage("images/dev/testScenarios/hard_roboto_highlight.png", false, 0, 4*toReturn.bounds.height/7-80, 288, 160); 
+			this.setImage("images/dev/testScenarios/hard_roboto_highlight.png", false, 0, 5*toReturn.bounds.height/7-80, 288, 160); 
 		}else{
-			this.setImage("images/dev/testScenarios/hard_roboto.png", false, 0, 4*toReturn.bounds.height/7-80, 288, 160); 
+			this.setImage("images/dev/testScenarios/hard_roboto.png", false, 0, 5*toReturn.bounds.height/7-80, 288, 160); 
 		}
 		_clipBoard.ToFire = ["redraw"]; 
 	},false);
 	hardTab.addEvent("mouseexit", function(_clipBoard){  
 		if(selectedCategory == hardContent){
-			hardTab.setImage("images/dev/testScenarios/hard_roboto_highlight.png", false, 0, 4*toReturn.bounds.height/7-64, 256, 128);
+			hardTab.setImage("images/dev/testScenarios/hard_roboto_highlight.png", false, 0, 5*toReturn.bounds.height/7-64, 256, 128);
 		}else{
-			hardTab.setImage("images/dev/testScenarios/hard_roboto.png", false, 0, 4*toReturn.bounds.height/7-64, 256, 128);
+			hardTab.setImage("images/dev/testScenarios/hard_roboto.png", false, 0, 5*toReturn.bounds.height/7-64, 256, 128);
 		}
 		_clipBoard.ToFire = ["redraw"]; 
 	},false);
