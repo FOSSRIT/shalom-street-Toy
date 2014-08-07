@@ -16,6 +16,9 @@ function DetailedScenarioScreen(_info){
 		var splashImage = Sprite(0, 0, 1920, 1080, base.jsonData[info.currentScenario].background);
 		base.addModule(splashImage);
 		
+		var hint = Sprite(toReturn.bounds.width/2-306, 1080-175, 612, 175, "images/dev/hints/hint2.png");
+		base.addModule(hint);
+		
 
 		//Other data.
 		console.log(info.currentScenario);
