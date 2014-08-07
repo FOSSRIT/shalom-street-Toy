@@ -715,6 +715,34 @@ jsonLoader.result = {
 								"sprite": "images/dev/alpha.png"
 							},
 						},
+
+						"jacket_01":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/icons/jackets/0.png", "images/production/dressup/icons/jackets/0.png"],
+								"sprite": "images/production/dressup/jackets/0-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/icons/jackets/0.png", "images/production/dressup/icons/jackets/0.png"],
+								"sprite": "images/production/dressup/jackets/0-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/icons/jackets/0.png", "images/production/dressup/icons/jackets/0.png"],
+								"sprite": "images/production/dressup/jackets/0-05.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/icons/jackets/0.png", "images/production/dressup/icons/jackets/0.png"],
+								"sprite": "images/production/dressup/jackets/0-02.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/icons/jackets/0.png", "images/production/dressup/icons/jackets/0.png"],
+								"sprite": "images/production/dressup/jackets/0-04.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/icons/jackets/0.png", "images/production/dressup/icons/jackets/0.png"],
+								"sprite": "images/production/dressup/jackets/0-06.png"
+							},
+						},
 					},
 				},
 
