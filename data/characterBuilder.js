@@ -625,33 +625,6 @@ jsonLoader.result = {
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
-						"shirt_00":{
-							"male_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"male_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"male_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							
-							"female_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"female_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"female_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-						},
 						"shirt_01":{
 							"male_1": {
 								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
@@ -678,7 +651,35 @@ jsonLoader.result = {
 								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
 								"sprite": "images/production/dressup/female/buff/set_01/shirt.png"
 							},
-						}
+						},
+
+						"shirt_02":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/icons/shirts/0.png", "images/production/dressup/icons/shirts/0.png"],
+								"sprite": "images/production/dressup/shirts/02-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/icons/shirts/0.png", "images/production/dressup/icons/shirts/0.png"],
+								"sprite": "images/production/dressup/shirts/02-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/icons/shirts/0.png", "images/production/dressup/icons/shirts/0.png"],
+								"sprite": "images/production/dressup/shirts/02-02.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/icons/shirts/0.png", "images/production/dressup/icons/shirts/0.png"],
+								"sprite": "images/production/dressup/shirts/02-04.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/icons/shirts/0.png", "images/production/dressup/icons/shirts/0.png"],
+								"sprite": "images/production/dressup/shirts/02-05.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/icons/shirts/0.png", "images/production/dressup/icons/shirts/0.png"],
+								"sprite": "images/production/dressup/shirts/02-06.png"
+							},
+						},
 					},
 				},
 
@@ -727,16 +728,16 @@ jsonLoader.result = {
 							},
 							"male_3": {
 								"option_sprite": ["images/production/dressup/icons/jackets/0.png", "images/production/dressup/icons/jackets/0.png"],
-								"sprite": "images/production/dressup/jackets/0-05.png"
+								"sprite": "images/production/dressup/jackets/0-02.png"
 							},
 							
 							"female_1": {
 								"option_sprite": ["images/production/dressup/icons/jackets/0.png", "images/production/dressup/icons/jackets/0.png"],
-								"sprite": "images/production/dressup/jackets/0-02.png"
+								"sprite": "images/production/dressup/jackets/0-04.png"
 							},
 							"female_2": {
 								"option_sprite": ["images/production/dressup/icons/jackets/0.png", "images/production/dressup/icons/jackets/0.png"],
-								"sprite": "images/production/dressup/jackets/0-04.png"
+								"sprite": "images/production/dressup/jackets/0-05.png"
 							},
 							"female_3": {
 								"option_sprite": ["images/production/dressup/icons/jackets/0.png", "images/production/dressup/icons/jackets/0.png"],
