@@ -82,7 +82,7 @@ function ResultsScreen(_info){
 	}
 
 
-	quitButton.addEvent("mousedown", base.changeState("PowersScreen", _info), false);
+	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 
 
 
