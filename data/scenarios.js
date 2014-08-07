@@ -36,8 +36,8 @@ jsonLoader.result = {
 		"summary": 		"images/dev/alpha.png",
 		"comic": 		"images/dev/alpha.png",
 		"required": {
-			"powers": [],
-			"qualities": ["bravery"]
+			"powers": ["mind","speed","strength","teleport"],
+			"qualities": ["respect","listening","understanding","friendship"]
 		}
 	},
 	"Fire": {
@@ -78,8 +78,8 @@ jsonLoader.result = {
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
 		"required": {
-			"powers": [],
-			"qualities": ["bravery"]
+			"powers": ["mind","speed","strength","teleport"],
+			"qualities": ["respect","listening","understanding","friendship"]
 		}
 	},
 	"bank" :{
@@ -89,8 +89,8 @@ jsonLoader.result = {
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
 		"required": {
-			"powers": [],
-			"qualities": ["bravery"]
+			"powers": ["laser","mind","speed","smart","strength","teleport","xray"],
+			"qualities": ["brave","responsibility","understanding","satisfied"]
 		}
 	},
 	"villain" :{
@@ -100,8 +100,8 @@ jsonLoader.result = {
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
 		"required": {
-			"powers": [],
-			"qualities": ["bravery"]
+			"powers": ["fire","water","laser","mind","flight","speed","smart","strength"],
+			"qualities": ["friendship","respect","satisfied","listening","understanding"]
 		}
 	},
 	//Medium
@@ -112,8 +112,8 @@ jsonLoader.result = {
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
 		"required": {
-			"powers": [],
-			"qualities": ["bravery"]
+			"powers": ["mind","healing","strength","smart"],
+			"qualities": ["brave","friendship","caring"]
 		}
 	},
 	"whale" :{
@@ -123,8 +123,8 @@ jsonLoader.result = {
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
 		"required": {
-			"powers": [],
-			"qualities": ["bravery"]
+			"powers": ["water","teleport","flight","healing","strength"],
+			"qualities": ["caring","respect","responsibility"]
 		}
 	},
 	"volcano" :{
@@ -134,8 +134,8 @@ jsonLoader.result = {
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
 		"required": {
-			"powers": [],
-			"qualities": ["bravery"]
+			"powers": ["water","healing","flight","speed","strength"],
+			"qualities": ["brave","responsibility","respect"]
 		}
 	},
 	//Hard
@@ -146,8 +146,8 @@ jsonLoader.result = {
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
 		"required": {
-			"powers": ["water"],
-			"qualities": ["bravery"]
+			"powers": ["duplicate","mind","smart"],
+			"qualities": ["friendship","respect","caring","satisfied"]
 		}
 	},
 	"fire" :{
@@ -157,8 +157,8 @@ jsonLoader.result = {
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
 		"required": {
-			"powers": ["water"],
-			"qualities": ["bravery"]
+			"powers": ["water","teleport","healing","xray"],
+			"qualities": ["brave","responsibility","caring"]
 		}
 	},
 	"aliens" :{
@@ -168,8 +168,8 @@ jsonLoader.result = {
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
 		"required": {
-			"powers": ["water"],
-			"qualities": ["bravery"]
+			"powers": ["flight","strength","laser","fire","speed"],
+			"qualities": ["brave","responsibility","respect","understanding"]
 		}
 	},
 	
