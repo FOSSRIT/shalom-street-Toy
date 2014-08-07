@@ -72,7 +72,7 @@ jsonLoader.result = {
 	},
 	//Easy
 	"team" :{
-		"banner": 		"images/production/scenarios/banners/fire.png", 
+		"banner": 		"images/Backgrounds/newbanners-02.png", 
 		"background": 	"images/Backgrounds/scenariobackgrounds-05.png",
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
@@ -83,7 +83,7 @@ jsonLoader.result = {
 		}
 	},
 	"bank" :{
-		"banner": 		"images/production/scenarios/banners/fire.png", 
+		"banner": 		"images/Backgrounds/newbanners-05.png", 
 		"background": 	"images/Backgrounds/scenariobackgrounds-06.png",
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
@@ -106,7 +106,7 @@ jsonLoader.result = {
 	},
 	//Medium
 	"bully" :{
-		"banner": 		"images/production/scenarios/banners/fire.png", 
+		"banner": 		"images/Backgrounds/newbanners-04.png", 
 		"background": 	"images/Backgrounds/scenariobackgrounds-01.png",
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
@@ -117,7 +117,7 @@ jsonLoader.result = {
 		}
 	},
 	"whale" :{
-		"banner": 		"images/production/scenarios/banners/fire.png", 
+		"banner": 		"images/Backgrounds/newbanners-01.png", 
 		"background": 	"images/Backgrounds/scenariobackgrounds-03.png",
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
@@ -151,7 +151,7 @@ jsonLoader.result = {
 		}
 	},
 	"fire" :{
-		"banner": 		"images/production/scenarios/banners/fire.png", 
+		"banner": 		"images/Backgrounds/newbanners-03.png", 
 		"background": 	"images/Backgrounds/scenariobackgrounds-04.png",
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
