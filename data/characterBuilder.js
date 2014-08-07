@@ -880,6 +880,33 @@ jsonLoader.result = {
 								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
 								"sprite": "images/production/dressup/female/buff/set_01/belt.png"
 							},
+						},
+						"belt_02":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/icons/belts/0.png", "images/production/dressup/icons/belts/0.png"],
+								"sprite": "images/production/dressup/belts/0-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/icons/belts/0.png", "images/production/dressup/icons/belts/0.png"],
+								"sprite": "images/production/dressup/belts/0-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/icons/belts/0.png", "images/production/dressup/icons/belts/0.png"],
+								"sprite": "images/production/dressup/belts/0-05.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/icons/belts/0.png", "images/production/dressup/icons/belts/0.png"],
+								"sprite": "images/production/dressup/belts/0-02.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/icons/belts/0.png", "images/production/dressup/icons/belts/0.png"],
+								"sprite": "images/production/dressup/belts/0-04.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/icons/belts/0.png", "images/production/dressup/icons/belts/0.png"],
+								"sprite": "images/production/dressup/belts/0-06.png"
+							},
 						}
 					},
 				},
