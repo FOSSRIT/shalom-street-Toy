@@ -744,6 +744,60 @@ jsonLoader.result = {
 								"sprite": "images/production/dressup/jackets/0-06.png"
 							},
 						},
+						"jacket_02":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jackets/1-01.png", "images/production/dressup/MC-Clothes/jackets/1-01.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jackets/1-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jackets/1-03.png", "images/production/dressup/MC-Clothes/jackets/1-03.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jackets/1-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jackets/1-02.png", "images/production/dressup/MC-Clothes/jackets/1-02.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jackets/1-02.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jackets/1-04.png", "images/production/dressup/MC-Clothes/jackets/1-04.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jackets/1-04.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jackets/1-05.png", "images/production/dressup/MC-Clothes/jackets/1-05.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jackets/1-05.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jackets/1-06.png", "images/production/dressup/MC-Clothes/jackets/1-06.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jackets/1-06.png"
+							},
+						},
+						"jacket_03":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jackets/2-01.png", "images/production/dressup/MC-Clothes/jackets/2-01.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jackets/2-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jackets/2-03.png", "images/production/dressup/MC-Clothes/jackets/2-03.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jackets/2-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jackets/2-02.png", "images/production/dressup/MC-Clothes/jackets/2-02.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jackets/2-02.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jackets/2-04.png", "images/production/dressup/MC-Clothes/jackets/2-04.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jackets/2-04.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jackets/2-05.png", "images/production/dressup/MC-Clothes/jackets/2-05.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jackets/2-05.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jackets/2-06.png", "images/production/dressup/MC-Clothes/jackets/2-06.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jackets/2-06.png"
+							},
+						},
 					},
 				},
 
