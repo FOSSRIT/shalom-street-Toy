@@ -16,10 +16,13 @@ function DetailedScenarioScreen(_info){
 		var splashImage = Sprite(0, 0, 1920, 1080, base.jsonData[info.currentScenario].background);
 		base.addModule(splashImage);
 		
+		var hint = Sprite(toReturn.bounds.width/2-306, 1080-175, 612, 175, "images/dev/hints/hint2.png");
+		base.addModule(hint);
+		
 
 		//Other data.
 		console.log(info.currentScenario);
-		info.banner = Sprite(0, 0, 1920, 1080, base.jsonData[info.currentScenario].banner);
+		info.banner = Sprite(0, 0, 1920, 216, base.jsonData[info.currentScenario].banner);
 		info.requiredPowers = [];
 		info.requiredQualities = [];
 		for(var i = 0; i < base.jsonData[info.currentScenario].required.powers.length; i++){
@@ -57,7 +60,7 @@ function DetailedScenarioScreen(_info){
 		//Events
 		backButton.addEvent("mousedown", base.changeState("ScenarioScreen", _info), false);
 		continueButton.addEvent("mousedown", base.changeState("QualitiesScreen", _info), false);
-		quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
+		//quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 
 
 		//For dev purposes.
