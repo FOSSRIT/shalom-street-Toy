@@ -8,10 +8,10 @@ function ScenarioScreen(_info){
 	info.currentScenario = "";
 
 
-	var splashImage = Sprite(0, 0, 1920, 1080, "images/dev/testScenarios/background.png");
+	var splashImage = Sprite(0, 0, 1920, 1080, "images/Backgrounds/background-01.png");
 	base.addModule(splashImage);
 	
-	var scenarioHint = Sprite(0, 0, 384, 384, "images/dev/hints/hint1.png");
+	var scenarioHint = Sprite(0, 150, 384, 384, "images/dev/hints/hint1.png");
 	base.addModule(scenarioHint);
 	
 	
@@ -19,13 +19,13 @@ function ScenarioScreen(_info){
 	//Set up all the components.
 	
 	//Tab Buttons
-	easyTab = Sprite(64, 3*toReturn.bounds.height/7-64, 256, 128, "images/dev/testScenarios/easy_roboto_highlight.png");
+	easyTab = Sprite(64, 3.5*toReturn.bounds.height/7-64, 256, 128, "images/dev/testScenarios/easy_roboto_highlight.png");
 	base.addModule(easyTab);
 	
-	mediumTab = Sprite(64, 4*toReturn.bounds.height/7-64, 256, 128, "images/dev/testScenarios/medium_roboto.png");
+	mediumTab = Sprite(64, 4.5*toReturn.bounds.height/7-64, 256, 128, "images/dev/testScenarios/medium_roboto.png");
 	base.addModule(mediumTab);
 	
-	hardTab = Sprite(64, 5*toReturn.bounds.height/7-64, 256, 128, "images/dev/testScenarios/hard_roboto.png");
+	hardTab = Sprite(64, 5.5*toReturn.bounds.height/7-64, 256, 128, "images/dev/testScenarios/hard_roboto.png");
 	base.addModule(hardTab);
 	
 	
@@ -45,37 +45,68 @@ function ScenarioScreen(_info){
 	//Content
 	
 	//easy
-	var scenario1Button = Sprite(2*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512, "images/Backgrounds/coversforcomics-03.png");
+	var scenario1Button = Sprite(2*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512, "images/Backgrounds/coversforcomics-03.png");
 	easyContent.addModule(scenario1Button);
 	
-	scenario2Button = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512, "images/Backgrounds/coversforcomics-02.png");
+	scenario2Button = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512, "images/Backgrounds/coversforcomics-02.png");
 	easyContent.addModule(scenario2Button);
 	
-	scenario3Button = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512, "images/Backgrounds/coversforcomics-07-07.png");
+	scenario3Button = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512, "images/Backgrounds/coversforcomics-07-07.png");
   	easyContent.addModule(scenario3Button);
 	
 	
 	
 	//medium
-	var bullyButton = Sprite(2*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512, "images/Backgrounds/coversforcomics-05-05.png");
+	var bullyButton = Sprite(2*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512, "images/Backgrounds/coversforcomics-05-05.png");
 	mediumContent.addModule(bullyButton);
 	
-	aliensButton = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512, "images/Backgrounds/coversforcomics-04.png");
+	aliensButton = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512, "images/Backgrounds/coversforcomics-04.png");
 	mediumContent.addModule(aliensButton);
 	
-	mediumButton3 = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512, "images/Backgrounds/coversforcomics-07-07.png");
+	mediumButton3 = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512, "images/Backgrounds/coversforcomics-07-07.png");
 	mediumContent.addModule(mediumButton3);
 	
 	
 	//hardTab
-	var testButton1 = Sprite(2*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512, "images/Backgrounds/coversforcomics-06.png");
+	var testButton1 = Sprite(2*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512, "images/Backgrounds/coversforcomics-06.png");
 	hardContent.addModule(testButton1);
 	
-	var testButton3 = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512, "images/Backgrounds/coversforcomics-01.png");
+	var testButton3 = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512, "images/Backgrounds/coversforcomics-01.png");
 	hardContent.addModule(testButton3);
 	
-	var testButton5 = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512, "images/Backgrounds/coversforcomics-07-07.png");
+	var testButton5 = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512, "images/Backgrounds/coversforcomics-07-07.png");
 	hardContent.addModule(testButton5);
+	
+	//Titles
+	//easy
+	var title_team = Sprite(2*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
+	easyContent.addModule(title_team);
+	
+	var title_bank = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
+	easyContent.addModule(title_bank);
+	
+	var title_villain = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
+	easyContent.addModule(title_villain);
+	
+	//med
+	var title_team = Sprite(2*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
+	mediumContent.addModule(title_team);
+	
+	var title_bank = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
+	mediumContent.addModule(title_bank);
+	
+	var title_villain = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
+	mediumContent.addModule(title_villain);
+	
+	//hard
+	var title_team = Sprite(2*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
+	hardContent.addModule(title_team);
+	
+	var title_bank = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
+	hardContent.addModule(title_bank);
+	
+	var title_villain = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
+	hardContent.addModule(title_villain);
 	
 	
 	//prep for screen
@@ -99,17 +130,17 @@ function ScenarioScreen(_info){
 	Touch.onEnterExit(easyTab);
 	easyTab.addEvent("mouseenter", function(_clipBoard){ 
 		if(selectedCategory == easyContent){
-			this.setImage("images/dev/testScenarios/easy_roboto_highlight.png", false, 0, 3*toReturn.bounds.height/7-80, 288, 160); 
+			this.setImage("images/dev/testScenarios/easy_roboto_highlight.png", false, 0, 3.5*toReturn.bounds.height/7-80, 288, 160); 
 		}else{
-			this.setImage("images/dev/testScenarios/easy_roboto.png", false, 0, 3*toReturn.bounds.height/7-80, 288, 160); 
+			this.setImage("images/dev/testScenarios/easy_roboto.png", false, 0, 3.5*toReturn.bounds.height/7-80, 288, 160); 
 		}
 		_clipBoard.ToFire = ["redraw"]; 
 	},false);
 	easyTab.addEvent("mouseexit", function(_clipBoard){ 
 		if(selectedCategory == easyContent){
-			easyTab.setImage("images/dev/testScenarios/easy_roboto_highlight.png", false, 0, 3*toReturn.bounds.height/7-64, 256, 128); 
+			easyTab.setImage("images/dev/testScenarios/easy_roboto_highlight.png", false, 0, 3.5*toReturn.bounds.height/7-64, 256, 128); 
 		}else{
-			easyTab.setImage("images/dev/testScenarios/easy_roboto.png", false, 0, 3*toReturn.bounds.height/7-64, 256, 128); 
+			easyTab.setImage("images/dev/testScenarios/easy_roboto.png", false, 0, 3.5*toReturn.bounds.height/7-64, 256, 128); 
 		}
 		_clipBoard.ToFire = ["redraw"]; 
 	},false);
@@ -117,17 +148,17 @@ function ScenarioScreen(_info){
 	Touch.onEnterExit(mediumTab);
 	mediumTab.addEvent("mouseenter", function(_clipBoard){  
 		if(selectedCategory == mediumContent){
-			this.setImage("images/dev/testScenarios/medium_roboto_highlight.png", false, 0, 4*toReturn.bounds.height/7-80, 288, 160); 
+			this.setImage("images/dev/testScenarios/medium_roboto_highlight.png", false, 0, 4.5*toReturn.bounds.height/7-80, 288, 160); 
 		}else{
-			this.setImage("images/dev/testScenarios/medium_roboto.png", false, 0, 4*toReturn.bounds.height/7-80, 288, 160); 
+			this.setImage("images/dev/testScenarios/medium_roboto.png", false, 0, 4.5*toReturn.bounds.height/7-80, 288, 160); 
 		}
 		_clipBoard.ToFire = ["redraw"]; 
 	},false);
 	mediumTab.addEvent("mouseexit", function(_clipBoard){  
 		if(selectedCategory == mediumContent){
-			mediumTab.setImage("images/dev/testScenarios/medium_roboto_highlight.png", false, 0, 4*toReturn.bounds.height/7-64, 256, 128); 
+			mediumTab.setImage("images/dev/testScenarios/medium_roboto_highlight.png", false, 0, 4.5*toReturn.bounds.height/7-64, 256, 128); 
 		}else{
-			mediumTab.setImage("images/dev/testScenarios/medium_roboto.png", false, 0, 4*toReturn.bounds.height/7-64, 256, 128); 
+			mediumTab.setImage("images/dev/testScenarios/medium_roboto.png", false, 0, 4.5*toReturn.bounds.height/7-64, 256, 128); 
 		}
 		_clipBoard.ToFire = ["redraw"]; 
 	},false);
@@ -135,17 +166,17 @@ function ScenarioScreen(_info){
 	Touch.onEnterExit(hardTab);
 	hardTab.addEvent("mouseenter", function(_clipBoard){  
 		if(selectedCategory == hardContent){
-			this.setImage("images/dev/testScenarios/hard_roboto_highlight.png", false, 0, 5*toReturn.bounds.height/7-80, 288, 160); 
+			this.setImage("images/dev/testScenarios/hard_roboto_highlight.png", false, 0, 5.5*toReturn.bounds.height/7-80, 288, 160); 
 		}else{
-			this.setImage("images/dev/testScenarios/hard_roboto.png", false, 0, 5*toReturn.bounds.height/7-80, 288, 160); 
+			this.setImage("images/dev/testScenarios/hard_roboto.png", false, 0, 5.5*toReturn.bounds.height/7-80, 288, 160); 
 		}
 		_clipBoard.ToFire = ["redraw"]; 
 	},false);
 	hardTab.addEvent("mouseexit", function(_clipBoard){  
 		if(selectedCategory == hardContent){
-			hardTab.setImage("images/dev/testScenarios/hard_roboto_highlight.png", false, 0, 5*toReturn.bounds.height/7-64, 256, 128);
+			hardTab.setImage("images/dev/testScenarios/hard_roboto_highlight.png", false, 0, 5.5*toReturn.bounds.height/7-64, 256, 128);
 		}else{
-			hardTab.setImage("images/dev/testScenarios/hard_roboto.png", false, 0, 5*toReturn.bounds.height/7-64, 256, 128);
+			hardTab.setImage("images/dev/testScenarios/hard_roboto.png", false, 0, 5.5*toReturn.bounds.height/7-64, 256, 128);
 		}
 		_clipBoard.ToFire = ["redraw"]; 
 	},false);
@@ -155,42 +186,42 @@ function ScenarioScreen(_info){
 	
 	//Easy
 	Touch.onEnterExit(scenario1Button);
-	scenario1Button.addEvent("mouseenter", function(_clipBoard){  this.setImage("images/Backgrounds/coversforcomics-03.png", false, 2*toReturn.bounds.width/5-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	scenario1Button.addEvent("mouseexit", function(_clipBoard){  scenario1Button.setImage("images/Backgrounds/coversforcomics-03.png", false, 2*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	scenario1Button.addEvent("mouseenter", function(_clipBoard){  this.setImage("images/Backgrounds/coversforcomics-03.png", false, 2*toReturn.bounds.width/5-160, toReturn.bounds.height/2-320, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	scenario1Button.addEvent("mouseexit", function(_clipBoard){  scenario1Button.setImage("images/Backgrounds/coversforcomics-03.png", false, 2*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(scenario2Button);
-	scenario2Button.addEvent("mouseenter", function(_clipBoard){   scenario2Button.setImage("images/Backgrounds/coversforcomics-02.png", false, 3*toReturn.bounds.width/5-160, toReturn.bounds.height/2-256, 320, 640);  _clipBoard.ToFire = ["redraw"]; },false);
-	scenario2Button.addEvent("mouseexit", function(_clipBoard){  scenario2Button.setImage("images/Backgrounds/coversforcomics-02.png", false, 3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512);  _clipBoard.ToFire = ["redraw"]; }, false);
+	scenario2Button.addEvent("mouseenter", function(_clipBoard){   scenario2Button.setImage("images/Backgrounds/coversforcomics-02.png", false, 3*toReturn.bounds.width/5-160, toReturn.bounds.height/2-320, 320, 640);  _clipBoard.ToFire = ["redraw"]; },false);
+	scenario2Button.addEvent("mouseexit", function(_clipBoard){  scenario2Button.setImage("images/Backgrounds/coversforcomics-02.png", false, 3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512);  _clipBoard.ToFire = ["redraw"]; }, false);
 
 	Touch.onEnterExit(scenario3Button);
-	scenario3Button.addEvent("mouseenter", function(_clipBoard){   scenario3Button.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	scenario3Button.addEvent("mouseexit", function(_clipBoard){  scenario3Button.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; }, false);
+	scenario3Button.addEvent("mouseenter", function(_clipBoard){   scenario3Button.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-160, toReturn.bounds.height/2-320, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	scenario3Button.addEvent("mouseexit", function(_clipBoard){  scenario3Button.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512); _clipBoard.ToFire = ["redraw"]; }, false);
 
 	//Medium
 	Touch.onEnterExit(bullyButton);
-	bullyButton.addEvent("mouseenter", function(_clipBoard){  bullyButton.setImage("images/Backgrounds/coversforcomics-05-05.png", false, 2*toReturn.bounds.width/5-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	bullyButton.addEvent("mouseexit", function(_clipBoard){  bullyButton.setImage("images/Backgrounds/coversforcomics-05-05.png", false, 2*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	bullyButton.addEvent("mouseenter", function(_clipBoard){  bullyButton.setImage("images/Backgrounds/coversforcomics-05-05.png", false, 2*toReturn.bounds.width/5-160, toReturn.bounds.height/2-320, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	bullyButton.addEvent("mouseexit", function(_clipBoard){  bullyButton.setImage("images/Backgrounds/coversforcomics-05-05.png", false, 2*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(aliensButton);
-	aliensButton.addEvent("mouseenter", function(_clipBoard){  aliensButton.setImage("images/Backgrounds/coversforcomics-04.png", false, 3*toReturn.bounds.width/5-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	aliensButton.addEvent("mouseexit", function(_clipBoard){  aliensButton.setImage("images/Backgrounds/coversforcomics-04.png", false, 3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	aliensButton.addEvent("mouseenter", function(_clipBoard){  aliensButton.setImage("images/Backgrounds/coversforcomics-04.png", false, 3*toReturn.bounds.width/5-160, toReturn.bounds.height/2-320, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	aliensButton.addEvent("mouseexit", function(_clipBoard){  aliensButton.setImage("images/Backgrounds/coversforcomics-04.png", false, 3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(mediumButton3);
-	mediumButton3.addEvent("mouseenter", function(_clipBoard){  mediumButton3.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	mediumButton3.addEvent("mouseexit", function(_clipBoard){  mediumButton3.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	mediumButton3.addEvent("mouseenter", function(_clipBoard){  mediumButton3.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-160, toReturn.bounds.height/2-320, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	mediumButton3.addEvent("mouseexit", function(_clipBoard){  mediumButton3.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 		
 	//Hard
 	Touch.onEnterExit(testButton1);
-	testButton1.addEvent("mouseenter", function(_clipBoard){  testButton1.setImage("images/Backgrounds/coversforcomics-06.png", false, 2*toReturn.bounds.width/5-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	testButton1.addEvent("mouseexit", function(_clipBoard){  testButton1.setImage("images/Backgrounds/coversforcomics-06.png", false, 2*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton1.addEvent("mouseenter", function(_clipBoard){  testButton1.setImage("images/Backgrounds/coversforcomics-06.png", false, 2*toReturn.bounds.width/5-160, toReturn.bounds.height/2-320, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton1.addEvent("mouseexit", function(_clipBoard){  testButton1.setImage("images/Backgrounds/coversforcomics-06.png", false, 2*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(testButton3);
-	testButton3.addEvent("mouseenter", function(_clipBoard){  testButton3.setImage("images/Backgrounds/coversforcomics-01.png", false, 3*toReturn.bounds.width/5-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	testButton3.addEvent("mouseexit", function(_clipBoard){  testButton3.setImage("images/Backgrounds/coversforcomics-01.png", false, 3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton3.addEvent("mouseenter", function(_clipBoard){  testButton3.setImage("images/Backgrounds/coversforcomics-01.png", false, 3*toReturn.bounds.width/5-160, toReturn.bounds.height/2-320, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton3.addEvent("mouseexit", function(_clipBoard){  testButton3.setImage("images/Backgrounds/coversforcomics-01.png", false, 3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(testButton5);
-	testButton5.addEvent("mouseenter", function(_clipBoard){  testButton5.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-160, toReturn.bounds.height/2-256, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	testButton5.addEvent("mouseexit", function(_clipBoard){  testButton5.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-128, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton5.addEvent("mouseenter", function(_clipBoard){  testButton5.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-160, toReturn.bounds.height/2-320, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton5.addEvent("mouseexit", function(_clipBoard){  testButton5.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	//Swap content Events
 	easyTab.addEvent("mousedown", function(_clipBoard){
