@@ -54,7 +54,7 @@ jsonLoader.result = {
 				//This name should correspond to the name of the superhero slot it's going to go into.
 				"face": {
 					//URL of banner image for the tab.
-					"sprite": "images/dev/hero/01_head/03_face/faceTab.png",
+					"sprite": "images/dev/hero/subtabs/subTab_01_face.png",
 					//An option that will be included in the tab.
 					"options": {
 						//In each tab, we have a list of options that the user can click on.
@@ -212,7 +212,7 @@ jsonLoader.result = {
 
 				"hair": {
 					//URL of banner image for the tab.
-					"sprite": "images/dev/hero/01_head/02_hair/hairTab.png",
+					"sprite": "images/dev/hero/subtabs/subTab_01_hair.png",
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
