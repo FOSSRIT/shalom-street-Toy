@@ -418,84 +418,84 @@ jsonLoader.result = {
 						},
 						"mask_01":{
 							"male_1": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
 								"sprite": "images/production/dressup/male/young/set_01/mask.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
 								"sprite": "images/production/dressup/male/adult/set_01/mask.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
 								"sprite": "images/production/dressup/male/buff/set_01/mask.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
 								"sprite": "images/production/dressup/female/young/set_01/mask.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
 								"sprite": "images/production/dressup/female/adult/set_01/mask.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
 								"sprite": "images/production/dressup/female/buff/set_01/mask.png"
 							},
 						},
 
 						"mask_02":{
 							"male_1": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_02.png", "images/dev/_02.png"],
 								"sprite": "images/production/dressup/male/young/masks/2.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_02.png", "images/dev/_02.png"],
 								"sprite": "images/production/dressup/male/adult/masks/2.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_02.png", "images/dev/_02.png"],
 								"sprite": "images/production/dressup/male/buff/masks/2.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_02.png", "images/dev/_02.png"],
 								"sprite": "images/production/dressup/female/young/masks/2.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_02.png", "images/dev/_02.png"],
 								"sprite": "images/production/dressup/female/adult/masks/2.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_02.png", "images/dev/_02.png"],
 								"sprite": "images/production/dressup/female/buff/masks/2.png"
 							},
 						}, 
 
 						"mask_03":{
 							"male_1": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_03.png", "images/dev/_03.png"],
 								"sprite": "images/production/dressup/male/young/masks/3.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_03.png", "images/dev/_03.png"],
 								"sprite": "images/production/dressup/male/adult/masks/3.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_03.png", "images/dev/_03.png"],
 								"sprite": "images/production/dressup/male/buff/masks/3.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_03.png", "images/dev/_03.png"],
 								"sprite": "images/production/dressup/female/young/masks/3.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_03.png", "images/dev/_03.png"],
 								"sprite": "images/production/dressup/female/adult/masks/3.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_03.png", "images/dev/_03.png"],
 								"sprite": "images/production/dressup/female/buff/masks/3.png"
 							},
 						},
@@ -525,6 +525,61 @@ jsonLoader.result = {
 							"female_3": {
 								"option_sprite": ["images/production/dressup/MC-Clothes/masks/1-06.png", "images/production/dressup/MC-Clothes/masks/1-06.png"],
 								"sprite": "images/production/dressup/MC-Clothes/masks/1-06.png"
+							},
+						},
+						
+						"mask_05":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/masks/2-01.png", "images/production/dressup/MC-Clothes/masks/2-01.png"],
+								"sprite": "images/production/dressup/MC-Clothes/masks/2-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/masks/2-03.png", "images/production/dressup/MC-Clothes/masks/2-03.png"],
+								"sprite": "images/production/dressup/MC-Clothes/masks/2-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/masks/2-02.png", "images/production/dressup/MC-Clothes/masks/2-02.png"],
+								"sprite": "images/production/dressup/MC-Clothes/masks/2-02.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/masks/2-04.png", "images/production/dressup/MC-Clothes/masks/2-04.png"],
+								"sprite": "images/production/dressup/MC-Clothes/masks/2-04.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/masks/2-05.png", "images/production/dressup/MC-Clothes/masks/2-05.png"],
+								"sprite": "images/production/dressup/MC-Clothes/masks/2-05.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/masks/2-06.png", "images/production/dressup/MC-Clothes/masks/2-06.png"],
+								"sprite": "images/production/dressup/MC-Clothes/masks/2-06.png"
+							},
+						},
+						"mask_06":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/masks/3-01.png", "images/production/dressup/MC-Clothes/masks/3-01.png"],
+								"sprite": "images/production/dressup/MC-Clothes/masks/3-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/masks/3-03.png", "images/production/dressup/MC-Clothes/masks/3-03.png"],
+								"sprite": "images/production/dressup/MC-Clothes/masks/3-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/masks/3-02.png", "images/production/dressup/MC-Clothes/masks/3-02.png"],
+								"sprite": "images/production/dressup/MC-Clothes/masks/3-02.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/masks/3-04.png", "images/production/dressup/MC-Clothes/masks/3-04.png"],
+								"sprite": "images/production/dressup/MC-Clothes/masks/3-04.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/masks/3-05.png", "images/production/dressup/MC-Clothes/masks/3-05.png"],
+								"sprite": "images/production/dressup/MC-Clothes/masks/3-05.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/masks/3-06.png", "images/production/dressup/MC-Clothes/masks/3-06.png"],
+								"sprite": "images/production/dressup/MC-Clothes/masks/3-06.png"
 							},
 						},
 					},
