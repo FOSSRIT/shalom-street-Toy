@@ -11,7 +11,7 @@ function ScenarioScreen(_info){
 	var splashImage = Sprite(0, 0, 1920, 1080, "images/Backgrounds/background-01.png");
 	base.addModule(splashImage);
 	
-	var scenarioHint = Sprite(0, 150, 384, 384, "images/dev/hints/hint1.png");
+	var scenarioHint = Sprite(36, 150, 384, 384, "images/dev/hints/hint1_alt2.png");
 	base.addModule(scenarioHint);
 	
 	
@@ -82,31 +82,31 @@ function ScenarioScreen(_info){
 	var title_team = Sprite(2*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
 	easyContent.addModule(title_team);
 	
-	var title_bank = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
+	var title_bank = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/bank.png");
 	easyContent.addModule(title_bank);
 	
-	var title_villain = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
+	var title_villain = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/villain.png");
 	easyContent.addModule(title_villain);
 	
 	//med
-	var title_team = Sprite(2*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
-	mediumContent.addModule(title_team);
+	var title_bully = Sprite(2*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/bully.png");
+	mediumContent.addModule(title_bully);
 	
-	var title_bank = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
-	mediumContent.addModule(title_bank);
+	var title_whale = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/whale.png");
+	mediumContent.addModule(title_whale);
 	
-	var title_villain = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
-	mediumContent.addModule(title_villain);
+	var title_volcano = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/volcano.png");
+	mediumContent.addModule(title_volcano);
 	
 	//hard
-	var title_team = Sprite(2*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
-	hardContent.addModule(title_team);
+	var title_toy = Sprite(2*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/toy.png");
+	hardContent.addModule(title_toy);
 	
-	var title_bank = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
-	hardContent.addModule(title_bank);
+	var title_fire = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/fire.png");
+	hardContent.addModule(title_fire);
 	
-	var title_villain = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/team.png");
-	hardContent.addModule(title_villain);
+	var title_aliens = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2+320, 256, 128, "images/dev/scenarioTitles/aliens.png");
+	hardContent.addModule(title_aliens);
 	
 	
 	//prep for screen
