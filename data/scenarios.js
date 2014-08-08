@@ -140,7 +140,7 @@ jsonLoader.result = {
 	},
 	//Hard
 	"toy" :{
-		"banner": 		"images/production/scenarios/banners/fire.png", 
+		"banner": 		"images/Backgrounds/newbanners-06.png", 
 		"background": 	"images/Backgrounds/scenariobackgrounds-02.png",
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",

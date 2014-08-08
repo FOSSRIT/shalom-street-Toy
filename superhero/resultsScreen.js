@@ -41,13 +41,17 @@ function ResultsScreen(_info){
 	//---------------Just setting up the rest of the stuff here.---------------
 
 	if(qualityFound && powerFound){
-		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-06.png");
+		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-06_alt.png");
 		info.win = true;
+		var words = Sprite(0, 375, 512, 512, "images/dev/lorem_512.png");
 	}else{
-		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-07.png");
+		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-07_alt.png");
 		info.win = false;
+		var words = Sprite(0, 375, 512, 512, "images/dev/lorem_512.png");
+		
 	}
 	base.addModule(resultImage);
+	base.addModule(words);
 	
 	//Buttons
 	/*
