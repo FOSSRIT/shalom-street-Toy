@@ -40,6 +40,30 @@ jsonLoader.result = {
 			"female_1": "images/production/dressup/female/young/hands.png",
 			"female_2": "images/production/dressup/female/adult/hands.png",
 			"female_3": "images/production/dressup/female/buff/hands.png"
+		},
+		"face": {
+			"male_1": "images/production/dressup/MC-Clothes/faces and heads/1-01.png",
+			"male_2": "images/production/dressup/MC-Clothes/faces and heads/1-03.png",
+			"male_3": "images/production/dressup/MC-Clothes/faces and heads/1-02.png",
+			"female_1": "images/production/dressup/MC-Clothes/faces and heads/1-04.png",
+			"female_2": "images/production/dressup/MC-Clothes/faces and heads/1-05.png",
+			"female_3": "images/production/dressup/MC-Clothes/faces and heads/1-06.png"
+		},
+		"pants": {
+			"male_1": "images/production/dressup/male/young/set_01/pants.png",
+			"male_2":  "images/production/dressup/male/adult/set_01/pants.png",
+			"male_3": "images/production/dressup/male/buff/set_01/pants.png",
+			"female_1": "images/production/dressup/female/young/set_01/pants.png",
+			"female_2": "images/production/dressup/female/adult/set_01/pants.png",
+			"female_3": "images/production/dressup/female/buff/set_01/pants.png"
+		},
+		"shirt": {
+			"male_1": "images/production/dressup/male/young/set_01/shirt.png",
+			"male_2": "images/production/dressup/male/adult/set_01/shirt.png",
+			"male_3": "images/production/dressup/male/buff/set_01/shirt.png",
+			"female_1": "images/production/dressup/female/young/set_01/shirt.png",
+			"female_2": "images/production/dressup/female/adult/set_01/shirt.png",
+			"female_3": "images/production/dressup/female/buff/set_01/shirt.png"
 		}
 		
 	},
@@ -58,33 +82,6 @@ jsonLoader.result = {
 					//An option that will be included in the tab.
 					"options": {
 						//In each tab, we have a list of options that the user can click on.
-						"face_00":{
-							"male_1": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"male_2": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"male_3": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							
-							"female_1": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"female_2": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"female_3": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-						},
 						"face_1": {
 							//Face_1 applies to multiple body types.  Each one is rendered differently.
 							"male_1": {
@@ -842,33 +839,6 @@ jsonLoader.result = {
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
-						"shirt_00":{
-							"male_1": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"male_2": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"male_3": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							
-							"female_1": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"female_2": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"female_3": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-						},
 						"shirt_01":{
 							"male_1": {
 								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
@@ -1200,33 +1170,6 @@ jsonLoader.result = {
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
-						"pants_00":{
-							"male_1": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"male_2": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"male_3": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							
-							"female_1": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"female_2": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-							"female_3": {
-								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
-								"sprite": "images/dev/alpha.png"
-							},
-						},
 						"pants_01":{
 							"male_1": {
 								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
