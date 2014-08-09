@@ -89,7 +89,7 @@ jsonLoader.result = {
 							//Face_1 applies to multiple body types.  Each one is rendered differently.
 							"male_1": {
 								//The url of the selected/unselected image that you click on to choose this customization for your character.
-								"option_sprite": ["images/production/dressup/MC-Clothes/faces and heads/1-01.png", "images/production/dressup/MC-Clothes/faces and heads/1-01.png"],
+								"option_sprite": ["images/production/dressup/MC-Clothes/faces and heads/icons/1-01_alt1.png", "images/production/dressup/MC-Clothes/faces and heads/icons/1-01_alt1.png"],
 								//The url of the image that is loaded onto the character.
 								"sprite": "images/production/dressup/MC-Clothes/faces and heads/1-01.png"
 							},
@@ -1253,7 +1253,88 @@ jsonLoader.result = {
 								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
 								"sprite": "images/production/dressup/female/buff/set_01/pants.png"
 							},
-						}
+						},
+						"pants_02":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/1-01.png", "images/production/dressup/MC-Clothes/pants/1-01.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/1-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/1-03.png", "images/production/dressup/MC-Clothes/pants/1-03.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/1-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/1-02.png", "images/production/dressup/MC-Clothes/pants/1-02.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/1-02.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/1-04.png", "images/production/dressup/MC-Clothes/pants/1-04.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/1-04.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/1-05.png", "images/production/dressup/MC-Clothes/pants/1-05.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/1-05.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/1-06.png", "images/production/dressup/MC-Clothes/pants/1-06.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/1-06.png"
+							},
+						},
+						"pants_03":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/2-01.png", "images/production/dressup/MC-Clothes/pants/2-01.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/2-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/2-03.png", "images/production/dressup/MC-Clothes/pants/2-03.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/2-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/2-02.png", "images/production/dressup/MC-Clothes/pants/2-02.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/2-02.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/2-04.png", "images/production/dressup/MC-Clothes/pants/2-04.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/2-04.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/2-05.png", "images/production/dressup/MC-Clothes/pants/2-05.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/2-05.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/2-06.png", "images/production/dressup/MC-Clothes/pants/2-06.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/2-06.png"
+							},
+						},
+						"pants_04":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/3-01.png", "images/production/dressup/MC-Clothes/pants/3-01.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/3-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/3-03.png", "images/production/dressup/MC-Clothes/pants/3-03.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/3-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/3-02.png", "images/production/dressup/MC-Clothes/pants/3-02.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/3-02.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/3-04.png", "images/production/dressup/MC-Clothes/pants/3-04.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/3-04.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/3-05.png", "images/production/dressup/MC-Clothes/pants/3-05.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/3-05.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/pants/3-06.png", "images/production/dressup/MC-Clothes/pants/3-06.png"],
+								"sprite": "images/production/dressup/MC-Clothes/pants/3-06.png"
+							},
+						},
 					},
 				},
 
@@ -1343,7 +1424,34 @@ jsonLoader.result = {
 								"option_sprite": ["images/production/dressup/icons/belts/0.png", "images/production/dressup/icons/belts/0.png"],
 								"sprite": "images/production/dressup/belts/0-06.png"
 							},
-						}
+						},
+						"belt_03":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/belts/1-01.png", "images/production/dressup/MC-Clothes/belts/1-01.png"],
+								"sprite": "images/production/dressup/MC-Clothes/belts/1-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/belts/1-03.png", "images/production/dressup/MC-Clothes/belts/1-03.png"],
+								"sprite": "images/production/dressup/MC-Clothes/belts/1-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/belts/1-02.png", "images/production/dressup/MC-Clothes/belts/1-02.png"],
+								"sprite": "images/production/dressup/MC-Clothes/belts/1-02.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/belts/1-04.png", "images/production/dressup/MC-Clothes/belts/1-04.png"],
+								"sprite": "images/production/dressup/MC-Clothes/belts/1-04.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/belts/1-05.png", "images/production/dressup/MC-Clothes/belts/1-05.png"],
+								"sprite": "images/production/dressup/MC-Clothes/belts/1-05.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/belts/1-06.png", "images/production/dressup/MC-Clothes/belts/1-06.png"],
+								"sprite": "images/production/dressup/MC-Clothes/belts/1-06.png"
+							},
+						},
 					},
 				},
 
