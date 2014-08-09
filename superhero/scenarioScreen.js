@@ -316,10 +316,11 @@ function ScenarioScreen(_info){
 		info.currentScenario = "bank";
 		base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
-	scenario3Button.addEvent("mousedown", function(_clipBoard){
+	
+	/*scenario3Button.addEvent("mousedown", function(_clipBoard){
 		info.currentScenario = "villain";
 		base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
-	}, false );
+	}, false );*/ //---Until we get graphics.
 	
 	
 	//Medium
@@ -331,10 +332,11 @@ function ScenarioScreen(_info){
 			info.currentScenario = "whale";
 			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
-	mediumButton3.addEvent("mousedown", function(_clipBoard){
+
+	/*mediumButton3.addEvent("mousedown", function(_clipBoard){
 			info.currentScenario = "volcano";
 			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
-	}, false );
+	}, false );*/ //-- Until we get graphics.
 	
 	//Hard
 	testButton1.addEvent("mousedown", function(_clipBoard){
@@ -345,10 +347,11 @@ function ScenarioScreen(_info){
 			info.currentScenario = "fire";
 			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
-	testButton5.addEvent("mousedown", function(_clipBoard){
+
+	/*testButton5.addEvent("mousedown", function(_clipBoard){
 			info.currentScenario = "aliens";
 			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
-	}, false );
+	}, false );*/ //--- Until we get graphics.
 
 	//For dev purposes.
 	console.log("Current super powers: " + _info.superhero.powers);
