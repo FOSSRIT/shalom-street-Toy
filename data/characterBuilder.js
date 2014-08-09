@@ -60,28 +60,28 @@ jsonLoader.result = {
 						//In each tab, we have a list of options that the user can click on.
 						"face_00":{
 							"male_1": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 						},
@@ -189,28 +189,28 @@ jsonLoader.result = {
 						//Add in options here.
 						"hair_00":{
 							"male_1": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 						},
@@ -391,28 +391,28 @@ jsonLoader.result = {
 						//Add in options here.
 						"mask_00":{
 							"male_1": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/_00.png", "images/dev/_00.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 						},
@@ -597,58 +597,139 @@ jsonLoader.result = {
 						//Add in options here.
 						"jumpsuit_00":{
 							"male_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 						},
 						"jumpsuit_01":{
 							"male_1": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
 								"sprite": "images/production/dressup/male/young/set_01/jumpsuit.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
 								"sprite": "images/production/dressup/male/adult/set_01/jumpsuit.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
 								"sprite": "images/production/dressup/male/buff/set_01/jumpsuit.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
 								"sprite": "images/production/dressup/female/young/set_01/jumpsuit.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
 								"sprite": "images/production/dressup/female/adult/set_01/jumpsuit.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
+								"option_sprite": ["images/dev/_01.png", "images/dev/_01.png"],
 								"sprite": "images/production/dressup/female/buff/set_01/jumpsuit.png"
 							},
-						}
+						},
+						"jumpsuit_02":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/1-01.png", "images/production/dressup/MC-Clothes/jumpsuit/1-01.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/1-03.png", "images/production/dressup/MC-Clothes/jumpsuit/1-03.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/1-02.png", "images/production/dressup/MC-Clothes/jumpsuit/1-02.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-02.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/1-04.png", "images/production/dressup/MC-Clothes/jumpsuit/1-04.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-04.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/1-05.png", "images/production/dressup/MC-Clothes/jumpsuit/1-05.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-05.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/1-06.png", "images/production/dressup/MC-Clothes/jumpsuit/1-06.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-06.png"
+							},
+						},
+						"jumpsuit_03":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/2-01.png", "images/production/dressup/MC-Clothes/jumpsuit/2-01.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/2-03.png", "images/production/dressup/MC-Clothes/jumpsuit/2-03.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/2-02.png", "images/production/dressup/MC-Clothes/jumpsuit/2-02.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-02.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/2-04.png", "images/production/dressup/MC-Clothes/jumpsuit/2-04.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-04.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/2-05.png", "images/production/dressup/MC-Clothes/jumpsuit/2-05.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-05.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/2-06.png", "images/production/dressup/MC-Clothes/jumpsuit/2-06.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-06.png"
+							},
+						},
+						"jumpsuit_04":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/3-01.png", "images/production/dressup/MC-Clothes/jumpsuit/3-01.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/3-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/3-03.png", "images/production/dressup/MC-Clothes/jumpsuit/3-03.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/3-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/3-02.png", "images/production/dressup/MC-Clothes/jumpsuit/3-02.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/3-02.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/3-04.png", "images/production/dressup/MC-Clothes/jumpsuit/3-04.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/3-04.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/3-05.png", "images/production/dressup/MC-Clothes/jumpsuit/3-05.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/3-05.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/jumpsuit/3-06.png", "images/production/dressup/MC-Clothes/jumpsuit/3-06.png"],
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/3-06.png"
+							},
+						},
 					},
 				},
 
@@ -660,28 +741,28 @@ jsonLoader.result = {
 						//Add in options here.
 						"cape_00":{
 							"male_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 						},
@@ -711,7 +792,7 @@ jsonLoader.result = {
 								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
 								"sprite": "images/production/dressup/female/buff/set_01/cape.png"
 							},
-						}
+						},
 					},
 				},
 
@@ -723,28 +804,28 @@ jsonLoader.result = {
 						//Add in options here.
 						"boots_00":{
 							"male_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 						},
@@ -761,6 +842,33 @@ jsonLoader.result = {
 					//An option that will be included in the tab.
 					"options": {
 						//Add in options here.
+						"shirt_00":{
+							"male_1": {
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
+								"sprite": "images/dev/alpha.png"
+							},
+						},
 						"shirt_01":{
 							"male_1": {
 								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
@@ -816,6 +924,88 @@ jsonLoader.result = {
 								"sprite": "images/production/dressup/shirts/02-06.png"
 							},
 						},
+						
+						"shirt_03":{
+							"male_1": {
+								"option_sprite": ["images/dev/_03.png", "images/dev/_03.png"],
+								"sprite": "images/dev/_03.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/dev/_03.png", "images/dev/_03.png"],
+								"sprite": "images/dev/_03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/dev/_03.png", "images/dev/_03.png"],
+								"sprite": "images/dev/_03.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/shirts/1-04.png", "images/production/dressup/MC-Clothes/shirts/1-04.png"],
+								"sprite": "images/production/dressup/MC-Clothes/shirts/1-04.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/shirts/1-05.png", "images/production/dressup/MC-Clothes/shirts/1-05.png"],
+								"sprite": "images/production/dressup/MC-Clothes/shirts/1-05.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/shirts/1-06.png", "images/production/dressup/MC-Clothes/shirts/1-06.png"],
+								"sprite": "images/production/dressup/MC-Clothes/shirts/1-06.png"
+							},
+						},
+						"shirt_04":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/shirts/5-01.png", "images/production/dressup/MC-Clothes/shirts/5-01.png"],
+								"sprite": "images/production/dressup/MC-Clothes/shirts/5-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/shirts/5-03.png", "images/production/dressup/MC-Clothes/shirts/5-03.png"],
+								"sprite": "images/production/dressup/MC-Clothes/shirts/5-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/shirts/5-02.png", "images/production/dressup/MC-Clothes/shirts/5-02.png"],
+								"sprite": "images/production/dressup/MC-Clothes/shirts/5-02.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/shirts/2-04.png", "images/production/dressup/MC-Clothes/shirts/2-04.png"],
+								"sprite": "images/production/dressup/MC-Clothes/shirts/2-04.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/shirts/2-05.png", "images/production/dressup/MC-Clothes/shirts/2-05.png"],
+								"sprite": "images/production/dressup/MC-Clothes/shirts/2-05.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/shirts/2-06.png", "images/production/dressup/MC-Clothes/shirts/2-06.png"],
+								"sprite": "images/production/dressup/MC-Clothes/shirts/2-06.png"
+							},
+						},
+						"shirt_05":{
+							"male_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/shirts/3-01.png", "images/production/dressup/MC-Clothes/shirts/3-01.png"],
+								"sprite": "images/production/dressup/MC-Clothes/shirts/3-01.png"
+							},
+							"male_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/shirts/3-03.png", "images/production/dressup/MC-Clothes/shirts/3-03.png"],
+								"sprite": "images/production/dressup/MC-Clothes/shirts/3-03.png"
+							},
+							"male_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/shirts/3-02.png", "images/production/dressup/MC-Clothes/shirts/3-02.png"],
+								"sprite": "images/production/dressup/MC-Clothes/shirts/3-02.png"
+							},
+							
+							"female_1": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/shirts/3-04.png", "images/production/dressup/MC-Clothes/shirts/3-04.png"],
+								"sprite": "images/production/dressup/MC-Clothes/shirts/3-04.png"
+							},
+							"female_2": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/shirts/3-05.png", "images/production/dressup/MC-Clothes/shirts/3-05.png"],
+								"sprite": "images/production/dressup/MC-Clothes/shirts/3-05.png"
+							},
+							"female_3": {
+								"option_sprite": ["images/production/dressup/MC-Clothes/shirts/3-06.png", "images/production/dressup/MC-Clothes/shirts/3-06.png"],
+								"sprite": "images/production/dressup/MC-Clothes/shirts/3-06.png"
+							},
+						},
 					},
 				},
 
@@ -827,28 +1017,28 @@ jsonLoader.result = {
 						//Add in options here.
 						"jacket_00":{
 							"male_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 						},
@@ -972,28 +1162,28 @@ jsonLoader.result = {
 						//Add in options here.
 						"logo_00":{
 							"male_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 						},
@@ -1012,28 +1202,28 @@ jsonLoader.result = {
 						//Add in options here.
 						"pants_00":{
 							"male_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 						},
@@ -1075,28 +1265,28 @@ jsonLoader.result = {
 						//Add in options here.
 						"belt_00":{
 							"male_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 						},
@@ -1165,28 +1355,28 @@ jsonLoader.result = {
 						//Add in options here.
 						"pant_accessory_00":{
 							"male_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 						},
@@ -1232,28 +1422,28 @@ jsonLoader.result = {
 						//Add in options here.
 						"armGuards_00":{
 							"male_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 						},
@@ -1295,28 +1485,28 @@ jsonLoader.result = {
 						//Add in options here.
 						"shinGuards_00":{
 							"male_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 						},
@@ -1358,28 +1548,28 @@ jsonLoader.result = {
 						//Add in options here.
 						"hoods_and_helmets_00":{
 							"male_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"male_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							
 							"female_1": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_2": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 							"female_3": {
-								"option_sprite": ["images/dev/alpha.png", "images/dev/alpha.png"],
+								"option_sprite": ["images/production/Deleteclothingicon-01.png", "images/production/Deleteclothingicon-01.png"],
 								"sprite": "images/dev/alpha.png"
 							},
 						},
