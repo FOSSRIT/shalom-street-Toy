@@ -118,7 +118,7 @@ jsonLoader.result = {
 
 						"face_2": {
 							"male_1": {
-								"option_sprite": ["images/production/dressup/MC-Clothes/faces and heads/2-01.png", "images/production/dressup/MC-Clothes/faces and heads/2-01.png"],
+								"option_sprite": ["images/production/dressup/MC-Clothes/faces and heads/icons/2-01_alt1.png", "images/production/dressup/MC-Clothes/faces and heads/icons/2-01_alt1.png"],
 								"sprite": "images/production/dressup/MC-Clothes/faces and heads/2-01.png"
 							},
 							"male_2": {
@@ -147,7 +147,7 @@ jsonLoader.result = {
 						
 						"face_3": {
 							"male_1": {
-								"option_sprite": ["images/production/dressup/MC-Clothes/faces and heads/3-01.png", "images/production/dressup/MC-Clothes/faces and heads/3-01.png"],
+								"option_sprite": ["images/production/dressup/MC-Clothes/faces and heads/icons/3-01_alt1.png", "images/production/dressup/MC-Clothes/faces and heads/icons/3-01_alt1.png"],
 								"sprite": "images/production/dressup/MC-Clothes/faces and heads/3-01.png"
 							},
 							"male_2": {
