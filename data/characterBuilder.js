@@ -298,7 +298,7 @@ jsonLoader.result = {
 						
 						"hair_04":{
 							"male_1": {
-								"option_sprite": ["images/production/dressup/MC-Clothes/hair/1-01.png", "images/production/dressup/MC-Clothes/hair/1-01.png"],
+								"option_sprite": ["images/dev/dressup/icons/hair/1-01.png", "images/dev/dressup/icons/hair/1-01.png"],
 								"sprite": "images/production/dressup/MC-Clothes/hair/1-01.png"
 							},
 							"male_2": {
@@ -325,7 +325,7 @@ jsonLoader.result = {
 						}, 
 						"hair_05":{
 							"male_1": {
-								"option_sprite": ["images/production/dressup/MC-Clothes/hair/2-01.png", "images/production/dressup/MC-Clothes/hair/2-01.png"],
+								"option_sprite": ["images/dev/dressup/icons/hair/2-01.png", "images/dev/dressup/icons/hair/2-01.png"],
 								"sprite": "images/production/dressup/MC-Clothes/hair/2-01.png"
 							},
 							"male_2": {
