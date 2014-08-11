@@ -1,6 +1,7 @@
 <?php
 
 require 'PHPMailer/PHPMailerAutoload.php';
+require 'mailSettings.php';
 
 $mail = new PHPMailer;
 
@@ -9,13 +10,13 @@ try {
 	$mail->Host = '127.0.0.1';  					  // Specify main and backup SMTP servers
 	//$mail->SMTPDebug = 2; //We have debug information.
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'webmaster@127.0.0.1';                 // SMTP username
-	$mail->Password = 'password';                           // SMTP password
+	$mail->Username = $local_address;                 // SMTP username
+	$mail->Password = $password;                           // SMTP password
 	//$mail->SMTPSecure = 'tls'; 				  //For God's sake remove this before you commit.
 	$mail->Priority = 1;
 	$mail->Port = 25;
-	$mail->From = 'webmaster@127.0.0.1';
-	$mail->FromName = 'Mailer';
+	$mail->From = $local_address;
+	$mail->FromName = 'Shalom Street';
 	$mail->addAddress($_POST["address"]);     // Add a recipient
 	//$mail->addAddress('ellen@example.com');               // Name is optional
 	//$mail->addReplyTo('info@example.com', 'Information');

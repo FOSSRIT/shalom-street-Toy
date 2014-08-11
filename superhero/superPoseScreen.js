@@ -69,7 +69,7 @@ function SuperPoseScreen(_info){
 			if(data.image) { //If it's an image.
 				//Currently no support for spritesheets.
 				console.log('draw image');
-				ctx.drawImage(data.image, 0, 0, data.image.width, data.image.height, data.x - data.originX, data.y - data.originY, data.width, data.height);
+				ctx.drawImage(data.image, 0, 0, data.image.width, data.image.height, 0, 0, data.width, data.height);
 			} else if(data.text) { //If it's text.
 				ctx.font = data.font;
 				ctx.fillText(data.text, data.x - data.originX, data.y - data.originY);
@@ -84,7 +84,7 @@ function SuperPoseScreen(_info){
     	//console.log('saved');
     }
 
-    function email(data, address){
+    function sendEmail(data, address){
 
 	    //Use jquery for Ajax, it's easier and I don't know Ajax very well.
 	    $.ajax({
@@ -98,6 +98,7 @@ function SuperPoseScreen(_info){
 	    	if(o == 'success') {
 	    		_sentMail(true); //If we didn't get an error or did get an error.
 	    	} else {
+	    		console.log(o);
 	    		_sentMail(false);
 	    	}
 	    });
@@ -109,7 +110,7 @@ function SuperPoseScreen(_info){
 	function _sendMail(address){
 		try {
 			var data = save();
-			email(data, address);
+			sendEmail(data, address);
 		} catch(e) {
 			//You must be offline.
 			console.log(e);
