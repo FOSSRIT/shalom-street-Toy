@@ -11,6 +11,12 @@ function SuperPoseScreen(_info){
 	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-08.png");
 	base.addModule(splashImage);
 	base.addModule(info.banner);
+
+	//Update bounds in case they've changed.
+	info.superhero.skeleton.bounds.x = 1280;
+	info.superhero.skeleton.bounds.y = 216;
+	//Add your superhero.
+	base.addModule(info.superhero.skeleton);
 	
 	//Buttons
 	/*

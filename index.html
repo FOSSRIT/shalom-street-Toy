@@ -52,7 +52,7 @@
 		<script>
 
 			var canvas, ctx, manager, playArea;
-			var bioSubmission, bioName, resultsScreenBox;
+			var bioSubmission, bioName, bioTextBox, resultsScreenBox;
 			var superhero = {
 				"virtues":[],
 				"skeleton":undefined,
@@ -67,6 +67,7 @@
 
 				bioSubmission = DomWrapper(document.getElementById("bioSubmitBox"));
 				bioName = DomWrapper(document.getElementById("bioNameBox"));
+				bioTextBox = DomWrapper(document.getElementById("bioText"));
 				resultsScreenBox = DomWrapper(document.getElementById("resultsScreenBox"));
 				//bioSubmission.visible = false;
 				canvas = document.getElementById("main");
@@ -140,6 +141,9 @@
 		<!--We'll need to set this stuff up so it goes full screen I guess.-->
 		
 	
+		<div id="bioText"  style="font-size:18px; display:none; position:absolute; left:100px; width:100px; width:500px; height:500px; color:white;">
+			Your superhero's bio will go here.
+		</div>
 		<div id="resultsScreenBox" style="font-size:18px; display:none; position:absolute; left:100px; width:100px; width:500px; height:500px; color:white;">Your superhero's results will go into this box right here.</div>
 		<textarea id="bioSubmitBox" style="font-size:18px; resize: none; display:none; position:absolute; left:0; top:0; width:400px; height:400px">Enter your superhero's bio here!</textarea> 
 		<!--Form that we use for submitting the email address.-->

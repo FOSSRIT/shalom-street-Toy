@@ -16,6 +16,7 @@ function ResultsScreen(_info){
 	splashImage = Sprite(0,0,1920,1080, "images/dev/resultsScreenTest02.png");
 	base.addModule(splashImage);
 	base.addModule(info.banner);
+
 	var myResult = resultsScreenBox;
 	myResult.bounds.x = 20;
 	myResult.bounds.y = 400;
@@ -60,7 +61,14 @@ function ResultsScreen(_info){
 		
 	}
 	base.addModule(resultImage);
-	//base.addModule(words);
+	
+	//Update bounds in case they've changed.
+	info.superhero.skeleton.bounds.x = 640;
+	info.superhero.skeleton.bounds.y = 216;
+	//Add your superhero.
+	base.addModule(info.superhero.skeleton);
+
+
 	
 	//Buttons
 	/*

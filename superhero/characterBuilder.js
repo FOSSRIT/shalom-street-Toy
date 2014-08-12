@@ -186,7 +186,9 @@ function CharacterBuilder(_info){
 		} else { 
 			toy = info.superhero.skeleton;
 			toy.setBodyType(info.superhero.bodyType);
-			//Update skeleton if body type has changed.
+			//Update bounds in case they've changed.
+			toy.bounds.x = playArea.bounds.width/2-320;
+			toy.bounds.y = playArea.bounds.height/5;
 		}
 		//Add module.
 		playArea.addModule(toy);
