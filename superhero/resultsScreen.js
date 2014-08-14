@@ -16,6 +16,13 @@ function ResultsScreen(_info){
 	splashImage = Sprite(0,0,1920,1080, "images/dev/resultsScreenTest02.png");
 	base.addModule(splashImage);
 	base.addModule(info.banner);
+
+	var myResult = resultsScreenBox;
+	myResult.bounds.x = 20;
+	myResult.bounds.y = 400;
+	myResult.bounds.width= 400;
+	myResult.bounds.height = 700;
+	base.addModule(myResult)
 	
 	//Logic
 	//See if based on qualities and powers if the player won or lost the scenario
@@ -28,11 +35,11 @@ function ResultsScreen(_info){
 	//Right now you just need one of each.  In the future, this could change.
 	for(var i=0; i<info.requiredPowers.length; i++){//} in powerRequirements) {
 		if(info.superhero.powers.indexOf(info.requiredPowers[i]) != -1) { powerFound = true; };
-		console.log('found power!');
+		//console.log('found power!');
 	}
 	for(var i=0; i<info.requiredQualities.length; i++){//} in qualityRequirements) {
 		if(info.superhero.virtues.indexOf(info.requiredQualities[i]) != -1) { qualityFound = true; };
-		console.log('found quality!');
+		//console.log('found quality!');
 	}
 
 
@@ -43,15 +50,25 @@ function ResultsScreen(_info){
 	if(qualityFound && powerFound){
 		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-06_alt.png");
 		info.win = true;
-		var words = Sprite(0, 375, 512, 512, "images/dev/lorem_512.png");
+		myResult.getDom().innerHTML = "Congratulations!  <br><br>Using your powers and virtues, you've saved the day!";
+		//var words = Sprite(0, 375, 512, 512, "images/dev/lorem_512.png");
 	}else{
 		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-07_alt.png");
 		info.win = false;
-		var words = Sprite(0, 375, 512, 512, "images/dev/lorem_512.png");
+		myResult.getDom().innerHTML = "Hmmm... <br><br>Are you sure you selected the right powers and virtues?  Maybe you should try again!";
+
+		//var words = Sprite(0, 375, 512, 512, "images/dev/lorem_512.png");
 		
 	}
 	base.addModule(resultImage);
-	base.addModule(words);
+	
+	//Update bounds in case they've changed.
+	info.superhero.skeleton.bounds.x = 640;
+	info.superhero.skeleton.bounds.y = 216;
+	//Add your superhero.
+	base.addModule(info.superhero.skeleton);
+
+
 	
 	//Buttons
 	/*

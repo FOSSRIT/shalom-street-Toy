@@ -1,6 +1,7 @@
 <?php
 
 require 'PHPMailer/PHPMailerAutoload.php';
+require 'mailSettings.php';
 
 $mail = new PHPMailer;
 
@@ -9,13 +10,13 @@ try {
 	$mail->Host = '127.0.0.1';  					  // Specify main and backup SMTP servers
 	//$mail->SMTPDebug = 2; //We have debug information.
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'webmaster@127.0.0.1';                 // SMTP username
-	$mail->Password = 'password';                           // SMTP password
+	$mail->Username = $local_address;                 // SMTP username
+	$mail->Password = $password;                           // SMTP password
 	//$mail->SMTPSecure = 'tls'; 				  //For God's sake remove this before you commit.
 	$mail->Priority = 1;
 	$mail->Port = 25;
-	$mail->From = 'webmaster@127.0.0.1';
-	$mail->FromName = 'Mailer';
+	$mail->From = $local_address;
+	$mail->FromName = 'Shalom Street';
 	$mail->addAddress($_POST["address"]);     // Add a recipient
 	//$mail->addAddress('ellen@example.com');               // Name is optional
 	//$mail->addReplyTo('info@example.com', 'Information');
@@ -38,7 +39,9 @@ try {
 	$mail->isHTML(true);                                  // Set email format to HTML
 
 	$mail->Subject = 'Shalom Street Superhero';
-	$mail->Body    = "Thanks for using our app and visiting our museum!  We've attached an image of the superhero you created!<br><br>On behalf of everyone here at Shalom Street Museum, have a great day!";
+	$bodyString = "Thanks for using our app and visiting our museum!  We've attached an image of the superhero you created!<br><br>On behalf of everyone here at Shalom Street Museum, have a great day!<br><br>";
+	$bodyString .= "<b>Name: </b> " . $_POST["name"] . "</br></br><b>Bio:</b><br>" . $_POST["biography"];
+	$mail->Body    = $bodyString;
 	$mail->AltBody = "Thanks for using our app and visiting our museum!  We've attached an image of the superhero you created!";
 
 	$mail->send();

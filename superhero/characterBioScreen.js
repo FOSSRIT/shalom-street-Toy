@@ -12,6 +12,44 @@ function CharacterBioScreen(_info){
 	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-05_alt.png");
 	base.addModule(splashImage);
 	base.addModule(info.banner);
+
+
+
+	//Set up bios.
+	var myBio = bioTextBox; myBio.bounds.x = 128; myBio.bounds.y = 508; myBio.bounds.width = 896; myBio.bounds.height = 384;
+	//base.addModule(myBio);
+	var customBio = bioSubmission; customBio.bounds.x = 128; customBio.bounds.y = 508; customBio.bounds.width = 896; customBio.bounds.height = 384;
+	//base.addModule(customBio);
+	//
+	info.superhero.bios = [];
+	jsonLoader.Load("data/characterBuilder.js", function(result){
+
+
+		//Default to 1.
+		_changeBio(0);
+	});
+
+	//Function for changing bios (slightly hacky)
+	function _changeBio(bioToChangeTo) {
+		//If the bio exists - 
+		if(info.bios[bioToChangeTo]) {
+			myBio.visible = true;
+			customBio.visible = false; //Turn off custom.
+
+			info.superhero.myBio = info.bios[bioToChangeTo];
+			myBio.getDom().innerHTML = info.bios[bioToChangeTo];
+		}
+		//Else, change to custom.  
+		//There are far far worse sections of code in here than this.
+		//I'm certainly not going to draw the line now.
+		info.superhero.myBio = customBio.getDom().value;
+	}
+
+	//Update bounds in case they've changed.
+	info.superhero.skeleton.bounds.x = 1280;
+	info.superhero.skeleton.bounds.y = 216;
+	//Add your superhero.
+	base.addModule(info.superhero.skeleton);
 	
 
 	

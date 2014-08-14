@@ -1,0 +1,6 @@
+jsonLoader.result = {
+	"1": "This hero grew up in a very rich family and recieved a lot of money from their parents.  This hero used the money to fund their fight against crime and corruption.  Thanks to all the money, this hero is able to help those in need and always stay one step ahead of all the villians in town."
+	"2": "This hero is a time traveler from a distant planet.  They came here from the future to prevent a great disaster from happening.  When they arrived on our planet, they were taken in and lived with a family on a farm in a small town.  On the farm, the hero learned the value of a hard day's work.  The hero lives by those values and works tirelessly to protect those around them."
+	"3": "This hero is a misfit that doesn't quite fit in with everyone else, probably because they're independent and like to make their own rules.  However, they still really care about everyone else around them.  The hero understands the true value of life and that every person is special and deserves to be looked after. This hero protects everyone: big, small, boy, or girl.  If you need help, this hero will always have your back, no matter who you are."
+}
+jsonLoader.onresult();
