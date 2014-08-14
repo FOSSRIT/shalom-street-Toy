@@ -50,12 +50,12 @@ function ResultsScreen(_info){
 	if(qualityFound && powerFound){
 		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-06_alt.png");
 		info.win = true;
-		myResult.getDom().innerHTML = "Congratulations!  <br><br>Using your powers and virtues, you've saved the day!";
+		myResult.getDom().innerHTML = info.winText;
 		//var words = Sprite(0, 375, 512, 512, "images/dev/lorem_512.png");
 	}else{
 		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-07_alt.png");
 		info.win = false;
-		myResult.getDom().innerHTML = "Hmmm... <br><br>Are you sure you selected the right powers and virtues?  Maybe you should try again!";
+		myResult.getDom().innerHTML = info.loseText;
 
 		//var words = Sprite(0, 375, 512, 512, "images/dev/lorem_512.png");
 		
