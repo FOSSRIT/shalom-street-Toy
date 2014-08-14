@@ -11,7 +11,7 @@ function GenderSelect(_info){
 
 	//--------------------------------------
 
-	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-14.png");
+	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/updatedBackgrounds/background-05.png");
 	base.addModule(splashImage);
 	base.addModule(info.banner);
 

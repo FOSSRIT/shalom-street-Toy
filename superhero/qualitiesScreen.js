@@ -15,7 +15,7 @@ function QualitiesScreen(_info){
 	//info.superhero.virtueSelected
 	
 	//Dev Splash Image
-	var splashImage = Sprite(0,0,1920,1080, "images/dev/qualitiesButtons/background.png");
+	var splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/updatedBackgrounds/background-03.png");
 	base.addModule(splashImage);
 	base.addModule(info.banner);
 	
@@ -37,11 +37,11 @@ function QualitiesScreen(_info){
 	var backButton = Sprite(0, 1080-128, 256, 128, "images/dev/buttons/back.png");
 	base.addModule(backButton);
 	
-	var continueButton = Sprite(1920-256, 1080-128, 256, 128, "images/dev/buttons/continue.png");
+	var continueButton = Sprite(1920-335, 1080-138, 306, 108);
 	base.addModule(continueButton);
 	
 	
-	var quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
+	var quitButton = Sprite(0, 0, 256, 216);
 	base.addModule(quitButton);
 
 	var grid = Grid(toReturn.bounds.width/5, toReturn.bounds.height/3-128, 2, 1, 256, 256, 10);

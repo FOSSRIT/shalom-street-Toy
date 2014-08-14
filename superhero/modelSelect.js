@@ -12,7 +12,7 @@ function ModelSelect(_info){
 
 	if(info.superhero.gender == "female"){
 	
-		var splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-15_alt.png");
+		var splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/updatedBackgrounds/background-06.png");
 		base.addModule(splashImage);
 		base.addModule(info.banner);
 
@@ -47,7 +47,7 @@ function ModelSelect(_info){
 
 	} else if(info.superhero.gender == "male"){
 	
-		var splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-16_alt.png");
+		var splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-16.png");
 		base.addModule(splashImage);
 		base.addModule(info.banner);
 

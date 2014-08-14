@@ -9,7 +9,7 @@ function CharacterBioScreen(_info){
 
 	//--------------------------------------
 
-	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-05_alt.png");
+	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/updatedBackgrounds/background-10.png");
 	base.addModule(splashImage);
 	base.addModule(info.banner);
 

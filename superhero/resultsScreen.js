@@ -13,7 +13,7 @@ function ResultsScreen(_info){
 	//Super inneficient, will fix later.
 
 	//Dev Splash Image
-	splashImage = Sprite(0,0,1920,1080, "images/dev/resultsScreenTest02.png");
+	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/updatedBackgrounds/background-11.png");
 	base.addModule(splashImage);
 	base.addModule(info.banner);
 
@@ -48,12 +48,12 @@ function ResultsScreen(_info){
 	//---------------Just setting up the rest of the stuff here.---------------
 
 	if(qualityFound && powerFound){
-		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-06_alt.png");
+		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/updatedBackgrounds/background-11.png");
 		info.win = true;
 		myResult.getDom().innerHTML = info.winText;
 		//var words = Sprite(0, 375, 512, 512, "images/dev/lorem_512.png");
 	}else{
-		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-07_alt.png");
+		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/updatedBackgrounds/background-12.png");
 		info.win = false;
 		myResult.getDom().innerHTML = info.loseText;
 

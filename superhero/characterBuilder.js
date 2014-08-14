@@ -16,7 +16,7 @@ function CharacterBuilder(_info){
 
 
 		//Load in the basics.
-		var splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-04.png");
+		var splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/updatedBackgrounds/background-09.png");
 		base.addModule(splashImage);
 		base.addModule(info.banner);
 
