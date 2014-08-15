@@ -1,27 +1,3 @@
-/*
-No arrays.
-The artist isn't building the page, they're adding things to the page and positioning them.
-They're filling in the blanks.
-
-Try to remove weird syntax whenever possible.
-This is their interface for reacting with you, and it encourages communication.
-Minimize the amount that's required to learn.
-*/
-
-
-
-/*
-Some reminders:
-----------------------------------------------------------------------
-Screen resolution: 1920x1080,
-How information should look, depending on what's being included  - 
-"informationName": ["someText", 20]
-----------------------------------------------------------------------
-Adding an image: [path_to_image, xPosition, yPosition, width, height]
-Adding an animation: ***NOT YET SUPPORTED***
-----------------------------------------------------------------------
-*/
-
 jsonLoader.result = {
 	//Here you should the tabs you want.
 
@@ -70,8 +46,8 @@ jsonLoader.result = {
 		"lose_text": "Think carefully. <br><br>You're looking for powers that will help you outsmart criminals, and for qualities that might motivate you to go up against a gang of theives.  What qualities would be helpful to teach the criminals not to steal as well?  Can you think of anything that would help motivate you not to steal something?"
 	},
 	"villain" :{
-		"banner": 		"images/production/scenarios/banners/fire.png", 
-		"background": 	"images/Backgrounds/background-09.png",
+		"banner": 		"images/Backgrounds/newbanners-08.png", 
+		"background": 	"images/Backgrounds/scenariobackgrounds-08.png",
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
@@ -150,8 +126,8 @@ jsonLoader.result = {
 		"lose_text": "Are you sure you selected all the right qualities and virtues?  <br><br>You're looking for powers that can help you put out fires and rescue the people inside.  It might be handy to include powers that let you care for people who might be injured in the blaze, or that might help you locate and reach people that normal firefighters couldn't get to.  <br><br>Finally, think about the qualities and virtues that real firefighters demonstrate when they're confronted with similar problems - what might drive someone to risk their life to help others, even when faced with something like a fire?"
 	},
 	"aliens" :{
-		"banner": 		"images/production/scenarios/banners/fire.png", 
-		"background": 	"images/Backgrounds/background-09.png",
+		"banner": 		"images/Backgrounds/newbanners-07.png", 
+		"background": 	"images/Backgrounds/scenariobackgrounds-07.png",
 		"title": 		"images/dev/testDetailedScenarios/temp_title.png",
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
@@ -167,53 +143,3 @@ jsonLoader.result = {
 };
 
 jsonLoader.onresult();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-var data= {
-
-
-	//HEADS
-	//--------------------------------------------------
-	"myFirstHead": ["images/test.png", 0, 0, 10, 10],
-	"mySecondHead": ["images/test.png", 0, 0, 10, 10],
-	"myThirdHead": ["images/test.png", 0, 0, 10, 10],
-	"myFourthHead": [undefined],
-
-	//Add additional heads here.
-	//--------------------------------------------------
-
-
-	//All of the character parts.
-	"heads": ["myFirstHead", "mySecondHead", "myThirdHead"],
-	"hair": [],
-	""
-}
-
-*/

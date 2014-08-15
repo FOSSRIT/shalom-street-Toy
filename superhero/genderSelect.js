@@ -43,7 +43,7 @@ function GenderSelect(_info){
 	backButton = Sprite(0, 1080-128, 256, 128, "images/dev/buttons/back.png");
 	base.addModule(backButton);
 	
-	quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
+	quitButton = Sprite(0, 0, 256, 216);
 	base.addModule(quitButton);
 	
 	//Events

@@ -18,7 +18,7 @@ function ResultsScreen(_info){
 	base.addModule(info.banner);
 
 	var myResult = resultsScreenBox;
-	myResult.bounds.x = 20;
+	myResult.bounds.x = 50;
 	myResult.bounds.y = 400;
 	myResult.bounds.width= 400;
 	myResult.bounds.height = 700;
@@ -81,7 +81,7 @@ function ResultsScreen(_info){
 	//Add it regardless.
 	base.addModule(continueButton);
 	
-	var quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
+	var quitButton = Sprite(0, 0, 256, 216);
 	base.addModule(quitButton);
 	
 	//Events

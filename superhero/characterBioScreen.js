@@ -14,10 +14,10 @@ function CharacterBioScreen(_info){
 	base.addModule(info.banner);
 
 	//Set up bios.
-	var myBio = bioTextBox; myBio.bounds.x = 128; myBio.bounds.y = 508; myBio.bounds.width = 896; myBio.bounds.height = 384;
+	var myBio = bioTextBox; myBio.bounds.x = 128; myBio.bounds.y = 508; myBio.bounds.width = 896; myBio.bounds.height = 364;
 	myBio.visible = false;
 	base.addModule(myBio);
-	var customBio = bioSubmission; customBio.bounds.x = 128; customBio.bounds.y = 508; customBio.bounds.width = 896; customBio.bounds.height = 384;
+	var customBio = bioSubmission; customBio.bounds.x = 128; customBio.bounds.y = 508; customBio.bounds.width = 896; customBio.bounds.height = 328;
 	customBio.visible = false;
 	base.addModule(customBio);
 	//
@@ -64,13 +64,13 @@ function CharacterBioScreen(_info){
 
 		
 		//option tabs
-		var option1 = Sprite(32,8*toReturn.bounds.height/16-32,64,64, "images/dev/charBioPage/1_highlight.png");
+		var option1 = Sprite(8*toReturn.bounds.height/16-200, 850 ,64,64, "images/dev/charBioPage/1_highlight.png");
 		base.addModule(option1);
-		var option2 = Sprite(32,9*toReturn.bounds.height/16-32+16,64,64, "images/dev/charBioPage/2.png");
+		var option2 = Sprite(9*toReturn.bounds.height/16+16-200, 850,64,64, "images/dev/charBioPage/2.png");
 		base.addModule(option2);
-		var option3 = Sprite(32,10*toReturn.bounds.height/16-32+32,64,64, "images/dev/charBioPage/3.png");
+		var option3 = Sprite(10*toReturn.bounds.height/16+32-200, 850,64,64, "images/dev/charBioPage/3.png");
 		base.addModule(option3);
-		var option4 = Sprite(32,11*toReturn.bounds.height/16-32+48,64,64, "images/dev/charBioPage/custom.png");
+		var option4 = Sprite(11*toReturn.bounds.height/16+48-200, 850,64,64, "images/dev/charBioPage/custom.png");
 		base.addModule(option4); 
 		
 		//ToyboxTab
@@ -85,25 +85,6 @@ function CharacterBioScreen(_info){
 		
 		
 		//Content
-		//bio1
-
-		var bioDescription1 = Sprite(0,0,896,384, "images/dev/charBioPage/bio_1.png");
-		content1.addModule(bioDescription1); 
-		//bio1
-		var bioDescription2 = Sprite(0,0,896,384, "images/dev/charBioPage/bio_2.png");
-		content2.addModule(bioDescription2); 
-		//bio1
-		var bioDescription3 = Sprite(0,0,896,384, "images/dev/charBioPage/bio_3.png");
-		content3.addModule(bioDescription3); 
-		//bio_custom
-		//var bioDescription4 = Sprite(0,0,896,384, "images/dev/_04.png");
-		/*var bioDescription4 = bioSubmission;
-		bioDescription4.bounds.x = 0;
-		bioDescription4.bounds.y = 0;
-		bioDescription4.bounds.width = 896;
-		bioDescription4.bounds.height = 384;*/
-		//bioSubmission.getDom().
-		//content4.addModule(bioDescription4); 
 
 		//Name tag.
 		var name = bioName;
@@ -199,12 +180,12 @@ function CharacterBioScreen(_info){
 	continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
 	base.addModule(continueButton);
 	
-	var quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
+	var quitButton = Sprite(0, 0, 256, 216);
 	base.addModule(quitButton);
 	
 	//Events
 	backButton.addEvent("mousedown", base.changeState("CharacterBuilder", _info), false);
-	continueButton.addEvent("mousedown", function(_clipBoard){ if(domValueToGet){ info.superhero.myBio = domValueToGet.value; }}, false);
+	continueButton.addEvent("mousedown", function(_clipBoard){ info.superhero.myName = bioName.getDom().value; if(domValueToGet){ info.superhero.myBio = domValueToGet.value; }}, false);
 	continueButton.addEvent("mousedown", base.changeState("ResultsScreen", _info), false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 

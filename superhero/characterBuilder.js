@@ -208,12 +208,8 @@ function CharacterBuilder(_info){
 		var continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
 		toReturn.addModule(continueButton);
 		
-		quitButton = Sprite(toReturn.bounds.x, toReturn.bounds.y, 256, 216, "images/dev/buttons/quit.png");
+		quitButton = Sprite(toReturn.bounds.x, toReturn.bounds.y, 256, 216);
 		toReturn.addModule(quitButton);
-
-
-
-
 
 
 
@@ -259,31 +255,6 @@ function CharacterBuilder(_info){
 				c_column++;
 			}
 		}
-
-
-		/*
-		var redButton = Sprite(toybox.bounds.width-256, 216+128, 128, 128, "images/dev/_01.png");
-		toReturn.addModule(redButton);
-		var orangeButton = Sprite(toybox.bounds.width-256, 216+(2*128), 128, 128, "images/dev/_02.png");
-		toReturn.addModule(orangeButton);
-		var yellowButton = Sprite(toybox.bounds.width-256, 216+(3*128), 128, 128, "images/dev/_03.png");
-		toReturn.addModule(yellowButton);
-		var greenButton = Sprite(toybox.bounds.width-256, 216+(4*128), 128, 128, "images/dev/_04.png");
-		toReturn.addModule(greenButton);
-		var blueButton = Sprite(toybox.bounds.width-256, 216+(5*128), 128, 128, "images/dev/_05.png");
-		toReturn.addModule(blueButton);
-		
-		var purpleButton = Sprite(toybox.bounds.width-128, 216+128, 128, 128, "images/dev/_06.png");
-		toReturn.addModule(purpleButton);
-		var pinkButton = Sprite(toybox.bounds.width-128, 216+(2*128), 128, 128, "images/dev/_07.png");
-		toReturn.addModule(pinkButton);
-		var brownButton = Sprite(toybox.bounds.width-128, 216+(3*128), 128, 128, "images/dev/_08.png");
-		toReturn.addModule(brownButton);
-		var whiteButton = Sprite(toybox.bounds.width-128, 216+(4*128), 128, 128, "images/dev/_00.png");
-		toReturn.addModule(whiteButton);
-		var blackButton = Sprite(toybox.bounds.width-128, 216+(5*128), 128, 128, "images/error.png");
-		toReturn.addModule(blackButton);
-		*/
 		
 		
 		//Events
