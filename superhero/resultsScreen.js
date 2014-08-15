@@ -18,7 +18,7 @@ function ResultsScreen(_info){
 	base.addModule(info.banner);
 
 	var myResult = resultsScreenBox;
-	myResult.bounds.x = 20;
+	myResult.bounds.x = 50;
 	myResult.bounds.y = 400;
 	myResult.bounds.width= 400;
 	myResult.bounds.height = 700;
