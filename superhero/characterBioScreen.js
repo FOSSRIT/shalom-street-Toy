@@ -17,7 +17,7 @@ function CharacterBioScreen(_info){
 	var myBio = bioTextBox; myBio.bounds.x = 128; myBio.bounds.y = 508; myBio.bounds.width = 896; myBio.bounds.height = 364;
 	myBio.visible = false;
 	base.addModule(myBio);
-	var customBio = bioSubmission; customBio.bounds.x = 128; customBio.bounds.y = 508; customBio.bounds.width = 896; customBio.bounds.height = 358;
+	var customBio = bioSubmission; customBio.bounds.x = 128; customBio.bounds.y = 508; customBio.bounds.width = 896; customBio.bounds.height = 328;
 	customBio.visible = false;
 	base.addModule(customBio);
 	//
@@ -64,13 +64,13 @@ function CharacterBioScreen(_info){
 
 		
 		//option tabs
-		var option1 = Sprite(32,8*toReturn.bounds.height/16-32,64,64, "images/dev/charBioPage/1_highlight.png");
+		var option1 = Sprite(8*toReturn.bounds.height/16-200, 850 ,64,64, "images/dev/charBioPage/1_highlight.png");
 		base.addModule(option1);
-		var option2 = Sprite(32,9*toReturn.bounds.height/16-32+16,64,64, "images/dev/charBioPage/2.png");
+		var option2 = Sprite(9*toReturn.bounds.height/16+16-200, 850,64,64, "images/dev/charBioPage/2.png");
 		base.addModule(option2);
-		var option3 = Sprite(32,10*toReturn.bounds.height/16-32+32,64,64, "images/dev/charBioPage/3.png");
+		var option3 = Sprite(10*toReturn.bounds.height/16+32-200, 850,64,64, "images/dev/charBioPage/3.png");
 		base.addModule(option3);
-		var option4 = Sprite(32,11*toReturn.bounds.height/16-32+48,64,64, "images/dev/charBioPage/custom.png");
+		var option4 = Sprite(11*toReturn.bounds.height/16+48-200, 850,64,64, "images/dev/charBioPage/custom.png");
 		base.addModule(option4); 
 		
 		//ToyboxTab

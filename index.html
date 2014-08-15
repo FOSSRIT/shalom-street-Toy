@@ -148,7 +148,7 @@
 		<textarea id="bioSubmitBox" style="font-family: 'robotolight', sans-serif; font-size:16px; resize: none; display:none; position:absolute; left:0; top:0; width:400px; height:400px">Enter your superhero's bio here!</textarea> 
 		<!--Form that we use for submitting the email address.-->
 		<form name="email" style="visibility:hidden; font-size:24pt; padding:15px; width:20%; border-radius:10px; position:absolute; left:35%; top:40%; background-color:white; box-shadow: 0px 0px 10px black;" >
-			Email Adress: <input type="text" style="font-size:18pt; width:95%; padding:3px;" name="address" />
+			Email Adress: <input type="text" style="font-size:18pt; width:95%; padding:3px;" name="address"/>
 			<input type="button" style="font-size:18pt; padding:4px;" value="Send Email" onclick="manager.handleEvent('sendEmail', {'address':document.forms['email']['address'].value});"/>
 			<input type="button" style="font-size:18pt; padding:4px;" value="Cancel" onclick="document.forms['email']['address'].value = ''; document.forms['email'].style.visibility = 'hidden';"/>
 		</form>
@@ -168,7 +168,7 @@
 			<input type="button" style="font-size:18pt; padding:4px;" value="Ok" onclick="document.forms['sent_error'].style.visibility = 'hidden';"/>
 		</form>
 
-		<input id="bioNameBox" style="font-family: 'robotolight', sans-serif; font-size:18px; resize: none; display:none; position:absolute; left:0; top:0; width:100px; height:100px">
+		<input id="bioNameBox" style="font-family: 'robotolight', sans-serif; font-size:16px; resize: none; display:none; position:absolute; left:0; top:0; width:100px; height:100px" value="Your name here" />
 
 		<canvas id="main" width="1920px" height="1080px"></canvas>
 	</body>

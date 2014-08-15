@@ -40,7 +40,7 @@ try {
 
 	$mail->Subject = 'Shalom Street Superhero';
 	$bodyString = "Thanks for using our app and visiting our museum!  We've attached an image of the superhero you created!<br><br>On behalf of everyone here at Shalom Street Museum, have a great day!<br><br>";
-	$bodyString .= "<b>Name: </b> " . $_POST["name"] . "</br></br><b>Bio:</b><br>" . $_POST["biography"];
+	$bodyString .= "<b>Name: </b> " . $_POST["name"] . "</br></br><b>Bio:</b><br>" . $_POST["bio"];
 	$mail->Body    = $bodyString;
 	$mail->AltBody = "Thanks for using our app and visiting our museum!  We've attached an image of the superhero you created!";
 
