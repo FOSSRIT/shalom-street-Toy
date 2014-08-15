@@ -70,17 +70,13 @@ function ResultsScreen(_info){
 
 
 	
-	//Buttons
-	/*
-	backButton = Sprite(0, 1080-128, 256, 128, "images/dev/buttons/back.png");
-	base.addModule(backButton);
-	*/
+	//--------------Buttons-------------------------------
 	
-	//Change the continue button based on whether or not we won.
-	if(info.win){
-		continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
-	} else if(!info.win){
-		continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
+	//Change the buttons we get based on whether or not we won.
+	var continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
+	var tryAgainButton = Sprite(1920-512, 1080-320, 512, 150, "images/dev/alpha.png");
+	if(!info.win){
+		base.addModule(tryAgainButton);
 	}
 	//Add it regardless.
 	base.addModule(continueButton);
@@ -89,20 +85,8 @@ function ResultsScreen(_info){
 	base.addModule(quitButton);
 	
 	//Events
-	/*
-	backButton.addEvent("mousedown", base.changeState("CharacterBioScreen", _info), false);
-	*/
-
-	//We swap out the image and destination based on how you did.
-	if(info.win){
-		continueButton.addEvent("mousedown", base.changeState("SuperPoseScreen", _info), false);
-	} else if(!info.win){
-		//continueButton.addEvent("mousedown", base.changeState("QualitiesScreen", _info), false);
-		//For dev purposes - change back after we know emails work.
-		continueButton.addEvent("mousedown", base.changeState("SuperPoseScreen", _info), false);
-	}
-
-
+	continueButton.addEvent("mousedown", base.changeState("SuperPoseScreen", _info), false);
+	tryAgainButton.addEvent("mousedown", base.changeState("QualitiesScreen", _info), false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 
 

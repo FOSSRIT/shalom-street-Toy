@@ -196,7 +196,7 @@ function CharacterBioScreen(_info){
 	backButton = Sprite(0, 1080-128, 256, 128, "images/dev/buttons/back.png");
 	base.addModule(backButton);
 	
-	continueButton = Sprite(1920-256, 1080-128, 256, 128, "images/dev/buttons/continue.png");
+	continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
 	base.addModule(continueButton);
 	
 	var quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");

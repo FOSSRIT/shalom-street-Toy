@@ -205,7 +205,7 @@ function CharacterBuilder(_info){
 		var backButton = Sprite(toReturn.bounds.x, toReturn.bounds.height-128, 256, 128, "images/dev/buttons/back.png");
 		toReturn.addModule(backButton);
 		
-		var continueButton = Sprite(toReturn.bounds.width-256, toReturn.bounds.height-128, 256, 128, "images/dev/buttons/continue.png");
+		var continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
 		toReturn.addModule(continueButton);
 		
 		quitButton = Sprite(toReturn.bounds.x, toReturn.bounds.y, 256, 216, "images/dev/buttons/quit.png");

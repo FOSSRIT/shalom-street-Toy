@@ -36,7 +36,7 @@ jsonLoader.result = {
 		"summary": 		"images/dev/testDetailedScenarios/temp_summary.png",
 		"comic": 		"images/dev/testDetailedScenarios/temp_comic.png",
 		"required": {
-			"powers": [],
+			"powers": ["fire"],
 			"qualities": ["bravery"]
 		},
 		"win_text": "You win!",
@@ -53,8 +53,8 @@ jsonLoader.result = {
 			"powers": ["mind","speed","strength","teleport"],
 			"qualities": ["respect","listening","understanding","friendship"]
 		},
-		"win_text": "You win!",
-		"lose_text": "You lose!"
+		"win_text": "Nice work!  <br><br>You've probably discovered in your own life that teamwork is often challenging.  However, those challenges come with huge rewards.  It's often difficult, even for a Superhero, to do everything on their own, and you were able to teach that to the baseball team.  Thanks to you, they're now able to work together and take advantage of everyone's strengths.",
+		"lose_text": "Are you sure you selected all the right qualities and virtues? <br><br> While you'll need to look for powers that could help you win a baseball game, it's more important that you look for qualities that could help encourage the other players to work together as an effective team."
 	},
 	"bank" :{
 		"banner": 		"images/Backgrounds/newbanners-05.png", 
@@ -66,8 +66,8 @@ jsonLoader.result = {
 			"powers": ["laser","mind","speed","smart","strength","teleport","xray"],
 			"qualities": ["brave","responsibility","understanding","satisfied"]
 		},
-		"win_text": "You win!",
-		"lose_text": "You lose!"
+		"win_text": "Congratulations!  <br><br>You were able to stop a bank robbery!  It's a good thing you were around to help or who knows what might have happened!  Thanks to you, everyone's money is safe, and the criminals have been apprehended without any injuries or disasters.",
+		"lose_text": "Think carefully. <br><br>You're looking for powers that will help you outsmart criminals, and for qualities that might motivate you to go up against a gang of theives.  What qualities would be helpful to teach the criminals not to steal as well?  Can you think of anything that would help motivate you not to steal something?"
 	},
 	"villain" :{
 		"banner": 		"images/production/scenarios/banners/fire.png", 
@@ -79,8 +79,8 @@ jsonLoader.result = {
 			"powers": ["fire","water","laser","mind","flight","speed","smart","strength"],
 			"qualities": ["friendship","respect","satisfied","listening","understanding"]
 		},
-		"win_text": "You win!",
-		"lose_text": "You lose!"
+		"win_text": "Great job!  <br><br>Beating a Supervillain is definitely a job for a Superhero! Doctor NeverWrong needed to learn to listen to other people and admit his mistakes.  Qualities like understanding are important in any argument; they help you pay attention to what other people are saying, and work with them to resolve a conflict rather than against them.  If Doctor NeverWrong had known that, he might never have become a Supervillain.",
+		"lose_text": "Think carfeully. <br><br>You're up against a Supervillain, so you'll want to pick powers that could help you out in a fight.  You'll also want to look for qualities that could help you deal with an argumentative person.  What qualities would Doctor NeverWrong need to help him be less contrary and pay more attention to other people's opinions."
 	},
 	//Medium
 	"bully" :{
@@ -94,7 +94,7 @@ jsonLoader.result = {
 			"qualities": ["brave","friendship","caring"]
 		},
 		"win_text": "Nice job!  <br><br>Dealing with bullying can be a complicated and difficult task, well deserving of a Superhero's attention.  The best Superheros look at ways of resolving conflicts and helping everyone involved.  You were able to help a bullied child in a highly significant way.",
-		"lose_text": "Are you sure you selected all the right qualities and virtues?  <br><br> What powers do you need? <br><br> What virtues do you need?"
+		"lose_text": "Are you sure you selected all the right qualities and virtues?  <br><br> You'll need powers that can help you stand up to a bully, but also powers that can help care for victims and reach resolutions for a conflict. <br><br> You're also looking for virtues that you can use to teach someone not to hurt other people, and for qualities that give you the courage to stand up for yourself and for others."
 	},
 	"whale" :{
 		"banner": 		"images/Backgrounds/newbanners-01.png", 
@@ -133,7 +133,7 @@ jsonLoader.result = {
 			"powers": ["duplicate","mind","smart"],
 			"qualities": ["friendship","respect","caring","satisfied"]
 		},
-		"win_text": "Congratulations!  <br><br>You've been able to resolve the situation using your creativity, and help the children realize that being friends with other people feels better than being jealous of other people.  Both parties are greatful for your intervention!",
+		"win_text": "Congratulations!  <br><br>You've been able to resolve the situation using your creativity, and help the children realize that being friends with other people feels better than being jealous of other people.  Both parties are greatful for your help!",
 		"lose_text": "Are you sure you selected all the right qualities and virtues?  <br><br>Ask yourself what kinds of powers you would use to help resolve an argument.  Are there any superpowers that are uniquely situated to this problem?  <br><br>More importantly, ask what qualities you'd need in a conflict like this.  What can you show the parties involved, or tell them about, to help them realize that other people are more important than things?"
 	},
 	"fire" :{
