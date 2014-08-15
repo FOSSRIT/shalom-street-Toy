@@ -133,19 +133,17 @@
 		</script>
 	</head>
 
-
-
 	<!--Main app-->
 	<body>
 		<!--Canvas is width and height of the screen.-->
 		<!--We'll need to set this stuff up so it goes full screen I guess.-->
 		
 	
-		<div id="bioText"  style="font-size:18px; display:none; position:absolute; left:100px; width:100px; width:500px; height:500px; color:white;">
+		<div id="bioText"  style="font-family: 'Roboto', sans-serif; font-size:19px; display:none; position:absolute; left:100px; width:100px; width:500px; height:500px; color:white;">
 			Your superhero's bio will go here.
 		</div>
-		<div id="resultsScreenBox" style="font-size:18px; display:none; position:absolute; left:100px; width:100px; width:500px; height:500px; color:white;">Your superhero's results will go into this box right here.</div>
-		<textarea id="bioSubmitBox" style="font-size:18px; resize: none; display:none; position:absolute; left:0; top:0; width:400px; height:400px">Enter your superhero's bio here!</textarea> 
+		<div id="resultsScreenBox" style="font-family: 'Roboto', sans-serif; font-size:19px; display:none; position:absolute; left:100px; width:100px; width:500px; height:500px; color:white;">Your superhero's results will go into this box right here.</div>
+		<textarea id="bioSubmitBox" style="font-family: 'Roboto', sans-serif; font-size:18px; resize: none; display:none; position:absolute; left:0; top:0; width:400px; height:400px">Enter your superhero's bio here!</textarea> 
 		<!--Form that we use for submitting the email address.-->
 		<form name="email" style="visibility:hidden; font-size:24pt; padding:15px; width:20%; border-radius:10px; position:absolute; left:35%; top:40%; background-color:white; box-shadow: 0px 0px 10px black;" >
 			Email Adress: <input type="text" style="font-size:18pt; width:95%; padding:3px;" name="address" />
@@ -168,7 +166,7 @@
 			<input type="button" style="font-size:18pt; padding:4px;" value="Ok" onclick="document.forms['sent_error'].style.visibility = 'hidden';"/>
 		</form>
 
-		<input id="bioNameBox" style="font-size:18px; resize: none; display:none; position:absolute; left:0; top:0; width:100px; height:100px">
+		<input id="bioNameBox" style="font-family: 'Roboto', sans-serif; font-size:18px; resize: none; display:none; position:absolute; left:0; top:0; width:100px; height:100px">
 
 		<canvas id="main" width="1920px" height="1080px"></canvas>
 	</body>

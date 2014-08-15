@@ -32,6 +32,9 @@ function DetailedScenarioScreen(_info){
 			info.requiredQualities.push(base.jsonData[info.currentScenario].required.qualities[i]);
 		}
 
+		info.winText = base.jsonData[info.currentScenario].win_text;
+		info.loseText = base.jsonData[info.currentScenario].lose_text;
+
 
 		//info
 		

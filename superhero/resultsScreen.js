@@ -13,7 +13,7 @@ function ResultsScreen(_info){
 	//Super inneficient, will fix later.
 
 	//Dev Splash Image
-	splashImage = Sprite(0,0,1920,1080, "images/dev/resultsScreenTest02.png");
+	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/updatedBackgrounds/background-11.png");
 	base.addModule(splashImage);
 	base.addModule(info.banner);
 
@@ -48,14 +48,14 @@ function ResultsScreen(_info){
 	//---------------Just setting up the rest of the stuff here.---------------
 
 	if(qualityFound && powerFound){
-		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-06_alt.png");
+		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/updatedBackgrounds/background-11.png");
 		info.win = true;
-		myResult.getDom().innerHTML = "Congratulations!  <br><br>Using your powers and virtues, you've saved the day!";
+		myResult.getDom().innerHTML = info.winText;
 		//var words = Sprite(0, 375, 512, 512, "images/dev/lorem_512.png");
 	}else{
-		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-07_alt.png");
+		resultImage = Sprite(0,0,1920,1080, "images/Backgrounds/updatedBackgrounds/background-12.png");
 		info.win = false;
-		myResult.getDom().innerHTML = "Hmmm... <br><br>Are you sure you selected the right powers and virtues?  Maybe you should try again!";
+		myResult.getDom().innerHTML = info.loseText;
 
 		//var words = Sprite(0, 375, 512, 512, "images/dev/lorem_512.png");
 		
@@ -70,17 +70,13 @@ function ResultsScreen(_info){
 
 
 	
-	//Buttons
-	/*
-	backButton = Sprite(0, 1080-128, 256, 128, "images/dev/buttons/back.png");
-	base.addModule(backButton);
-	*/
+	//--------------Buttons-------------------------------
 	
-	//Change the continue button based on whether or not we won.
-	if(info.win){
-		continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
-	} else if(!info.win){
-		continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
+	//Change the buttons we get based on whether or not we won.
+	var continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
+	var tryAgainButton = Sprite(1920-512, 1080-320, 512, 150, "images/dev/alpha.png");
+	if(!info.win){
+		base.addModule(tryAgainButton);
 	}
 	//Add it regardless.
 	base.addModule(continueButton);
@@ -89,20 +85,8 @@ function ResultsScreen(_info){
 	base.addModule(quitButton);
 	
 	//Events
-	/*
-	backButton.addEvent("mousedown", base.changeState("CharacterBioScreen", _info), false);
-	*/
-
-	//We swap out the image and destination based on how you did.
-	if(info.win){
-		continueButton.addEvent("mousedown", base.changeState("SuperPoseScreen", _info), false);
-	} else if(!info.win){
-		//continueButton.addEvent("mousedown", base.changeState("QualitiesScreen", _info), false);
-		//For dev purposes - change back after we know emails work.
-		continueButton.addEvent("mousedown", base.changeState("SuperPoseScreen", _info), false);
-	}
-
-
+	continueButton.addEvent("mousedown", base.changeState("SuperPoseScreen", _info), false);
+	tryAgainButton.addEvent("mousedown", base.changeState("QualitiesScreen", _info), false);
 	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
 
 

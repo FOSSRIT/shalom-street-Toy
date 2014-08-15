@@ -12,7 +12,7 @@ function PowersScreen(_info){
 	info.superhero.powersSelected = [];
 				
 	//Dev Splash Image
-	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/background-03_alt.png");
+	splashImage = Sprite(0,0,1920,1080, "images/Backgrounds/updatedBackgrounds/background-04.png");
 	base.addModule(splashImage);
 	base.addModule(info.banner);
 	
@@ -37,10 +37,10 @@ function PowersScreen(_info){
 	backButton = Sprite(0, 1080-128, 256, 128, "images/dev/buttons/back.png");
 	base.addModule(backButton);
 	
-	continueButton = Sprite(1920-256, 1080-128, 256, 128, "images/dev/buttons/continue.png");
+	var continueButton = Sprite(1920-335, 1080-138, 306, 108);
 	base.addModule(continueButton);
 	
-	quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
+	quitButton = Sprite(0, 0, 256, 216);
 	base.addModule(quitButton);
 	
 	//Powers
