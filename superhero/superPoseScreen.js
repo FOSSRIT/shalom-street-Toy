@@ -27,34 +27,16 @@ function SuperPoseScreen(_info){
 	continueButton = Sprite(1920-512, 1080-150, 512, 150, "images/dev/alpha.png");
 	base.addModule(continueButton);
 	
-	var quitButton = Sprite(0, 0, 256, 216, "images/dev/buttons/quit.png");
+	var quitButton = Sprite(0, 0, 256, 216);
 	base.addModule(quitButton);
+
+	base.addModule(bioTextBox);
+	bioTextBox.getDom().innerHTML = info.superhero.myBio
 	
 	//Events
-	//backButton.addEvent("mousedown", base.changeState("ResultsScreen", _info), false);
 	
 	continueButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
-	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false);
-
-
-	console.log('post results here');
-
-
-	//Copied from http://stackoverflow.com/questions/5292689/sending-images-from-canvas-elements-using-ajax-and-php-files
-	/*xhr: function () {
-        var myXHR = new XMLHttpRequest();
-        if (myXHR.sendAsBinary == undefined) {
-            myXHR.legacySend = myXHR.send;
-            myXHR.sendAsBinary = function (string) {
-                var bytes = Array.prototype.map.call(string, function (c) {
-                    return c.charCodeAt(0) & 0xff;
-                });
-                this.legacySend(new Uint8Array(bytes).buffer);
-            };
-        }
-        myXHR.send = myXHR.sendAsBinary;
-        return myXHR;
-    }*/
+	quitButton.addEvent("mousedown", base.changeState("SplashScreen", _info), false)
 
 
 
@@ -99,6 +81,8 @@ function SuperPoseScreen(_info){
 	    	data: {
 	    		imgBase64: data,
 	    		address: address,
+	    		bio: info.superhero.myBio,
+	    		name: info.superhero.myName,
 	    	}
 	    }).done(function(o){
 	    	if(o == 'success') {

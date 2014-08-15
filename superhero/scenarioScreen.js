@@ -51,7 +51,7 @@ function ScenarioScreen(_info){
 	scenario2Button = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512, "images/Backgrounds/coversforcomics-02.png");
 	easyContent.addModule(scenario2Button);
 	
-	scenario3Button = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512, "images/Backgrounds/coversforcomics-07-07.png");
+	scenario3Button = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512, "images/Backgrounds/coversforcomics-09.png");
   	easyContent.addModule(scenario3Button);
 	
 	
@@ -74,7 +74,7 @@ function ScenarioScreen(_info){
 	var testButton3 = Sprite(3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512, "images/Backgrounds/coversforcomics-01.png");
 	hardContent.addModule(testButton3);
 	
-	var testButton5 = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512, "images/Backgrounds/coversforcomics-07-07.png");
+	var testButton5 = Sprite(4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512, "images/Backgrounds/coversforcomics-08.png");
 	hardContent.addModule(testButton5);
 	
 	//Titles
@@ -194,8 +194,8 @@ function ScenarioScreen(_info){
 	scenario2Button.addEvent("mouseexit", function(_clipBoard){  scenario2Button.setImage("images/Backgrounds/coversforcomics-02.png", false, 3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512);  _clipBoard.ToFire = ["redraw"]; }, false);
 
 	Touch.onEnterExit(scenario3Button);
-	scenario3Button.addEvent("mouseenter", function(_clipBoard){   scenario3Button.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-160, toReturn.bounds.height/2-320, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	scenario3Button.addEvent("mouseexit", function(_clipBoard){  scenario3Button.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512); _clipBoard.ToFire = ["redraw"]; }, false);
+	scenario3Button.addEvent("mouseenter", function(_clipBoard){   scenario3Button.setImage("images/Backgrounds/coversforcomics-09.png", false, 4*toReturn.bounds.width/5-160, toReturn.bounds.height/2-320, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	scenario3Button.addEvent("mouseexit", function(_clipBoard){  scenario3Button.setImage("images/Backgrounds/coversforcomics-09.png", false, 4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512); _clipBoard.ToFire = ["redraw"]; }, false);
 
 	//Medium
 	Touch.onEnterExit(bullyButton);
@@ -220,8 +220,8 @@ function ScenarioScreen(_info){
 	testButton3.addEvent("mouseexit", function(_clipBoard){  testButton3.setImage("images/Backgrounds/coversforcomics-01.png", false, 3*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	Touch.onEnterExit(testButton5);
-	testButton5.addEvent("mouseenter", function(_clipBoard){  testButton5.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-160, toReturn.bounds.height/2-320, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
-	testButton5.addEvent("mouseexit", function(_clipBoard){  testButton5.setImage("images/Backgrounds/coversforcomics-07-07.png", false, 4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton5.addEvent("mouseenter", function(_clipBoard){  testButton5.setImage("images/Backgrounds/coversforcomics-08.png", false, 4*toReturn.bounds.width/5-160, toReturn.bounds.height/2-320, 320, 640); _clipBoard.ToFire = ["redraw"]; },false);
+	testButton5.addEvent("mouseexit", function(_clipBoard){  testButton5.setImage("images/Backgrounds/coversforcomics-08.png", false, 4*toReturn.bounds.width/5-128, toReturn.bounds.height/2-192, 256, 512); _clipBoard.ToFire = ["redraw"]; },false);
 	
 	//Swap content Events
 	easyTab.addEvent("mousedown", function(_clipBoard){
@@ -317,10 +317,10 @@ function ScenarioScreen(_info){
 		base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
 	
-	/*scenario3Button.addEvent("mousedown", function(_clipBoard){
+	scenario3Button.addEvent("mousedown", function(_clipBoard){
 		info.currentScenario = "villain";
 		base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
-	}, false );*/ //---Until we get graphics.
+	}, false ); //---Until we get graphics.
 	
 	
 	//Medium
@@ -347,11 +347,10 @@ function ScenarioScreen(_info){
 			info.currentScenario = "fire";
 			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
 	}, false );
-
-	/*testButton5.addEvent("mousedown", function(_clipBoard){
+	testButton5.addEvent("mousedown", function(_clipBoard){
 			info.currentScenario = "aliens";
 			base.changeState("DetailedScenarioScreen", _info)(_clipBoard);
-	}, false );*/ //--- Until we get graphics.
+	}, false ); //--- Until we get graphics.
 
 	//For dev purposes.
 	console.log("Current super powers: " + _info.superhero.powers);
