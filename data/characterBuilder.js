@@ -408,84 +408,84 @@ jsonLoader.result = {
 						"mask_01":{
 							"male_1": {
 								"option_sprite": ["images/production/dressup/icons/masks/0.png", "images/production/dressup/icons/masks/0.png"],
-								"sprite": "images/production/dressup/male/young/set_01/mask.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/1-01.png"
 							},
 							"male_2": {
 								"option_sprite": ["images/production/dressup/icons/masks/0.png", "images/production/dressup/icons/masks/0.png"],
-								"sprite": "images/production/dressup/male/adult/set_01/mask.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/1-03.png"
 							},
 							"male_3": {
 								"option_sprite": ["images/production/dressup/icons/masks/0.png", "images/production/dressup/icons/masks/0.png"],
-								"sprite": "images/production/dressup/male/buff/set_01/mask.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/1-02.png"
 							},
 							
 							"female_1": {
 								"option_sprite": ["images/production/dressup/icons/masks/0.png", "images/production/dressup/icons/masks/0.png"],
-								"sprite": "images/production/dressup/female/young/set_01/mask.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/1-04.png"
 							},
 							"female_2": {
 								"option_sprite": ["images/production/dressup/icons/masks/0.png", "images/production/dressup/icons/masks/0.png"],
-								"sprite": "images/production/dressup/female/adult/set_01/mask.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/1-05.png"
 							},
 							"female_3": {
 								"option_sprite": ["images/production/dressup/icons/masks/0.png", "images/production/dressup/icons/masks/0.png"],
-								"sprite": "images/production/dressup/female/buff/set_01/mask.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/1-06.png"
 							},
 						},
 
 						"mask_02":{
 							"male_1": {
 								"option_sprite": ["images/production/dressup/icons/masks/1.png", "images/production/dressup/icons/masks/1.png"],
-								"sprite": "images/production/dressup/male/young/masks/2.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/2-01.png"
 							},
 							"male_2": {
 								"option_sprite": ["images/production/dressup/icons/masks/1.png", "images/production/dressup/icons/masks/1.png"],
-								"sprite": "images/production/dressup/male/adult/masks/2.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/2-03.png"
 							},
 							"male_3": {
 								"option_sprite": ["images/production/dressup/icons/masks/1.png", "images/production/dressup/icons/masks/1.png"],
-								"sprite": "images/production/dressup/male/buff/masks/2.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/2-02.png"
 							},
 							
 							"female_1": {
 								"option_sprite": ["images/production/dressup/icons/masks/1.png", "images/production/dressup/icons/masks/1.png"],
-								"sprite": "images/production/dressup/female/young/masks/2.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/2-04.png"
 							},
 							"female_2": {
 								"option_sprite": ["images/production/dressup/icons/masks/1.png", "images/production/dressup/icons/masks/1.png"],
-								"sprite": "images/production/dressup/female/adult/masks/2.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/2-05.png"
 							},
 							"female_3": {
 								"option_sprite": ["images/production/dressup/icons/masks/1.png", "images/production/dressup/icons/masks/1.png"],
-								"sprite": "images/production/dressup/female/buff/masks/2.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/2-06.png"
 							},
 						}, 
 
 						"mask_03":{
 							"male_1": {
 								"option_sprite": ["images/production/dressup/icons/masks/2.png", "images/production/dressup/icons/masks/2.png"],
-								"sprite": "images/production/dressup/male/young/masks/3.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/3-01.png"
 							},
 							"male_2": {
 								"option_sprite": ["images/production/dressup/icons/masks/2.png", "images/production/dressup/icons/masks/2.png"],
-								"sprite": "images/production/dressup/male/adult/masks/3.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/3-03.png"
 							},
 							"male_3": {
 								"option_sprite": ["images/production/dressup/icons/masks/2.png", "images/production/dressup/icons/masks/2.png"],
-								"sprite": "images/production/dressup/male/buff/masks/3.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/3-02.png"
 							},
 							
 							"female_1": {
 								"option_sprite": ["images/production/dressup/icons/masks/2.png", "images/production/dressup/icons/masks/2.png"],
-								"sprite": "images/production/dressup/female/young/masks/3.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/3-04.png"
 							},
 							"female_2": {
 								"option_sprite": ["images/production/dressup/icons/masks/2.png", "images/production/dressup/icons/masks/2.png"],
-								"sprite": "images/production/dressup/female/adult/masks/3.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/3-05.png"
 							},
 							"female_3": {
 								"option_sprite": ["images/production/dressup/icons/masks/2.png", "images/production/dressup/icons/masks/2.png"],
-								"sprite": "images/production/dressup/female/buff/masks/3.png"
+								"sprite": "images/production/dressup/MC-Clothes/masks/3-06.png"
 							},
 						},
 						
@@ -614,82 +614,82 @@ jsonLoader.result = {
 						"jumpsuit_01":{
 							"male_1": {
 								"option_sprite": ["images/production/dressup/icons/suits/0-1.png", "images/production/dressup/icons/suits/0-1.png"],
-								"sprite": "images/production/dressup/male/young/set_01/jumpsuit.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-01.png"
 							},
 							"male_2": {
 								"option_sprite": ["images/production/dressup/icons/suits/0-1.png", "images/production/dressup/icons/suits/0-1.png"],
-								"sprite": "images/production/dressup/male/adult/set_01/jumpsuit.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-03.png"
 							},
 							"male_3": {
 								"option_sprite": ["images/production/dressup/icons/suits/0-1.png", "images/production/dressup/icons/suits/0-1.png"],
-								"sprite": "images/production/dressup/male/buff/set_01/jumpsuit.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-02.png"
 							},
 							
 							"female_1": {
 								"option_sprite": ["images/production/dressup/icons/suits/0-2.png", "images/production/dressup/icons/suits/0-2.png"],
-								"sprite": "images/production/dressup/female/young/set_01/jumpsuit.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-04.png"
 							},
 							"female_2": {
 								"option_sprite": ["images/production/dressup/icons/suits/0-2.png", "images/production/dressup/icons/suits/0-2.png"],
-								"sprite": "images/production/dressup/female/adult/set_01/jumpsuit.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-06.png"
 							},
 							"female_3": {
 								"option_sprite": ["images/production/dressup/icons/suits/0-2.png", "images/production/dressup/icons/suits/0-2.png"],
-								"sprite": "images/production/dressup/female/buff/set_01/jumpsuit.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-05.png"
 							},
 						},
 						"jumpsuit_02":{
 							"male_1": {
 								"option_sprite": ["images/production/dressup/icons/suits/1-1.png", "images/production/dressup/icons/suits/1-1.png"],
-								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-01.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-01.png"
 							},
 							"male_2": {
 								"option_sprite": ["images/production/dressup/icons/suits/1-1.png", "images/production/dressup/icons/suits/1-1.png"],
-								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-03.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-03.png"
 							},
 							"male_3": {
 								"option_sprite": ["images/production/dressup/icons/suits/1-1.png", "images/production/dressup/icons/suits/1-1.png"],
-								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-02.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-02.png"
 							},
 							
 							"female_1": {
 								"option_sprite": ["images/production/dressup/icons/suits/1-2.png", "images/production/dressup/icons/suits/1-2.png"],
-								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-04.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-04.png"
 							},
 							"female_2": {
 								"option_sprite": ["images/production/dressup/icons/suits/1-2.png", "images/production/dressup/icons/suits/1-2.png"],
-								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-05.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-05.png"
 							},
 							"female_3": {
 								"option_sprite": ["images/production/dressup/icons/suits/1-2.png", "images/production/dressup/icons/suits/1-2.png"],
-								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-06.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-06.png"
 							},
 						},
 						"jumpsuit_03":{
 							"male_1": {
 								"option_sprite": ["images/production/dressup/icons/suits/2-1.png", "images/production/dressup/icons/suits/2-1.png"],
-								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-01.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/3-01.png"
 							},
 							"male_2": {
 								"option_sprite": ["images/production/dressup/icons/suits/2-1.png", "images/production/dressup/icons/suits/2-1.png"],
-								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-03.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/3-03.png"
 							},
 							"male_3": {
 								"option_sprite": ["images/production/dressup/icons/suits/2-1.png", "images/production/dressup/icons/suits/2-1.png"],
-								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-02.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/3-02.png"
 							},
 							
 							"female_1": {
 								"option_sprite": ["images/production/dressup/icons/suits/2-2.png", "images/production/dressup/icons/suits/2-2.png"],
-								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-04.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/3-04.png"
 							},
 							"female_2": {
 								"option_sprite": ["images/production/dressup/icons/suits/2-2.png", "images/production/dressup/icons/suits/2-2.png"],
-								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-05.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/3-05.png"
 							},
 							"female_3": {
 								"option_sprite": ["images/production/dressup/icons/suits/2-2.png", "images/production/dressup/icons/suits/2-2.png"],
-								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/2-06.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/3-06.png"
 							},
 						},
 						/*
@@ -759,7 +759,7 @@ jsonLoader.result = {
 						"cape_01":{
 							"male_1": {
 								"option_sprite": ["images/production/dressup/icons/capes/1.png", "images/production/dressup/icons/capes/1.png"],
-								"sprite": "images/production/dressup/male/young/set_01/cape.png"
+								"sprite": "images/production/dressup/MC-Clothes/jumpsuit/1-02.png"
 							},
 							"male_2": {
 								"option_sprite": ["images/production/dressup/icons/capes/1.png", "images/production/dressup/icons/capes/1.png"],
@@ -835,15 +835,15 @@ jsonLoader.result = {
 						"shirt_01":{
 							"male_1": {
 								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
-								"sprite": "images/production/dressup/male/young/set_01/shirt.png"
+								"sprite": "images/production/dressup/MC-Clothes/shirts/1-01.png"
 							},
 							"male_2": {
 								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
-								"sprite": "images/production/dressup/male/adult/set_01/shirt.png"
+								"sprite": "images/production/dressup/MC-Clothes/shirts/1-03.png"
 							},
 							"male_3": {
 								"option_sprite": ["images/dev/_04.png", "images/dev/_04.png"],
-								"sprite": "images/production/dressup/male/buff/set_01/shirt.png"
+								"sprite": "images/production/dressup/MC-Clothes/shirts/1-02.png"
 							},
 							
 							"female_1": {
