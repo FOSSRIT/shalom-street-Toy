@@ -52,7 +52,7 @@
 		<script>
 
 			var canvas, ctx, manager, playArea;
-			var bioSubmission, bioName, bioTextBox, resultsScreenBox;
+			var bioSubmission, bioName, bioTextBox, resultsScreenBox, nameTextBox;
 			var superhero = {
 				"virtues":[],
 				"skeleton":undefined,
@@ -69,6 +69,7 @@
 				bioName = DomWrapper(document.getElementById("bioNameBox"));
 				bioTextBox = DomWrapper(document.getElementById("bioText"));
 				resultsScreenBox = DomWrapper(document.getElementById("resultsScreenBox"));
+				bioNameBox = DomWrapper(document.getElementById("nameText"));
 				//bioSubmission.visible = false;
 				canvas = document.getElementById("main");
 				ctx = canvas.getContext("2d");
@@ -141,11 +142,22 @@
 		<!--We'll need to set this stuff up so it goes full screen I guess.-->
 		
 	
-		<div id="bioText"  style="font-family: 'robotolight', sans-serif; font-size:16px; display:none; position:absolute; left:100px; width:100px; width:500px; height:500px; color:white;">
+		<div id="bioText"  style="font-family: 'robotolight', sans-serif; font-size:20px; display:none; position:absolute; left:100px; width:100px; width:500px; height:500px; color:white;">
 			Your superhero's bio will go here.
 		</div>
-		<div id="resultsScreenBox" style="font-family: 'robotolight', sans-serif; font-size:15px; display:none; position:absolute; left:100px; width:100px; width:500px; height:500px; color:white;">Your superhero's results will go into this box right here.</div>
+		<div id="nameText" style="font-family: 'robotolight', sans-serif; font-size:20px; display:none; position:absolute; left:100px; width:100px; width:500px; height:500px; color:white;"> Name here </div>
+		<div id="resultsScreenBox" style="font-family: 'robotolight', sans-serif; font-size:18px; display:none; position:absolute; left:100px; width:100px; width:500px; height:500px; color:white;">Your superhero's results will go into this box right here.</div>
 		<textarea id="bioSubmitBox" style="font-family: 'robotolight', sans-serif; font-size:16px; resize: none; display:none; position:absolute; left:0; top:0; width:400px; height:400px">Enter your superhero's bio here!</textarea> 
+		<!--Form for choosing what to submit-->
+		<form name="email_choice" style="visibility:hidden; font-size:24pt; padding:15px; width:20%; border-radius:10px; position:absolute; left:35%; top:40%; background-color:white; box-shadow: 0px 0px 10px black;" >
+			<input type="button" style="font-size:18pt; padding:4px;" value="Email Yourself" onclick="manager.handleEvent('emailChoice', {'mine':true, 'Shalom':false});"/>
+			<br>
+			<input type="button" style="font-size:18pt; padding:4px;" value="Send to Shalom Street" onclick="manager.handleEvent('emailChoice', {'mine':false, 'Shalom':true});"/>
+			<br>
+			<input type="button" style="font-size:18pt; padding:4px;" value="Email Both" onclick="manager.handleEvent('emailChoice', {'mine':true, 'Shalom':true});"/>
+			<br>
+			<input type="button" style="font-size:18pt; padding:4px;" value="Cancel" onclick="document.forms['email']['address'].value = ''; document.forms['email_choice'].style.visibility = 'hidden';"/>
+		</form>
 		<!--Form that we use for submitting the email address.-->
 		<form name="email" style="visibility:hidden; font-size:24pt; padding:15px; width:20%; border-radius:10px; position:absolute; left:35%; top:40%; background-color:white; box-shadow: 0px 0px 10px black;" >
 			Email Adress: <input type="text" style="font-size:18pt; width:95%; padding:3px;" name="address"/>

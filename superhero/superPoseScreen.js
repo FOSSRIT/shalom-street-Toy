@@ -30,8 +30,18 @@ function SuperPoseScreen(_info){
 	var quitButton = Sprite(0, 0, 256, 216);
 	base.addModule(quitButton);
 
+	bioTextBox.visible = true;
 	base.addModule(bioTextBox);
-	bioTextBox.getDom().innerHTML = info.superhero.myBio
+	bioTextBox.getDom().innerHTML = info.superhero.myBio;
+
+	bioNameBox.visible = true;
+	bioNameBox.bounds.x = 155;
+	bioNameBox.bounds.y = 400;
+	bioNameBox.bounds.width = 400;
+	bioNameBox.bounds.height = 80;
+	base.addModule(bioNameBox);
+	
+	bioNameBox.getDom().innerHTML = info.superhero.myName;
 	
 	//Events
 	
@@ -86,15 +96,31 @@ function SuperPoseScreen(_info){
 	    	}
 	    }).done(function(o){
 	    	if(o == 'success') {
-	    		_sentMail(true); //If we didn't get an error or did get an error.
+	    		_sentMail(true, clip); //If we didn't get an error or did get an error.
 	    	} else {
 	    		console.log(o);
-	    		_sentMail(false);
+	    		_sentMail(false, clip);
 	    	}
 	    });
 	}
 
 
+	var clip;
+	base.addEvent("emailChoice", function(_clipBoard){ 
+		clip = _clipBoard;
+		if(_clipBoard.mine){
+			_clipBoard.mine = false;
+			document.forms["email_choice"].style.visibility = "none";
+			document.forms["email"].style.visibility = "visible";
+			document.forms["shalom_confirm"].style.visibility = "none";
+		}
+		else if(_clipBoard.Shalom){
+			_clipBoard.Shalom = false;
+			document.forms["email_choice"].style.visibility = "none";
+			document.forms["email"].style.visibility = "none";
+			document.forms["shalom_confirm"].style.visibility = "visible";
+		}
+	}, false);
 
 	
 	function _sendMail(address){
@@ -105,18 +131,26 @@ function SuperPoseScreen(_info){
 			//You must be offline.
 			console.log(e);
 			//console.log("You must be running on a server or set up correctly on a local server to send emails.");
-			_sentMail(false);
+			_sentMail(false, clip);
 		}
 	}
 	toReturn.sendMail = _sendMail;
 
-	function _sentMail(no_error) {
-		document.forms["email"].style.visibility = "hidden";
-		document.forms["shalom_confirm"].style.visibility = "hidden";
-		if(no_error) {
-			document.forms["sent"].style.visibility = "visible";
+	function _sentMail(no_error, _clipBoard) {
+
+		if(_clipBoard.Shalom){
+			_clipBoard.Shalom = false;
+			document.forms["email_choice"].style.visibility = "none";
+			document.forms["email"].style.visibility = "none";
+			document.forms["shalom_confirm"].style.visibility = "visible";
 		} else {
-			document.forms["sent_error"].style.visibility = "visible";
+			document.forms["email"].style.visibility = "hidden";
+			document.forms["shalom_confirm"].style.visibility = "hidden";
+			if(no_error) {
+				document.forms["sent"].style.visibility = "visible";
+			} else {
+				document.forms["sent_error"].style.visibility = "visible";
+			}
 		}
 	}
 
@@ -125,15 +159,15 @@ function SuperPoseScreen(_info){
 	}, false);
 
 
-	var facebook = Sprite(60, 980, 800, 100, "images/dev/alpha.png");
-	base.addModule(facebook);
+	//var facebook = Sprite(60, 980, 800, 100, "images/dev/alpha.png");
+	/*base.addModule(facebook);
 	facebook.addEvent("mousedown", function(_clipBoard){
 		document.forms["shalom_confirm"].style.visibility = "visible";
-	}, false);
-	var email = Sprite(60, 880, 800, 100,  "images/dev/alpha.png");
+	}, false);*/
+	var email = Sprite(60, 780, 800, 100,  "images/dev/alpha.png");
 	base.addModule(email);
 	email.addEvent("mousedown", function(_clipBoard){
-		document.forms["email"].style.visibility = "visible";
+		document.forms["email_choice"].style.visibility = "visible";
 	}, false);
 
 
