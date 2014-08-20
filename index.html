@@ -134,6 +134,21 @@
 		</script>
 
 		<link rel="stylesheet" href="fonts/stylesheet.css" type="text/css" charset="utf-8" />
+		<style>
+			body {
+				overflow:hidden;
+				background-color:rgb(10, 10, 70);
+			}
+
+			#canvas_wrapper {
+			   width: 100%;
+			   text-align:center;
+			}
+
+			canvas {
+			   display: inline;
+			}
+		</style>
 	</head>
 
 	<!--Main app-->
@@ -182,7 +197,9 @@
 
 		<input id="bioNameBox" style="font-family: 'robotolight', sans-serif; font-size:16px; resize: none; display:none; position:absolute; left:0; top:0; width:100px; height:100px" value="Your name here" />
 
-		<canvas id="main" width="1920px" height="1080px"></canvas>
+		<div id="canvas_wrapper" style="">
+			<canvas id="main" width="1920px" style="" height="1080px"></canvas>
+		</div>
 	</body>
 
 </html>
